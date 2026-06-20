@@ -1,0 +1,30 @@
+{
+  "_comment": "Ground-truth ABCD-16 ratio2/ratio3 values for the sampled families, copied verbatim from the published report.",
+  "tolerance_abs": 1e-06,
+  "samples": [
+    {
+      "suite": "original8",
+      "row_id": "Extended_LowHigh_Base",
+      "ratio2": 0.10068959165161649,
+      "ratio3": 0.26795140505508536
+    },
+    {
+      "suite": "original8",
+      "row_id": "ThreeGeneration_LowHigh_Aggressive",
+      "ratio2": 0.05132042771771293,
+      "ratio3": 0.10682960328633219
+    },
+    {
+      "suite": "original8",
+      "row_id": "Extended_MediumEven_Base",
+      "ratio2": 0.15896943584408058,
+      "ratio3": 0.1882308025539009
+    },
+    {
+      "suite": "phase6_54",
+      "row_id": "Extended_LowHigh_Base_fixed_0p015_variable_0p030",
+      "ratio2": 0.42325420933876706,
+      "ratio3": 0.39321674744944496
+    }
+  ]
+}

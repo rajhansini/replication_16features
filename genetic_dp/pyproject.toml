@@ -1,0 +1,12 @@
+[project]
+name = "genetic_dp"
+version = "0.1.0"
+description = "A package for solving genetic testing problems using dual dynamic programming."
+dependencies = [
+    "numpy",
+    "gurobipy",
+    "pgmpy",
+]
+
+[tool.setuptools]
+packages = ["cli", "models", "policy", "exact_dp", "experiments", "optimisation", "utils"]

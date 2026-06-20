@@ -1,0 +1,618 @@
+{
+ "_comment": "Ground-truth ABCD-16 ratio2/ratio3 values for all 102 families, copied verbatim from the published report.",
+ "tolerance_abs": 1e-06,
+ "samples": [
+  {
+   "suite": "original8",
+   "row_id": "Extended_LowHigh_Aggressive",
+   "ratio2": 0.05951841229027414,
+   "ratio3": 0.13004854759865747
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p005_variable_0p010",
+   "ratio2": 0.024719285895520037,
+   "ratio3": 0.06684495594293732
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p005_variable_0p020",
+   "ratio2": 0.02085409428301911,
+   "ratio3": 0.09645106988965815
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p005_variable_0p030",
+   "ratio2": 0.03293740560553688,
+   "ratio3": 0.12699846496715622
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p010_variable_0p010",
+   "ratio2": 0.0560534909828648,
+   "ratio3": 0.09402407330336299
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p010_variable_0p020",
+   "ratio2": 0.05947220178498243,
+   "ratio3": 0.13010407246492917
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p010_variable_0p030",
+   "ratio2": 0.04965921953329699,
+   "ratio3": 0.16894176032027025
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p015_variable_0p010",
+   "ratio2": 0.09377335973852138,
+   "ratio3": 0.12577983964231737
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p015_variable_0p020",
+   "ratio2": 0.09987475220986895,
+   "ratio3": 0.17121372434965834
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Aggressive_fixed_0p015_variable_0p030",
+   "ratio2": 0.08335378711948735,
+   "ratio3": 0.2101693649186529
+  },
+  {
+   "suite": "original8",
+   "row_id": "Extended_LowHigh_Base",
+   "ratio2": 0.10068959165161649,
+   "ratio3": 0.26795140505508536
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p005_variable_0p010",
+   "ratio2": 0.04798990248743956,
+   "ratio3": 0.1181914103756244
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p005_variable_0p020",
+   "ratio2": 0.046172659933437804,
+   "ratio3": 0.18497680539332298
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p005_variable_0p030",
+   "ratio2": 0.06564080193145506,
+   "ratio3": 0.2581253927895496
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p010_variable_0p010",
+   "ratio2": 0.11292507502570469,
+   "ratio3": 0.18276530926790244
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p010_variable_0p020",
+   "ratio2": 0.10068959165161649,
+   "ratio3": 0.26795140505508536
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p010_variable_0p030",
+   "ratio2": 0.1668231828255424,
+   "ratio3": 0.32399109377360175
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p015_variable_0p010",
+   "ratio2": 0.25119961031856763,
+   "ratio3": 0.2486247895045838
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p015_variable_0p020",
+   "ratio2": 0.32193686079916667,
+   "ratio3": 0.33286146787928045
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Base_fixed_0p015_variable_0p030",
+   "ratio2": 0.42325420933876706,
+   "ratio3": 0.39321674744944496
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p005_variable_0p010",
+   "ratio2": 0.034383138795103935,
+   "ratio3": 0.08677324186100314
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p005_variable_0p020",
+   "ratio2": 0.027624928607921942,
+   "ratio3": 0.12929782233011466
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p005_variable_0p030",
+   "ratio2": 0.045532429371489457,
+   "ratio3": 0.17311572290899277
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p010_variable_0p010",
+   "ratio2": 0.07396297374656743,
+   "ratio3": 0.1252388485559385
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p010_variable_0p020",
+   "ratio2": 0.08267807463313338,
+   "ratio3": 0.17957580568388737
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p010_variable_0p030",
+   "ratio2": 0.07160393415620306,
+   "ratio3": 0.2424716874651384
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p015_variable_0p010",
+   "ratio2": 0.1337613016272487,
+   "ratio3": 0.16897683689577486
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p015_variable_0p020",
+   "ratio2": 0.15869081282907463,
+   "ratio3": 0.23380044755818155
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_LowHigh_Midpoint_fixed_0p015_variable_0p030",
+   "ratio2": 0.14676828618623286,
+   "ratio3": 0.284937820171897
+  },
+  {
+   "suite": "original8",
+   "row_id": "Extended_MediumEven_Aggressive",
+   "ratio2": 0.04854886017692337,
+   "ratio3": 0.10292417861151729
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p005_variable_0p010",
+   "ratio2": 0.031126426991962983,
+   "ratio3": 0.0782952631667586
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p005_variable_0p020",
+   "ratio2": 0.042836484664250656,
+   "ratio3": 0.0902853218980063
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p005_variable_0p030",
+   "ratio2": 0.039379186500845965,
+   "ratio3": 0.10992287503848769
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p010_variable_0p010",
+   "ratio2": 0.07000417490102497,
+   "ratio3": 0.09018394294324655
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p010_variable_0p020",
+   "ratio2": 0.04855030060478334,
+   "ratio3": 0.1028570440485098
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p010_variable_0p030",
+   "ratio2": 0.07690392850828559,
+   "ratio3": 0.1252661822714196
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p015_variable_0p010",
+   "ratio2": 0.11012975934527637,
+   "ratio3": 0.10486409884561586
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p015_variable_0p020",
+   "ratio2": 0.113882625721783,
+   "ratio3": 0.12376982601699478
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Aggressive_fixed_0p015_variable_0p030",
+   "ratio2": 0.13218727280058207,
+   "ratio3": 0.14480802581236313
+  },
+  {
+   "suite": "original8",
+   "row_id": "Extended_MediumEven_Base",
+   "ratio2": 0.15896943584408058,
+   "ratio3": 0.1882308025539009
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p005_variable_0p010",
+   "ratio2": 0.06332602384260345,
+   "ratio3": 0.12087561016770869
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p005_variable_0p020",
+   "ratio2": 0.06977266563692795,
+   "ratio3": 0.14931262161659242
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p005_variable_0p030",
+   "ratio2": 0.07597770476288508,
+   "ratio3": 0.19678744350058003
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p010_variable_0p010",
+   "ratio2": 0.07673189442956711,
+   "ratio3": 0.152046144343961
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p010_variable_0p020",
+   "ratio2": 0.15896943584408058,
+   "ratio3": 0.1882308025539009
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p010_variable_0p030",
+   "ratio2": 0.1447384304578347,
+   "ratio3": 0.24007662255404771
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p015_variable_0p010",
+   "ratio2": 0.13645874933202073,
+   "ratio3": 0.18135037100068224
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p015_variable_0p020",
+   "ratio2": 0.26159436825311744,
+   "ratio3": 0.22567747492136944
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Base_fixed_0p015_variable_0p030",
+   "ratio2": 0.29357454105928055,
+   "ratio3": 0.2983247830414906
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p005_variable_0p010",
+   "ratio2": 0.02700112070483801,
+   "ratio3": 0.09678557899464671
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p005_variable_0p020",
+   "ratio2": 0.05575878181372783,
+   "ratio3": 0.11363807506452363
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p005_variable_0p030",
+   "ratio2": 0.05171822751430297,
+   "ratio3": 0.14217195225261137
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p010_variable_0p010",
+   "ratio2": 0.09251501275639322,
+   "ratio3": 0.11295297670381815
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p010_variable_0p020",
+   "ratio2": 0.10551422579510814,
+   "ratio3": 0.13550977727452942
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p010_variable_0p030",
+   "ratio2": 0.10508616177281663,
+   "ratio3": 0.16704887160966994
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p015_variable_0p010",
+   "ratio2": 0.08661059136146379,
+   "ratio3": 0.13640433301976929
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p015_variable_0p020",
+   "ratio2": 0.10337883110985924,
+   "ratio3": 0.15728135715254732
+  },
+  {
+   "suite": "phase6_54",
+   "row_id": "Extended_MediumEven_Midpoint_fixed_0p015_variable_0p030",
+   "ratio2": 0.1897253930339132,
+   "ratio3": 0.19646760864530075
+  },
+  {
+   "suite": "original8",
+   "row_id": "ThreeGeneration_LowHigh_Aggressive",
+   "ratio2": 0.05132042771771293,
+   "ratio3": 0.10682960328633219
+  },
+  {
+   "suite": "original8",
+   "row_id": "ThreeGeneration_LowHigh_Base",
+   "ratio2": 0.1236396698203771,
+   "ratio3": 0.24315240643828323
+  },
+  {
+   "suite": "original8",
+   "row_id": "ThreeGeneration_MediumEven_Aggressive",
+   "ratio2": 0.041949850517887716,
+   "ratio3": 0.06916036693368577
+  },
+  {
+   "suite": "original8",
+   "row_id": "ThreeGeneration_MediumEven_Base",
+   "ratio2": 0.08395475742342791,
+   "ratio3": 0.11175994526018347
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_01",
+   "ratio2": 0.05642559163196085,
+   "ratio3": 0.11387170676858378
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_02",
+   "ratio2": 0.037203354322656756,
+   "ratio3": 0.09574530787197386
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_03",
+   "ratio2": 0.01926641010199414,
+   "ratio3": 0.10409570687757051
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_01",
+   "ratio2": 0.12782689230845087,
+   "ratio3": 0.2628752364875211
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_02",
+   "ratio2": 0.11491923768526026,
+   "ratio3": 0.2146268279296059
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_03",
+   "ratio2": 0.1609545521692399,
+   "ratio3": 0.22699546052889163
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_01",
+   "ratio2": 0.04051138691332684,
+   "ratio3": 0.06269238659461451
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_02",
+   "ratio2": 0.04726237086882677,
+   "ratio3": 0.07700301800740285
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_03",
+   "ratio2": 0.03797680514272997,
+   "ratio3": 0.07245133961676932
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_01",
+   "ratio2": 0.09028679788148508,
+   "ratio3": 0.15393176498510758
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_02",
+   "ratio2": 0.12101438456788602,
+   "ratio3": 0.12566524793395656
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_03",
+   "ratio2": 0.08789516487378644,
+   "ratio3": 0.13312764238194172
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_Extended_LowHigh_Aggressive",
+   "ratio2": 0.05947220178498243,
+   "ratio3": 0.13010407246492917
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_Extended_LowHigh_Base",
+   "ratio2": 0.10068959165161649,
+   "ratio3": 0.26795140505508536
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_Extended_MediumEven_Aggressive",
+   "ratio2": 0.04855030060478334,
+   "ratio3": 0.1028570440485098
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_Extended_MediumEven_Base",
+   "ratio2": 0.15896943584408058,
+   "ratio3": 0.1882308025539009
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_ThreeGeneration_LowHigh_Aggressive",
+   "ratio2": 0.023226638057836334,
+   "ratio3": 0.10702321643969358
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_ThreeGeneration_LowHigh_Base",
+   "ratio2": 0.1236396698203771,
+   "ratio3": 0.24315240643828323
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_ThreeGeneration_MediumEven_Aggressive",
+   "ratio2": 0.06210019842562298,
+   "ratio3": 0.06674347001879233
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_anchor_ThreeGeneration_MediumEven_Base",
+   "ratio2": 0.08395475742342791,
+   "ratio3": 0.11175994526018347
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_coefficient_ThreeGeneration_LowHigh_Aggressive",
+   "ratio2": 0.07077456818259223,
+   "ratio3": 0.15308111309770844
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_coefficient_ThreeGeneration_LowHigh_Base",
+   "ratio2": 0.07077456818259223,
+   "ratio3": 0.15308111309770844
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_coefficient_ThreeGeneration_MediumEven_Aggressive",
+   "ratio2": 0.055979750558013984,
+   "ratio3": 0.07713975521518228
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_coefficient_ThreeGeneration_MediumEven_Base",
+   "ratio2": 0.055979750558013984,
+   "ratio3": 0.07713975521518228
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p005",
+   "ratio2": 0.01976351824897015,
+   "ratio3": 0.07171191609196426
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p015",
+   "ratio2": 0.050750071076397334,
+   "ratio3": 0.15320806203641021
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p005",
+   "ratio2": 0.040883340655980954,
+   "ratio3": 0.14840101589316995
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p015",
+   "ratio2": 0.2894147163018731,
+   "ratio3": 0.2568888055249574
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p005",
+   "ratio2": 0.032934361691152235,
+   "ratio3": 0.060070165738770026
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p015",
+   "ratio2": 0.059705053905940796,
+   "ratio3": 0.07193583572815147
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p005",
+   "ratio2": 0.06477655796752793,
+   "ratio3": 0.08578004787518549
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p015",
+   "ratio2": 0.2462233138771822,
+   "ratio3": 0.1746611708307127
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p01",
+   "ratio2": 0.05365189777955006,
+   "ratio3": 0.06769772451618121
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p03",
+   "ratio2": 0.0549669801181142,
+   "ratio3": 0.15364397560506474
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p01",
+   "ratio2": 0.04016487970306516,
+   "ratio3": 0.14313614716087827
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p03",
+   "ratio2": 0.16563742350583277,
+   "ratio3": 0.29780331918576347
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p01",
+   "ratio2": 0.032268233122543157,
+   "ratio3": 0.06218629309049384
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p03",
+   "ratio2": 0.045139689731982506,
+   "ratio3": 0.08886063393338549
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p01",
+   "ratio2": 0.05196365440877842,
+   "ratio3": 0.088026446764976
+  },
+  {
+   "suite": "local40",
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p03",
+   "ratio2": 0.1503351580442572,
+   "ratio3": 0.20376123447437078
+  }
+ ]
+}

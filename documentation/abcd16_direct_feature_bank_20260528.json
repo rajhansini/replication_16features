@@ -1,0 +1,44 @@
+{
+ "certificate_tolerance": 5e-07,
+ "feature_bank_name": "ABCD16_DIRECT",
+ "features": [
+  "best_second_best_test_margin",
+  "boundary_state_indicator",
+  "bridge_depth_mass",
+  "collateral_block_count",
+  "cost_adjusted_continuation_margin",
+  "descendant_bridge_mass",
+  "frontier_carrier_mass",
+  "frontier_carrier_max",
+  "frontier_carrier_variance",
+  "myopic_stop_gate_pressure",
+  "myopic_tests",
+  "sibling_breadth",
+  "stop_test_margin",
+  "all_untested_carrier_variance_honest",
+  "allele_asymmetry_high_gene_GeneA_carrier_depth_mass_honest",
+  "collateral_active_parent_pair_block_count_honest"
+ ],
+ "myopic_features": [
+  "best_second_best_test_margin",
+  "boundary_state_indicator",
+  "bridge_depth_mass",
+  "collateral_block_count",
+  "cost_adjusted_continuation_margin",
+  "descendant_bridge_mass",
+  "frontier_carrier_mass",
+  "frontier_carrier_max",
+  "frontier_carrier_variance",
+  "myopic_stop_gate_pressure",
+  "myopic_tests",
+  "sibling_breadth",
+  "stop_test_margin"
+ ],
+ "regime_features": [
+  "all_untested_carrier_variance_honest",
+  "allele_asymmetry_high_gene_GeneA_carrier_depth_mass_honest",
+  "collateral_active_parent_pair_block_count_honest"
+ ],
+ "requires_myopic_precompute": true,
+ "selection_mode": "fixed_all_features"
+}

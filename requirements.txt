@@ -1,0 +1,5 @@
+# Requirements for the ABCD-16 replication.
+# Gurobi is the exact-DP / ADP dual LP solver and needs a license (a free academic license works).
+gurobipy>=12.0
+numpy>=1.24
+tqdm

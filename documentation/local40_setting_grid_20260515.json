@@ -1,0 +1,605 @@
+{
+ "_comment": "Local-40 setting rows: family/preset/allele/cost fields for the 40 local-perturbation ABCD-16 settings. The solver recomputes ratio2/ratio3 from scratch.",
+ "rows": [
+  {
+   "row_id": "local_anchor_Extended_LowHigh_Base",
+   "setting_name": "local_anchor_Extended_LowHigh_Base",
+   "family": "Extended",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_Extended_LowHigh_Aggressive",
+   "setting_name": "local_anchor_Extended_LowHigh_Aggressive",
+   "family": "Extended",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_Extended_MediumEven_Base",
+   "setting_name": "local_anchor_Extended_MediumEven_Base",
+   "family": "Extended",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_Extended_MediumEven_Aggressive",
+   "setting_name": "local_anchor_Extended_MediumEven_Aggressive",
+   "family": "Extended",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_ThreeGeneration_LowHigh_Base",
+   "setting_name": "local_anchor_ThreeGeneration_LowHigh_Base",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_ThreeGeneration_LowHigh_Aggressive",
+   "setting_name": "local_anchor_ThreeGeneration_LowHigh_Aggressive",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_ThreeGeneration_MediumEven_Base",
+   "setting_name": "local_anchor_ThreeGeneration_MediumEven_Base",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_anchor_ThreeGeneration_MediumEven_Aggressive",
+   "setting_name": "local_anchor_ThreeGeneration_MediumEven_Aggressive",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_01",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Base_01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.015,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_02",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Base_02",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.03,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Base_03",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Base_03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.12
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_coefficient_ThreeGeneration_LowHigh_Base",
+   "setting_name": "local_coefficient_ThreeGeneration_LowHigh_Base",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.25,
+   "b_scale": 1.25,
+   "delta_shift": 0.05,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p005",
+   "setting_name": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p005",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.005,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p015",
+   "setting_name": "local_fixed_cost_ThreeGeneration_LowHigh_Base_0p015",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.015,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p01",
+   "setting_name": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.01
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p03",
+   "setting_name": "local_variable_cost_ThreeGeneration_LowHigh_Base_0p03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.03
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_01",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Aggressive_01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.015,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_02",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Aggressive_02",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.03,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_LowHigh_Aggressive_03",
+   "setting_name": "local_allele_ThreeGeneration_LowHigh_Aggressive_03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.12
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_coefficient_ThreeGeneration_LowHigh_Aggressive",
+   "setting_name": "local_coefficient_ThreeGeneration_LowHigh_Aggressive",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.25,
+   "b_scale": 1.25,
+   "delta_shift": 0.05,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p005",
+   "setting_name": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p005",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.005,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p015",
+   "setting_name": "local_fixed_cost_ThreeGeneration_LowHigh_Aggressive_0p015",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.015,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p01",
+   "setting_name": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.01
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p03",
+   "setting_name": "local_variable_cost_ThreeGeneration_LowHigh_Aggressive_0p03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.03
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_01",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Base_01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.06,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_02",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Base_02",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.1,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Base_03",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Base_03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.06
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_coefficient_ThreeGeneration_MediumEven_Base",
+   "setting_name": "local_coefficient_ThreeGeneration_MediumEven_Base",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.25,
+   "b_scale": 1.25,
+   "delta_shift": 0.05,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p005",
+   "setting_name": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p005",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.005,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p015",
+   "setting_name": "local_fixed_cost_ThreeGeneration_MediumEven_Base_0p015",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.015,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p01",
+   "setting_name": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.01
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p03",
+   "setting_name": "local_variable_cost_ThreeGeneration_MediumEven_Base_0p03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.0,
+   "b_scale": 1.0,
+   "delta_shift": 0.0,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.03
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_01",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Aggressive_01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.06,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_02",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Aggressive_02",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.1,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_allele_ThreeGeneration_MediumEven_Aggressive_03",
+   "setting_name": "local_allele_ThreeGeneration_MediumEven_Aggressive_03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.06
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_coefficient_ThreeGeneration_MediumEven_Aggressive",
+   "setting_name": "local_coefficient_ThreeGeneration_MediumEven_Aggressive",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.25,
+   "b_scale": 1.25,
+   "delta_shift": 0.05,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p005",
+   "setting_name": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p005",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.005,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p015",
+   "setting_name": "local_fixed_cost_ThreeGeneration_MediumEven_Aggressive_0p015",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.015,
+   "variable_cost": 0.02
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p01",
+   "setting_name": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p01",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.01
+  },
+  {
+   "row_id": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p03",
+   "setting_name": "local_variable_cost_ThreeGeneration_MediumEven_Aggressive_0p03",
+   "family": "ThreeGeneration",
+   "preset": "Base",
+   "allele_freqs": {
+    "GeneA": 0.08,
+    "GeneB": 0.08
+   },
+   "a_scale": 1.5,
+   "b_scale": 1.5,
+   "delta_shift": 0.1,
+   "fixed_cost": 0.01,
+   "variable_cost": 0.03
+  }
+ ]
+}
