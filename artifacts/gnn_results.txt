@@ -1,0 +1,28 @@
+GNN vs MLP — Results Comparison
+=================================
+Trained with PPO, seed=0, N=9 (large family)
+
+300k timesteps — apples-to-apples comparison:
+
+Model   Timesteps   Eval Reward   Std      Gap vs Exact DP   Notes
+-----   ---------   -----------   ---      ---------------   -----
+Exact   —           -0.1661       —        0%                ground truth
+MLP     300k        -0.1640       0.0969   1.3%              reliable
+GNN     300k        -0.1515       0.0823   UNRELIABLE        beats exact DP — impossible, eval too noisy
+
+*** N=9 eval with 100 episodes is not reliable (std ~0.08-0.10) ***
+*** Need 500+ episodes for stable estimates at this family size  ***
+
+Earlier results (different timesteps, for reference):
+Family   N   Exact DP   MLP Reward   MLP Gap   GNN Reward   GNN Gap
+-------  -   --------   ----------   -------   ----------   -------
+nuclear  4   -0.0746    -0.0783      4.9%      -0.0800      7.2%
+extended 7   -0.1302    -0.1396      7.2%      -0.1343      3.1%
+large    9   -0.1661    -0.1670      0.5%      -0.1696      2.1%     (100k timesteps)
+
+Key observations:
+- GNN wins at N=7 (3.1% vs 7.2% gap) — pedigree structure helps
+- N=9 comparison unreliable with 100 eval episodes — need to rerun with 500+
+- GNN entropy stays ~1.0-1.2 even at 300k — still not fully converged
+- MLP converges faster on a single fixed family
+- Real GNN advantage expected when training on a DISTRIBUTION of families

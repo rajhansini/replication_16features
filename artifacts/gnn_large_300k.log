@@ -1,0 +1,135 @@
+  Device: cuda
+
+============================================================
+  Training PPO (GNN) on large family
+  N=9 individuals | obs_dim=18 | actions=10
+  timesteps=300,000 | seed=0
+============================================================
+
+  Policy parameters: 27,715
+
+[   2560/300000] ep_reward= -0.1832  policy_loss=-0.0048  value_loss= 0.0028  entropy=1.6638  fps=  157
+[   5120/300000] ep_reward= -0.2153  policy_loss=-0.0057  value_loss= 0.0032  entropy=1.5753  fps=  196
+[   7680/300000] ep_reward= -0.1958  policy_loss=-0.0080  value_loss= 0.0025  entropy=1.5271  fps=  214
+[  10240/300000] ep_reward= -0.2159  policy_loss=-0.0034  value_loss= 0.0030  entropy=1.4501  fps=  224
+[  12800/300000] ep_reward= -0.1991  policy_loss=-0.0115  value_loss= 0.0028  entropy=1.3520  fps=  231
+[  15360/300000] ep_reward= -0.1939  policy_loss=-0.0033  value_loss= 0.0027  entropy=1.2514  fps=  236
+[  17920/300000] ep_reward= -0.1824  policy_loss=-0.0054  value_loss= 0.0019  entropy=1.2045  fps=  240
+[  20480/300000] ep_reward= -0.2041  policy_loss=-0.0097  value_loss= 0.0037  entropy=1.1985  fps=  242
+[  23040/300000] ep_reward= -0.1933  policy_loss=-0.0031  value_loss= 0.0025  entropy=1.2022  fps=  245
+[  25600/300000] ep_reward= -0.1776  policy_loss=-0.0123  value_loss= 0.0019  entropy=1.1741  fps=  247
+[  28160/300000] ep_reward= -0.1636  policy_loss=-0.0113  value_loss= 0.0017  entropy=1.1769  fps=  248
+[  30720/300000] ep_reward= -0.2039  policy_loss=-0.0079  value_loss= 0.0028  entropy=1.1819  fps=  250
+[  33280/300000] ep_reward= -0.1649  policy_loss=-0.0017  value_loss= 0.0019  entropy=1.1650  fps=  251
+[  35840/300000] ep_reward= -0.1722  policy_loss=-0.0145  value_loss= 0.0023  entropy=1.2356  fps=  252
+[  38400/300000] ep_reward= -0.1769  policy_loss=-0.0054  value_loss= 0.0026  entropy=1.1393  fps=  253
+[  40960/300000] ep_reward= -0.1710  policy_loss=-0.0049  value_loss= 0.0028  entropy=1.1447  fps=  253
+[  43520/300000] ep_reward= -0.1928  policy_loss=-0.0093  value_loss= 0.0026  entropy=1.2653  fps=  254
+[  46080/300000] ep_reward= -0.1676  policy_loss=-0.0103  value_loss= 0.0021  entropy=1.2296  fps=  255
+[  48640/300000] ep_reward= -0.1589  policy_loss=-0.0045  value_loss= 0.0021  entropy=1.1021  fps=  255
+[  51200/300000] ep_reward= -0.1980  policy_loss=-0.0027  value_loss= 0.0036  entropy=1.2436  fps=  256
+[  53760/300000] ep_reward= -0.1706  policy_loss=-0.0080  value_loss= 0.0024  entropy=1.2428  fps=  256
+[  56320/300000] ep_reward= -0.1760  policy_loss=-0.0070  value_loss= 0.0027  entropy=1.2076  fps=  257
+[  58880/300000] ep_reward= -0.1647  policy_loss=-0.0074  value_loss= 0.0026  entropy=1.2489  fps=  257
+[  61440/300000] ep_reward= -0.1840  policy_loss=-0.0096  value_loss= 0.0025  entropy=1.2411  fps=  257
+[  64000/300000] ep_reward= -0.1721  policy_loss=-0.0065  value_loss= 0.0020  entropy=1.1712  fps=  258
+[  66560/300000] ep_reward= -0.1813  policy_loss=-0.0115  value_loss= 0.0025  entropy=1.1973  fps=  258
+[  69120/300000] ep_reward= -0.1733  policy_loss=-0.0054  value_loss= 0.0023  entropy=1.1970  fps=  258
+[  71680/300000] ep_reward= -0.1628  policy_loss=-0.0018  value_loss= 0.0023  entropy=1.1078  fps=  258
+[  74240/300000] ep_reward= -0.1609  policy_loss=-0.0092  value_loss= 0.0019  entropy=1.1184  fps=  259
+[  76800/300000] ep_reward= -0.1662  policy_loss=-0.0153  value_loss= 0.0024  entropy=1.0841  fps=  259
+[  79360/300000] ep_reward= -0.1954  policy_loss=-0.0059  value_loss= 0.0038  entropy=1.1645  fps=  259
+[  81920/300000] ep_reward= -0.1667  policy_loss=-0.0082  value_loss= 0.0038  entropy=1.0942  fps=  259
+[  84480/300000] ep_reward= -0.1779  policy_loss=-0.0050  value_loss= 0.0047  entropy=1.0245  fps=  260
+[  87040/300000] ep_reward= -0.1506  policy_loss=-0.0049  value_loss= 0.0032  entropy=0.9809  fps=  260
+[  89600/300000] ep_reward= -0.1689  policy_loss=-0.0034  value_loss= 0.0035  entropy=1.0638  fps=  260
+[  92160/300000] ep_reward= -0.1506  policy_loss=-0.0033  value_loss= 0.0032  entropy=0.9604  fps=  260
+[  94720/300000] ep_reward= -0.1767  policy_loss=-0.0084  value_loss= 0.0041  entropy=1.0237  fps=  260
+[  97280/300000] ep_reward= -0.1769  policy_loss=-0.0052  value_loss= 0.0039  entropy=0.9907  fps=  260
+[  99840/300000] ep_reward= -0.1667  policy_loss=-0.0039  value_loss= 0.0034  entropy=1.0128  fps=  260
+[ 102400/300000] ep_reward= -0.1967  policy_loss=-0.0077  value_loss= 0.0043  entropy=0.9957  fps=  261
+[ 104960/300000] ep_reward= -0.1950  policy_loss=-0.0052  value_loss= 0.0038  entropy=1.0287  fps=  261
+[ 107520/300000] ep_reward= -0.1723  policy_loss=-0.0023  value_loss= 0.0032  entropy=1.0100  fps=  261
+[ 110080/300000] ep_reward= -0.1745  policy_loss=-0.0077  value_loss= 0.0033  entropy=1.0789  fps=  261
+[ 112640/300000] ep_reward= -0.1603  policy_loss=-0.0088  value_loss= 0.0033  entropy=1.0566  fps=  261
+[ 115200/300000] ep_reward= -0.1788  policy_loss=-0.0096  value_loss= 0.0033  entropy=1.1615  fps=  261
+[ 117760/300000] ep_reward= -0.1819  policy_loss=-0.0028  value_loss= 0.0041  entropy=1.0631  fps=  261
+[ 120320/300000] ep_reward= -0.1792  policy_loss=-0.0049  value_loss= 0.0032  entropy=1.1395  fps=  261
+[ 122880/300000] ep_reward= -0.1755  policy_loss=-0.0024  value_loss= 0.0036  entropy=1.0604  fps=  261
+[ 125440/300000] ep_reward= -0.1686  policy_loss=-0.0045  value_loss= 0.0025  entropy=1.1428  fps=  261
+[ 128000/300000] ep_reward= -0.1643  policy_loss=-0.0080  value_loss= 0.0038  entropy=1.0138  fps=  262
+[ 130560/300000] ep_reward= -0.1874  policy_loss=-0.0067  value_loss= 0.0041  entropy=0.9993  fps=  262
+[ 133120/300000] ep_reward= -0.1840  policy_loss=-0.0047  value_loss= 0.0036  entropy=1.0579  fps=  262
+[ 135680/300000] ep_reward= -0.1763  policy_loss=-0.0091  value_loss= 0.0041  entropy=0.9388  fps=  262
+[ 138240/300000] ep_reward= -0.1629  policy_loss=-0.0012  value_loss= 0.0029  entropy=1.0008  fps=  262
+[ 140800/300000] ep_reward= -0.1769  policy_loss=-0.0032  value_loss= 0.0032  entropy=0.9907  fps=  262
+[ 143360/300000] ep_reward= -0.1742  policy_loss=-0.0030  value_loss= 0.0035  entropy=0.9823  fps=  262
+[ 145920/300000] ep_reward= -0.1806  policy_loss=-0.0011  value_loss= 0.0029  entropy=0.9973  fps=  262
+[ 148480/300000] ep_reward= -0.1668  policy_loss=-0.0051  value_loss= 0.0034  entropy=1.0230  fps=  262
+[ 151040/300000] ep_reward= -0.1716  policy_loss=-0.0065  value_loss= 0.0039  entropy=1.0191  fps=  262
+[ 153600/300000] ep_reward= -0.1943  policy_loss=-0.0100  value_loss= 0.0035  entropy=1.0831  fps=  262
+[ 156160/300000] ep_reward= -0.1834  policy_loss=-0.0097  value_loss= 0.0038  entropy=1.0371  fps=  262
+[ 158720/300000] ep_reward= -0.1866  policy_loss=-0.0047  value_loss= 0.0033  entropy=1.0550  fps=  263
+[ 161280/300000] ep_reward= -0.1652  policy_loss=-0.0042  value_loss= 0.0027  entropy=1.0524  fps=  263
+[ 163840/300000] ep_reward= -0.1830  policy_loss=-0.0112  value_loss= 0.0029  entropy=1.0908  fps=  263
+[ 166400/300000] ep_reward= -0.1922  policy_loss=-0.0098  value_loss= 0.0024  entropy=1.1214  fps=  263
+[ 168960/300000] ep_reward= -0.1692  policy_loss=-0.0116  value_loss= 0.0026  entropy=1.1891  fps=  263
+[ 171520/300000] ep_reward= -0.1697  policy_loss=-0.0080  value_loss= 0.0020  entropy=1.1221  fps=  263
+[ 174080/300000] ep_reward= -0.1640  policy_loss=-0.0067  value_loss= 0.0020  entropy=1.1903  fps=  263
+[ 176640/300000] ep_reward= -0.1793  policy_loss=-0.0079  value_loss= 0.0023  entropy=1.2461  fps=  263
+[ 179200/300000] ep_reward= -0.1828  policy_loss=-0.0040  value_loss= 0.0027  entropy=1.1384  fps=  263
+[ 181760/300000] ep_reward= -0.1754  policy_loss=-0.0074  value_loss= 0.0024  entropy=1.2012  fps=  263
+[ 184320/300000] ep_reward= -0.1856  policy_loss=-0.0041  value_loss= 0.0030  entropy=1.2282  fps=  263
+[ 186880/300000] ep_reward= -0.1816  policy_loss=-0.0076  value_loss= 0.0023  entropy=1.2589  fps=  263
+[ 189440/300000] ep_reward= -0.1738  policy_loss=-0.0116  value_loss= 0.0026  entropy=1.2645  fps=  263
+[ 192000/300000] ep_reward= -0.1720  policy_loss=-0.0070  value_loss= 0.0021  entropy=1.2398  fps=  263
+[ 194560/300000] ep_reward= -0.1769  policy_loss=-0.0085  value_loss= 0.0018  entropy=1.2061  fps=  263
+[ 197120/300000] ep_reward= -0.1946  policy_loss=-0.0061  value_loss= 0.0028  entropy=1.1356  fps=  263
+[ 199680/300000] ep_reward= -0.1693  policy_loss=-0.0057  value_loss= 0.0018  entropy=1.1311  fps=  263
+[ 202240/300000] ep_reward= -0.1620  policy_loss=-0.0103  value_loss= 0.0018  entropy=1.2379  fps=  263
+[ 204800/300000] ep_reward= -0.1639  policy_loss=-0.0076  value_loss= 0.0020  entropy=1.1872  fps=  263
+[ 207360/300000] ep_reward= -0.1707  policy_loss=-0.0079  value_loss= 0.0028  entropy=1.1552  fps=  263
+[ 209920/300000] ep_reward= -0.1806  policy_loss=-0.0096  value_loss= 0.0028  entropy=1.2614  fps=  263
+[ 212480/300000] ep_reward= -0.1643  policy_loss=-0.0093  value_loss= 0.0024  entropy=1.1532  fps=  263
+[ 215040/300000] ep_reward= -0.1747  policy_loss=-0.0091  value_loss= 0.0025  entropy=1.1509  fps=  264
+[ 217600/300000] ep_reward= -0.1615  policy_loss=-0.0078  value_loss= 0.0026  entropy=1.1768  fps=  264
+[ 220160/300000] ep_reward= -0.1497  policy_loss=-0.0052  value_loss= 0.0024  entropy=1.0425  fps=  264
+[ 222720/300000] ep_reward= -0.1683  policy_loss=-0.0094  value_loss= 0.0024  entropy=1.0648  fps=  264
+[ 225280/300000] ep_reward= -0.1761  policy_loss=-0.0067  value_loss= 0.0021  entropy=1.1001  fps=  264
+[ 227840/300000] ep_reward= -0.1845  policy_loss=-0.0060  value_loss= 0.0036  entropy=1.0799  fps=  264
+[ 230400/300000] ep_reward= -0.1792  policy_loss=-0.0077  value_loss= 0.0024  entropy=1.1367  fps=  264
+[ 232960/300000] ep_reward= -0.1876  policy_loss=-0.0073  value_loss= 0.0023  entropy=1.0690  fps=  264
+[ 235520/300000] ep_reward= -0.1673  policy_loss=-0.0073  value_loss= 0.0018  entropy=1.1251  fps=  264
+[ 238080/300000] ep_reward= -0.1575  policy_loss=-0.0012  value_loss= 0.0019  entropy=1.0857  fps=  264
+[ 240640/300000] ep_reward= -0.1832  policy_loss=-0.0069  value_loss= 0.0024  entropy=1.0885  fps=  264
+[ 243200/300000] ep_reward= -0.1864  policy_loss=-0.0042  value_loss= 0.0026  entropy=1.0621  fps=  264
+[ 245760/300000] ep_reward= -0.1712  policy_loss=-0.0040  value_loss= 0.0021  entropy=1.1359  fps=  264
+[ 248320/300000] ep_reward= -0.1824  policy_loss=-0.0051  value_loss= 0.0023  entropy=1.0512  fps=  264
+[ 250880/300000] ep_reward= -0.1978  policy_loss=-0.0070  value_loss= 0.0025  entropy=1.1584  fps=  264
+[ 253440/300000] ep_reward= -0.1833  policy_loss=-0.0109  value_loss= 0.0025  entropy=1.0812  fps=  264
+[ 256000/300000] ep_reward= -0.1872  policy_loss=-0.0110  value_loss= 0.0019  entropy=1.1406  fps=  264
+[ 258560/300000] ep_reward= -0.1610  policy_loss=-0.0086  value_loss= 0.0018  entropy=1.1780  fps=  264
+[ 261120/300000] ep_reward= -0.1769  policy_loss=-0.0094  value_loss= 0.0019  entropy=1.1334  fps=  264
+[ 263680/300000] ep_reward= -0.1912  policy_loss=-0.0109  value_loss= 0.0028  entropy=1.1607  fps=  264
+[ 266240/300000] ep_reward= -0.1713  policy_loss=-0.0049  value_loss= 0.0025  entropy=1.2104  fps=  264
+[ 268800/300000] ep_reward= -0.1780  policy_loss=-0.0084  value_loss= 0.0024  entropy=1.2048  fps=  264
+[ 271360/300000] ep_reward= -0.1750  policy_loss=-0.0061  value_loss= 0.0024  entropy=1.1351  fps=  264
+[ 273920/300000] ep_reward= -0.1814  policy_loss=-0.0119  value_loss= 0.0019  entropy=1.1366  fps=  264
+[ 276480/300000] ep_reward= -0.1702  policy_loss=-0.0031  value_loss= 0.0016  entropy=1.1438  fps=  264
+[ 279040/300000] ep_reward= -0.1767  policy_loss=-0.0042  value_loss= 0.0025  entropy=1.1058  fps=  264
+[ 281600/300000] ep_reward= -0.1721  policy_loss=-0.0131  value_loss= 0.0025  entropy=1.0898  fps=  264
+[ 284160/300000] ep_reward= -0.1731  policy_loss=-0.0086  value_loss= 0.0024  entropy=1.1253  fps=  264
+[ 286720/300000] ep_reward= -0.1834  policy_loss=-0.0097  value_loss= 0.0028  entropy=1.0991  fps=  264
+[ 289280/300000] ep_reward= -0.1931  policy_loss=-0.0105  value_loss= 0.0027  entropy=1.0654  fps=  264
+[ 291840/300000] ep_reward= -0.1841  policy_loss=-0.0056  value_loss= 0.0032  entropy=1.1037  fps=  264
+[ 294400/300000] ep_reward= -0.1816  policy_loss=-0.0076  value_loss= 0.0028  entropy=1.1031  fps=  264
+[ 296960/300000] ep_reward= -0.1750  policy_loss=-0.0061  value_loss= 0.0028  entropy=1.0454  fps=  264
+[ 299520/300000] ep_reward= -0.1659  policy_loss=-0.0087  value_loss= 0.0025  entropy=1.0931  fps=  264
+
+============================================================
+  Evaluation (100 episodes, deterministic policy)
+  Mean reward : -0.151464
+  Std reward  : 0.082306
+============================================================
+
+  Saved policy → artifacts/trained_policy.pt

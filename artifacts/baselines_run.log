@@ -1,0 +1,73 @@
+============================================================
+  Week 5: Baseline Comparison
+  Sizes: [4, 6, 7, 9]  |  timesteps: 300,000
+  Eval episodes: 500  |  Device: cuda
+============================================================
+
+── N=4 ─────────────────────────────────────────────
+  Random:  mean=-0.124305 ± 0.0642  avg_tests=1.9
+  Myopic:  mean=-0.084920 ± 0.0340  avg_tests=2.4
+[  59904/300000] ep_reward= -0.0828  policy_loss=-0.0040  value_loss= 0.0013  entropy=0.2920  fps= 1068
+[ 119808/300000] ep_reward= -0.0759  policy_loss=-0.0050  value_loss= 0.0011  entropy=0.2647  fps= 1068
+[ 179712/300000] ep_reward= -0.0777  policy_loss=-0.0009  value_loss= 0.0012  entropy=0.1747  fps= 1069
+[ 239616/300000] ep_reward= -0.0775  policy_loss=-0.0003  value_loss= 0.0013  entropy=0.1722  fps= 1070
+[ 299520/300000] ep_reward= -0.0843  policy_loss=-0.0032  value_loss= 0.0010  entropy=0.4559  fps= 1071
+  RL:      mean=-0.078293 ± 0.0542  avg_tests=2.7  train=280s
+  Saved policy → artifacts/rl_policy_N4.pt
+    random gap: 66.57%
+    myopic gap: 13.79%
+        rl gap: 4.91%
+
+── N=6 ─────────────────────────────────────────────
+  Random:  mean=-0.199190 ± 0.1286  avg_tests=3.0
+  Myopic:  mean=-0.124485 ± 0.0720  avg_tests=3.6
+[  59904/300000] ep_reward= -0.1245  policy_loss=-0.0030  value_loss= 0.0042  entropy=0.4743  fps= 1064
+[ 119808/300000] ep_reward= -0.1174  policy_loss=-0.0021  value_loss= 0.0046  entropy=0.5004  fps= 1066
+[ 179712/300000] ep_reward= -0.1079  policy_loss=-0.0038  value_loss= 0.0039  entropy=0.5393  fps= 1066
+[ 239616/300000] ep_reward= -0.1333  policy_loss=-0.0081  value_loss= 0.0037  entropy=0.7047  fps= 1062
+[ 299520/300000] ep_reward= -0.1200  policy_loss=-0.0047  value_loss= 0.0037  entropy=0.5833  fps= 1063
+  RL:      mean=-0.116216 ± 0.1034  avg_tests=3.5  train=282s
+  Saved policy → artifacts/rl_policy_N6.pt
+    random gap: 80.72%
+    myopic gap: 12.94%
+        rl gap: 5.44%
+
+── N=7 ─────────────────────────────────────────────
+  Random:  mean=-0.211147 ± 0.0882  avg_tests=3.5
+  Myopic:  mean=-0.140286 ± 0.0424  avg_tests=6.1
+[  59904/300000] ep_reward= -0.1613  policy_loss=-0.0041  value_loss= 0.0021  entropy=0.6331  fps= 1057
+[ 119808/300000] ep_reward= -0.1407  policy_loss=-0.0068  value_loss= 0.0016  entropy=0.6979  fps= 1058
+[ 179712/300000] ep_reward= -0.1196  policy_loss=-0.0049  value_loss= 0.0014  entropy=0.5089  fps= 1057
+[ 239616/300000] ep_reward= -0.1381  policy_loss=-0.0067  value_loss= 0.0015  entropy=0.5017  fps= 1057
+[ 299520/300000] ep_reward= -0.1379  policy_loss=-0.0091  value_loss= 0.0017  entropy=0.4595  fps= 1055
+  RL:      mean=-0.131583 ± 0.0577  avg_tests=5.2  train=284s
+  Saved policy → artifacts/rl_policy_N7.pt
+    random gap: 62.12%
+    myopic gap: 7.71%
+        rl gap: 1.03%
+
+── N=9 ─────────────────────────────────────────────
+  Random:  mean=-0.282818 ± 0.1416  avg_tests=4.5
+  Myopic:  mean=-0.166809 ± 0.0876  avg_tests=6.6
+[  59904/300000] ep_reward= -0.1838  policy_loss=-0.0121  value_loss= 0.0044  entropy=1.0287  fps= 1021
+[ 119808/300000] ep_reward= -0.1817  policy_loss=-0.0053  value_loss= 0.0032  entropy=0.8356  fps= 1038
+[ 179712/300000] ep_reward= -0.1880  policy_loss=-0.0108  value_loss= 0.0042  entropy=0.8530  fps= 1042
+[ 239616/300000] ep_reward= -0.1853  policy_loss=-0.0097  value_loss= 0.0042  entropy=0.8229  fps= 1043
+[ 299520/300000] ep_reward= -0.1763  policy_loss=-0.0111  value_loss= 0.0039  entropy=0.8998  fps= 1045
+  RL:      mean=-0.178999 ± 0.1147  avg_tests=6.1  train=287s
+  Saved policy → artifacts/rl_policy_N9.pt
+    random gap: 70.25%
+    myopic gap: 0.42%
+        rl gap: 7.75%
+
+  Results → artifacts/baselines_results.json
+
+========================================================================
+  N |   Exact V* |     Random |     Myopic |         RL
+------------------------------------------------------------------------
+  4 |  -0.074627 |  -0.124305 |  -0.084920 |  -0.078293
+  6 |  -0.110219 |  -0.199190 |  -0.124485 |  -0.116216
+  7 |  -0.130243 |  -0.211147 |  -0.140286 |  -0.131583
+  9 |  -0.166119 |  -0.282818 |  -0.166809 |  -0.178999
+========================================================================
+  Figure → artifacts/fig8_baselines.png

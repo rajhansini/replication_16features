@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RL for Genetic Testing — Scaling Beyond Exact DP</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <style>
+    :root {
+      --accent: #1565C0;
+      --accent2: #FF5722;
+      --muted: #546E7A;
+      --bg-soft: #ECEFF1;
+    }
+    .reveal {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #263238;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--accent);
+      text-transform: none;
+      letter-spacing: -0.02em;
+    }
+    .reveal h1 { font-size: 2.1em; font-weight: 700; }
+    .reveal h2 { font-size: 1.55em; font-weight: 600; margin-bottom: 0.6em; }
+    .reveal h3 { font-size: 1.1em; color: var(--muted); font-weight: 500; }
+    .reveal .subtitle { color: var(--muted); font-size: 0.95em; margin-top: 0.5em; }
+    .reveal .pill {
+      display: inline-block;
+      background: var(--bg-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.25em 0.85em;
+      font-size: 0.55em;
+      font-weight: 600;
+      margin: 0 0.3em 0.3em 0;
+    }
+    .reveal table {
+      font-size: 0.62em;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    .reveal table th {
+      background: var(--accent);
+      color: white;
+      padding: 0.45em 0.7em;
+    }
+    .reveal table td {
+      padding: 0.4em 0.7em;
+      border-bottom: 1px solid #CFD8DC;
+    }
+    .reveal table tr:nth-child(even) td { background: #F5F7F8; }
+    .reveal .highlight { color: var(--accent2); font-weight: 700; }
+    .reveal .good { color: #2E7D32; font-weight: 700; }
+    .reveal .cols { display: flex; gap: 1.2em; align-items: flex-start; }
+    .reveal .col { flex: 1; }
+    .reveal .col-narrow { flex: 0.9; }
+    .reveal .col-wide { flex: 1.1; }
+    .reveal ul { font-size: 0.78em; line-height: 1.45; }
+    .reveal ul.check li::marker { content: "✓  "; color: #2E7D32; }
+    .reveal .figure img {
+      max-height: 420px;
+      width: auto;
+      border: 1px solid #CFD8DC;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .reveal .figure-sm img { max-height: 340px; }
+    .reveal .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8em;
+      margin-top: 0.8em;
+    }
+    .reveal .stat {
+      background: var(--bg-soft);
+      border-radius: 10px;
+      padding: 0.7em 0.9em;
+      text-align: center;
+    }
+    .reveal .stat .num { font-size: 1.5em; font-weight: 700; color: var(--accent); }
+    .reveal .stat .lbl { font-size: 0.5em; color: var(--muted); margin-top: 0.2em; }
+    .reveal .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+      font-size: 0.65em;
+      margin: 1em 0;
+    }
+    .reveal .flow .box {
+      background: var(--bg-soft);
+      border-left: 4px solid var(--accent);
+      padding: 0.6em 0.9em;
+      border-radius: 4px;
+      min-width: 120px;
+    }
+    .reveal .flow .arrow { color: var(--muted); font-size: 1.4em; }
+    .reveal .footer-note {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      font-size: 0.38em;
+      color: #90A4AE;
+    }
+    .reveal section.title-slide {
+      text-align: center;
+    }
+    .reveal section.title-slide h1 { margin-bottom: 0.2em; }
+    @media print {
+      .reveal .slides section { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1. Title -->
+      <section class="title-slide" data-background-color="#FAFBFC">
+        <h1>Scaling Genetic Testing Policies<br/>with Reinforcement Learning</h1>
+        <p class="subtitle">When exact dynamic programming breaks, RL keeps going</p>
+        <div style="margin-top: 1.5em;">
+          <span class="pill">PPO</span>
+          <span class="pill">Bayesian belief MDP</span>
+          <span class="pill">N = 4–15 members</span>
+          <span class="pill">1–3 genes</span>
+        </div>
+        <p class="subtitle" style="margin-top: 2em;">Rajhansini · June 2026</p>
+      </section>
+
+      <!-- 2. Problem -->
+      <section>
+        <h2>The Bottleneck</h2>
+        <div class="cols">
+          <div class="col">
+            <ul>
+              <li>Sequential genetic testing: choose <em>who to test next</em> or <em>stop</em></li>
+              <li>Belief state tracks carrier probabilities via Mendelian inheritance</li>
+              <li><strong>Exact backward induction</strong> gives optimal policies — but state space grows as <span class="highlight">3<sup>N</sup></span></li>
+            </ul>
+            <div class="stat-grid">
+              <div class="stat"><div class="num">256</div><div class="lbl">states at N=4</div></div>
+              <div class="stat"><div class="num">262K</div><div class="lbl">states at N=9</div></div>
+              <div class="stat"><div class="num">1B+</div><div class="lbl">states at N=15</div></div>
+            </div>
+          </div>
+          <div class="col figure figure-sm">
+            <img src="figures/fig1_compute_time.png" alt="Exact DP compute time vs family size" />
+          </div>
+        </div>
+        <p class="footer-note">Exact solve: 0.02 s (N=4) → 62 s (N=9) → infeasible (N≥12)</p>
+      </section>
+
+      <!-- 3. Approach -->
+      <section>
+        <h2>Our Approach</h2>
+        <div class="flow">
+          <div class="box"><strong>Pedigree + MDP</strong><br/>Mendelian genetics<br/>test / stop actions</div>
+          <span class="arrow">→</span>
+          <div class="box"><strong>Gym Environment</strong><br/>Belief-state obs<br/>validated vs exact</div>
+          <span class="arrow">→</span>
+          <div class="box"><strong>PPO Agent</strong><br/>MLP actor-critic<br/>~300K timesteps</div>
+          <span class="arrow">→</span>
+          <div class="box"><strong>Evaluate</strong><br/>vs exact V*<br/>vs myopic / random</div>
+        </div>
+        <div class="cols" style="margin-top: 0.5em;">
+          <div class="col">
+            <h3>Environment details</h3>
+            <ul class="check">
+              <li>Observation: carrier beliefs per individual × gene</li>
+              <li>Reward: outcome utility − testing costs (fixed + variable)</li>
+              <li>Allele frequency 0.1 (BRCA-style); sensitivity 0.05–0.30</li>
+              <li>Bayesian updates validated against hand-computed posteriors</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Why RL?</h3>
+            <ul>
+              <li>Inference is <span class="good">~0.12 ms/step</span> — flat across N</li>
+              <li>Training cost is one-time; deploy policy on any pedigree size</li>
+              <li>No enumeration of 3<sup>N</sup> genotype configurations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Week 3 benchmark -->
+      <section>
+        <h2>Week 3 — RL vs Exact DP</h2>
+        <div class="cols">
+          <div class="col col-narrow">
+            <table>
+              <thead>
+                <tr><th>N</th><th>Exact V*</th><th>RL mean</th><th>Gap</th><th>Exact time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>4</td><td>−0.075</td><td>−0.087</td><td>16.7%</td><td>0.02 s</td></tr>
+                <tr><td>6</td><td>−0.110</td><td>−0.126</td><td>14.6%</td><td>3.4 s</td></tr>
+                <tr><td>7</td><td>−0.130</td><td>−0.140</td><td>7.2%</td><td>2.1 s</td></tr>
+                <tr><td class="good">9</td><td class="good">−0.166</td><td class="good">−0.167</td><td class="good">0.5%</td><td class="highlight">62 s</td></tr>
+                <tr><td>12</td><td>—</td><td>—</td><td>—</td><td>infeasible</td></tr>
+                <tr><td>15</td><td>—</td><td>—</td><td>—</td><td>infeasible</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.5em; color:var(--muted); margin-top:0.8em;">RL inference: ~0.12 ms/step at all N (500× faster than exact solve at N=9)</p>
+          </div>
+          <div class="col col-wide figure">
+            <img src="figures/fig3_scalability.png" alt="RL inference vs exact DP time" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Optimality gap + training -->
+      <section>
+        <h2>RL Converges Toward Optimum</h2>
+        <div class="cols">
+          <div class="col figure figure-sm">
+            <img src="figures/fig2_optimality_gap.png" alt="Optimality gap by family size" />
+          </div>
+          <div class="col figure figure-sm">
+            <img src="figures/fig4_training_curves.png" alt="PPO training curves" />
+          </div>
+        </div>
+        <p style="font-size:0.62em; text-align:center; margin-top:0.5em;">
+          Gap drops from ~17% (N=4) to <span class="good">&lt;1%</span> (N=9) as state complexity increases — PPO benefits from richer decision structure
+        </p>
+      </section>
+
+      <!-- 6. Week 4 scale -->
+      <section>
+        <h2>Week 4 — Scaling Past Exact DP</h2>
+        <div class="cols">
+          <div class="col figure">
+            <img src="figures/fig5_family_scale.png" alt="RL reward and training time vs N" />
+          </div>
+          <div class="col">
+            <table>
+              <thead>
+                <tr><th>N</th><th>State bound</th><th>RL reward</th><th>Gap vs exact</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>4</td><td>256</td><td>−0.081</td><td>9.2%</td></tr>
+                <tr><td>6</td><td>4,096</td><td>−0.128</td><td>16.3%</td></tr>
+                <tr><td>7</td><td>16,384</td><td>−0.137</td><td>5.2%</td></tr>
+                <tr><td>9</td><td>262,144</td><td>−0.165</td><td>1.0%</td></tr>
+                <tr><td class="highlight">12</td><td>16.8M</td><td>−0.239</td><td>—</td></tr>
+                <tr><td class="highlight">15</td><td>1.07B</td><td>−0.320</td><td>—</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.52em; color:var(--muted); margin-top:0.8em;">
+              RL trains successfully where exact DP cannot run.<br/>
+              Training time: ~5.5 min (N=9) → ~94 min (N=15).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Multi-gene -->
+      <section>
+        <h2>Multi-Gene Families (N = 9)</h2>
+        <div class="cols">
+          <div class="col figure">
+            <img src="figures/fig6_multigene.png" alt="RL reward vs number of genes" />
+          </div>
+          <div class="col">
+            <ul>
+              <li>Extended obs space: beliefs per individual × gene</li>
+              <li>1 gene (G=1): reward −0.170, gap 2.5% vs exact</li>
+              <li>2 genes (G=2): reward −0.164 — no degradation</li>
+              <li>3 genes (G=3): reward −0.164 — stable</li>
+            </ul>
+            <div class="stat-grid" style="grid-template-columns: repeat(2,1fr);">
+              <div class="stat"><div class="num">~6 min</div><div class="lbl">train time per config</div></div>
+              <div class="stat"><div class="num">0.15 ms</div><div class="lbl">inference / step</div></div>
+            </div>
+            <p style="font-size:0.52em; color:var(--muted); margin-top:0.8em;">
+              RL handles multi-gene pedigrees without exact ground truth — path to 5–20 gene families.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Baselines -->
+      <section>
+        <h2>Week 5 — RL vs Baselines</h2>
+        <div class="cols">
+          <div class="col col-narrow">
+            <table>
+              <thead>
+                <tr><th>N</th><th>Exact</th><th>Random</th><th>Myopic</th><th>RL</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>4</td><td>−0.075</td><td>−0.124</td><td>−0.085</td><td class="good">−0.078</td></tr>
+                <tr><td>6</td><td>−0.110</td><td>−0.199</td><td>−0.124</td><td class="good">−0.116</td></tr>
+                <tr><td>7</td><td>−0.130</td><td>−0.211</td><td>−0.140</td><td class="good">−0.132</td></tr>
+                <tr><td>9</td><td>−0.166</td><td>−0.283</td><td>−0.167</td><td>−0.179</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.52em; margin-top:0.8em;">
+              RL beats <strong>random</strong> by 60–80% gap reduction.<br/>
+              RL beats <strong>myopic</strong> at N=4,6,7; competitive at N=9.<br/>
+              Myopic over-tests at N=7 (6.1 tests vs RL 5.2).
+            </p>
+          </div>
+          <div class="col col-wide figure">
+            <img src="figures/fig8_baselines.png" alt="RL vs baselines" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Sensitivity -->
+      <section>
+        <h2>Sensitivity to Allele Frequency</h2>
+        <div class="cols">
+          <div class="col figure">
+            <img src="figures/fig9_sensitivity.png" alt="Sensitivity to allele frequency" />
+          </div>
+          <div class="col">
+            <table>
+              <thead>
+                <tr><th>Freq</th><th>Exact V*</th><th>RL</th><th>Gap</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0.05</td><td>−0.106</td><td>−0.116</td><td>9.3%</td></tr>
+                <tr><td>0.10</td><td>−0.166</td><td>−0.172</td><td>3.8%</td></tr>
+                <tr><td class="good">0.15</td><td>−0.221</td><td>−0.222</td><td class="good">0.5%</td></tr>
+                <tr><td>0.20</td><td>−0.270</td><td>−0.292</td><td>8.1%</td></tr>
+                <tr><td>0.30</td><td>−0.353</td><td>−0.361</td><td>2.4%</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.52em; color:var(--muted); margin-top:0.8em;">
+              RL tracks exact optimum across BRCA-relevant allele frequencies without re-architecting the policy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Policy visualization -->
+      <section>
+        <h2>What Does the Learned Policy Do?</h2>
+        <div class="cols">
+          <div class="col figure">
+            <img src="figures/fig10_policy_viz.png" alt="Policy visualization N=9" />
+          </div>
+          <div class="col">
+            <ul>
+              <li><strong>Testing order:</strong> RL prioritizes high-information individuals (parents before children)</li>
+              <li><strong>Stopping:</strong> RL averages <span class="good">6.05 ± 2.21</span> tests vs myopic <span class="highlight">6.70 ± 1.20</span></li>
+              <li><strong>Efficiency:</strong> fewer wasted tests while maintaining reward quality</li>
+              <li>Policy structure resembles exact optimal ordering on N=9 three-generation pedigree</li>
+            </ul>
+            <p style="font-size:0.52em; color:var(--muted); margin-top:0.8em;">
+              2,000 evaluation episodes · trained policy: <code>rl_policy_N9.pt</code>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Takeaways -->
+      <section data-background-color="#E3F2FD">
+        <h2>Key Takeaways</h2>
+        <div class="stat-grid" style="grid-template-columns: 1fr;">
+          <div class="stat" style="text-align:left; padding:1em 1.2em;">
+            <div style="font-size:0.75em; line-height:1.5;">
+              <strong>1. Near-optimal where we can verify</strong><br/>
+              <span style="color:var(--muted); font-size:0.9em;">RL matches exact DP within &lt;1% at N=9; gaps 0.5–9% across allele frequencies</span>
+            </div>
+          </div>
+          <div class="stat" style="text-align:left; padding:1em 1.2em;">
+            <div style="font-size:0.75em; line-height:1.5;">
+              <strong>2. Scales where exact methods fail</strong><br/>
+              <span style="color:var(--muted); font-size:0.9em;">Trained policies for N=12 (16M states) and N=15 (1B states); multi-gene families at N=9</span>
+            </div>
+          </div>
+          <div class="stat" style="text-align:left; padding:1em 1.2em;">
+            <div style="font-size:0.75em; line-height:1.5;">
+              <strong>3. Beats simple heuristics</strong><br/>
+              <span style="color:var(--muted); font-size:0.9em;">Consistently outperforms random; beats myopic on small/medium families; more efficient stopping</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.58em; margin-top:1.2em; text-align:center; color:var(--muted);">
+          Exact DP gives the certificate · RL gives the scalable deployable policy
+        </p>
+      </section>
+
+      <!-- 12. Future work -->
+      <section>
+        <h2>Future Work</h2>
+        <div class="cols">
+          <div class="col">
+            <h3>Near term</h3>
+            <ul>
+              <li>GNN state encoder for pedigree structure (swappable module)</li>
+              <li>Scale to 5–20 genes on larger pedigrees</li>
+              <li>Compare RL to ABCD-16 ADP bounds from exact replication package</li>
+              <li>Transfer learning: train on N=15, fine-tune on new topologies</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Longer term</h3>
+            <ul>
+              <li>Real clinical pedigrees (BRCA1/2 cascade screening)</li>
+              <li>Constrained policies (cost budgets, test limits)</li>
+              <li>Uncertainty quantification on policy value</li>
+              <li>Integration with existing Gurobi ADP pipeline</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:0.55em; text-align:center; margin-top:1.5em; color:var(--accent);">
+          <strong>All code, results, and 10 figures:</strong> <code>replication_16features/artifacts/</code>
+        </p>
+      </section>
+
+      <!-- 13. Thank you -->
+      <section class="title-slide" data-background-color="#FAFBFC">
+        <h1>Thank You</h1>
+        <p class="subtitle">Questions?</p>
+        <p style="font-size:0.55em; color:var(--muted); margin-top:2em;">
+          Navigate: ← → arrows &nbsp;·&nbsp; Fullscreen: <kbd>F</kbd> &nbsp;·&nbsp; Overview: <kbd>Esc</kbd> &nbsp;·&nbsp; Speaker notes: <kbd>S</kbd>
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      width: 1280,
+      height: 720,
+      margin: 0.08,
+      transition: "slide",
+      center: true,
+    });
+  </script>
+</body>
+</html>

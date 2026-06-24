@@ -1,0 +1,79 @@
+============================================================
+  Benchmark: RL vs Exact DP — Scalability
+  Sizes: [4, 6, 7, 9]  |  timesteps/size: 50,000
+  Large-N (inference only): [12, 15]
+  Device: cuda
+============================================================
+
+  N=4 ─────────────────────────────────────────────
+    Exact DP:  V*(∅)=-0.074627  states=256  time=0.02s
+[   9728/50000] ep_reward= -0.0897  policy_loss=-0.0031  value_loss= 0.0008  entropy=0.6875  fps=  682
+[  19456/50000] ep_reward= -0.0889  policy_loss=-0.0099  value_loss= 0.0006  entropy=0.6011  fps=  812
+[  29184/50000] ep_reward= -0.0834  policy_loss=-0.0026  value_loss= 0.0004  entropy=0.4965  fps=  866
+[  38912/50000] ep_reward= -0.0815  policy_loss=-0.0041  value_loss= 0.0004  entropy=0.3581  fps=  896
+[  48640/50000] ep_reward= -0.0846  policy_loss=-0.0064  value_loss= 0.0005  entropy=0.4415  fps=  913
+    RL policy: mean=-0.087120 ± 0.0384  train=54.8s
+    RL inference: 0.117ms/step
+    Optimality gap: 16.74%
+
+  N=6 ─────────────────────────────────────────────
+    Exact DP:  V*(∅)=-0.110219  states=4096  time=3.39s
+[   9728/50000] ep_reward= -0.1426  policy_loss=-0.0108  value_loss= 0.0023  entropy=0.9842  fps=  970
+[  19456/50000] ep_reward= -0.1316  policy_loss=-0.0047  value_loss= 0.0019  entropy=0.8008  fps=  981
+[  29184/50000] ep_reward= -0.1232  policy_loss=-0.0020  value_loss= 0.0015  entropy=0.6658  fps=  985
+[  38912/50000] ep_reward= -0.1185  policy_loss=-0.0062  value_loss= 0.0014  entropy=0.6358  fps=  986
+[  48640/50000] ep_reward= -0.1249  policy_loss=-0.0023  value_loss= 0.0014  entropy=0.4801  fps=  988
+    RL policy: mean=-0.126344 ± 0.0765  train=50.8s
+    RL inference: 0.119ms/step
+    Optimality gap: 14.63%
+
+  N=7 ─────────────────────────────────────────────
+    Exact DP:  V*(∅)=-0.130243  states=16384  time=2.08s
+[   9728/50000] ep_reward= -0.1526  policy_loss=-0.0090  value_loss= 0.0008  entropy=1.1051  fps=  971
+[  19456/50000] ep_reward= -0.1471  policy_loss=-0.0085  value_loss= 0.0006  entropy=1.0065  fps=  975
+[  29184/50000] ep_reward= -0.1486  policy_loss=-0.0079  value_loss= 0.0007  entropy=1.0638  fps=  978
+[  38912/50000] ep_reward= -0.1486  policy_loss=-0.0112  value_loss= 0.0014  entropy=0.9271  fps=  980
+[  48640/50000] ep_reward= -0.1497  policy_loss=-0.0139  value_loss= 0.0017  entropy=0.7480  fps=  982
+    RL policy: mean=-0.139600 ± 0.0630  train=51.1s
+    RL inference: 0.131ms/step
+    Optimality gap: 7.18%
+
+  N=9 ─────────────────────────────────────────────
+    Exact DP:  V*(∅)=-0.166119  states=262144  time=61.84s
+[   9728/50000] ep_reward= -0.2034  policy_loss=-0.0125  value_loss= 0.0027  entropy=1.4596  fps=  883
+[  19456/50000] ep_reward= -0.2112  policy_loss=-0.0127  value_loss= 0.0026  entropy=1.3131  fps=  924
+[  29184/50000] ep_reward= -0.2198  policy_loss=-0.0094  value_loss= 0.0030  entropy=1.1907  fps=  940
+[  38912/50000] ep_reward= -0.1838  policy_loss=-0.0110  value_loss= 0.0022  entropy=1.0190  fps=  949
+[  48640/50000] ep_reward= -0.1817  policy_loss=-0.0092  value_loss= 0.0022  entropy=0.9942  fps=  955
+    RL policy: mean=-0.166981 ± 0.0880  train=52.5s
+    RL inference: 0.120ms/step
+    Optimality gap: 0.52%
+
+  ───────────────────────────────────────────────────────
+  Large-N: RL inference speed only (exact DP infeasible)
+  ───────────────────────────────────────────────────────
+    N=12  LARGE-N INFERENCE ONLY
+    State space (bound): 16,777,216  | RL inference: 0.115ms/step
+    [Exact DP: infeasible — 16,777,216 states]
+    N=15  LARGE-N INFERENCE ONLY
+    State space (bound): 1,073,741,824  | RL inference: 0.123ms/step
+    [Exact DP: infeasible — 1,073,741,824 states]
+
+  Results saved → artifacts/benchmark_results.json
+
+===========================================================================
+   N |  Exact V*(∅) |   Exact Time |      RL Mean |    Gap% | RL ms/step
+---------------------------------------------------------------------------
+   4 |    -0.074627 |        0.02s |    -0.087120 |  16.74% |      0.117
+   6 |    -0.110219 |        3.39s |    -0.126344 |  14.63% |      0.119
+   7 |    -0.130243 |        2.08s |    -0.139600 |   7.18% |      0.131
+   9 |    -0.166119 |       61.84s |    -0.166981 |   0.52% |      0.120
+  12 |        N/A   |          N/A |        N/A   |     N/A |      0.115
+  15 |        N/A   |          N/A |        N/A   |     N/A |      0.123
+===========================================================================
+  Scalability table → artifacts/scalability.txt
+
+  KEY TAKE-AWAY:
+    • RL achieves 90.2% of exact optimal on N≤9 families
+    • RL scales to N=15 where exact DP is infeasible
+    • Exact DP time grows to 61.8s at N=9; RL inference stays at 0.12ms

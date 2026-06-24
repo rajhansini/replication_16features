@@ -1,0 +1,171 @@
+{
+  "family_size": [
+    {
+      "N": 4,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 8,
+      "n_actions": 5,
+      "train_time_s": 55.10539174079895,
+      "rl_mean_reward": -0.08711958725761772,
+      "rl_std_reward": 0.03836268632079456,
+      "rl_inference_ms": 0.11752176284790039,
+      "cache_size": 138,
+      "state_space_bound": 256,
+      "config_space": 81,
+      "exact_V0": -0.07462713157894738,
+      "optimality_gap_pct": 16.739830962757406
+    },
+    {
+      "N": 6,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 12,
+      "n_actions": 7,
+      "train_time_s": 50.30916213989258,
+      "rl_mean_reward": -0.12634381560539823,
+      "rl_std_reward": 0.0765048631787391,
+      "rl_inference_ms": 0.1181797981262207,
+      "cache_size": 973,
+      "state_space_bound": 4096,
+      "config_space": 729,
+      "exact_V0": -0.11021914123180501,
+      "optimality_gap_pct": 14.629649798922816
+    },
+    {
+      "N": 7,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 14,
+      "n_actions": 8,
+      "train_time_s": 53.99734592437744,
+      "rl_mean_reward": -0.1396,
+      "rl_std_reward": 0.06302729567417598,
+      "rl_inference_ms": 0.12837886810302734,
+      "cache_size": 2125,
+      "state_space_bound": 16384,
+      "config_space": 2187,
+      "exact_V0": -0.130242738946875,
+      "optimality_gap_pct": 7.1844780974252735
+    },
+    {
+      "N": 9,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 18,
+      "n_actions": 10,
+      "train_time_s": 52.41089415550232,
+      "rl_mean_reward": -0.166981,
+      "rl_std_reward": 0.0879926516193256,
+      "rl_inference_ms": 0.11934661865234375,
+      "cache_size": 6955,
+      "state_space_bound": 262144,
+      "config_space": 19683,
+      "exact_V0": -0.1661191115203125,
+      "optimality_gap_pct": 0.5188376411356501
+    },
+    {
+      "N": 12,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 24,
+      "n_actions": 13,
+      "train_time_s": 121.77471852302551,
+      "rl_mean_reward": -0.23992194153858018,
+      "rl_std_reward": 0.16717452490090975,
+      "rl_inference_ms": 0.11705136299133301,
+      "cache_size": 10000,
+      "state_space_bound": 16777216,
+      "config_space": 531441,
+      "exact_V0": null,
+      "optimality_gap_pct": null
+    },
+    {
+      "N": 15,
+      "G": 1,
+      "genes": [
+        "gene"
+      ],
+      "obs_dim": 30,
+      "n_actions": 16,
+      "train_time_s": 1791.3544294834137,
+      "rl_mean_reward": -0.33114968809027473,
+      "rl_std_reward": 0.18044561680706364,
+      "rl_inference_ms": 0.11980152130126953,
+      "cache_size": 6634,
+      "state_space_bound": 1073741824,
+      "config_space": 14348907,
+      "exact_V0": null,
+      "optimality_gap_pct": null
+    }
+  ],
+  "multi_gene": [
+    {
+      "N": 9,
+      "G": 1,
+      "genes": [
+        "gene1"
+      ],
+      "obs_dim": 18,
+      "n_actions": 10,
+      "train_time_s": 55.3967559337616,
+      "rl_mean_reward": -0.1685165281954887,
+      "rl_std_reward": 0.10303793738656473,
+      "rl_inference_ms": 0.13480305671691895,
+      "cache_size": 7350,
+      "state_space_bound": 262144,
+      "config_space": 19683,
+      "exact_V0": -0.1661191115203125,
+      "optimality_gap_pct": 1.4431913662643554
+    },
+    {
+      "N": 9,
+      "G": 2,
+      "genes": [
+        "gene1",
+        "gene2"
+      ],
+      "obs_dim": 27,
+      "n_actions": 10,
+      "train_time_s": 54.92648983001709,
+      "rl_mean_reward": -0.16741555563373678,
+      "rl_std_reward": 0.09799351518435483,
+      "rl_inference_ms": 0.11744308471679688,
+      "cache_size": 7484,
+      "state_space_bound": 262144,
+      "config_space": 19683,
+      "exact_V0": null,
+      "optimality_gap_pct": null
+    },
+    {
+      "N": 9,
+      "G": 3,
+      "genes": [
+        "gene1",
+        "gene2",
+        "gene3"
+      ],
+      "obs_dim": 36,
+      "n_actions": 10,
+      "train_time_s": 56.19382691383362,
+      "rl_mean_reward": -0.16839213561439806,
+      "rl_std_reward": 0.1016864739448088,
+      "rl_inference_ms": 0.1169888973236084,
+      "cache_size": 7188,
+      "state_space_bound": 262144,
+      "config_space": 19683,
+      "exact_V0": null,
+      "optimality_gap_pct": null
+    }
+  ]
+}

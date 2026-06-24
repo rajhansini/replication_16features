@@ -1,0 +1,212 @@
+=================================================================
+  Week 4: RL Scalability Benchmark
+  Sizes: [4, 6, 7, 9, 12, 15]  |  Gene counts (N=9): [1, 2, 3]
+  Timesteps: 50,000  |  Device: cuda
+=================================================================
+
+── Part 1: Family size scale-up (single gene) ──────────────
+
+  N=4  (state space bound: 4^4 = 256)  timesteps=50,000
+[   2560/50000] ep_reward= -0.0934  policy_loss=-0.0084  value_loss= 0.0008  entropy=1.0268  fps=  343
+[   5120/50000] ep_reward= -0.0842  policy_loss=-0.0134  value_loss= 0.0007  entropy=0.9008  fps=  507
+[   7680/50000] ep_reward= -0.0904  policy_loss=-0.0034  value_loss= 0.0010  entropy=0.7139  fps=  601
+[  10240/50000] ep_reward= -0.0913  policy_loss=-0.0074  value_loss= 0.0007  entropy=0.7250  fps=  665
+[  12800/50000] ep_reward= -0.0843  policy_loss=-0.0038  value_loss= 0.0006  entropy=0.6339  fps=  710
+[  15360/50000] ep_reward= -0.0853  policy_loss=-0.0034  value_loss= 0.0006  entropy=0.5811  fps=  745
+[  17920/50000] ep_reward= -0.0873  policy_loss=-0.0021  value_loss= 0.0006  entropy=0.6258  fps=  771
+[  20480/50000] ep_reward= -0.0829  policy_loss=-0.0078  value_loss= 0.0004  entropy=0.5613  fps=  793
+[  23040/50000] ep_reward= -0.0837  policy_loss=-0.0019  value_loss= 0.0005  entropy=0.5318  fps=  812
+[  25600/50000] ep_reward= -0.0862  policy_loss=-0.0097  value_loss= 0.0006  entropy=0.4861  fps=  828
+[  28160/50000] ep_reward= -0.0810  policy_loss=-0.0020  value_loss= 0.0004  entropy=0.4966  fps=  842
+[  30720/50000] ep_reward= -0.0836  policy_loss=-0.0056  value_loss= 0.0004  entropy=0.4906  fps=  855
+[  33280/50000] ep_reward= -0.0845  policy_loss=-0.0033  value_loss= 0.0004  entropy=0.4171  fps=  865
+[  35840/50000] ep_reward= -0.0780  policy_loss=-0.0050  value_loss= 0.0003  entropy=0.3406  fps=  872
+[  38400/50000] ep_reward= -0.0808  policy_loss=-0.0044  value_loss= 0.0004  entropy=0.3241  fps=  881
+[  40960/50000] ep_reward= -0.0824  policy_loss=-0.0031  value_loss= 0.0004  entropy=0.3371  fps=  889
+[  43520/50000] ep_reward= -0.0829  policy_loss=-0.0004  value_loss= 0.0004  entropy=0.4361  fps=  896
+[  46080/50000] ep_reward= -0.0840  policy_loss=-0.0094  value_loss= 0.0005  entropy=0.4417  fps=  902
+[  48640/50000] ep_reward= -0.0846  policy_loss=-0.0064  value_loss= 0.0005  entropy=0.4415  fps=  908
+    RL mean=-0.087120  exact=-0.074627  gap=16.74%  train=55.1s  cache=138 states
+
+  N=6  (state space bound: 4^6 = 4,096)  timesteps=50,000
+[   2560/50000] ep_reward= -0.1475  policy_loss=-0.0103  value_loss= 0.0028  entropy=1.4078  fps=  982
+[   5120/50000] ep_reward= -0.1426  policy_loss=-0.0114  value_loss= 0.0025  entropy=1.1540  fps=  988
+[   7680/50000] ep_reward= -0.1267  policy_loss=-0.0093  value_loss= 0.0019  entropy=1.0813  fps=  988
+[  10240/50000] ep_reward= -0.1264  policy_loss=-0.0048  value_loss= 0.0016  entropy=0.9974  fps=  989
+[  12800/50000] ep_reward= -0.1329  policy_loss=-0.0047  value_loss= 0.0019  entropy=0.9085  fps=  992
+[  15360/50000] ep_reward= -0.1234  policy_loss=-0.0067  value_loss= 0.0017  entropy=0.8178  fps=  994
+[  17920/50000] ep_reward= -0.1239  policy_loss=-0.0088  value_loss= 0.0014  entropy=0.8140  fps=  996
+[  20480/50000] ep_reward= -0.1310  policy_loss=-0.0046  value_loss= 0.0018  entropy=0.7709  fps=  993
+[  23040/50000] ep_reward= -0.1217  policy_loss=-0.0043  value_loss= 0.0015  entropy=0.6808  fps=  991
+[  25600/50000] ep_reward= -0.1226  policy_loss=-0.0028  value_loss= 0.0014  entropy=0.6949  fps=  989
+[  28160/50000] ep_reward= -0.1308  policy_loss=-0.0076  value_loss= 0.0015  entropy=0.7121  fps=  990
+[  30720/50000] ep_reward= -0.1182  policy_loss=-0.0044  value_loss= 0.0012  entropy=0.6542  fps=  989
+[  33280/50000] ep_reward= -0.1212  policy_loss=-0.0045  value_loss= 0.0015  entropy=0.6272  fps=  990
+[  35840/50000] ep_reward= -0.1296  policy_loss=-0.0037  value_loss= 0.0016  entropy=0.6155  fps=  992
+[  38400/50000] ep_reward= -0.1301  policy_loss=-0.0061  value_loss= 0.0016  entropy=0.5910  fps=  993
+[  40960/50000] ep_reward= -0.1285  policy_loss=-0.0108  value_loss= 0.0016  entropy=0.6273  fps=  994
+[  43520/50000] ep_reward= -0.1270  policy_loss=-0.0074  value_loss= 0.0014  entropy=0.5827  fps=  995
+[  46080/50000] ep_reward= -0.1331  policy_loss=-0.0017  value_loss= 0.0014  entropy=0.5291  fps=  996
+[  48640/50000] ep_reward= -0.1249  policy_loss=-0.0023  value_loss= 0.0014  entropy=0.4801  fps=  997
+    RL mean=-0.126344  exact=-0.110219  gap=14.63%  train=50.3s  cache=973 states
+
+  N=7  (state space bound: 4^7 = 16,384)  timesteps=50,000
+[   2560/50000] ep_reward= -0.1726  policy_loss=-0.0209  value_loss= 0.0018  entropy=1.3720  fps=  974
+[   5120/50000] ep_reward= -0.1602  policy_loss=-0.0078  value_loss= 0.0010  entropy=1.2017  fps=  974
+[   7680/50000] ep_reward= -0.1515  policy_loss=-0.0143  value_loss= 0.0008  entropy=1.1488  fps=  968
+[  10240/50000] ep_reward= -0.1522  policy_loss=-0.0122  value_loss= 0.0007  entropy=1.1025  fps=  974
+[  12800/50000] ep_reward= -0.1468  policy_loss=-0.0058  value_loss= 0.0007  entropy=1.1045  fps=  977
+[  15360/50000] ep_reward= -0.1582  policy_loss=-0.0126  value_loss= 0.0012  entropy=1.0144  fps=  980
+[  17920/50000] ep_reward= -0.1574  policy_loss=-0.0036  value_loss= 0.0008  entropy=0.9434  fps=  979
+[  20480/50000] ep_reward= -0.1559  policy_loss=-0.0074  value_loss= 0.0009  entropy=1.0076  fps=  981
+[  23040/50000] ep_reward= -0.1533  policy_loss=-0.0088  value_loss= 0.0007  entropy=0.9901  fps=  981
+[  25600/50000] ep_reward= -0.1562  policy_loss=-0.0110  value_loss= 0.0008  entropy=1.0712  fps=  983
+[  28160/50000] ep_reward= -0.1520  policy_loss=-0.0069  value_loss= 0.0009  entropy=1.0914  fps=  880
+[  30720/50000] ep_reward= -0.1493  policy_loss=-0.0098  value_loss= 0.0010  entropy=1.0696  fps=  889
+[  33280/50000] ep_reward= -0.1463  policy_loss=-0.0122  value_loss= 0.0010  entropy=0.9884  fps=  897
+[  35840/50000] ep_reward= -0.1596  policy_loss=-0.0116  value_loss= 0.0015  entropy=0.9394  fps=  904
+[  38400/50000] ep_reward= -0.1450  policy_loss=-0.0103  value_loss= 0.0015  entropy=0.9330  fps=  909
+[  40960/50000] ep_reward= -0.1461  policy_loss=-0.0075  value_loss= 0.0016  entropy=0.9223  fps=  915
+[  43520/50000] ep_reward= -0.1475  policy_loss=-0.0081  value_loss= 0.0014  entropy=0.8429  fps=  920
+[  46080/50000] ep_reward= -0.1437  policy_loss=-0.0066  value_loss= 0.0014  entropy=0.7977  fps=  924
+[  48640/50000] ep_reward= -0.1497  policy_loss=-0.0139  value_loss= 0.0017  entropy=0.7480  fps=  928
+    RL mean=-0.139600  exact=-0.130243  gap=7.18%  train=54.0s  cache=2125 states
+
+  N=9  (state space bound: 4^9 = 262,144)  timesteps=50,000
+[   2560/50000] ep_reward= -0.2312  policy_loss=-0.0163  value_loss= 0.0044  entropy=1.5661  fps=  895
+[   5120/50000] ep_reward= -0.2246  policy_loss=-0.0185  value_loss= 0.0035  entropy=1.4808  fps=  910
+[   7680/50000] ep_reward= -0.1932  policy_loss=-0.0158  value_loss= 0.0024  entropy=1.4568  fps=  916
+[  10240/50000] ep_reward= -0.2227  policy_loss=-0.0135  value_loss= 0.0028  entropy=1.4230  fps=  921
+[  12800/50000] ep_reward= -0.1942  policy_loss=-0.0202  value_loss= 0.0025  entropy=1.4241  fps=  925
+[  15360/50000] ep_reward= -0.2019  policy_loss=-0.0102  value_loss= 0.0023  entropy=1.3329  fps=  930
+[  17920/50000] ep_reward= -0.1901  policy_loss=-0.0113  value_loss= 0.0019  entropy=1.3209  fps=  934
+[  20480/50000] ep_reward= -0.1855  policy_loss=-0.0129  value_loss= 0.0022  entropy=1.3469  fps=  938
+[  23040/50000] ep_reward= -0.1925  policy_loss=-0.0079  value_loss= 0.0026  entropy=1.2657  fps=  941
+[  25600/50000] ep_reward= -0.1914  policy_loss=-0.0096  value_loss= 0.0026  entropy=1.2077  fps=  945
+[  28160/50000] ep_reward= -0.1826  policy_loss=-0.0117  value_loss= 0.0021  entropy=1.2426  fps=  947
+[  30720/50000] ep_reward= -0.1790  policy_loss=-0.0113  value_loss= 0.0022  entropy=1.2444  fps=  949
+[  33280/50000] ep_reward= -0.1904  policy_loss=-0.0109  value_loss= 0.0028  entropy=1.1224  fps=  950
+[  35840/50000] ep_reward= -0.2046  policy_loss=-0.0080  value_loss= 0.0026  entropy=1.0464  fps=  950
+[  38400/50000] ep_reward= -0.2024  policy_loss=-0.0114  value_loss= 0.0028  entropy=0.9839  fps=  951
+[  40960/50000] ep_reward= -0.1811  policy_loss=-0.0064  value_loss= 0.0025  entropy=1.0116  fps=  952
+[  43520/50000] ep_reward= -0.1954  policy_loss=-0.0099  value_loss= 0.0031  entropy=1.0547  fps=  954
+[  46080/50000] ep_reward= -0.1788  policy_loss=-0.0104  value_loss= 0.0023  entropy=1.0090  fps=  955
+[  48640/50000] ep_reward= -0.1817  policy_loss=-0.0092  value_loss= 0.0022  entropy=0.9942  fps=  957
+    RL mean=-0.166981  exact=-0.166119  gap=0.52%  train=52.4s  cache=6955 states
+
+  N=12  (state space bound: 4^12 = 16,777,216)  timesteps=50,000
+[   2560/50000] ep_reward= -0.2975  policy_loss=-0.0188  value_loss= 0.0090  entropy=1.8579  fps=  283
+[   5120/50000] ep_reward= -0.2687  policy_loss=-0.0175  value_loss= 0.0066  entropy=1.8462  fps=  302
+[   7680/50000] ep_reward= -0.2724  policy_loss=-0.0138  value_loss= 0.0046  entropy=1.7057  fps=  317
+[  10240/50000] ep_reward= -0.2309  policy_loss=-0.0106  value_loss= 0.0043  entropy=1.7747  fps=  326
+[  12800/50000] ep_reward= -0.2986  policy_loss=-0.0187  value_loss= 0.0056  entropy=1.6078  fps=  336
+[  15360/50000] ep_reward= -0.2779  policy_loss=-0.0107  value_loss= 0.0053  entropy=1.5868  fps=  346
+[  17920/50000] ep_reward= -0.2883  policy_loss=-0.0121  value_loss= 0.0063  entropy=1.5545  fps=  354
+[  20480/50000] ep_reward= -0.2105  policy_loss=-0.0134  value_loss= 0.0033  entropy=1.5920  fps=  364
+[  23040/50000] ep_reward= -0.3090  policy_loss=-0.0141  value_loss= 0.0046  entropy=1.4590  fps=  369
+[  25600/50000] ep_reward= -0.2635  policy_loss=-0.0143  value_loss= 0.0053  entropy=1.5387  fps=  375
+[  28160/50000] ep_reward= -0.2463  policy_loss=-0.0105  value_loss= 0.0050  entropy=1.4443  fps=  381
+[  30720/50000] ep_reward= -0.2313  policy_loss=-0.0172  value_loss= 0.0041  entropy=1.3843  fps=  386
+[  33280/50000] ep_reward= -0.2877  policy_loss=-0.0122  value_loss= 0.0061  entropy=1.3502  fps=  391
+[  35840/50000] ep_reward= -0.2641  policy_loss=-0.0173  value_loss= 0.0055  entropy=1.4266  fps=  395
+[  38400/50000] ep_reward= -0.2457  policy_loss=-0.0166  value_loss= 0.0052  entropy=1.4533  fps=  398
+[  40960/50000] ep_reward= -0.2243  policy_loss=-0.0139  value_loss= 0.0039  entropy=1.3922  fps=  401
+[  43520/50000] ep_reward= -0.3159  policy_loss=-0.0138  value_loss= 0.0064  entropy=1.2820  fps=  403
+[  46080/50000] ep_reward= -0.2541  policy_loss=-0.0160  value_loss= 0.0054  entropy=1.3090  fps=  407
+[  48640/50000] ep_reward= -0.2489  policy_loss=-0.0127  value_loss= 0.0058  entropy=1.3119  fps=  410
+    RL mean=-0.239922  [exact DP infeasible]  train=121.8s  cache=10000 states
+
+  N=15  (state space bound: 4^15 = 1,073,741,824)  timesteps=8,000
+[   2560/8000] ep_reward= -0.4130  policy_loss=-0.0212  value_loss= 0.0176  entropy=2.1840  fps=    4
+[   5120/8000] ep_reward= -0.3942  policy_loss=-0.0174  value_loss= 0.0089  entropy=1.9524  fps=    4
+[   7680/8000] ep_reward= -0.3529  policy_loss=-0.0189  value_loss= 0.0066  entropy=1.9191  fps=    5
+    RL mean=-0.331150  [exact DP infeasible]  train=1791.4s  cache=6634 states
+
+── Part 2: Multi-gene scale-up (N=9 family) ────────────────
+
+  G=1 genes  obs_dim=18  state space: 4^9 = 262,144 (per gene independent)
+[   2560/50000] ep_reward= -0.2200  policy_loss=-0.0155  value_loss= 0.0036  entropy=1.6208  fps=  871
+[   5120/50000] ep_reward= -0.2026  policy_loss=-0.0163  value_loss= 0.0023  entropy=1.4833  fps=  894
+[   7680/50000] ep_reward= -0.2145  policy_loss=-0.0064  value_loss= 0.0028  entropy=1.4031  fps=  902
+[  10240/50000] ep_reward= -0.1909  policy_loss=-0.0096  value_loss= 0.0020  entropy=1.4411  fps=  786
+[  12800/50000] ep_reward= -0.1860  policy_loss=-0.0104  value_loss= 0.0029  entropy=1.4578  fps=  809
+[  15360/50000] ep_reward= -0.1889  policy_loss=-0.0135  value_loss= 0.0023  entropy=1.3556  fps=  826
+[  17920/50000] ep_reward= -0.2039  policy_loss=-0.0183  value_loss= 0.0038  entropy=1.3494  fps=  842
+[  20480/50000] ep_reward= -0.1670  policy_loss=-0.0157  value_loss= 0.0023  entropy=1.4097  fps=  852
+[  23040/50000] ep_reward= -0.1900  policy_loss=-0.0118  value_loss= 0.0026  entropy=1.3377  fps=  861
+[  25600/50000] ep_reward= -0.1952  policy_loss=-0.0094  value_loss= 0.0023  entropy=1.3664  fps=  866
+[  28160/50000] ep_reward= -0.2060  policy_loss=-0.0118  value_loss= 0.0029  entropy=1.2942  fps=  872
+[  30720/50000] ep_reward= -0.1953  policy_loss=-0.0196  value_loss= 0.0033  entropy=1.2875  fps=  877
+[  33280/50000] ep_reward= -0.1798  policy_loss=-0.0111  value_loss= 0.0032  entropy=1.2989  fps=  884
+[  35840/50000] ep_reward= -0.1753  policy_loss=-0.0114  value_loss= 0.0024  entropy=1.1855  fps=  888
+[  38400/50000] ep_reward= -0.1842  policy_loss=-0.0140  value_loss= 0.0029  entropy=1.1114  fps=  891
+[  40960/50000] ep_reward= -0.1766  policy_loss=-0.0131  value_loss= 0.0032  entropy=1.0955  fps=  894
+[  43520/50000] ep_reward= -0.1758  policy_loss=-0.0070  value_loss= 0.0029  entropy=1.1151  fps=  897
+[  46080/50000] ep_reward= -0.1759  policy_loss=-0.0160  value_loss= 0.0024  entropy=1.1226  fps=  901
+[  48640/50000] ep_reward= -0.2027  policy_loss=-0.0127  value_loss= 0.0036  entropy=1.1527  fps=  904
+    RL mean=-0.168517  train=55.4s  cache=7350 states
+
+  G=2 genes  obs_dim=27  state space: 4^9 = 262,144 (per gene independent)
+[   2560/50000] ep_reward= -0.2215  policy_loss=-0.0190  value_loss= 0.0041  entropy=1.6343  fps=  815
+[   5120/50000] ep_reward= -0.2106  policy_loss=-0.0146  value_loss= 0.0029  entropy=1.4807  fps=  833
+[   7680/50000] ep_reward= -0.2011  policy_loss=-0.0111  value_loss= 0.0020  entropy=1.4333  fps=  849
+[  10240/50000] ep_reward= -0.2186  policy_loss=-0.0137  value_loss= 0.0028  entropy=1.3958  fps=  858
+[  12800/50000] ep_reward= -0.2094  policy_loss=-0.0126  value_loss= 0.0026  entropy=1.4429  fps=  868
+[  15360/50000] ep_reward= -0.1916  policy_loss=-0.0089  value_loss= 0.0023  entropy=1.4044  fps=  873
+[  17920/50000] ep_reward= -0.1889  policy_loss=-0.0140  value_loss= 0.0021  entropy=1.3650  fps=  878
+[  20480/50000] ep_reward= -0.1915  policy_loss=-0.0120  value_loss= 0.0025  entropy=1.3820  fps=  882
+[  23040/50000] ep_reward= -0.2036  policy_loss=-0.0164  value_loss= 0.0028  entropy=1.2426  fps=  885
+[  25600/50000] ep_reward= -0.1931  policy_loss=-0.0138  value_loss= 0.0025  entropy=1.1865  fps=  890
+[  28160/50000] ep_reward= -0.1971  policy_loss=-0.0144  value_loss= 0.0027  entropy=1.1556  fps=  895
+[  30720/50000] ep_reward= -0.1942  policy_loss=-0.0084  value_loss= 0.0025  entropy=1.2039  fps=  897
+[  33280/50000] ep_reward= -0.1685  policy_loss=-0.0104  value_loss= 0.0023  entropy=1.1809  fps=  900
+[  35840/50000] ep_reward= -0.1860  policy_loss=-0.0110  value_loss= 0.0031  entropy=1.1125  fps=  903
+[  38400/50000] ep_reward= -0.2133  policy_loss=-0.0133  value_loss= 0.0031  entropy=1.1339  fps=  906
+[  40960/50000] ep_reward= -0.1933  policy_loss=-0.0189  value_loss= 0.0030  entropy=1.1497  fps=  908
+[  43520/50000] ep_reward= -0.1770  policy_loss=-0.0150  value_loss= 0.0032  entropy=1.1478  fps=  909
+[  46080/50000] ep_reward= -0.2026  policy_loss=-0.0144  value_loss= 0.0034  entropy=1.1253  fps=  909
+[  48640/50000] ep_reward= -0.1761  policy_loss=-0.0076  value_loss= 0.0030  entropy=1.0434  fps=  912
+    RL mean=-0.167416  train=54.9s  cache=7484 states
+
+  G=3 genes  obs_dim=36  state space: 4^9 = 262,144 (per gene independent)
+[   2560/50000] ep_reward= -0.2218  policy_loss=-0.0181  value_loss= 0.0033  entropy=1.5174  fps=  737
+[   5120/50000] ep_reward= -0.1919  policy_loss=-0.0179  value_loss= 0.0023  entropy=1.4108  fps=  784
+[   7680/50000] ep_reward= -0.2024  policy_loss=-0.0152  value_loss= 0.0019  entropy=1.3918  fps=  809
+[  10240/50000] ep_reward= -0.2186  policy_loss=-0.0111  value_loss= 0.0027  entropy=1.3054  fps=  821
+[  12800/50000] ep_reward= -0.1844  policy_loss=-0.0127  value_loss= 0.0022  entropy=1.4462  fps=  834
+[  15360/50000] ep_reward= -0.2128  policy_loss=-0.0149  value_loss= 0.0025  entropy=1.3291  fps=  840
+[  17920/50000] ep_reward= -0.1902  policy_loss=-0.0157  value_loss= 0.0026  entropy=1.3662  fps=  848
+[  20480/50000] ep_reward= -0.1900  policy_loss=-0.0146  value_loss= 0.0029  entropy=1.3880  fps=  852
+[  23040/50000] ep_reward= -0.1971  policy_loss=-0.0191  value_loss= 0.0030  entropy=1.3492  fps=  855
+[  25600/50000] ep_reward= -0.1914  policy_loss=-0.0104  value_loss= 0.0030  entropy=1.2028  fps=  859
+[  28160/50000] ep_reward= -0.1974  policy_loss=-0.0093  value_loss= 0.0027  entropy=1.2025  fps=  864
+[  30720/50000] ep_reward= -0.1759  policy_loss=-0.0179  value_loss= 0.0021  entropy=1.2079  fps=  868
+[  33280/50000] ep_reward= -0.1765  policy_loss=-0.0102  value_loss= 0.0027  entropy=1.1576  fps=  872
+[  35840/50000] ep_reward= -0.1785  policy_loss=-0.0116  value_loss= 0.0029  entropy=1.1681  fps=  875
+[  38400/50000] ep_reward= -0.2077  policy_loss=-0.0167  value_loss= 0.0025  entropy=1.1618  fps=  878
+[  40960/50000] ep_reward= -0.1846  policy_loss=-0.0155  value_loss= 0.0029  entropy=1.0570  fps=  882
+[  43520/50000] ep_reward= -0.1688  policy_loss=-0.0126  value_loss= 0.0023  entropy=1.0209  fps=  885
+[  46080/50000] ep_reward= -0.1781  policy_loss=-0.0119  value_loss= 0.0030  entropy=1.0570  fps=  888
+[  48640/50000] ep_reward= -0.1691  policy_loss=-0.0165  value_loss= 0.0028  entropy=1.0358  fps=  891
+    RL mean=-0.168392  train=56.2s  cache=7188 states
+
+  Results saved → artifacts/scale_results.json
+
+======================================================================
+  FAMILY SIZE SCALE-UP
+   N |    RL Mean |    Gap% |  Train(s) |  Infer(ms) |    Cache
+----------------------------------------------------------------------
+   4 |  -0.087120 |  16.74% |      55.1 |      0.118 |      138
+   6 |  -0.126344 |  14.63% |      50.3 |      0.118 |      973
+   7 |  -0.139600 |   7.18% |      54.0 |      0.128 |    2,125
+   9 |  -0.166981 |   0.52% |      52.4 |      0.119 |    6,955
+  12 |  -0.239922 |     N/A |     121.8 |      0.117 |   10,000
+  15 |  -0.331150 |     N/A |    1791.4 |      0.120 |    6,634
+
+  MULTI-GENE (N=9)
+  G |    RL Mean |    Gap% |  Train(s) |  Infer(ms)
+--------------------------------------------------
+  1 |  -0.168517 |   1.44% |      55.4 |      0.135
+  2 |  -0.167416 |     N/A |      54.9 |      0.117
+  3 |  -0.168392 |     N/A |      56.2 |      0.117
+======================================================================

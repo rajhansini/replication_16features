@@ -1,0 +1,48 @@
+============================================================
+  Week 5: Sensitivity Analysis (N=9)
+  Allele freqs: [0.05, 0.1, 0.15, 0.2, 0.3]
+  Timesteps: 200,000  |  Device: cuda
+============================================================
+[  39936/200000] ep_reward= -0.1155  policy_loss=-0.0170  value_loss= 0.0022  entropy=1.0904  fps= 1011
+[  79872/200000] ep_reward= -0.1200  policy_loss=-0.0093  value_loss= 0.0023  entropy=1.0268  fps= 1035
+[ 119808/200000] ep_reward= -0.1246  policy_loss=-0.0134  value_loss= 0.0028  entropy=0.7368  fps= 1043
+[ 159744/200000] ep_reward= -0.1318  policy_loss=-0.0080  value_loss= 0.0032  entropy=0.8498  fps= 1047
+[ 199680/200000] ep_reward= -0.1266  policy_loss=-0.0091  value_loss= 0.0031  entropy=0.8207  fps= 1051
+  freq=0.05  exact=-0.105839  RL=-0.115697  gap=9.31%  exact_t=60.2s  rl_t=190s
+[  39936/200000] ep_reward= -0.1933  policy_loss=-0.0146  value_loss= 0.0028  entropy=1.1934  fps= 1016
+[  79872/200000] ep_reward= -0.1832  policy_loss=-0.0067  value_loss= 0.0040  entropy=1.0742  fps= 1024
+[ 119808/200000] ep_reward= -0.1678  policy_loss=-0.0105  value_loss= 0.0031  entropy=0.9395  fps= 1034
+[ 159744/200000] ep_reward= -0.1897  policy_loss=-0.0115  value_loss= 0.0043  entropy=0.8977  fps= 1039
+[ 199680/200000] ep_reward= -0.1590  policy_loss=-0.0107  value_loss= 0.0038  entropy=0.8238  fps= 1041
+  freq=0.10  exact=-0.166119  RL=-0.172446  gap=3.81%  exact_t=60.3s  rl_t=192s
+[  39936/200000] ep_reward= -0.2545  policy_loss=-0.0105  value_loss= 0.0026  entropy=1.3103  fps=  997
+[  79872/200000] ep_reward= -0.2701  policy_loss=-0.0091  value_loss= 0.0041  entropy=1.0826  fps= 1009
+[ 119808/200000] ep_reward= -0.2489  policy_loss=-0.0085  value_loss= 0.0037  entropy=0.9648  fps= 1008
+[ 159744/200000] ep_reward= -0.2123  policy_loss=-0.0100  value_loss= 0.0035  entropy=0.7354  fps= 1006
+[ 199680/200000] ep_reward= -0.2133  policy_loss=-0.0097  value_loss= 0.0041  entropy=0.6019  fps= 1004
+  freq=0.15  exact=-0.220898  RL=-0.221945  gap=0.47%  exact_t=60.2s  rl_t=199s
+[  39936/200000] ep_reward= -0.3052  policy_loss=-0.0092  value_loss= 0.0025  entropy=1.1423  fps=  990
+[  79872/200000] ep_reward= -0.3096  policy_loss=-0.0054  value_loss= 0.0024  entropy=0.9288  fps= 1003
+[ 119808/200000] ep_reward= -0.2964  policy_loss=-0.0134  value_loss= 0.0023  entropy=1.0278  fps= 1006
+[ 159744/200000] ep_reward= -0.2869  policy_loss=-0.0077  value_loss= 0.0018  entropy=0.8699  fps= 1008
+[ 199680/200000] ep_reward= -0.3041  policy_loss=-0.0146  value_loss= 0.0030  entropy=0.9470  fps= 1011
+  freq=0.20  exact=-0.270302  RL=-0.292209  gap=8.10%  exact_t=60.2s  rl_t=198s
+[  39936/200000] ep_reward= -0.3954  policy_loss=-0.0085  value_loss= 0.0030  entropy=1.2145  fps=  952
+[  79872/200000] ep_reward= -0.3725  policy_loss=-0.0129  value_loss= 0.0030  entropy=1.0623  fps=  956
+[ 119808/200000] ep_reward= -0.3645  policy_loss=-0.0189  value_loss= 0.0026  entropy=0.9536  fps=  961
+[ 159744/200000] ep_reward= -0.3769  policy_loss=-0.0108  value_loss= 0.0023  entropy=0.7610  fps=  966
+[ 199680/200000] ep_reward= -0.3605  policy_loss=-0.0092  value_loss= 0.0021  entropy=0.6807  fps=  970
+  freq=0.30  exact=-0.352954  RL=-0.361459  gap=2.41%  exact_t=59.9s  rl_t=206s
+
+  Results → artifacts/sensitivity_results.json
+
+============================================================
+  Freq |   Exact V* |    RL Mean |    Gap%
+------------------------------------------------------------
+  0.05 |  -0.105839 |  -0.115697 |   9.31%
+  0.10 |  -0.166119 |  -0.172446 |   3.81%
+  0.15 |  -0.220898 |  -0.221945 |   0.47%
+  0.20 |  -0.270302 |  -0.292209 |   8.10%
+  0.30 |  -0.352954 |  -0.361459 |   2.41%
+============================================================
+  Figure → artifacts/fig9_sensitivity.png

@@ -1,0 +1,5 @@
+  Collecting 2000 episodes per policy...
+  Done.
+  RL:     avg tests = 6.05 ± 2.21
+  Myopic: avg tests = 6.70 ± 1.20
+  Figure → artifacts/fig10_policy_viz.png

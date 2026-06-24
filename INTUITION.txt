@@ -1,0 +1,135 @@
+INTUITIVE GUIDE TO ABCD-16 REPLICATION
+=======================================
+
+
+PEDIGREE
+--------
+- A family tree, but drawn for medical genetics purposes
+- Shows who is related to whom, who is tested, who carries a mutation
+- Example: grandparents -> parents -> children, connected by lines
+
+
+CARRIER
+-------
+- A person who has the disease-causing gene mutation
+- May or may not be sick themselves (some mutations only cause disease if you inherit two copies)
+- Key insight: if your parent is a carrier, you have a 50% chance of being one too
+- So testing one person updates your beliefs about untested relatives
+
+
+BELIEF STATE (s)
+----------------
+- At any point in the testing process, you don't know for certain who is a carrier
+- The belief state = your current probability distribution over who might be a carrier
+- As you test people, you update these probabilities (Bayesian updating)
+- c_i(s) = probability person i is a carrier given what you know so far
+
+
+FRONTIER
+--------
+- The set of untested people who are still decision-relevant
+- Testing them would update your beliefs in a meaningful way
+- People deep in already-resolved branches fall off the frontier
+
+
+BRIDGE / ARTICULATION NODE
+---------------------------
+- A person in the pedigree who connects two otherwise separate branches
+- Example: a parent connects their siblings' branch to their children's branch
+- Testing a bridge person gives you information about multiple branches at once -> high value
+
+
+DEPTH
+-----
+- How far down in the family tree a person is
+- Testing someone deeper costs the same but often gives less downstream value (fewer untested descendants below them)
+
+
+MYOPIC POLICY
+-------------
+- The greedy one-step-ahead strategy: "which action (test someone / stop) looks best right now, ignoring future consequences?"
+- Often good but not optimal -- it can miss that testing person A now unlocks valuable information about persons B, C, D later
+
+
+V* (EXACT OPTIMUM)
+-------------------
+- The true optimal expected value of the best possible sequential testing strategy
+- Computed by exact DP -- expensive but provably correct
+
+
+V_STOP (STOP-ONLY VALUE)
+-------------------------
+- What you get if you stop testing immediately and never test anyone
+- This is the baseline / floor -- any testing policy should beat this
+
+
+U (ADP UPPER BOUND)
+--------------------
+- The ADP model gives you a certificate that the true optimum V* is at most U
+- Comes from the LP relaxation -- it's an upper bound on what's achievable
+
+
+L (POLICY LOWER BOUND)
+-----------------------
+- The value you actually get by running the ADP policy
+- It's a lower bound on V* -- proves you can achieve at least this much
+
+
+THE GAP INTUITION
+-----------------
+
+    V_stop  <=  L  <=  V*  <=  U
+     floor    policy  optimal  certificate
+
+- denom  = V* - V_stop        = total room for improvement over doing nothing
+- ratio2 = (V* - L) / denom   = how much of that room your policy FAILS to capture  (lower = better)
+- ratio3 = (U - V*) / denom   = how loose your certificate is above optimal          (lower = better)
+- Both should be close to 0
+
+
+WHAT IS THIS PROBLEM?
+---------------------
+- A family has a hereditary genetic disease. You need to decide who in the family to test for a genetic mutation.
+- Testing costs money. Finding carriers has value (informs treatment / family planning).
+- The pedigree creates information dependencies: testing one person updates your beliefs about their relatives.
+- Goal: find the optimal sequential testing policy -- which person to test next, or when to stop.
+
+
+WHY IS IT HARD?
+---------------
+- Exact DP gives the provably optimal answer but is computationally intractable for large families.
+- So you use ADP (Approximate Dynamic Programming) -- a linear function approximation over hand-crafted features of the belief state.
+
+
+WHAT IS ABCD-16?
+----------------
+- An ADP model with 16 fixed features describing the current belief state of the pedigree.
+- 13 structural/myopic features (A/D block):
+    - how much carrier risk is on the frontier of untested people
+    - bridge structure, sibling breadth
+    - marginal gain of testing next vs stopping
+- 3 regime features (B/C block):
+    - broader statistical summaries of all untested people and allele-asymmetry effects
+- These features go into a linear LP:
+    Phi(s) = base(s) + sum_j  beta_j * feature_j(s)
+- The LP coefficients beta_j are learned by solving an ALP (Approximate LP)
+
+
+WHAT DOES THIS REPO DO?
+------------------------
+- It is a replication package: re-runs the ABCD-16 solver from scratch on 4 sample families
+  (or all 102) and verifies the published ratio2/ratio3 numbers match to within 1e-6.
+- Uses Gurobi as the LP solver.
+- Guarantees freshness: no disk caching across runs, every invocation recomputes from scratch.
+- All 4 sample rows pass with diff = +0.00e+00 (exact reproduction).
+
+
+DATA / FAMILIES
+---------------
+- 102 families total across 3 suites: original8, local40, phase6_54
+- Each family = a pedigree topology + reward preset + allele frequencies + cost structure
+- The 4-sample fast audit covers:
+    - two topology types    (Extended, ThreeGeneration)
+    - two allele regimes    (LowHigh, MediumEven)
+    - two cost presets      (Base, Aggressive)
+    - best-case and worst-case rows

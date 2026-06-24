@@ -1,0 +1,19 @@
+
+================================================================================
+   N |     Exact V* |      RL Mean |    Gap % |   Exact Time |   RL ms/step
+--------------------------------------------------------------------------------
+   4 |    -0.074627 |    -0.087120 |   16.74% |        0.02s |        0.117
+   6 |    -0.110219 |    -0.126344 |   14.63% |        3.39s |        0.119
+   7 |    -0.130243 |    -0.139600 |    7.18% |        2.08s |        0.131
+   9 |    -0.166119 |    -0.166981 |    0.52% |       61.84s |        0.120
+  12 |          N/A |          N/A |      N/A |   infeasible |        0.115
+  15 |          N/A |          N/A |      N/A |   infeasible |        0.123
+================================================================================
+
+Generating figures...
+  Saved → artifacts/fig1_compute_time.png
+  Saved → artifacts/fig2_optimality_gap.png
+  Saved → artifacts/fig3_scalability.png
+  Saved → artifacts/fig4_training_curves.png
+
+Done. Figures saved to artifacts
