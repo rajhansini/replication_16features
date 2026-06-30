@@ -1,0 +1,200 @@
+
+============================================================
+[RUN START] 2026-06-25T23:21:58.975008
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets for all 8 canonical families...
+    Extended_LowHigh_Base  [building...] 
+============================================================
+[RUN START] 2026-06-25T23:23:04.240672
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets for all 8 canonical families...
+    Extended_LowHigh_Base  [CACHED]
+
+============================================================
+[RUN START] 2026-06-25T23:25:12.928616
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets for all 8 canonical families...
+    Extended_LowHigh_Base  [building...] done in 15.9s  (107728 states)
+    Extended_LowHigh_Aggressive  [building...] done in 15.8s  (107728 states)
+    Extended_MediumEven_Base  [building...] done in 14.8s  (107728 states)
+    Extended_MediumEven_Aggressive  [building...] done in 16.6s  (107728 states)
+    ThreeGeneration_LowHigh_Base  [building...] done in 1.8s  (20816 states)
+    ThreeGeneration_LowHigh_Aggressive  [building...] done in 1.8s  (20816 states)
+    ThreeGeneration_MediumEven_Base  [building...] done in 2.0s  (20816 states)
+    ThreeGeneration_MediumEven_Aggressive  [building...] done in 1.8s  (20816 states)
+
+[2] Train (6): ['Extended_LowHigh_Base', 'Extended_LowHigh_Aggressive', 'Extended_MediumEven_Base', 'Extended_MediumEven_Aggressive', 'ThreeGeneration_LowHigh_Base', 'ThreeGeneration_LowHigh_Aggressive']
+    Test  (2) : ['ThreeGeneration_MediumEven_Base', 'ThreeGeneration_MediumEven_Aggressive']
+    Combined: 472544 states, dim=36
+
+[3] Training MLP (800 epochs, batch=512)...
+  epoch  100/800  train_loss=0.000716  val_loss=0.000716
+  epoch  200/800  train_loss=0.000702  val_loss=0.000719
+  epoch  300/800  train_loss=0.000699  val_loss=0.000717
+  epoch  400/800  train_loss=0.000698  val_loss=0.000729
+
+============================================================
+[RUN START] 2026-06-26T05:02:29.703127
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets for all 8 canonical families...
+    Extended_LowHigh_Base  [CACHED]
+    Extended_LowHigh_Aggressive  [CACHED]
+    Extended_MediumEven_Base  [CACHED]
+    Extended_MediumEven_Aggressive  [CACHED]
+    ThreeGeneration_LowHigh_Base  [CACHED]
+    ThreeGeneration_LowHigh_Aggressive  [CACHED]
+    ThreeGeneration_MediumEven_Base  [CACHED]
+    ThreeGeneration_MediumEven_Aggressive  [CACHED]
+
+[2] Train (6): ['Extended_LowHigh_Base', 'Extended_LowHigh_Aggressive', 'Extended_MediumEven_Base', 'Extended_MediumEven_Aggressive', 'ThreeGeneration_LowHigh_Base', 'ThreeGeneration_LowHigh_Aggressive']
+    Test  (2) : ['ThreeGeneration_MediumEven_Base', 'ThreeGeneration_MediumEven_Aggressive']
+    Combined: 472544 states, dim=36
+
+[3] Training MLP (800 epochs, batch=512, checkpoint every 50 epochs)...
+  epoch  100/800  train_loss=0.000724  val_loss=0.000754
+  epoch  200/800  train_loss=0.000709  val_loss=0.000762
+  epoch  300/800  train_loss=0.000704  val_loss=0.000743
+  epoch  400/800  train_loss=0.000702  val_loss=0.000741
+  epoch  500/800  train_loss=0.000700  val_loss=0.000744
+  epoch  600/800  train_loss=0.000699  val_loss=0.000762
+  epoch  700/800  train_loss=0.000698  val_loss=0.000748
+
+============================================================
+[RUN START] 2026-06-26T14:20:19.261154
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets for all 8 canonical families...
+    Extended_LowHigh_Base  [CACHED]
+    Extended_LowHigh_Aggressive  [CACHED]
+    Extended_MediumEven_Base  [CACHED]
+    Extended_MediumEven_Aggressive  [CACHED]
+    ThreeGeneration_LowHigh_Base  [CACHED]
+    ThreeGeneration_LowHigh_Aggressive  [CACHED]
+    ThreeGeneration_MediumEven_Base  [CACHED]
+    ThreeGeneration_MediumEven_Aggressive  [CACHED]
+
+[2] Train (6): ['Extended_LowHigh_Base', 'Extended_LowHigh_Aggressive', 'Extended_MediumEven_Base', 'Extended_MediumEven_Aggressive', 'ThreeGeneration_LowHigh_Base', 'ThreeGeneration_LowHigh_Aggressive']
+    Test  (2) : ['ThreeGeneration_MediumEven_Base', 'ThreeGeneration_MediumEven_Aggressive']
+    Combined: 472544 states, dim=36
+
+[3] Training MLP (800 epochs, batch=512, checkpoint every 50 epochs)...
+  Resumed from checkpoint at epoch 700/800
+
+============================================================
+[FINISH RUN] 2026-06-26T18:28:44.516469
+============================================================
+
+[1] Dataset status:
+    Extended_LowHigh_Base  [OK]
+    Extended_LowHigh_Aggressive  [OK]
+    Extended_MediumEven_Base  [OK]
+    Extended_MediumEven_Aggressive  [OK]
+    ThreeGeneration_LowHigh_Base  [OK]
+    ThreeGeneration_LowHigh_Aggressive  [OK]
+    ThreeGeneration_MediumEven_Base  [OK]
+    ThreeGeneration_MediumEven_Aggressive  [OK]
+
+[2] Training status:
+    Checkpoint found: epoch 700/800
+    Need 100 more epochs — loading training data...
+    Training data: 472544 states
+    Training complete.
+
+[3] Evaluation status:
+    Done    : 0/8  []
+    Pending : 8/8  ['Extended_LowHigh_Base', 'Extended_LowHigh_Aggressive', 'Extended_MediumEven_Base', 'Extended_MediumEven_Aggressive', 'ThreeGeneration_LowHigh_Base', 'ThreeGeneration_LowHigh_Aggressive', 'ThreeGeneration_MediumEven_Base', 'ThreeGeneration_MediumEven_Aggressive']
+
+    [TRAIN] Extended_LowHigh_Base — loading...
+    ratio2 (net) = 0.037035  |  ratio2 (ADP) = 0.100690  (8.7s)
+
+    [TRAIN] Extended_LowHigh_Aggressive — loading...
+    ratio2 (net) = 0.018984  |  ratio2 (ADP) = N/A  (12.5s)
+
+    [TRAIN] Extended_MediumEven_Base — loading...
+    ratio2 (net) = 0.048361  |  ratio2 (ADP) = 0.158969  (9.1s)
+
+    [TRAIN] Extended_MediumEven_Aggressive — loading...
+    ratio2 (net) = 0.027277  |  ratio2 (ADP) = N/A  (14.0s)
+
+    [TRAIN] ThreeGeneration_LowHigh_Base — loading...
+    ratio2 (net) = 0.022351  |  ratio2 (ADP) = N/A  (0.8s)
+
+    [TRAIN] ThreeGeneration_LowHigh_Aggressive — loading...
+    ratio2 (net) = 0.005137  |  ratio2 (ADP) = 0.051320  (1.0s)
+
+    [TEST] ThreeGeneration_MediumEven_Base — loading...
+    ratio2 (net) = 0.039824  |  ratio2 (ADP) = N/A  (0.6s)
+
+    [TEST] ThreeGeneration_MediumEven_Aggressive — loading...
+    ratio2 (net) = 0.023154  |  ratio2 (ADP) = N/A  (0.9s)
+
+[DONE] Results saved to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/results.json
+
+SUMMARY:
+  Family                                        Split  ratio2_net  ratio2_ADP
+  ---------------------------------------------------------------------------
+  Extended_LowHigh_Base                         TRAIN    0.037035    0.100690
+  Extended_LowHigh_Aggressive                   TRAIN    0.018984      N/A   
+  Extended_MediumEven_Base                      TRAIN    0.048361    0.158969
+  Extended_MediumEven_Aggressive                TRAIN    0.027277      N/A   
+  ThreeGeneration_LowHigh_Base                  TRAIN    0.022351      N/A   
+  ThreeGeneration_LowHigh_Aggressive            TRAIN    0.005137    0.051320
+  ThreeGeneration_MediumEven_Base               TEST     0.039824      N/A   
+  ThreeGeneration_MediumEven_Aggressive         TEST     0.023154      N/A   
+
+============================================================
+[RUN START] 2026-06-29T03:18:33.164255
+============================================================
+Logging to /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/run.log
+
+[1] Building / loading datasets (one at a time to save RAM)...
+    Extended_LowHigh_Base  [building...] done in 17.2s  (107728 states)
+    Extended_LowHigh_Aggressive  [building...] done in 17.5s  (107728 states)
+    Extended_MediumEven_Base  [building...] done in 17.0s  (107728 states)
+    Extended_MediumEven_Aggressive  [building...] done in 18.4s  (107728 states)
+    ThreeGeneration_LowHigh_Base  [building...] done in 2.3s  (20816 states)
+    ThreeGeneration_LowHigh_Aggressive  [building...] done in 2.6s  (20816 states)
+    ThreeGeneration_MediumEven_Base  [building...] done in 2.4s  (20816 states)
+    ThreeGeneration_MediumEven_Aggressive  [building...] done in 2.5s  (20816 states)
+
+[2] Train (6): ['Extended_LowHigh_Base', 'Extended_LowHigh_Aggressive', 'Extended_MediumEven_Base', 'Extended_MediumEven_Aggressive', 'ThreeGeneration_LowHigh_Base', 'ThreeGeneration_LowHigh_Aggressive']
+    Test  (2) : ['ThreeGeneration_MediumEven_Base', 'ThreeGeneration_MediumEven_Aggressive']
+    Combined: 472544 states, dim=36
+
+[3] Training MLP (800 epochs, batch=512, checkpoint every 50 epochs)...
+  epoch  100/800  train_loss=0.000409  val_loss=0.000410
+  epoch  200/800  train_loss=0.000401  val_loss=0.000412
+  epoch  300/800  train_loss=0.000400  val_loss=0.000412
+  epoch  400/800  train_loss=0.000399  val_loss=0.000411
+  epoch  500/800  train_loss=0.000397  val_loss=0.000411
+  epoch  600/800  train_loss=0.000397  val_loss=0.000414
+  epoch  700/800  train_loss=0.000397  val_loss=0.000419
+  epoch  800/800  train_loss=0.000397  val_loss=0.000420
+    Training done.
+
+[4] Evaluating ratio2...
+    [TRAIN] Extended_LowHigh_Base  (3.9s)
+           ratio2 (net) = 0.057262  |  ratio2 (ADP) = 0.100690
+    [TRAIN] Extended_LowHigh_Aggressive  (4.4s)
+           ratio2 (net) = 0.024124  |  ratio2 (ADP) = N/A
+    [TRAIN] Extended_MediumEven_Base  (2.4s)
+           ratio2 (net) = 0.022660  |  ratio2 (ADP) = 0.158969
+    [TRAIN] Extended_MediumEven_Aggressive  (3.7s)
+           ratio2 (net) = 0.033382  |  ratio2 (ADP) = N/A
+    [TRAIN] ThreeGeneration_LowHigh_Base  (0.7s)
+           ratio2 (net) = 0.026171  |  ratio2 (ADP) = N/A
+    [TRAIN] ThreeGeneration_LowHigh_Aggressive  (1.2s)
+           ratio2 (net) = 0.025856  |  ratio2 (ADP) = 0.051320
+    [TEST] ThreeGeneration_MediumEven_Base  (0.9s)
+           ratio2 (net) = 0.035705  |  ratio2 (ADP) = N/A
+    [TEST] ThreeGeneration_MediumEven_Aggressive  (1.0s)
+           ratio2 (net) = 0.022331  |  ratio2 (ADP) = N/A

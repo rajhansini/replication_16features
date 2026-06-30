@@ -1,0 +1,18 @@
+{
+  "ThreeGeneration_MediumEven_Base": {
+    "V_root": -0.13323727504574362,
+    "V_stop_root": -0.2289814732799998,
+    "L_myopic": -0.13974518059969357,
+    "ratio2_myopic": 0.06797180063095976,
+    "L_net": -0.13705014785071284,
+    "ratio2_net": 0.039823538922330474
+  },
+  "ThreeGeneration_MediumEven_Aggressive": {
+    "V_root": -0.14215285195761657,
+    "V_stop_root": -0.33950859263999966,
+    "L_myopic": -0.14984078475776771,
+    "ratio2_myopic": 0.038954695584577995,
+    "L_net": -0.14672242134469285,
+    "ratio2_net": 0.02315397247263446
+  }
+}

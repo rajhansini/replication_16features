@@ -1,0 +1,131 @@
+
+=================================================================
+ADP (fresh): ThreeGeneration_LowHigh_Base
+=================================================================
+    Pre-computing myopic policy for 20816 states...
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-494.136146
+
+    V*(root)     = -0.137231
+    V_stop(root) = -0.217962
+    L (ADP)      = -0.146137
+    ratio2 (ADP) = 0.110320
+
+=================================================================
+ADP (fresh): ThreeGeneration_LowHigh_Aggressive
+=================================================================
+    Pre-computing myopic policy for 20816 states...
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-528.977139
+
+    V*(root)     = -0.146382
+    V_stop(root) = -0.320343
+    L (ADP)      = -0.155394
+    ratio2 (ADP) = 0.051805
+    paper ratio2 = 0.051320  (diff = +0.000485)
+
+=================================================================
+ADP (fresh): ThreeGeneration_MediumEven_Base
+=================================================================
+    Pre-computing myopic policy for 20816 states...
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-489.645013
+
+    V*(root)     = -0.133237
+    V_stop(root) = -0.228981
+    L (ADP)      = -0.142739
+    ratio2 (ADP) = 0.099241
+
+=================================================================
+ADP (fresh): ThreeGeneration_MediumEven_Aggressive
+=================================================================
+    Pre-computing myopic policy for 20816 states...
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-561.289666
+
+    V*(root)     = -0.142153
+    V_stop(root) = -0.339509
+    L (ADP)      = -0.151805
+    ratio2 (ADP) = 0.048909
+
+=================================================================
+ADP (fresh): Extended_LowHigh_Base
+=================================================================
+    Pre-computing myopic policy for 107728 states...
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-2955.021931
+
+    V*(root)     = -0.166772
+    V_stop(root) = -0.280237
+    L (ADP)      = -0.180504
+    ratio2 (ADP) = 0.121030
+    paper ratio2 = 0.100690  (diff = +0.020340)
+
+=================================================================
+ADP (fresh): Extended_LowHigh_Aggressive
+=================================================================
+    Pre-computing myopic policy for 107728 states...
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-3337.890403
+
+    V*(root)     = -0.178814
+    V_stop(root) = -0.411870
+    L (ADP)      = -0.193167
+    ratio2 (ADP) = 0.061586
+
+=================================================================
+ADP (fresh): Extended_MediumEven_Base
+=================================================================
+    Pre-computing myopic policy for 107728 states...
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-3074.779978
+
+    V*(root)     = -0.161961
+    V_stop(root) = -0.294405
+    L (ADP)      = -0.173978
+    ratio2 (ADP) = 0.090731
+    paper ratio2 = 0.158969  (diff = -0.068239)
+
+=================================================================
+ADP (fresh): Extended_MediumEven_Aggressive
+=================================================================
+    Pre-computing myopic policy for 107728 states...
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-3549.678927
+
+    V*(root)     = -0.173799
+    V_stop(root) = -0.436511
+    L (ADP)      = -0.188118
+    ratio2 (ADP) = 0.054501
+
+=================================================================
+SUMMARY — ratio2_adp (lower = better, 0 = optimal)
+=================================================================
+  Family                                         Fresh     Paper    Delta
+  ------------------------------------------------------------------------
+  ThreeGeneration_LowHigh_Base                0.110320        --       --
+  ThreeGeneration_LowHigh_Aggressive          0.051805  0.051320  +0.0005
+  ThreeGeneration_MediumEven_Base             0.099241        --       --
+  ThreeGeneration_MediumEven_Aggressive       0.048909        --       --
+  Extended_LowHigh_Base                       0.121030  0.100690  +0.0203
+  Extended_LowHigh_Aggressive                 0.061586        --       --
+  Extended_MediumEven_Base                    0.090731  0.158969  -0.0682
+  Extended_MediumEven_Aggressive              0.054501        --       --
+
+Saved → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/adp_all_families.json

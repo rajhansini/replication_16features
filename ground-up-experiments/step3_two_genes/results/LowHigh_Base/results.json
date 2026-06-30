@@ -1,0 +1,20 @@
+{
+  "regime": "LowHigh",
+  "allele_freqs": {
+    "GeneA": 0.02,
+    "GeneB": 0.15
+  },
+  "preset": "Base",
+  "family": "ThreeGeneration",
+  "n_genes": 2,
+  "n_states": 20816,
+  "input_dim": 30,
+  "V_root": -0.13723077601716632,
+  "V_stop_root": -0.21796216343999997,
+  "L_net": -0.1404021852999095,
+  "ratio2": 0.03928347305779352,
+  "mse": 0.0007867481326684356,
+  "mae": 0.014446613378822803,
+  "train_loss_final": 0.0005719754021859575,
+  "val_loss_final": 0.001709279022179544
+}

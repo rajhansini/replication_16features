@@ -1,0 +1,305 @@
+
+============================================================
+[RUN] 2026-06-26T20:21:07.794819
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [building...]
+    done in 2.5s  (20816 states)
+    ThreeGeneration__Base__0.08  [building...]
+    done in 2.4s  (20816 states)
+    Extended__Base__0.02  [building...]
+    done in 65.8s  (107728 states)
+    Extended__Base__0.08  [building...]
+    done in 173.9s  (107728 states)
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 149360
+
+============================================================
+[RUN] 2026-06-26T23:23:24.993814
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 149360
+
+============================================================
+[RUN] 2026-06-26T23:40:02.428213
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 149360
+
+============================================================
+[RUN] 2026-06-27T01:42:41.727597
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Starting fresh (0/300)
+    Train samples: 149360
+
+============================================================
+[RUN] 2026-06-27T01:55:48.711635
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Starting fresh (0/300)
+    Train samples: 149360
+    Training complete.
+
+[3] Evaluation — done 0/4, pending 4/4
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=-0.899709  (0.1s)
+
+    [TRAIN] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.020429  (7.3s)
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=-0.737841  (0.0s)
+
+    [TEST] Extended__Base__0.08 — loading...
+    ratio2=0.023676  (24.3s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  ThreeGeneration__Base__0.02                   TRAIN  -0.899709
+  ThreeGeneration__Base__0.08                   TRAIN  0.020429
+  Extended__Base__0.02                          TRAIN  -0.737841
+  Extended__Base__0.08                          TEST   0.023676
+
+============================================================
+[RUN] 2026-06-27T02:28:09.310157
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Resumed from checkpoint at epoch 300/300
+    Already at 300/300 — skipping training.
+
+[3] Evaluation — done 0/4, pending 4/4
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=-0.955722  (2.5s)
+
+    [TRAIN] ThreeGeneration__Base__0.08 — loading...
+    ratio2=-0.771949  (6.5s)
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=-0.939630  (30.2s)
+
+    [TEST] Extended__Base__0.08 — loading...
+    ratio2=-0.798907  (32.0s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  ThreeGeneration__Base__0.02                   TRAIN  -0.955722
+  ThreeGeneration__Base__0.08                   TRAIN  -0.771949
+  Extended__Base__0.02                          TRAIN  -0.939630
+  Extended__Base__0.08                          TEST   -0.798907
+
+============================================================
+[RUN] 2026-06-27T02:36:46.025382
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Resumed from checkpoint at epoch 300/300
+    Already at 300/300 — skipping training.
+
+[3] Evaluation — done 4/4, pending 0/4
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  ThreeGeneration__Base__0.02                   TRAIN  -0.955722
+  ThreeGeneration__Base__0.08                   TRAIN  -0.771949
+  Extended__Base__0.02                          TRAIN  -0.939630
+  Extended__Base__0.08                          TEST   -0.798907
+
+============================================================
+[RUN] 2026-06-27T04:23:46.049285
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+
+[2] Training GNN:
+    Resumed from checkpoint at epoch 300/300
+    Already at 300/300 — skipping training.
+
+[3] Evaluation — done 0/4, pending 4/4
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=0.030713  (3.4s)
+
+    [TRAIN] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.034370  (8.4s)
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=0.005255  (39.6s)
+
+    [TEST] Extended__Base__0.08 — loading...
+    ratio2=0.004476  (41.7s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  ThreeGeneration__Base__0.02                   TRAIN  0.030713
+  ThreeGeneration__Base__0.08                   TRAIN  0.034370
+  Extended__Base__0.02                          TRAIN  0.005255
+  Extended__Base__0.08                          TEST   0.004476
+
+============================================================
+[RUN] 2026-06-29T03:18:33.164013
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [building...]
+    done in 2.6s  (20816 states)
+    ThreeGeneration__Base__0.08  [building...]
+    done in 2.5s  (20816 states)
+    Extended__Base__0.02  [building...]
+    done in 17.4s  (107728 states)
+    Extended__Base__0.08  [building...]
+    done in 18.4s  (107728 states)
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 149360
+    Training complete.
+
+[3] Evaluation — done 0/4, pending 4/4
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=0.025937  (1.4s)
+
+    [TRAIN] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.020391  (5.1s)
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=0.019323  (21.2s)
+
+    [TEST] Extended__Base__0.08 — loading...
+    ratio2=0.008404  (23.5s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  ThreeGeneration__Base__0.02                   TRAIN  0.025937
+  ThreeGeneration__Base__0.08                   TRAIN  0.020391
+  Extended__Base__0.02                          TRAIN  0.019323
+  Extended__Base__0.08                          TEST   0.008404
+
+============================================================
+[RUN] 2026-06-29T04:54:51.162620
+============================================================
+
+[1] Datasets:
+    Extended__Base__0.02  [building...]
+    done in 16.9s  (107728 states)
+    Extended__Aggressive__0.02  [building...]
+    done in 18.0s  (107728 states)
+    Extended__Base__0.08  [building...]
+    done in 17.4s  (107728 states)
+    Extended__Aggressive__0.08  [building...]
+    done in 18.0s  (107728 states)
+    ThreeGeneration__Base__0.02  [building...]
+    done in 2.3s  (20816 states)
+    ThreeGeneration__Aggressive__0.02  [building...]
+    done in 2.1s  (20816 states)
+    ThreeGeneration__Base__0.08  [building...]
+    done in 2.6s  (20816 states)
+    ThreeGeneration__Aggressive__0.08  [building...]
+    done in 2.5s  (20816 states)
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 472544
+    Training complete.
+
+[3] Evaluation — done 0/4, pending 8/4
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=0.029989  (18.8s)
+
+    [TRAIN] Extended__Aggressive__0.02 — loading...
+    ratio2=0.036675  (20.1s)
+
+    [TRAIN] Extended__Base__0.08 — loading...
+    ratio2=0.026968  (18.7s)
+
+    [TRAIN] Extended__Aggressive__0.08 — loading...
+    ratio2=0.036482  (20.5s)
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=0.001425  (3.1s)
+
+    [TRAIN] ThreeGeneration__Aggressive__0.02 — loading...
+    ratio2=0.011129  (4.3s)
+
+    [TEST] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.041502  (3.3s)
+
+    [TEST] ThreeGeneration__Aggressive__0.08 — loading...
+    ratio2=0.023564  (4.8s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  Extended__Base__0.02                          TRAIN  0.029989
+  Extended__Aggressive__0.02                    TRAIN  0.036675
+  Extended__Base__0.08                          TRAIN  0.026968
+  Extended__Aggressive__0.08                    TRAIN  0.036482
+  ThreeGeneration__Base__0.02                   TRAIN  0.001425
+  ThreeGeneration__Aggressive__0.02             TRAIN  0.011129
+  ThreeGeneration__Base__0.08                   TEST   0.041502
+  ThreeGeneration__Aggressive__0.08             TEST   0.023564

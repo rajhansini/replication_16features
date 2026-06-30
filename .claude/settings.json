@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); if echo \"$f\" | grep -q 'PRESENTATION.*\\.md'; then python ground-up-experiments/generate_notebook.py 2>/dev/null || true; fi",
+            "statusMessage": "Regenerating VERIFICATION.ipynb..."
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(rm -f ground-up-experiments/step5_gnn/results/partial_eval.json ground-up-experiments/step5_gnn/results/results.json)",
+      "Bash(find /net/projects/ranalab/rajhansini -path \"*/genetic_dp/models/reward.py\" 2>/dev/null | head -3)",
+      "Read(//net/projects/ranalab/rajhansini/**)",
+      "Bash(find /net/projects/ranalab/rajhansini/conda_envs/genetic-rl -path \"*/genetic_dp/models/reward.py\" 2>/dev/null | head -3)",
+      "Read(//net/projects/ranalab/rajhansini/conda_envs/genetic-rl/**)",
+      "Bash(python -c \"import genetic_dp.models.reward as r; import inspect; print\\(inspect.getfile\\(r\\)\\)\")",
+      "Bash(python -c \"from genetic_dp.models.belief import InferenceResult; import inspect; print\\(inspect.getsource\\(InferenceResult\\)\\)\")",
+      "Bash(python -c \"from genetic_dp.exact_dp.utils import lift_tuple_posteriors_to_genes; import inspect; print\\(inspect.getsource\\(lift_tuple_posteriors_to_genes\\)\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(pandoc --version)",
+      "Bash(pandoc PRESENTATION_FULL.md -o PRESENTATION_FULL.pdf --pdf-engine=xelatex --toc -V geometry:margin=1in -V fontsize=11pt)",
+      "Bash(fc-list)",
+      "Bash(pandoc PRESENTATION_FULL.md -o PRESENTATION_FULL.pdf --pdf-engine=xelatex --toc -V geometry:margin=1in -V fontsize=11pt -V 'mainfont=DejaVu Serif' -V 'monofont=DejaVu Sans Mono')",
+      "Bash(grep -v \"^$\")"
+    ]
+  }
+}

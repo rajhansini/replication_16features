@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/adp_all_families.py", line 27, in <module>
+    from scipy.optimize import linprog
+ModuleNotFoundError: No module named 'scipy'

@@ -1,0 +1,17 @@
+{
+  "gene": "GeneB",
+  "allele_freq": 0.15,
+  "preset": "Base",
+  "family": "ThreeGeneration",
+  "n_states": 592,
+  "input_dim": 15,
+  "V_root": -0.1245759485109375,
+  "V_stop_root": -0.18566415000000003,
+  "L_net": -0.12862840247056587,
+  "ratio2": 0.06633775198560933,
+  "mse": 0.0004345121269579977,
+  "mae": 0.013447796925902367,
+  "sanity_errors": 0,
+  "train_loss_final": 0.00034863871675994606,
+  "val_loss_final": 0.0009371341438964009
+}

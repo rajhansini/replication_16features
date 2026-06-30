@@ -1,0 +1,17 @@
+{
+  "gene": "GeneA",
+  "allele_freq": 0.02,
+  "preset": "Base",
+  "family": "ThreeGeneration",
+  "n_states": 592,
+  "input_dim": 15,
+  "V_root": -0.030870687414758097,
+  "V_stop_root": -0.03229801343999996,
+  "L_net": -0.03229801343999996,
+  "ratio2": 1.0,
+  "mse": 0.0005553922965191305,
+  "mae": 0.018214737996459007,
+  "sanity_errors": 0,
+  "train_loss_final": 0.0004733636275814052,
+  "val_loss_final": 0.0009203752852045
+}

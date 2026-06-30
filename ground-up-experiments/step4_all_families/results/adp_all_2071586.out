@@ -1,0 +1,123 @@
+
+=================================================================
+ADP (fresh): ThreeGeneration_LowHigh_Base
+=================================================================
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-1260.253112
+
+    V*(root)     = -0.137231
+    V_stop(root) = -0.217962
+    L (ADP)      = -0.144088
+    ratio2 (ADP) = 0.084938
+
+=================================================================
+ADP (fresh): ThreeGeneration_LowHigh_Aggressive
+=================================================================
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-1417.784751
+
+    V*(root)     = -0.146382
+    V_stop(root) = -0.320343
+    L (ADP)      = -0.153516
+    ratio2 (ADP) = 0.041011
+    paper ratio2 = 0.051320  (diff = -0.010309)
+
+=================================================================
+ADP (fresh): ThreeGeneration_MediumEven_Base
+=================================================================
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-1258.114947
+
+    V*(root)     = -0.133237
+    V_stop(root) = -0.228981
+    L (ADP)      = -0.140609
+    ratio2 (ADP) = 0.076992
+
+=================================================================
+ADP (fresh): ThreeGeneration_MediumEven_Aggressive
+=================================================================
+    Pre-computing features for 20816 states...
+    Building ALP: 20816 states × 16 features...
+    Solving LP: 40720 constraints × 16 vars (HiGHS)...
+    Solved: obj=-1415.379315
+
+    V*(root)     = -0.142153
+    V_stop(root) = -0.339509
+    L (ADP)      = -0.150361
+    ratio2 (ADP) = 0.041590
+
+=================================================================
+ADP (fresh): Extended_LowHigh_Base
+=================================================================
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-7843.278921
+
+    V*(root)     = -0.166772
+    V_stop(root) = -0.280237
+    L (ADP)      = -0.177005
+    ratio2 (ADP) = 0.090193
+    paper ratio2 = 0.100690  (diff = -0.010497)
+
+=================================================================
+ADP (fresh): Extended_LowHigh_Aggressive
+=================================================================
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-8823.688786
+
+    V*(root)     = -0.178814
+    V_stop(root) = -0.411870
+    L (ADP)      = -0.192114
+    ratio2 (ADP) = 0.057069
+
+=================================================================
+ADP (fresh): Extended_MediumEven_Base
+=================================================================
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-7832.581892
+
+    V*(root)     = -0.161961
+    V_stop(root) = -0.294405
+    L (ADP)      = -0.175319
+    ratio2 (ADP) = 0.100856
+    paper ratio2 = 0.158969  (diff = -0.058114)
+
+=================================================================
+ADP (fresh): Extended_MediumEven_Aggressive
+=================================================================
+    Pre-computing features for 107728 states...
+    Building ALP: 107728 states × 16 features...
+    Solving LP: 240856 constraints × 16 vars (HiGHS)...
+    Solved: obj=-8811.654629
+
+    V*(root)     = -0.173799
+    V_stop(root) = -0.436511
+    L (ADP)      = -0.188229
+    ratio2 (ADP) = 0.054927
+
+=================================================================
+SUMMARY — ratio2_adp (lower = better, 0 = optimal)
+=================================================================
+  Family                                         Fresh     Paper    Delta
+  ------------------------------------------------------------------------
+  ThreeGeneration_LowHigh_Base                0.084938        --       --
+  ThreeGeneration_LowHigh_Aggressive          0.041011  0.051320  -0.0103
+  ThreeGeneration_MediumEven_Base             0.076992        --       --
+  ThreeGeneration_MediumEven_Aggressive       0.041590        --       --
+  Extended_LowHigh_Base                       0.090193  0.100690  -0.0105
+  Extended_LowHigh_Aggressive                 0.057069        --       --
+  Extended_MediumEven_Base                    0.100856  0.158969  -0.0581
+  Extended_MediumEven_Aggressive              0.054927        --       --
+
+Saved → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step4_all_families/results/adp_all_families.json

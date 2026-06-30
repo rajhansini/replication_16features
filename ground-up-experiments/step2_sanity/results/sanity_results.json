@@ -1,0 +1,26 @@
+{
+  "single_GeneA": {
+    "root_state_exists": true,
+    "v_root_geq_v_stop_root": true,
+    "v_star_geq_v_stop_everywhere": true,
+    "leaf_value_zero": true,
+    "tested_belief_degenerate": true,
+    "n_reachable_states": 592
+  },
+  "single_GeneB": {
+    "root_state_exists": true,
+    "v_root_geq_v_stop_root": true,
+    "v_star_geq_v_stop_everywhere": true,
+    "leaf_value_zero": true,
+    "tested_belief_degenerate": true,
+    "n_reachable_states": 592
+  },
+  "two_genes_LowHigh": {
+    "root_state_exists": true,
+    "v_root_geq_v_stop_root": true,
+    "v_star_geq_v_stop_everywhere": true,
+    "leaf_value_zero": true,
+    "tested_belief_degenerate": true,
+    "n_reachable_states": 20816
+  }
+}

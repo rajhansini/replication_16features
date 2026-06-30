@@ -1,0 +1,18 @@
+
+============================================================
+[RUN] 2026-06-27T05:59:09.310193
+============================================================
+
+[1] Datasets:
+    ThreeGeneration__Base__0.02  [CACHED]
+    ThreeGeneration__Base__0.08  [CACHED]
+    Extended__Base__0.02  [CACHED]
+    Extended__Base__0.08  [CACHED]
+    ThreeGeneration__Aggressive__0.02  [CACHED]
+    ThreeGeneration__Aggressive__0.08  [CACHED]
+    Extended__Aggressive__0.02  [CACHED]
+    Extended__Aggressive__0.08  [CACHED]
+
+[2] Training GNN (node_feat_dim=7, hidden_dim=32, n_rounds=2):
+    Starting fresh (0/300)
+    Train samples: 298720 (from 6 families)
