@@ -1,0 +1,19 @@
+[extended_fourway] 2026-07-26T20:03:06.208051  genes=3  seed=2  family=Extended (OOD -- never trained on)  GNN=E6 sumpool  MLP=E6 sumpool  only=HighHigh/Aggressive
+loaded GNN (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_gnn_sumpool/seed_runs/seed2/gnn_q_e6.pt
+loaded MLP (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_mlp_sumpool/seed_runs/seed2/mlp_q_e6.pt
+
+==========================================================================================
+Extended_HighHigh_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.3622  V_stop(root)=-0.9669
+  ratio2: myopic=0.0106  gnn=0.0112  mlp=0.0770
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST Mother     TEST Child      partial
+  1    {Grandfather:(0, 0, 0)}                                     TEST Mother       TEST Father     TEST GrandmotherTEST Mother     partial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST Mother     TEST Mother     none
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Grandmother  TEST GrandmotherTEST Mother     TEST Mother     partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/7=0.571  gnn=3/7=0.429  mlp=4/7=0.571  all4=2/7=0.286
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed2/configs_e6/HighHigh_Aggressive.json

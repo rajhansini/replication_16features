@@ -1,0 +1,16 @@
+{
+  "V_root": -0.06672220719073242,
+  "V_stop_root": -0.09843375959999974,
+  "myopic_L": -0.08667595787509208,
+  "myopic_ratio2": 0.6292265489509248,
+  "myopic_root_action": [
+    "test",
+    "Grandfather"
+  ],
+  "dp_root_action": [
+    "test",
+    "Uncle"
+  ],
+  "root_action_match": false,
+  "split": "test"
+}

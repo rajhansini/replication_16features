@@ -1,0 +1,15 @@
+{
+  "genes": 2,
+  "family": "Nuclear",
+  "regime": "HighHigh",
+  "preset": "Aggressive",
+  "split": "train",
+  "V_star": -0.1580185502050434,
+  "V_stop": -0.4038832124999997,
+  "ADP_phi": -0.14009293345735624,
+  "production_policy_value": -0.15981790567630605,
+  "production_policy_source": "adp_policy",
+  "adp_ratio2_deployed_policy": 0.0073184794206172295,
+  "adp_ratio3_certificate": 0.07290847159720072,
+  "seconds": 5.3
+}

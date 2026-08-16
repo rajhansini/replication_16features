@@ -1,0 +1,2756 @@
+{
+  "genes": 3,
+  "seed": 1,
+  "overall": {
+    "follow_gnn": {
+      "n_total": 63,
+      "rate_all3": 0.3333333333333333,
+      "rate_gnn_mlp": 0.4126984126984127,
+      "rate_gnn_myopic": 0.6349206349206349,
+      "rate_mlp_myopic": 0.4126984126984127
+    },
+    "follow_mlp": {
+      "n_total": 62,
+      "rate_all3": 0.5645161290322581,
+      "rate_gnn_mlp": 0.6129032258064516,
+      "rate_gnn_myopic": 0.7419354838709677,
+      "rate_mlp_myopic": 0.6129032258064516
+    },
+    "follow_myopic": {
+      "n_total": 66,
+      "rate_all3": 0.5606060606060606,
+      "rate_gnn_mlp": 0.6212121212121212,
+      "rate_gnn_myopic": 0.7727272727272727,
+      "rate_mlp_myopic": 0.5909090909090909
+    }
+  },
+  "per_config": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.5,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      }
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.4,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      }
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.8333333333333334,
+        "rate_gnn_mlp": 0.8333333333333334,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      }
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.6,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.5,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      }
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 3,
+        "rate_all3": 0.3333333333333333,
+        "rate_gnn_mlp": 0.3333333333333333,
+        "rate_gnn_myopic": 0.3333333333333333,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 1,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.0,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_myopic": {
+        "n_total": 3,
+        "rate_all3": 0.3333333333333333,
+        "rate_gnn_mlp": 0.3333333333333333,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.3333333333333333
+      }
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 1,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.0,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_myopic": {
+        "n_total": 3,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.3333333333333333,
+        "rate_mlp_myopic": 0.3333333333333333
+      }
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      }
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      }
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.8333333333333334,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      }
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.2,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.5,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      }
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      }
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.6,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      }
+    }
+  },
+  "detail": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.5,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.4,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.8333333333333334,
+        "rate_gnn_mlp": 0.8333333333333334,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.6,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.5,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 3,
+        "rate_all3": 0.3333333333333333,
+        "rate_gnn_mlp": 0.3333333333333333,
+        "rate_gnn_myopic": 0.3333333333333333,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 1,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.0,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_myopic": {
+        "n_total": 3,
+        "rate_all3": 0.3333333333333333,
+        "rate_gnn_mlp": 0.3333333333333333,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.3333333333333333
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 1,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.0,
+        "rate_mlp_myopic": 0.0
+      },
+      "follow_myopic": {
+        "n_total": 3,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.3333333333333333,
+        "rate_mlp_myopic": 0.3333333333333333
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "STOP",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        }
+      ]
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 1.0,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.8333333333333334,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.2,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.5,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.5
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.5,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.6666666666666666,
+        "rate_mlp_myopic": 0.5
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.4,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.6666666666666666
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "follow_gnn": {
+        "n_total": 5,
+        "rate_all3": 0.0,
+        "rate_gnn_mlp": 0.0,
+        "rate_gnn_myopic": 0.6,
+        "rate_mlp_myopic": 0.2
+      },
+      "follow_mlp": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      },
+      "follow_myopic": {
+        "n_total": 6,
+        "rate_all3": 0.6666666666666666,
+        "rate_gnn_mlp": 0.6666666666666666,
+        "rate_gnn_myopic": 0.8333333333333334,
+        "rate_mlp_myopic": 0.8333333333333334
+      },
+      "steps_follow_gnn": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Child:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Father",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "TEST Father",
+          "myopic": "STOP",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        }
+      ],
+      "steps_follow_mlp": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Child",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ],
+      "steps_follow_myopic": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Child",
+          "mlp": "TEST Father",
+          "myopic": "TEST Father",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": false,
+          "mlp_myopic_match": true,
+          "all3_match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Child",
+          "gnn_mlp_match": false,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": false,
+          "all3_match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "mlp": "TEST Grandfather",
+          "myopic": "TEST Grandfather",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "mlp": "TEST Grandmother",
+          "myopic": "TEST Grandmother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "mlp": "TEST Mother",
+          "myopic": "TEST Mother",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "mlp": "STOP",
+          "myopic": "STOP",
+          "gnn_mlp_match": true,
+          "gnn_myopic_match": true,
+          "mlp_myopic_match": true,
+          "all3_match": true
+        }
+      ]
+    }
+  }
+}

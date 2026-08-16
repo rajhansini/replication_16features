@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T02:07:04.076799  genes=3  family=Trio  regime=MediumEven  preset=Aggressive
+[CONFIG] Trio_MediumEven_Aggressive_3gene (train)
+  states=4,872  V*(root)=-0.091095  V_stop(root)=-0.228824

@@ -1,0 +1,67 @@
+{
+  "n_rounds": 3,
+  "seed": 0,
+  "avg_ratio2": 0.12963172545528573,
+  "per_config": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "ratio2": 0.04111617039257809,
+      "L": -0.1458565334877625,
+      "V_root": -0.14129369019229165
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "ratio2": 0.057243741333477365,
+      "L": -0.15959832435044896,
+      "V_root": -0.14667276416037336
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "ratio2": 0.05092398695638047,
+      "L": -0.15038502620003197,
+      "V_root": -0.14398376923256767
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "ratio2": 0.06088872504519189,
+      "L": -0.16704753783787274,
+      "V_root": -0.15191508319521396
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "ratio2": 1.0,
+      "L": -0.07655959079999991,
+      "V_root": -0.05601529043605717
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "ratio2": 0.08105020056965521,
+      "L": -0.06713337900115636,
+      "V_root": -0.06294973215316814
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "ratio2": 0.020490757526828395,
+      "L": -0.2775801773172432,
+      "V_root": -0.2725852948315528
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "ratio2": 0.017514394391292452,
+      "L": -0.29908716694934934,
+      "V_root": -0.2910120369647778
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "ratio2": 0.04593174854436312,
+      "L": -0.1351582898625171,
+      "V_root": -0.13063216323545412
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "ratio2": 0.059386874334342386,
+      "L": -0.14940599122627457,
+      "V_root": -0.13736505985989575
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "ratio2": 0.0625344468671529,
+      "L": -0.17124283965639156,
+      "V_root": -0.16327800052738312
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "ratio2": 0.05849965950216643,
+      "L": -0.1874861856417366,
+      "V_root": -0.172543730765459
+    }
+  }
+}

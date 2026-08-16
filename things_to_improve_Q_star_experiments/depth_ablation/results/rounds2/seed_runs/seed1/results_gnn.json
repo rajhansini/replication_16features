@@ -1,0 +1,67 @@
+{
+  "n_rounds": 2,
+  "seed": 1,
+  "avg_ratio2": 0.04045265605600482,
+  "per_config": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "ratio2": 0.03736256165724696,
+      "L": -0.14543997892326158,
+      "V_root": -0.14129369019229165
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "ratio2": 0.0163161864320674,
+      "L": -0.15035693722257057,
+      "V_root": -0.14667276416037336
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "ratio2": 0.04351853863159901,
+      "L": -0.14945414508644578,
+      "V_root": -0.14398376923256767
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "ratio2": 0.02086387826714941,
+      "L": -0.1571003074105882,
+      "V_root": -0.15191508319521396
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "ratio2": 0.07661897050298373,
+      "L": -0.05758937357964654,
+      "V_root": -0.05601529043605717
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "ratio2": 0.1379296098774059,
+      "L": -0.07006937866301155,
+      "V_root": -0.06294973215316814
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "ratio2": 0.03372092094430151,
+      "L": -0.2808051977417071,
+      "V_root": -0.2725852948315528
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "ratio2": 0.012611185260488574,
+      "L": -0.29682650921901615,
+      "V_root": -0.2910120369647778
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "ratio2": 0.0410139390678107,
+      "L": -0.13467368761844734,
+      "V_root": -0.13063216323545412
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "ratio2": 0.015824029790060565,
+      "L": -0.14057344654091475,
+      "V_root": -0.13736505985989575
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "ratio2": 0.026952902901371072,
+      "L": -0.16671091704658186,
+      "V_root": -0.16327800052738312
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "ratio2": 0.022699149339572972,
+      "L": -0.17834173057644756,
+      "V_root": -0.172543730765459
+    }
+  }
+}

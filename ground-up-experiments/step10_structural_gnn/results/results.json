@@ -1,0 +1,420 @@
+{
+  "model": "PedigreeGNN_Vstar",
+  "formulation": "V*(s) prediction, action derived via Bellman",
+  "node_feat_dim": 13,
+  "structural_features": [
+    "n_parents",
+    "n_children",
+    "depth"
+  ],
+  "hidden_dim": 32,
+  "n_rounds": 2,
+  "n_genes": 3,
+  "genes": [
+    "GeneA",
+    "GeneB",
+    "GeneC"
+  ],
+  "train_keys": [
+    "Nuclear_HighHigh_Aggressive_3gene",
+    "Nuclear_HighHigh_Base_3gene",
+    "Nuclear_LowHigh_Aggressive_3gene",
+    "Nuclear_LowHigh_Base_3gene",
+    "Nuclear_LowLow_Aggressive_3gene",
+    "Nuclear_LowLow_Base_3gene",
+    "Nuclear_MediumEven_Aggressive_3gene",
+    "Nuclear_MediumEven_Base_3gene",
+    "Nuclear_MixedA_Aggressive_3gene",
+    "Nuclear_MixedA_Base_3gene",
+    "Nuclear_MixedB_Aggressive_3gene",
+    "Nuclear_MixedB_Base_3gene",
+    "Trio_HighHigh_Aggressive_3gene",
+    "Trio_HighHigh_Base_3gene",
+    "Trio_LowHigh_Aggressive_3gene",
+    "Trio_LowHigh_Base_3gene",
+    "Trio_LowLow_Aggressive_3gene",
+    "Trio_LowLow_Base_3gene",
+    "Trio_MediumEven_Aggressive_3gene",
+    "Trio_MediumEven_Base_3gene",
+    "Trio_MixedA_Aggressive_3gene",
+    "Trio_MixedA_Base_3gene",
+    "Trio_MixedB_Aggressive_3gene",
+    "Trio_MixedB_Base_3gene"
+  ],
+  "test_keys": [
+    "ThreeGeneration_HighHigh_Aggressive_3gene",
+    "ThreeGeneration_HighHigh_Base_3gene",
+    "ThreeGeneration_LowHigh_Aggressive_3gene",
+    "ThreeGeneration_LowHigh_Base_3gene",
+    "ThreeGeneration_LowLow_Aggressive_3gene",
+    "ThreeGeneration_LowLow_Base_3gene",
+    "ThreeGeneration_MediumEven_Aggressive_3gene",
+    "ThreeGeneration_MediumEven_Base_3gene",
+    "ThreeGeneration_MixedA_Aggressive_3gene",
+    "ThreeGeneration_MixedA_Base_3gene",
+    "ThreeGeneration_MixedB_Aggressive_3gene",
+    "ThreeGeneration_MixedB_Base_3gene"
+  ],
+  "families": {
+    "Trio_LowHigh_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.08515972317185508,
+      "V_root": -0.08515972317185508,
+      "V_stop_root": -0.14415320768,
+      "v_hat_root": -0.08321315050125122,
+      "step9_ratio2": 0.12061155171001318,
+      "total_sec": 0.2931497097015381
+    },
+    "Trio_LowHigh_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.08819454890573902,
+      "V_root": -0.08819454890573902,
+      "V_stop_root": -0.21284081484000003,
+      "v_hat_root": -0.08544985949993134,
+      "step9_ratio2": 0.011717636838395948,
+      "total_sec": 0.06707119941711426
+    },
+    "Trio_MediumEven_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.08657776003649412,
+      "V_root": -0.08657776003649412,
+      "V_stop_root": -0.15410626560000001,
+      "v_hat_root": -0.08544804155826569,
+      "step9_ratio2": 0.05467088952709611,
+      "total_sec": 0.06960439682006836
+    },
+    "Trio_MediumEven_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.09109533216285651,
+      "V_root": -0.09109533216285651,
+      "V_stop_root": -0.22882369536000002,
+      "v_hat_root": -0.09049278497695923,
+      "step9_ratio2": 0.016769905999074096,
+      "total_sec": 0.06536412239074707
+    },
+    "Trio_LowLow_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 2.0969455221260928e-11,
+      "L": -0.032755017514266745,
+      "V_root": -0.03275501751403622,
+      "V_stop_root": -0.043748337600000006,
+      "v_hat_root": -0.03173457458615303,
+      "step9_ratio2": 1.0,
+      "total_sec": 0.054528236389160156
+    },
+    "Trio_LowLow_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.03881034095925408,
+      "V_root": -0.03881034095925408,
+      "V_stop_root": -0.06546725856000002,
+      "v_hat_root": -0.03719828650355339,
+      "step9_ratio2": 3.784299154242932e-05,
+      "total_sec": 0.06692242622375488
+    },
+    "Trio_HighHigh_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.00038493654289147434,
+      "L": -0.160867819921408,
+      "V_root": -0.160816146096128,
+      "V_stop_root": -0.295056,
+      "v_hat_root": -0.1596829742193222,
+      "step9_ratio2": 0.006087531316483666,
+      "total_sec": 0.06666898727416992
+    },
+    "Trio_HighHigh_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.00023013912456649294,
+      "L": -0.17143496199372799,
+      "V_root": -0.17137549908377597,
+      "V_stop_root": -0.42975359999999996,
+      "v_hat_root": -0.17067576944828033,
+      "step9_ratio2": 0.0140306381305569,
+      "total_sec": 0.07506871223449707
+    },
+    "Trio_MixedA_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.0789709384154935,
+      "V_root": -0.0789709384154935,
+      "V_stop_root": -0.13095567270000003,
+      "v_hat_root": -0.07705160975456238,
+      "step9_ratio2": 0.060487653429387986,
+      "total_sec": 0.0638735294342041
+    },
+    "Trio_MixedA_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.08278029245109944,
+      "V_root": -0.08278029245109944,
+      "V_stop_root": -0.19435379706,
+      "v_hat_root": -0.08204726129770279,
+      "step9_ratio2": 0.014540378620801786,
+      "total_sec": 0.07561278343200684
+    },
+    "Trio_MixedB_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.012365579313489859,
+      "L": -0.09845814071526134,
+      "V_root": -0.09761145049344289,
+      "V_stop_root": -0.16608298752,
+      "v_hat_root": -0.0926196426153183,
+      "step9_ratio2": 0.06546089432998191,
+      "total_sec": 0.06419849395751953
+    },
+    "Trio_MixedB_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.012154471807627364,
+      "L": -0.10461046408799382,
+      "V_root": -0.10288857978127318,
+      "V_stop_root": -0.24455531232000002,
+      "v_hat_root": -0.09840957820415497,
+      "step9_ratio2": 0.01308284667390246,
+      "total_sec": 0.06987667083740234
+    },
+    "Nuclear_LowHigh_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.006478807491737193,
+      "L": -0.11550728404819252,
+      "V_root": -0.1148504667900487,
+      "V_stop_root": -0.21622981151999998,
+      "v_hat_root": -0.1156049594283104,
+      "step9_ratio2": 0.008048478647266412,
+      "total_sec": 0.6679203510284424
+    },
+    "Nuclear_LowHigh_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.12020876284624152,
+      "V_root": -0.12020876284624152,
+      "V_stop_root": -0.3192612222599999,
+      "v_hat_root": -0.11977076530456543,
+      "step9_ratio2": 5.730268509217362e-05,
+      "total_sec": 0.6869785785675049
+    },
+    "Nuclear_MediumEven_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.11798965281072424,
+      "V_root": -0.11798965281072424,
+      "V_stop_root": -0.23115939839999994,
+      "v_hat_root": -0.11668410897254944,
+      "step9_ratio2": 0.001066875536095271,
+      "total_sec": 1.7871580123901367
+    },
+    "Nuclear_MediumEven_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.12490590161648331,
+      "V_root": -0.12490590161648331,
+      "V_stop_root": -0.3432355430399999,
+      "v_hat_root": -0.12381715327501297,
+      "step9_ratio2": 1.849587013660868e-05,
+      "total_sec": 1.8180913925170898
+    },
+    "Nuclear_LowLow_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.01144194403637741,
+      "L": -0.04712672469693294,
+      "V_root": -0.04691264753891589,
+      "V_stop_root": -0.06562250639999996,
+      "v_hat_root": -0.04510321095585823,
+      "step9_ratio2": 0.0007140827526563465,
+      "total_sec": 1.5867555141448975
+    },
+    "Nuclear_LowLow_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.04888337750335608,
+      "V_root": -0.04888337750335608,
+      "V_stop_root": -0.09820088783999993,
+      "v_hat_root": -0.04844063147902489,
+      "step9_ratio2": 0.0003474374842704707,
+      "total_sec": 1.1408777236938477
+    },
+    "Nuclear_HighHigh_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.00017378614499633126,
+      "L": -0.2246993418909075,
+      "V_root": -0.22466146997450653,
+      "V_stop_root": -0.442584,
+      "v_hat_root": -0.22492918372154236,
+      "step9_ratio2": 0.0027559806325318393,
+      "total_sec": 1.9629123210906982
+    },
+    "Nuclear_HighHigh_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 8.036692269761586e-05,
+      "L": -0.24244451797685587,
+      "V_root": -0.2424121929373013,
+      "V_stop_root": -0.6446303999999999,
+      "v_hat_root": -0.241280198097229,
+      "step9_ratio2": 0.0030137998852999863,
+      "total_sec": 1.271934986114502
+    },
+    "Nuclear_MixedA_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0008111529225026982,
+      "L": -0.10539785028905982,
+      "V_root": -0.10532394650113036,
+      "V_stop_root": -0.19643350904999995,
+      "v_hat_root": -0.1051754578948021,
+      "step9_ratio2": 0.011035073280785368,
+      "total_sec": 1.899116039276123
+    },
+    "Nuclear_MixedA_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.11230483693424093,
+      "V_root": -0.11230483693424093,
+      "V_stop_root": -0.2915306955899999,
+      "v_hat_root": -0.11262597143650055,
+      "step9_ratio2": 4.685346611293164e-05,
+      "total_sec": 1.712280511856079
+    },
+    "Nuclear_MixedB_Base_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.006198714385339161,
+      "L": -0.13522867355154572,
+      "V_root": -0.1345182623335128,
+      "V_stop_root": -0.24912448127999992,
+      "v_hat_root": -0.13429273664951324,
+      "step9_ratio2": 0.006717747483368498,
+      "total_sec": 1.176025629043579
+    },
+    "Nuclear_MixedB_Aggressive_3gene": {
+      "split": "TRAIN",
+      "ratio2": 0.0,
+      "L": -0.14245367995479152,
+      "V_root": -0.14245367995479152,
+      "V_stop_root": -0.3668329684799999,
+      "v_hat_root": -0.14065130054950714,
+      "step9_ratio2": 0.0061618335063651185,
+      "total_sec": 1.9822590351104736
+    },
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.02307253015265874,
+      "L": -0.14385415091884832,
+      "V_root": -0.14129369019229165,
+      "V_stop_root": -0.25226811343999994,
+      "v_hat_root": -0.14192695915699005,
+      "step9_ratio2": 0.0016142983246525118,
+      "total_sec": 35.5562162399292
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.012769542064142946,
+      "L": -0.14955610967037858,
+      "V_root": -0.14667276416037336,
+      "V_stop_root": -0.37247142596999994,
+      "v_hat_root": -0.14653366804122925,
+      "step9_ratio2": 0.003173686871154748,
+      "total_sec": 41.46332287788391
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.007225088683410061,
+      "L": -0.14489197874324172,
+      "V_root": -0.14398376923256767,
+      "V_stop_root": -0.26968596479999973,
+      "v_hat_root": -0.1451762467622757,
+      "step9_ratio2": 0.005333356216065735,
+      "total_sec": 41.94465208053589
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.011250996817585363,
+      "L": -0.15471125274713748,
+      "V_root": -0.15191508319521396,
+      "V_stop_root": -0.4004414668799996,
+      "v_hat_root": -0.15105900168418884,
+      "step9_ratio2": 0.005452202187750087,
+      "total_sec": 49.412984132766724
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.2811867629078731,
+      "L": -0.06179207575160127,
+      "V_root": -0.05601529043605717,
+      "V_stop_root": -0.07655959079999991,
+      "v_hat_root": -0.04481858015060425,
+      "step9_ratio2": 0.03804491296242328,
+      "total_sec": 48.81104898452759
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.13352150700036305,
+      "L": -0.06984184133950673,
+      "V_root": -0.06294973215316814,
+      "V_stop_root": -0.11456770247999984,
+      "v_hat_root": -0.05750191584229469,
+      "step9_ratio2": 0.007052462645308142,
+      "total_sec": 41.006428718566895
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.006344009323333805,
+      "L": -0.2741317277058225,
+      "V_root": -0.2725852948315528,
+      "V_stop_root": -0.516348,
+      "v_hat_root": -0.2693997919559479,
+      "step9_ratio2": 0.00041949161393667155,
+      "total_sec": 50.7871470451355
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.0022773567523887376,
+      "L": -0.29206202769731054,
+      "V_root": -0.2910120369647778,
+      "V_stop_root": -0.7520688,
+      "v_hat_root": -0.2886691093444824,
+      "step9_ratio2": 0.00026234435551094536,
+      "total_sec": 53.90174603462219
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.026336606863021084,
+      "L": -0.1332273794283251,
+      "V_root": -0.13063216323545412,
+      "V_stop_root": -0.2291724272249999,
+      "v_hat_root": -0.13180814683437347,
+      "step9_ratio2": 0.0030274571428110767,
+      "total_sec": 49.77491497993469
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.01581695862215131,
+      "L": -0.14057201283273546,
+      "V_root": -0.13736505985989575,
+      "V_stop_root": -0.34011914485499983,
+      "v_hat_root": -0.13919036090373993,
+      "step9_ratio2": 0.00414125987804163,
+      "total_sec": 50.59276056289673
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.014170769764673073,
+      "L": -0.16508289218572963,
+      "V_root": -0.16327800052738312,
+      "V_stop_root": -0.29064522815999994,
+      "v_hat_root": -0.16004034876823425,
+      "step9_ratio2": 0.0036914407652340287,
+      "total_sec": 50.55100631713867
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "split": "TEST_UNSEEN",
+      "ratio2": 0.013842588858758139,
+      "L": -0.17607951646324066,
+      "V_root": -0.172543730765459,
+      "V_stop_root": -0.42797179655999984,
+      "v_hat_root": -0.16770778596401215,
+      "step9_ratio2": 0.01048213300348699,
+      "total_sec": 51.76375722885132
+    }
+  }
+}

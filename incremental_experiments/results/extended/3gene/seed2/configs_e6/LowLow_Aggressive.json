@@ -1,0 +1,89 @@
+{
+  "n_total": 6,
+  "n_dp_myopic": 2,
+  "n_dp_gnn": 3,
+  "n_dp_mlp": 3,
+  "n_all4": 0,
+  "rate_dp_myopic": 0.3333333333333333,
+  "rate_dp_gnn": 0.5,
+  "rate_dp_mlp": 0.5,
+  "rate_all4": 0.0,
+  "steps": [
+    {
+      "step": 0,
+      "state": "root",
+      "dp": "TEST Grandfather",
+      "myopic": "TEST Grandfather",
+      "gnn": "TEST Child",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": true,
+      "dp_gnn_match": false,
+      "dp_mlp_match": false,
+      "all4_match": false
+    },
+    {
+      "step": 1,
+      "state": "{Grandfather:(0, 0, 0)}",
+      "dp": "TEST Grandmother",
+      "myopic": "TEST Father",
+      "gnn": "TEST Child",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": false,
+      "dp_gnn_match": false,
+      "dp_mlp_match": false,
+      "all4_match": false
+    },
+    {
+      "step": 2,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+      "dp": "TEST Mother",
+      "myopic": "TEST Uncle",
+      "gnn": "TEST Grandmother",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": false,
+      "dp_gnn_match": false,
+      "dp_mlp_match": true,
+      "all4_match": false
+    },
+    {
+      "step": 3,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "TEST Mother",
+      "myopic": "TEST Grandmother",
+      "gnn": "TEST Mother",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": false,
+      "dp_gnn_match": true,
+      "dp_mlp_match": true,
+      "all4_match": false
+    },
+    {
+      "step": 4,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "TEST Mother",
+      "myopic": "TEST Child",
+      "gnn": "TEST Mother",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": false,
+      "dp_gnn_match": true,
+      "dp_mlp_match": true,
+      "all4_match": false
+    },
+    {
+      "step": 5,
+      "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "STOP",
+      "myopic": "STOP",
+      "gnn": "STOP",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": true,
+      "dp_gnn_match": true,
+      "dp_mlp_match": false,
+      "all4_match": false
+    }
+  ],
+  "ratio2_myopic": 0.24999029000374037,
+  "ratio2_gnn": 0.07192482819787227,
+  "ratio2_mlp": 0.4010903199892435,
+  "V_root": -0.07246864592860622
+}

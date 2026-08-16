@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:51:28.524901  genes=2  family=ThreeGeneration  regime=LowHigh  preset=Base
+[CONFIG] ThreeGeneration_LowHigh_Base_2gene (test)
+  states=20,816  V*(root)=-0.109158  V_stop(root)=-0.168312
+  ADP: ratio2=0.10903697722271258  ratio3=0.2638669137226759  policy_source=myopic_policy  (72s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/ThreeGeneration_LowHigh_Base_2gene_adp.json

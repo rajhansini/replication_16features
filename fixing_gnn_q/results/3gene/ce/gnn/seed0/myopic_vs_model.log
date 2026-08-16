@@ -1,0 +1,148 @@
+[myopic_vs_model] 2026-07-22T17:19:18.821867  genes=3  seed=0  variant=ce  model=gnn
+output -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/gnn/seed0
+loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/gnn_q_ce/seed_runs/seed0/gnn_q_ce.pt  params=7729
+
+================================================================================
+ThreeGeneration_LowHigh_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST Mother     TEST GrandmotherNO
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_LowHigh_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST Mother     TEST GrandfatherNO
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandfatherTEST GrandfatherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MediumEven_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MediumEven_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_LowLow_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST Father     YES
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               STOP            STOP            YES
+  agreement with myopic: 2/3 = 0.667
+
+================================================================================
+ThreeGeneration_LowLow_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST Father     YES
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               STOP            TEST GrandfatherNO
+  agreement with myopic: 1/3 = 0.333
+
+================================================================================
+ThreeGeneration_HighHigh_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST Child      YES
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 5/6 = 0.833
+
+================================================================================
+ThreeGeneration_HighHigh_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST Child      YES
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 5/6 = 0.833
+
+================================================================================
+ThreeGeneration_MixedA_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST Mother     TEST GrandfatherNO
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandfatherTEST GrandfatherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MixedA_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST Mother     TEST GrandfatherNO
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandfatherTEST GrandfatherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MixedB_Base_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MixedB_Aggressive_3gene
+================================================================================
+  step state                                             MYOPIC          GNN             match
+  0    root                                              TEST Father     TEST GrandfatherNO
+  1    {Father:(0, 0, 0)}                                TEST Child      TEST GrandfatherNO
+  2    {Child:(0, 0, 0), Father:(0, 0, 0)}               TEST GrandfatherTEST GrandfatherYES
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST GrandmotherYES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother     YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP            YES
+  agreement with myopic: 4/6 = 0.667
+
+================================================================================
+OVERALL
+  agreement with myopic: 41/66 = 0.621
+  root-state agreement:  2/12 = 0.167
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/gnn/seed0/myopic_vs_model.json
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/gnn/seed0/myopic_vs_model.log

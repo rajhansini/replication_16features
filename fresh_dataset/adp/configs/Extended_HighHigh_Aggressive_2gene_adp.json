@@ -1,0 +1,15 @@
+{
+  "genes": 2,
+  "family": "Extended",
+  "regime": "HighHigh",
+  "preset": "Aggressive",
+  "split": "test",
+  "V_star": -0.23542485929783638,
+  "V_stop": -0.6058248187499646,
+  "ADP_phi": -0.18197119694140282,
+  "production_policy_value": -0.2440812636806881,
+  "production_policy_source": "adp_policy",
+  "adp_ratio2_deployed_policy": 0.023370424758295667,
+  "adp_ratio3_certificate": 0.14431335909296206,
+  "seconds": 489.8
+}

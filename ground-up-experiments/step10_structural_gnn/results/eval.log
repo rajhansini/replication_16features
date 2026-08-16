@@ -1,0 +1,2735 @@
+
+============================================================
+[EVAL] 2026-07-11T00:46:26.619673
+============================================================
+Loaded PedigreeGNN_Vstar  device=cuda  node_feat_dim=13
+Action selection: Q_hat(s,i) = r_test(i,s) + E[V_hat(s')]  (derived from V*)
+TRAIN families: ['Trio', 'Nuclear']  — seen during training
+TEST  families: ['ThreeGeneration']   — UNSEEN topology, scaling benchmark
+step9 results loaded: 36 configs for comparison
+Pending: 36/36
+
+[TRAIN] Trio_LowHigh_Base_3gene
+  [Trio] 3 people  2 edges
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.4s)  range=[-0.1724, 0.0000]
+  True V_root=-0.085160  V_hat(root)=-0.086925
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.007866  L=-0.085624  (0.0s)
+  step9 ratio2=0.120612  delta=-0.112746  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08648), 'Parent2': np.float64(-0.08648), 'Child': np.float64(-0.08613)}
+      v_stop=-0.14415  best=Child  best_Q_hat=-0.08613
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.03942), 'Parent2': np.float64(-0.03942)}
+      v_stop=-0.04224  best=Parent1  best_Q_hat=-0.03942
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.01963)}
+      v_stop=-0.02112  best=Parent2  best_Q_hat=-0.01963
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Trio_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1859, 0.0000]
+  True V_root=-0.088195  V_hat(root)=-0.090317
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.088195  (0.0s)
+  step9 ratio2=0.011718  delta=-0.011718  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08991), 'Parent2': np.float64(-0.08991), 'Child': np.float64(-0.09121)}
+      v_stop=-0.21284  best=Parent1  best_Q_hat=-0.08991
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04739), 'Child': np.float64(-0.04974)}
+      v_stop=-0.11608  best=Parent2  best_Q_hat=-0.04739
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1738, 0.0000]
+  True V_root=-0.086578  V_hat(root)=-0.088313
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.086578  (0.0s)
+  step9 ratio2=0.054671  delta=-0.054671  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08811), 'Parent2': np.float64(-0.08811), 'Child': np.float64(-0.08899)}
+      v_stop=-0.15411  best=Parent1  best_Q_hat=-0.08811
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04586), 'Child': np.float64(-0.04742)}
+      v_stop=-0.08128  best=Parent2  best_Q_hat=-0.04586
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1866, 0.0000]
+  True V_root=-0.091095  V_hat(root)=-0.092728
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.091095  (0.0s)
+  step9 ratio2=0.016770  delta=-0.016770  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.092), 'Parent2': np.float64(-0.092), 'Child': np.float64(-0.09427)}
+      v_stop=-0.22882  best=Parent1  best_Q_hat=-0.09200
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04826), 'Child': np.float64(-0.05162)}
+      v_stop=-0.12102  best=Parent2  best_Q_hat=-0.04826
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_LowLow_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1556, 0.0000]
+  True V_root=-0.032755  V_hat(root)=-0.034657
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.032755  (0.0s)
+  step9 ratio2=1.000000  delta=-1.000000  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.03784), 'Parent2': np.float64(-0.03784), 'Child': np.float64(-0.0315)}
+      v_stop=-0.04375  best=Child  best_Q_hat=-0.03150
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.01747), 'Parent2': np.float64(-0.01747)}
+      v_stop=-0.01122  best=Parent2  best_Q_hat=-0.01747
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1704, 0.0000]
+  True V_root=-0.038810  V_hat(root)=-0.038110
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.038810  (0.0s)
+  step9 ratio2=0.000038  delta=-0.000038  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.0397), 'Parent2': np.float64(-0.0397), 'Child': np.float64(-0.03889)}
+      v_stop=-0.06547  best=Child  best_Q_hat=-0.03889
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0208), 'Parent2': np.float64(-0.0208)}
+      v_stop=-0.01681  best=Parent1  best_Q_hat=-0.02080
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1925, 0.0000]
+  True V_root=-0.160816  V_hat(root)=-0.164308
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000386  L=-0.160868  (0.0s)
+  step9 ratio2=0.006088  delta=-0.005701  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.16265), 'Parent2': np.float64(-0.16265), 'Child': np.float64(-0.16292)}
+      v_stop=-0.29506  best=Parent1  best_Q_hat=-0.16265
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.08872), 'Child': np.float64(-0.08887)}
+      v_stop=-0.16996  best=Parent2  best_Q_hat=-0.08872
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.2108, 0.0000]
+  True V_root=-0.171375  V_hat(root)=-0.176058
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000023  L=-0.171381  (0.0s)
+  step9 ratio2=0.014031  delta=-0.014008  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.17454), 'Parent2': np.float64(-0.17454), 'Child': np.float64(-0.17515)}
+      v_stop=-0.42975  best=Parent1  best_Q_hat=-0.17454
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.09428), 'Child': np.float64(-0.09775)}
+      v_stop=-0.24976  best=Parent2  best_Q_hat=-0.09428
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedA_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1707, 0.0000]
+  True V_root=-0.078971  V_hat(root)=-0.081749
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.014134  L=-0.079706  (0.0s)
+  step9 ratio2=0.060488  delta=-0.046353  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08016), 'Parent2': np.float64(-0.08016), 'Child': np.float64(-0.0797)}
+      v_stop=-0.13096  best=Child  best_Q_hat=-0.07970
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.03718), 'Parent2': np.float64(-0.03718)}
+      v_stop=-0.03790  best=Parent2  best_Q_hat=-0.03718
+      → TEST Parent2
+    step 2: tested=['Child', 'Parent2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.01866)}
+      v_stop=-0.01895  best=Parent1  best_Q_hat=-0.01866
+      → TEST Parent1
+    trace done after 3 steps
+
+[TRAIN] Trio_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1875, 0.0000]
+  True V_root=-0.082780  V_hat(root)=-0.091161
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.082780  (0.0s)
+  step9 ratio2=0.014540  delta=-0.014540  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08603), 'Parent2': np.float64(-0.08603), 'Child': np.float64(-0.08651)}
+      v_stop=-0.19435  best=Parent1  best_Q_hat=-0.08603
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04432), 'Child': np.float64(-0.04653)}
+      v_stop=-0.10514  best=Parent2  best_Q_hat=-0.04432
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedB_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1758, 0.0000]
+  True V_root=-0.097611  V_hat(root)=-0.094213
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.012366  L=-0.098458  (0.0s)
+  step9 ratio2=0.065461  delta=-0.053095  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.09809), 'Parent2': np.float64(-0.09809), 'Child': np.float64(-0.09782)}
+      v_stop=-0.16608  best=Child  best_Q_hat=-0.09782
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.04286), 'Parent2': np.float64(-0.04286)}
+      v_stop=-0.04847  best=Parent1  best_Q_hat=-0.04286
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0212)}
+      v_stop=-0.02423  best=Parent2  best_Q_hat=-0.02120
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Trio_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1855, 0.0000]
+  True V_root=-0.102889  V_hat(root)=-0.095462
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.102889  (0.0s)
+  step9 ratio2=0.013083  delta=-0.013083  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10368), 'Parent2': np.float64(-0.10368), 'Child': np.float64(-0.10474)}
+      v_stop=-0.24456  best=Parent1  best_Q_hat=-0.10368
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05487), 'Child': np.float64(-0.05778)}
+      v_stop=-0.13318  best=Parent2  best_Q_hat=-0.05487
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowHigh_Base_3gene
+  [Nuclear] 4 people  4 edges
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3063, 0.0001]
+  True V_root=-0.114850  V_hat(root)=-0.115440
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000290  L=-0.114880  (0.1s)
+  step9 ratio2=0.008048  delta=-0.007759  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11521), 'Parent2': np.float64(-0.11521), 'Child1': np.float64(-0.11372), 'Child2': np.float64(-0.11372)}
+      v_stop=-0.21623  best=Child1  best_Q_hat=-0.11372
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.05612), 'Parent2': np.float64(-0.05612), 'Child2': np.float64(-0.05298)}
+      v_stop=-0.08337  best=Child2  best_Q_hat=-0.05298
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.02697), 'Parent2': np.float64(-0.02697)}
+      v_stop=-0.02360  best=Parent1  best_Q_hat=-0.02697
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3307, 0.0001]
+  True V_root=-0.120209  V_hat(root)=-0.119638
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.120209  (0.2s)
+  step9 ratio2=0.000057  delta=-0.000057  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.12005), 'Parent2': np.float64(-0.12005), 'Child1': np.float64(-0.12028), 'Child2': np.float64(-0.12028)}
+      v_stop=-0.31926  best=Parent1  best_Q_hat=-0.12005
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0653), 'Child1': np.float64(-0.06663), 'Child2': np.float64(-0.06663)}
+      v_stop=-0.17895  best=Parent2  best_Q_hat=-0.06530
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3061, 0.0001]
+  True V_root=-0.117990  V_hat(root)=-0.117545
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.117990  (0.1s)
+  step9 ratio2=0.001067  delta=-0.001067  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11741), 'Parent2': np.float64(-0.11741), 'Child1': np.float64(-0.11821), 'Child2': np.float64(-0.11821)}
+      v_stop=-0.23116  best=Parent1  best_Q_hat=-0.11741
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06339), 'Child1': np.float64(-0.06531), 'Child2': np.float64(-0.06531)}
+      v_stop=-0.12403  best=Parent2  best_Q_hat=-0.06339
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3328, 0.0001]
+  True V_root=-0.124906  V_hat(root)=-0.127753
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.124906  (0.2s)
+  step9 ratio2=0.000018  delta=-0.000018  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.12513), 'Parent2': np.float64(-0.12513), 'Child1': np.float64(-0.12621), 'Child2': np.float64(-0.12621)}
+      v_stop=-0.34324  best=Parent1  best_Q_hat=-0.12513
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06673), 'Child1': np.float64(-0.06951), 'Child2': np.float64(-0.06951)}
+      v_stop=-0.18483  best=Parent2  best_Q_hat=-0.06673
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.2905, 0.0001]
+  True V_root=-0.046913  V_hat(root)=-0.045780
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.011442  L=-0.047127  (0.1s)
+  step9 ratio2=0.000714  delta=+0.010728  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04733), 'Parent2': np.float64(-0.04733), 'Child1': np.float64(-0.04743), 'Child2': np.float64(-0.04743)}
+      v_stop=-0.06562  best=Parent1  best_Q_hat=-0.04733
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02439), 'Child1': np.float64(-0.02944), 'Child2': np.float64(-0.02944)}
+      v_stop=-0.03338  best=Parent2  best_Q_hat=-0.02439
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3204, 0.0001]
+  True V_root=-0.048883  V_hat(root)=-0.047567
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.048883  (0.1s)
+  step9 ratio2=0.000347  delta=-0.000347  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04953), 'Parent2': np.float64(-0.04953), 'Child1': np.float64(-0.0519), 'Child2': np.float64(-0.0519)}
+      v_stop=-0.09820  best=Parent1  best_Q_hat=-0.04953
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02525), 'Child1': np.float64(-0.03095), 'Child2': np.float64(-0.03095)}
+      v_stop=-0.04999  best=Parent2  best_Q_hat=-0.02525
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3250, 0.0001]
+  True V_root=-0.224661  V_hat(root)=-0.221910
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000037  L=-0.224670  (0.1s)
+  step9 ratio2=0.002756  delta=-0.002719  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.22405), 'Parent2': np.float64(-0.22405), 'Child1': np.float64(-0.22376), 'Child2': np.float64(-0.22376)}
+      v_stop=-0.44258  best=Child1  best_Q_hat=-0.22376
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.10331), 'Parent2': np.float64(-0.10331), 'Child2': np.float64(-0.10359)}
+      v_stop=-0.18844  best=Parent1  best_Q_hat=-0.10331
+      → TEST Parent1
+    step 2: tested=['Child1', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05494), 'Child2': np.float64(-0.05614)}
+      v_stop=-0.10065  best=Parent2  best_Q_hat=-0.05494
+      → TEST Parent2
+    step 3: tested=['Child1', 'Parent1', 'Parent2']
+      Q_hat (from V*): {'Child2': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child2  best_Q_hat=-0.00994
+      → STOP
+    trace done after 3 steps
+
+[TRAIN] Nuclear_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3571, 0.0001]
+  True V_root=-0.242412  V_hat(root)=-0.241451
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.001409  L=-0.242979  (0.2s)
+  step9 ratio2=0.003014  delta=-0.001605  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.24227), 'Parent2': np.float64(-0.24227), 'Child1': np.float64(-0.24212), 'Child2': np.float64(-0.24212)}
+      v_stop=-0.64463  best=Child1  best_Q_hat=-0.24212
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.10926), 'Parent2': np.float64(-0.10926), 'Child2': np.float64(-0.11022)}
+      v_stop=-0.27889  best=Parent1  best_Q_hat=-0.10926
+      → TEST Parent1
+    step 2: tested=['Child1', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05779), 'Child2': np.float64(-0.06139)}
+      v_stop=-0.14949  best=Parent2  best_Q_hat=-0.05779
+      → TEST Parent2
+    step 3: tested=['Child1', 'Parent1', 'Parent2']
+      Q_hat (from V*): {'Child2': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child2  best_Q_hat=-0.00994
+      → STOP
+    trace done after 3 steps
+
+[TRAIN] Nuclear_MixedA_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3052, 0.0001]
+  True V_root=-0.105324  V_hat(root)=-0.106357
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000822  L=-0.105399  (0.1s)
+  step9 ratio2=0.011035  delta=-0.010213  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10627), 'Parent2': np.float64(-0.10627), 'Child1': np.float64(-0.10534), 'Child2': np.float64(-0.10534)}
+      v_stop=-0.19643  best=Child1  best_Q_hat=-0.10534
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.05196), 'Parent2': np.float64(-0.05196), 'Child2': np.float64(-0.04895)}
+      v_stop=-0.07488  best=Child2  best_Q_hat=-0.04895
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0253), 'Parent2': np.float64(-0.0253)}
+      v_stop=-0.02100  best=Parent1  best_Q_hat=-0.02530
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3306, 0.0001]
+  True V_root=-0.112305  V_hat(root)=-0.113205
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.112305  (0.2s)
+  step9 ratio2=0.000047  delta=-0.000047  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11222), 'Parent2': np.float64(-0.11222), 'Child1': np.float64(-0.11281), 'Child2': np.float64(-0.11281)}
+      v_stop=-0.29153  best=Parent1  best_Q_hat=-0.11222
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06076), 'Child1': np.float64(-0.06203), 'Child2': np.float64(-0.06203)}
+      v_stop=-0.16169  best=Parent2  best_Q_hat=-0.06076
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3069, 0.0001]
+  True V_root=-0.134518  V_hat(root)=-0.126275
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.134518  (0.2s)
+  step9 ratio2=0.006718  delta=-0.006718  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.13145), 'Parent2': np.float64(-0.13145), 'Child1': np.float64(-0.13361), 'Child2': np.float64(-0.13361)}
+      v_stop=-0.24912  best=Parent1  best_Q_hat=-0.13145
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.07252), 'Child1': np.float64(-0.07494), 'Child2': np.float64(-0.07494)}
+      v_stop=-0.13846  best=Parent2  best_Q_hat=-0.07252
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3333, 0.0001]
+  True V_root=-0.142454  V_hat(root)=-0.140252
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.142454  (0.2s)
+  step9 ratio2=0.006162  delta=-0.006162  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.14155), 'Parent2': np.float64(-0.14155), 'Child1': np.float64(-0.14442), 'Child2': np.float64(-0.14442)}
+      v_stop=-0.36683  best=Parent1  best_Q_hat=-0.14155
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.07666), 'Child1': np.float64(-0.07949), 'Child2': np.float64(-0.07949)}
+      v_stop=-0.20523  best=Parent2  best_Q_hat=-0.07666
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Base_3gene
+  [ThreeGeneration] 5 people  4 edges
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2152, 0.0002]
+  True V_root=-0.141294  V_hat(root)=-0.088298
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.053357  L=-0.147215  (6.4s)
+  step9 ratio2=0.001614  delta=+0.051743  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10389), 'Grandmother': np.float64(-0.10389), 'Mother': np.float64(-0.093), 'Father': np.float64(-0.10687), 'Child': np.float64(-0.10629)}
+      v_stop=-0.25227  best=Mother  best_Q_hat=-0.09300
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07577), 'Grandmother': np.float64(-0.07577), 'Father': np.float64(-0.08253), 'Child': np.float64(-0.07375)}
+      v_stop=-0.18639  best=Child  best_Q_hat=-0.07375
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05009), 'Grandmother': np.float64(-0.05009), 'Father': np.float64(-0.05367)}
+      v_stop=-0.10025  best=Grandfather  best_Q_hat=-0.05009
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03161), 'Father': np.float64(-0.03118)}
+      v_stop=-0.05306  best=Father  best_Q_hat=-0.03118
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01964)}
+      v_stop=-0.02112  best=Grandmother  best_Q_hat=-0.01964
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2322, 0.0002]
+  True V_root=-0.146673  V_hat(root)=-0.090983
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.026054  L=-0.152556  (6.9s)
+  step9 ratio2=0.003174  delta=+0.022880  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10804), 'Grandmother': np.float64(-0.10804), 'Mother': np.float64(-0.09562), 'Father': np.float64(-0.11283), 'Child': np.float64(-0.10963)}
+      v_stop=-0.37247  best=Mother  best_Q_hat=-0.09562
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07876), 'Grandmother': np.float64(-0.07876), 'Father': np.float64(-0.08728), 'Child': np.float64(-0.07693)}
+      v_stop=-0.27571  best=Child  best_Q_hat=-0.07693
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05166), 'Grandmother': np.float64(-0.05166), 'Father': np.float64(-0.05627)}
+      v_stop=-0.14889  best=Grandfather  best_Q_hat=-0.05166
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.0326), 'Father': np.float64(-0.03202)}
+      v_stop=-0.07892  best=Father  best_Q_hat=-0.03202
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01997)}
+      v_stop=-0.03143  best=Grandmother  best_Q_hat=-0.01997
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2145, 0.0002]
+  True V_root=-0.143984  V_hat(root)=-0.098796
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.058044  L=-0.151280  (6.3s)
+  step9 ratio2=0.005333  delta=+0.052710  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.1088), 'Grandmother': np.float64(-0.1088), 'Mother': np.float64(-0.09722), 'Father': np.float64(-0.10756), 'Child': np.float64(-0.11052)}
+      v_stop=-0.26969  best=Mother  best_Q_hat=-0.09722
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07991), 'Grandmother': np.float64(-0.07991), 'Father': np.float64(-0.08092), 'Child': np.float64(-0.07559)}
+      v_stop=-0.19686  best=Child  best_Q_hat=-0.07559
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05095), 'Grandmother': np.float64(-0.05095), 'Father': np.float64(-0.05356)}
+      v_stop=-0.10326  best=Grandfather  best_Q_hat=-0.05095
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03244), 'Father': np.float64(-0.03085)}
+      v_stop=-0.05359  best=Father  best_Q_hat=-0.03085
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01951)}
+      v_stop=-0.02138  best=Grandmother  best_Q_hat=-0.01951
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2342, 0.0002]
+  True V_root=-0.151915  V_hat(root)=-0.101334
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.028805  L=-0.159074  (6.7s)
+  step9 ratio2=0.005452  delta=+0.023353  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.11294), 'Grandmother': np.float64(-0.11294), 'Mother': np.float64(-0.10011), 'Father': np.float64(-0.11231), 'Child': np.float64(-0.11494)}
+      v_stop=-0.40044  best=Mother  best_Q_hat=-0.10011
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.08364), 'Grandmother': np.float64(-0.08364), 'Father': np.float64(-0.08579), 'Child': np.float64(-0.07969)}
+      v_stop=-0.29263  best=Child  best_Q_hat=-0.07969
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.0523), 'Grandmother': np.float64(-0.0523), 'Father': np.float64(-0.05622)}
+      v_stop=-0.15389  best=Grandfather  best_Q_hat=-0.05230
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03383), 'Father': np.float64(-0.0321)}
+      v_stop=-0.07995  best=Father  best_Q_hat=-0.03210
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02003)}
+      v_stop=-0.03191  best=Grandmother  best_Q_hat=-0.02003
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2078, 0.0002]
+  True V_root=-0.056015  V_hat(root)=-0.038438
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.118918  L=-0.058458  (4.9s)
+  step9 ratio2=0.038045  delta=+0.080873  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04951), 'Grandmother': np.float64(-0.04951), 'Mother': np.float64(-0.03961), 'Father': np.float64(-0.04252), 'Child': np.float64(-0.04272)}
+      v_stop=-0.07656  best=Mother  best_Q_hat=-0.03961
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.03928), 'Grandmother': np.float64(-0.03928), 'Father': np.float64(-0.03087), 'Child': np.float64(-0.03667)}
+      v_stop=-0.05497  best=Father  best_Q_hat=-0.03087
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.01758), 'Grandmother': np.float64(-0.01758), 'Child': np.float64(-0.01606)}
+      v_stop=-0.01122  best=Child  best_Q_hat=-0.01606
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2243, 0.0002]
+  True V_root=-0.062950  V_hat(root)=-0.039818
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.032000  L=-0.064602  (5.9s)
+  step9 ratio2=0.007052  delta=+0.024948  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05179), 'Grandmother': np.float64(-0.05179), 'Mother': np.float64(-0.0412), 'Father': np.float64(-0.04894), 'Child': np.float64(-0.04341)}
+      v_stop=-0.11457  best=Mother  best_Q_hat=-0.04120
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.0414), 'Grandmother': np.float64(-0.0414), 'Father': np.float64(-0.03576), 'Child': np.float64(-0.03724)}
+      v_stop=-0.08228  best=Father  best_Q_hat=-0.03576
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.01962), 'Grandmother': np.float64(-0.01962), 'Child': np.float64(-0.01999)}
+      v_stop=-0.01681  best=Grandfather  best_Q_hat=-0.01962
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2266, 0.0002]
+  True V_root=-0.272585  V_hat(root)=-0.177030
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.020760  L=-0.277646  (6.3s)
+  step9 ratio2=0.000419  delta=+0.020340  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.19675), 'Grandmother': np.float64(-0.19675), 'Mother': np.float64(-0.19004), 'Father': np.float64(-0.19375), 'Child': np.float64(-0.20169)}
+      v_stop=-0.51635  best=Mother  best_Q_hat=-0.19004
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.14911), 'Grandmother': np.float64(-0.14911), 'Father': np.float64(-0.14703), 'Child': np.float64(-0.14882)}
+      v_stop=-0.39126  best=Father  best_Q_hat=-0.14703
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05301), 'Grandmother': np.float64(-0.05301), 'Child': np.float64(-0.04973)}
+      v_stop=-0.09620  best=Child  best_Q_hat=-0.04973
+      → TEST Child
+    step 3: tested=['Child', 'Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05172), 'Grandmother': np.float64(-0.05172)}
+      v_stop=-0.09620  best=Grandfather  best_Q_hat=-0.05172
+      → TEST Grandfather
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03245)}
+      v_stop=-0.04810  best=Grandmother  best_Q_hat=-0.03245
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2515, 0.0002]
+  True V_root=-0.291012  V_hat(root)=-0.187218
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.008601  L=-0.294978  (6.3s)
+  step9 ratio2=0.000262  delta=+0.008338  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.2104), 'Grandmother': np.float64(-0.2104), 'Mother': np.float64(-0.20216), 'Father': np.float64(-0.20741), 'Child': np.float64(-0.21495)}
+      v_stop=-0.75207  best=Mother  best_Q_hat=-0.20216
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.15951), 'Grandmother': np.float64(-0.15951), 'Father': np.float64(-0.15818), 'Child': np.float64(-0.15863)}
+      v_stop=-0.57207  best=Father  best_Q_hat=-0.15818
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05556), 'Grandmother': np.float64(-0.05556), 'Child': np.float64(-0.05098)}
+      v_stop=-0.14232  best=Child  best_Q_hat=-0.05098
+      → TEST Child
+    step 3: tested=['Child', 'Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05415), 'Grandmother': np.float64(-0.05415)}
+      v_stop=-0.14232  best=Grandfather  best_Q_hat=-0.05415
+      → TEST Grandfather
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03375)}
+      v_stop=-0.07116  best=Grandmother  best_Q_hat=-0.03375
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2137, 0.0002]
+  True V_root=-0.130632  V_hat(root)=-0.081276
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.062401  L=-0.136781  (5.8s)
+  step9 ratio2=0.003027  delta=+0.059374  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09634), 'Grandmother': np.float64(-0.09634), 'Mother': np.float64(-0.08432), 'Father': np.float64(-0.09586), 'Child': np.float64(-0.099)}
+      v_stop=-0.22917  best=Mother  best_Q_hat=-0.08432
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07134), 'Grandmother': np.float64(-0.07134), 'Father': np.float64(-0.07348), 'Child': np.float64(-0.06893)}
+      v_stop=-0.16885  best=Child  best_Q_hat=-0.06893
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04784), 'Grandmother': np.float64(-0.04784), 'Father': np.float64(-0.04842)}
+      v_stop=-0.09030  best=Grandfather  best_Q_hat=-0.04784
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02947), 'Father': np.float64(-0.02831)}
+      v_stop=-0.04757  best=Father  best_Q_hat=-0.02831
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01866)}
+      v_stop=-0.01895  best=Grandmother  best_Q_hat=-0.01866
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2315, 0.0002]
+  True V_root=-0.137365  V_hat(root)=-0.089389
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.030916  L=-0.143633  (6.5s)
+  step9 ratio2=0.004141  delta=+0.026775  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10414), 'Grandmother': np.float64(-0.10414), 'Mother': np.float64(-0.09095), 'Father': np.float64(-0.10485), 'Child': np.float64(-0.10358)}
+      v_stop=-0.34012  best=Mother  best_Q_hat=-0.09095
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07555), 'Grandmother': np.float64(-0.07555), 'Father': np.float64(-0.07965), 'Child': np.float64(-0.0726)}
+      v_stop=-0.25090  best=Child  best_Q_hat=-0.07260
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04961), 'Grandmother': np.float64(-0.04961), 'Father': np.float64(-0.05257)}
+      v_stop=-0.13455  best=Grandfather  best_Q_hat=-0.04961
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03048), 'Father': np.float64(-0.03009)}
+      v_stop=-0.07096  best=Father  best_Q_hat=-0.03009
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01912)}
+      v_stop=-0.02827  best=Grandmother  best_Q_hat=-0.01912
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2157, 0.0002]
+  True V_root=-0.163278  V_hat(root)=-0.108063
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.052512  L=-0.169966  (6.5s)
+  step9 ratio2=0.003691  delta=+0.048820  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.12028), 'Grandmother': np.float64(-0.12028), 'Mother': np.float64(-0.11127), 'Father': np.float64(-0.12014), 'Child': np.float64(-0.12178)}
+      v_stop=-0.29065  best=Mother  best_Q_hat=-0.11127
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09149), 'Grandmother': np.float64(-0.09149), 'Father': np.float64(-0.09025), 'Child': np.float64(-0.08383)}
+      v_stop=-0.21455  best=Child  best_Q_hat=-0.08383
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05545), 'Grandmother': np.float64(-0.05545), 'Father': np.float64(-0.05908)}
+      v_stop=-0.11515  best=Grandfather  best_Q_hat=-0.05545
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03741), 'Father': np.float64(-0.03354)}
+      v_stop=-0.06094  best=Father  best_Q_hat=-0.03354
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.0213)}
+      v_stop=-0.02423  best=Grandmother  best_Q_hat=-0.02130
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.6s)  range=[-0.2381, 0.0002]
+  True V_root=-0.172544  V_hat(root)=-0.114449
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.026632  L=-0.179346  (21.5s)
+  step9 ratio2=0.010482  delta=+0.016150  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.12665), 'Grandmother': np.float64(-0.12665), 'Mother': np.float64(-0.11441), 'Father': np.float64(-0.12576), 'Child': np.float64(-0.12805)}
+      v_stop=-0.42797  best=Mother  best_Q_hat=-0.11441
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09568), 'Grandmother': np.float64(-0.09568), 'Father': np.float64(-0.0963), 'Child': np.float64(-0.08883)}
+      v_stop=-0.31660  best=Child  best_Q_hat=-0.08883
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05693), 'Grandmother': np.float64(-0.05693), 'Father': np.float64(-0.06251)}
+      v_stop=-0.17071  best=Grandfather  best_Q_hat=-0.05693
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03931), 'Father': np.float64(-0.03498)}
+      v_stop=-0.09051  best=Father  best_Q_hat=-0.03498
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02194)}
+      v_stop=-0.03602  best=Grandmother  best_Q_hat=-0.02194
+      → TEST Grandmother
+    trace done after 5 steps
+
+============================================================
+[EVAL] 2026-07-11T11:13:44.739164
+============================================================
+Loaded PedigreeGNN_Vstar  device=cuda  node_feat_dim=13
+Action selection: Q_hat(s,i) = r_test(i,s) + E[V_hat(s')]  (derived from V*)
+TRAIN families: ['Trio', 'Nuclear']  — seen during training
+TEST  families: ['ThreeGeneration']   — UNSEEN topology, scaling benchmark
+step9 results loaded: 36 configs for comparison
+Pending: 36/36
+
+[TRAIN] Trio_LowHigh_Base_3gene
+  [Trio] 3 people  2 edges
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.3s)  range=[-0.1724, 0.0000]
+  True V_root=-0.085160  V_hat(root)=-0.086925
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.007866  L=-0.085624  (0.0s)
+  step9 ratio2=0.120612  delta=-0.112746  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08648), 'Parent2': np.float64(-0.08648), 'Child': np.float64(-0.08613)}
+      v_stop=-0.14415  best=Child  best_Q_hat=-0.08613
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.03942), 'Parent2': np.float64(-0.03942)}
+      v_stop=-0.04224  best=Parent1  best_Q_hat=-0.03942
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.01963)}
+      v_stop=-0.02112  best=Parent2  best_Q_hat=-0.01963
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Trio_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1859, 0.0000]
+  True V_root=-0.088195  V_hat(root)=-0.090317
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.088195  (0.0s)
+  step9 ratio2=0.011718  delta=-0.011718  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08991), 'Parent2': np.float64(-0.08991), 'Child': np.float64(-0.09121)}
+      v_stop=-0.21284  best=Parent1  best_Q_hat=-0.08991
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04739), 'Child': np.float64(-0.04974)}
+      v_stop=-0.11608  best=Parent2  best_Q_hat=-0.04739
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1738, 0.0000]
+  True V_root=-0.086578  V_hat(root)=-0.088313
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.086578  (0.0s)
+  step9 ratio2=0.054671  delta=-0.054671  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08811), 'Parent2': np.float64(-0.08811), 'Child': np.float64(-0.08899)}
+      v_stop=-0.15411  best=Parent1  best_Q_hat=-0.08811
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04586), 'Child': np.float64(-0.04742)}
+      v_stop=-0.08128  best=Parent2  best_Q_hat=-0.04586
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1866, 0.0000]
+  True V_root=-0.091095  V_hat(root)=-0.092728
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.091095  (0.0s)
+  step9 ratio2=0.016770  delta=-0.016770  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.092), 'Parent2': np.float64(-0.092), 'Child': np.float64(-0.09427)}
+      v_stop=-0.22882  best=Parent1  best_Q_hat=-0.09200
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04826), 'Child': np.float64(-0.05162)}
+      v_stop=-0.12102  best=Parent2  best_Q_hat=-0.04826
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_LowLow_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1556, 0.0000]
+  True V_root=-0.032755  V_hat(root)=-0.034657
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.032755  (0.0s)
+  step9 ratio2=1.000000  delta=-1.000000  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.03784), 'Parent2': np.float64(-0.03784), 'Child': np.float64(-0.0315)}
+      v_stop=-0.04375  best=Child  best_Q_hat=-0.03150
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.01747), 'Parent2': np.float64(-0.01747)}
+      v_stop=-0.01122  best=Parent2  best_Q_hat=-0.01747
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1704, 0.0000]
+  True V_root=-0.038810  V_hat(root)=-0.038110
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.038810  (0.0s)
+  step9 ratio2=0.000038  delta=-0.000038  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.0397), 'Parent2': np.float64(-0.0397), 'Child': np.float64(-0.03889)}
+      v_stop=-0.06547  best=Child  best_Q_hat=-0.03889
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0208), 'Parent2': np.float64(-0.0208)}
+      v_stop=-0.01681  best=Parent2  best_Q_hat=-0.02080
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1925, 0.0000]
+  True V_root=-0.160816  V_hat(root)=-0.164308
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000386  L=-0.160868  (0.0s)
+  step9 ratio2=0.006088  delta=-0.005701  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.16265), 'Parent2': np.float64(-0.16265), 'Child': np.float64(-0.16292)}
+      v_stop=-0.29506  best=Parent1  best_Q_hat=-0.16265
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.08872), 'Child': np.float64(-0.08887)}
+      v_stop=-0.16996  best=Parent2  best_Q_hat=-0.08872
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.2108, 0.0000]
+  True V_root=-0.171375  V_hat(root)=-0.176058
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000023  L=-0.171381  (0.0s)
+  step9 ratio2=0.014031  delta=-0.014008  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.17454), 'Parent2': np.float64(-0.17454), 'Child': np.float64(-0.17515)}
+      v_stop=-0.42975  best=Parent1  best_Q_hat=-0.17454
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.09428), 'Child': np.float64(-0.09775)}
+      v_stop=-0.24976  best=Parent2  best_Q_hat=-0.09428
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedA_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1707, 0.0000]
+  True V_root=-0.078971  V_hat(root)=-0.081749
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.014134  L=-0.079706  (0.0s)
+  step9 ratio2=0.060488  delta=-0.046353  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08016), 'Parent2': np.float64(-0.08016), 'Child': np.float64(-0.0797)}
+      v_stop=-0.13096  best=Child  best_Q_hat=-0.07970
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.03718), 'Parent2': np.float64(-0.03718)}
+      v_stop=-0.03790  best=Parent2  best_Q_hat=-0.03718
+      → TEST Parent2
+    step 2: tested=['Child', 'Parent2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.01866)}
+      v_stop=-0.01895  best=Parent1  best_Q_hat=-0.01866
+      → TEST Parent1
+    trace done after 3 steps
+
+[TRAIN] Trio_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1875, 0.0000]
+  True V_root=-0.082780  V_hat(root)=-0.091161
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.082780  (0.0s)
+  step9 ratio2=0.014540  delta=-0.014540  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08603), 'Parent2': np.float64(-0.08603), 'Child': np.float64(-0.08651)}
+      v_stop=-0.19435  best=Parent1  best_Q_hat=-0.08603
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04432), 'Child': np.float64(-0.04653)}
+      v_stop=-0.10514  best=Parent2  best_Q_hat=-0.04432
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedB_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1758, 0.0000]
+  True V_root=-0.097611  V_hat(root)=-0.094213
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.012366  L=-0.098458  (0.0s)
+  step9 ratio2=0.065461  delta=-0.053095  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.09809), 'Parent2': np.float64(-0.09809), 'Child': np.float64(-0.09782)}
+      v_stop=-0.16608  best=Child  best_Q_hat=-0.09782
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.04286), 'Parent2': np.float64(-0.04286)}
+      v_stop=-0.04847  best=Parent1  best_Q_hat=-0.04286
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0212)}
+      v_stop=-0.02423  best=Parent2  best_Q_hat=-0.02120
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Trio_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1855, 0.0000]
+  True V_root=-0.102889  V_hat(root)=-0.095462
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.102889  (0.0s)
+  step9 ratio2=0.013083  delta=-0.013083  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10368), 'Parent2': np.float64(-0.10368), 'Child': np.float64(-0.10474)}
+      v_stop=-0.24456  best=Parent1  best_Q_hat=-0.10368
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05487), 'Child': np.float64(-0.05778)}
+      v_stop=-0.13318  best=Parent2  best_Q_hat=-0.05487
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.01003)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01003
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowHigh_Base_3gene
+  [Nuclear] 4 people  4 edges
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3063, 0.0001]
+  True V_root=-0.114850  V_hat(root)=-0.115440
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000290  L=-0.114880  (0.1s)
+  step9 ratio2=0.008048  delta=-0.007759  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11521), 'Parent2': np.float64(-0.11521), 'Child1': np.float64(-0.11372), 'Child2': np.float64(-0.11372)}
+      v_stop=-0.21623  best=Child1  best_Q_hat=-0.11372
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.05612), 'Parent2': np.float64(-0.05612), 'Child2': np.float64(-0.05298)}
+      v_stop=-0.08337  best=Child2  best_Q_hat=-0.05298
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.02697), 'Parent2': np.float64(-0.02697)}
+      v_stop=-0.02360  best=Parent1  best_Q_hat=-0.02697
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3307, 0.0001]
+  True V_root=-0.120209  V_hat(root)=-0.119638
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.120209  (0.2s)
+  step9 ratio2=0.000057  delta=-0.000057  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.12005), 'Parent2': np.float64(-0.12005), 'Child1': np.float64(-0.12028), 'Child2': np.float64(-0.12028)}
+      v_stop=-0.31926  best=Parent1  best_Q_hat=-0.12005
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0653), 'Child1': np.float64(-0.06663), 'Child2': np.float64(-0.06663)}
+      v_stop=-0.17895  best=Parent2  best_Q_hat=-0.06530
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3061, 0.0001]
+  True V_root=-0.117990  V_hat(root)=-0.117545
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.117990  (0.2s)
+  step9 ratio2=0.001067  delta=-0.001067  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11741), 'Parent2': np.float64(-0.11741), 'Child1': np.float64(-0.11821), 'Child2': np.float64(-0.11821)}
+      v_stop=-0.23116  best=Parent1  best_Q_hat=-0.11741
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06339), 'Child1': np.float64(-0.06531), 'Child2': np.float64(-0.06531)}
+      v_stop=-0.12403  best=Parent2  best_Q_hat=-0.06339
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3328, 0.0001]
+  True V_root=-0.124906  V_hat(root)=-0.127753
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.124906  (0.2s)
+  step9 ratio2=0.000018  delta=-0.000018  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.12513), 'Parent2': np.float64(-0.12513), 'Child1': np.float64(-0.12621), 'Child2': np.float64(-0.12621)}
+      v_stop=-0.34324  best=Parent1  best_Q_hat=-0.12513
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06673), 'Child1': np.float64(-0.06951), 'Child2': np.float64(-0.06951)}
+      v_stop=-0.18483  best=Parent2  best_Q_hat=-0.06673
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.2905, 0.0001]
+  True V_root=-0.046913  V_hat(root)=-0.045780
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.011442  L=-0.047127  (0.2s)
+  step9 ratio2=0.000714  delta=+0.010728  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04733), 'Parent2': np.float64(-0.04733), 'Child1': np.float64(-0.04743), 'Child2': np.float64(-0.04743)}
+      v_stop=-0.06562  best=Parent1  best_Q_hat=-0.04733
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02439), 'Child1': np.float64(-0.02944), 'Child2': np.float64(-0.02944)}
+      v_stop=-0.03338  best=Parent2  best_Q_hat=-0.02439
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3204, 0.0001]
+  True V_root=-0.048883  V_hat(root)=-0.047567
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.048883  (0.1s)
+  step9 ratio2=0.000347  delta=-0.000347  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04953), 'Parent2': np.float64(-0.04953), 'Child1': np.float64(-0.0519), 'Child2': np.float64(-0.0519)}
+      v_stop=-0.09820  best=Parent1  best_Q_hat=-0.04953
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02525), 'Child1': np.float64(-0.03095), 'Child2': np.float64(-0.03095)}
+      v_stop=-0.04999  best=Parent2  best_Q_hat=-0.02525
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3250, 0.0001]
+  True V_root=-0.224661  V_hat(root)=-0.221910
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000037  L=-0.224670  (0.1s)
+  step9 ratio2=0.002756  delta=-0.002719  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.22405), 'Parent2': np.float64(-0.22405), 'Child1': np.float64(-0.22376), 'Child2': np.float64(-0.22376)}
+      v_stop=-0.44258  best=Child1  best_Q_hat=-0.22376
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.10331), 'Parent2': np.float64(-0.10331), 'Child2': np.float64(-0.10359)}
+      v_stop=-0.18844  best=Parent1  best_Q_hat=-0.10331
+      → TEST Parent1
+    step 2: tested=['Child1', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05494), 'Child2': np.float64(-0.05614)}
+      v_stop=-0.10065  best=Parent2  best_Q_hat=-0.05494
+      → TEST Parent2
+    step 3: tested=['Child1', 'Parent1', 'Parent2']
+      Q_hat (from V*): {'Child2': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child2  best_Q_hat=-0.00994
+      → STOP
+    trace done after 3 steps
+
+[TRAIN] Nuclear_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3571, 0.0001]
+  True V_root=-0.242412  V_hat(root)=-0.241451
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.001409  L=-0.242979  (0.2s)
+  step9 ratio2=0.003014  delta=-0.001605  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.24227), 'Parent2': np.float64(-0.24227), 'Child1': np.float64(-0.24212), 'Child2': np.float64(-0.24212)}
+      v_stop=-0.64463  best=Child1  best_Q_hat=-0.24212
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.10926), 'Parent2': np.float64(-0.10926), 'Child2': np.float64(-0.11022)}
+      v_stop=-0.27889  best=Parent1  best_Q_hat=-0.10926
+      → TEST Parent1
+    step 2: tested=['Child1', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05779), 'Child2': np.float64(-0.06139)}
+      v_stop=-0.14949  best=Parent2  best_Q_hat=-0.05779
+      → TEST Parent2
+    step 3: tested=['Child1', 'Parent1', 'Parent2']
+      Q_hat (from V*): {'Child2': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child2  best_Q_hat=-0.00994
+      → STOP
+    trace done after 3 steps
+
+[TRAIN] Nuclear_MixedA_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3052, 0.0001]
+  True V_root=-0.105324  V_hat(root)=-0.106357
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000822  L=-0.105399  (0.1s)
+  step9 ratio2=0.011035  delta=-0.010213  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10627), 'Parent2': np.float64(-0.10627), 'Child1': np.float64(-0.10534), 'Child2': np.float64(-0.10534)}
+      v_stop=-0.19643  best=Child1  best_Q_hat=-0.10534
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.05196), 'Parent2': np.float64(-0.05196), 'Child2': np.float64(-0.04895)}
+      v_stop=-0.07488  best=Child2  best_Q_hat=-0.04895
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0253), 'Parent2': np.float64(-0.0253)}
+      v_stop=-0.02100  best=Parent1  best_Q_hat=-0.02530
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3306, 0.0001]
+  True V_root=-0.112305  V_hat(root)=-0.113205
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.112305  (0.2s)
+  step9 ratio2=0.000047  delta=-0.000047  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11222), 'Parent2': np.float64(-0.11222), 'Child1': np.float64(-0.11281), 'Child2': np.float64(-0.11281)}
+      v_stop=-0.29153  best=Parent1  best_Q_hat=-0.11222
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06076), 'Child1': np.float64(-0.06203), 'Child2': np.float64(-0.06203)}
+      v_stop=-0.16169  best=Parent2  best_Q_hat=-0.06076
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3069, 0.0001]
+  True V_root=-0.134518  V_hat(root)=-0.126275
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.134518  (0.1s)
+  step9 ratio2=0.006718  delta=-0.006718  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.13145), 'Parent2': np.float64(-0.13145), 'Child1': np.float64(-0.13361), 'Child2': np.float64(-0.13361)}
+      v_stop=-0.24912  best=Parent1  best_Q_hat=-0.13145
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.07252), 'Child1': np.float64(-0.07494), 'Child2': np.float64(-0.07494)}
+      v_stop=-0.13846  best=Parent2  best_Q_hat=-0.07252
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01001), 'Child2': np.float64(-0.01001)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01001
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.1s)  range=[-0.3333, 0.0001]
+  True V_root=-0.142454  V_hat(root)=-0.140252
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.142454  (0.2s)
+  step9 ratio2=0.006162  delta=-0.006162  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.14155), 'Parent2': np.float64(-0.14155), 'Child1': np.float64(-0.14442), 'Child2': np.float64(-0.14442)}
+      v_stop=-0.36683  best=Parent1  best_Q_hat=-0.14155
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.07666), 'Child1': np.float64(-0.07949), 'Child2': np.float64(-0.07949)}
+      v_stop=-0.20523  best=Parent2  best_Q_hat=-0.07666
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.01), 'Child2': np.float64(-0.01)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.01000
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Base_3gene
+  [ThreeGeneration] 5 people  4 edges
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2152, 0.0002]
+  True V_root=-0.141294  V_hat(root)=-0.088298
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.053357  L=-0.147215  (6.4s)
+  step9 ratio2=0.001614  delta=+0.051743  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10389), 'Grandmother': np.float64(-0.10389), 'Mother': np.float64(-0.093), 'Father': np.float64(-0.10687), 'Child': np.float64(-0.10629)}
+      v_stop=-0.25227  best=Mother  best_Q_hat=-0.09300
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07577), 'Grandmother': np.float64(-0.07577), 'Father': np.float64(-0.08253), 'Child': np.float64(-0.07375)}
+      v_stop=-0.18639  best=Child  best_Q_hat=-0.07375
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05009), 'Grandmother': np.float64(-0.05009), 'Father': np.float64(-0.05367)}
+      v_stop=-0.10025  best=Grandfather  best_Q_hat=-0.05009
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03161), 'Father': np.float64(-0.03118)}
+      v_stop=-0.05306  best=Father  best_Q_hat=-0.03118
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01964)}
+      v_stop=-0.02112  best=Grandmother  best_Q_hat=-0.01964
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2322, 0.0002]
+  True V_root=-0.146673  V_hat(root)=-0.090983
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.026054  L=-0.152556  (6.8s)
+  step9 ratio2=0.003174  delta=+0.022880  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10804), 'Grandmother': np.float64(-0.10804), 'Mother': np.float64(-0.09562), 'Father': np.float64(-0.11283), 'Child': np.float64(-0.10963)}
+      v_stop=-0.37247  best=Mother  best_Q_hat=-0.09562
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07876), 'Grandmother': np.float64(-0.07876), 'Father': np.float64(-0.08728), 'Child': np.float64(-0.07693)}
+      v_stop=-0.27571  best=Child  best_Q_hat=-0.07693
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05166), 'Grandmother': np.float64(-0.05166), 'Father': np.float64(-0.05627)}
+      v_stop=-0.14889  best=Grandfather  best_Q_hat=-0.05166
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.0326), 'Father': np.float64(-0.03202)}
+      v_stop=-0.07892  best=Father  best_Q_hat=-0.03202
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01997)}
+      v_stop=-0.03143  best=Grandmother  best_Q_hat=-0.01997
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2145, 0.0002]
+  True V_root=-0.143984  V_hat(root)=-0.098796
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.058044  L=-0.151280  (6.4s)
+  step9 ratio2=0.005333  delta=+0.052710  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.1088), 'Grandmother': np.float64(-0.1088), 'Mother': np.float64(-0.09722), 'Father': np.float64(-0.10756), 'Child': np.float64(-0.11052)}
+      v_stop=-0.26969  best=Mother  best_Q_hat=-0.09722
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07991), 'Grandmother': np.float64(-0.07991), 'Father': np.float64(-0.08092), 'Child': np.float64(-0.07559)}
+      v_stop=-0.19686  best=Child  best_Q_hat=-0.07559
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05095), 'Grandmother': np.float64(-0.05095), 'Father': np.float64(-0.05356)}
+      v_stop=-0.10326  best=Grandfather  best_Q_hat=-0.05095
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03244), 'Father': np.float64(-0.03085)}
+      v_stop=-0.05359  best=Father  best_Q_hat=-0.03085
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01951)}
+      v_stop=-0.02138  best=Grandmother  best_Q_hat=-0.01951
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.1s)  range=[-0.2342, 0.0002]
+  True V_root=-0.151915  V_hat(root)=-0.101334
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.028805  L=-0.159074  (6.8s)
+  step9 ratio2=0.005452  delta=+0.023353  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.11294), 'Grandmother': np.float64(-0.11294), 'Mother': np.float64(-0.10011), 'Father': np.float64(-0.11231), 'Child': np.float64(-0.11494)}
+      v_stop=-0.40044  best=Mother  best_Q_hat=-0.10011
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.08364), 'Grandmother': np.float64(-0.08364), 'Father': np.float64(-0.08579), 'Child': np.float64(-0.07969)}
+      v_stop=-0.29263  best=Child  best_Q_hat=-0.07969
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.0523), 'Grandmother': np.float64(-0.0523), 'Father': np.float64(-0.05622)}
+      v_stop=-0.15389  best=Grandfather  best_Q_hat=-0.05230
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03383), 'Father': np.float64(-0.0321)}
+      v_stop=-0.07995  best=Father  best_Q_hat=-0.03210
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02003)}
+      v_stop=-0.03191  best=Grandmother  best_Q_hat=-0.02003
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2078, 0.0002]
+  True V_root=-0.056015  V_hat(root)=-0.038438
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.118918  L=-0.058458  (5.0s)
+  step9 ratio2=0.038045  delta=+0.080873  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04951), 'Grandmother': np.float64(-0.04951), 'Mother': np.float64(-0.03961), 'Father': np.float64(-0.04252), 'Child': np.float64(-0.04272)}
+      v_stop=-0.07656  best=Mother  best_Q_hat=-0.03961
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.03928), 'Grandmother': np.float64(-0.03928), 'Father': np.float64(-0.03087), 'Child': np.float64(-0.03667)}
+      v_stop=-0.05497  best=Father  best_Q_hat=-0.03087
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.01758), 'Grandmother': np.float64(-0.01758), 'Child': np.float64(-0.01606)}
+      v_stop=-0.01122  best=Child  best_Q_hat=-0.01606
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2243, 0.0002]
+  True V_root=-0.062950  V_hat(root)=-0.039818
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.032000  L=-0.064602  (5.9s)
+  step9 ratio2=0.007052  delta=+0.024948  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05179), 'Grandmother': np.float64(-0.05179), 'Mother': np.float64(-0.0412), 'Father': np.float64(-0.04894), 'Child': np.float64(-0.04341)}
+      v_stop=-0.11457  best=Mother  best_Q_hat=-0.04120
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.0414), 'Grandmother': np.float64(-0.0414), 'Father': np.float64(-0.03576), 'Child': np.float64(-0.03724)}
+      v_stop=-0.08228  best=Father  best_Q_hat=-0.03576
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.01962), 'Grandmother': np.float64(-0.01962), 'Child': np.float64(-0.01999)}
+      v_stop=-0.01681  best=Grandfather  best_Q_hat=-0.01962
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.9s)  range=[-0.2266, 0.0002]
+  True V_root=-0.272585  V_hat(root)=-0.177030
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.020760  L=-0.277646  (6.3s)
+  step9 ratio2=0.000419  delta=+0.020340  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.19675), 'Grandmother': np.float64(-0.19675), 'Mother': np.float64(-0.19004), 'Father': np.float64(-0.19375), 'Child': np.float64(-0.20169)}
+      v_stop=-0.51635  best=Mother  best_Q_hat=-0.19004
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.14911), 'Grandmother': np.float64(-0.14911), 'Father': np.float64(-0.14703), 'Child': np.float64(-0.14882)}
+      v_stop=-0.39126  best=Father  best_Q_hat=-0.14703
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05301), 'Grandmother': np.float64(-0.05301), 'Child': np.float64(-0.04973)}
+      v_stop=-0.09620  best=Child  best_Q_hat=-0.04973
+      → TEST Child
+    step 3: tested=['Child', 'Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05172), 'Grandmother': np.float64(-0.05172)}
+      v_stop=-0.09620  best=Grandfather  best_Q_hat=-0.05172
+      → TEST Grandfather
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03245)}
+      v_stop=-0.04810  best=Grandmother  best_Q_hat=-0.03245
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.1s)  range=[-0.2515, 0.0002]
+  True V_root=-0.291012  V_hat(root)=-0.187218
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.008601  L=-0.294978  (6.4s)
+  step9 ratio2=0.000262  delta=+0.008338  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.2104), 'Grandmother': np.float64(-0.2104), 'Mother': np.float64(-0.20216), 'Father': np.float64(-0.20741), 'Child': np.float64(-0.21495)}
+      v_stop=-0.75207  best=Mother  best_Q_hat=-0.20216
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.15951), 'Grandmother': np.float64(-0.15951), 'Father': np.float64(-0.15818), 'Child': np.float64(-0.15863)}
+      v_stop=-0.57207  best=Father  best_Q_hat=-0.15818
+      → TEST Father
+    step 2: tested=['Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05556), 'Grandmother': np.float64(-0.05556), 'Child': np.float64(-0.05098)}
+      v_stop=-0.14232  best=Child  best_Q_hat=-0.05098
+      → TEST Child
+    step 3: tested=['Child', 'Father', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05415), 'Grandmother': np.float64(-0.05415)}
+      v_stop=-0.14232  best=Grandfather  best_Q_hat=-0.05415
+      → TEST Grandfather
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03375)}
+      v_stop=-0.07116  best=Grandmother  best_Q_hat=-0.03375
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.9s)  range=[-0.2137, 0.0002]
+  True V_root=-0.130632  V_hat(root)=-0.081276
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.062401  L=-0.136781  (5.8s)
+  step9 ratio2=0.003027  delta=+0.059374  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09634), 'Grandmother': np.float64(-0.09634), 'Mother': np.float64(-0.08432), 'Father': np.float64(-0.09586), 'Child': np.float64(-0.099)}
+      v_stop=-0.22917  best=Mother  best_Q_hat=-0.08432
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07134), 'Grandmother': np.float64(-0.07134), 'Father': np.float64(-0.07348), 'Child': np.float64(-0.06893)}
+      v_stop=-0.16885  best=Child  best_Q_hat=-0.06893
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04784), 'Grandmother': np.float64(-0.04784), 'Father': np.float64(-0.04842)}
+      v_stop=-0.09030  best=Grandfather  best_Q_hat=-0.04784
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02947), 'Father': np.float64(-0.02831)}
+      v_stop=-0.04757  best=Father  best_Q_hat=-0.02831
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01866)}
+      v_stop=-0.01895  best=Grandmother  best_Q_hat=-0.01866
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2315, 0.0002]
+  True V_root=-0.137365  V_hat(root)=-0.089389
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.030916  L=-0.143633  (6.5s)
+  step9 ratio2=0.004141  delta=+0.026775  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.10414), 'Grandmother': np.float64(-0.10414), 'Mother': np.float64(-0.09095), 'Father': np.float64(-0.10485), 'Child': np.float64(-0.10358)}
+      v_stop=-0.34012  best=Mother  best_Q_hat=-0.09095
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07555), 'Grandmother': np.float64(-0.07555), 'Father': np.float64(-0.07965), 'Child': np.float64(-0.0726)}
+      v_stop=-0.25090  best=Child  best_Q_hat=-0.07260
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04961), 'Grandmother': np.float64(-0.04961), 'Father': np.float64(-0.05257)}
+      v_stop=-0.13455  best=Grandfather  best_Q_hat=-0.04961
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03048), 'Father': np.float64(-0.03009)}
+      v_stop=-0.07096  best=Father  best_Q_hat=-0.03009
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01912)}
+      v_stop=-0.02827  best=Grandmother  best_Q_hat=-0.01912
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (2.0s)  range=[-0.2157, 0.0002]
+  True V_root=-0.163278  V_hat(root)=-0.108063
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.052512  L=-0.169966  (6.6s)
+  step9 ratio2=0.003691  delta=+0.048820  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.12028), 'Grandmother': np.float64(-0.12028), 'Mother': np.float64(-0.11127), 'Father': np.float64(-0.12014), 'Child': np.float64(-0.12178)}
+      v_stop=-0.29065  best=Mother  best_Q_hat=-0.11127
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09149), 'Grandmother': np.float64(-0.09149), 'Father': np.float64(-0.09025), 'Child': np.float64(-0.08383)}
+      v_stop=-0.21455  best=Child  best_Q_hat=-0.08383
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05545), 'Grandmother': np.float64(-0.05545), 'Father': np.float64(-0.05908)}
+      v_stop=-0.11515  best=Grandfather  best_Q_hat=-0.05545
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03741), 'Father': np.float64(-0.03354)}
+      v_stop=-0.06094  best=Father  best_Q_hat=-0.03354
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.0213)}
+      v_stop=-0.02423  best=Grandmother  best_Q_hat=-0.02130
+      → TEST Grandmother
+    trace done after 5 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.9s)  range=[-0.2381, 0.0002]
+  True V_root=-0.172544  V_hat(root)=-0.114449
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.026632  L=-0.179346  (21.2s)
+  step9 ratio2=0.010482  delta=+0.016150  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.12665), 'Grandmother': np.float64(-0.12665), 'Mother': np.float64(-0.11441), 'Father': np.float64(-0.12576), 'Child': np.float64(-0.12805)}
+      v_stop=-0.42797  best=Mother  best_Q_hat=-0.11441
+      → TEST Mother
+    step 1: tested=['Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.09568), 'Grandmother': np.float64(-0.09568), 'Father': np.float64(-0.0963), 'Child': np.float64(-0.08883)}
+      v_stop=-0.31660  best=Child  best_Q_hat=-0.08883
+      → TEST Child
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05693), 'Grandmother': np.float64(-0.05693), 'Father': np.float64(-0.06251)}
+      v_stop=-0.17071  best=Grandfather  best_Q_hat=-0.05693
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03931), 'Father': np.float64(-0.03498)}
+      v_stop=-0.09051  best=Father  best_Q_hat=-0.03498
+      → TEST Father
+    step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02194)}
+      v_stop=-0.03602  best=Grandmother  best_Q_hat=-0.02194
+      → TEST Grandmother
+    trace done after 5 steps
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step10_structural_gnn/results/results.json
+
+  Key                                                Split        s10_ratio2   s9_ratio2     delta
+  --------------------------------------------------------------------------------------------------
+  Trio_LowHigh_Base_3gene                            TRAIN          0.007866    0.120612  -0.112746
+  Trio_LowHigh_Aggressive_3gene                      TRAIN          0.000000    0.011718  -0.011718
+  Trio_MediumEven_Base_3gene                         TRAIN          0.000000    0.054671  -0.054671
+  Trio_MediumEven_Aggressive_3gene                   TRAIN          0.000000    0.016770  -0.016770
+  Trio_LowLow_Base_3gene                             TRAIN          0.000000    1.000000  -1.000000
+  Trio_LowLow_Aggressive_3gene                       TRAIN          0.000000    0.000038  -0.000038
+  Trio_HighHigh_Base_3gene                           TRAIN          0.000386    0.006088  -0.005701
+  Trio_HighHigh_Aggressive_3gene                     TRAIN          0.000023    0.014031  -0.014008
+  Trio_MixedA_Base_3gene                             TRAIN          0.014134    0.060488  -0.046353
+  Trio_MixedA_Aggressive_3gene                       TRAIN          0.000000    0.014540  -0.014540
+  Trio_MixedB_Base_3gene                             TRAIN          0.012366    0.065461  -0.053095
+  Trio_MixedB_Aggressive_3gene                       TRAIN          0.000000    0.013083  -0.013083
+  Nuclear_LowHigh_Base_3gene                         TRAIN          0.000290    0.008048  -0.007759
+  Nuclear_LowHigh_Aggressive_3gene                   TRAIN          0.000000    0.000057  -0.000057
+  Nuclear_MediumEven_Base_3gene                      TRAIN          0.000000    0.001067  -0.001067
+  Nuclear_MediumEven_Aggressive_3gene                TRAIN          0.000000    0.000018  -0.000018
+  Nuclear_LowLow_Base_3gene                          TRAIN          0.011442    0.000714  +0.010728
+  Nuclear_LowLow_Aggressive_3gene                    TRAIN          0.000000    0.000347  -0.000347
+  Nuclear_HighHigh_Base_3gene                        TRAIN          0.000037    0.002756  -0.002719
+  Nuclear_HighHigh_Aggressive_3gene                  TRAIN          0.001409    0.003014  -0.001605
+  Nuclear_MixedA_Base_3gene                          TRAIN          0.000822    0.011035  -0.010213
+  Nuclear_MixedA_Aggressive_3gene                    TRAIN          0.000000    0.000047  -0.000047
+  Nuclear_MixedB_Base_3gene                          TRAIN          0.000000    0.006718  -0.006718
+  Nuclear_MixedB_Aggressive_3gene                    TRAIN          0.000000    0.006162  -0.006162
+  ThreeGeneration_LowHigh_Base_3gene                 TEST_UNSEEN    0.053357    0.001614  +0.051743
+  ThreeGeneration_LowHigh_Aggressive_3gene           TEST_UNSEEN    0.026054    0.003174  +0.022880
+  ThreeGeneration_MediumEven_Base_3gene              TEST_UNSEEN    0.058044    0.005333  +0.052710
+  ThreeGeneration_MediumEven_Aggressive_3gene        TEST_UNSEEN    0.028805    0.005452  +0.023353
+  ThreeGeneration_LowLow_Base_3gene                  TEST_UNSEEN    0.118918    0.038045  +0.080873
+  ThreeGeneration_LowLow_Aggressive_3gene            TEST_UNSEEN    0.032000    0.007052  +0.024948
+  ThreeGeneration_HighHigh_Base_3gene                TEST_UNSEEN    0.020760    0.000419  +0.020340
+  ThreeGeneration_HighHigh_Aggressive_3gene          TEST_UNSEEN    0.008601    0.000262  +0.008338
+  ThreeGeneration_MixedA_Base_3gene                  TEST_UNSEEN    0.062401    0.003027  +0.059374
+  ThreeGeneration_MixedA_Aggressive_3gene            TEST_UNSEEN    0.030916    0.004141  +0.026775
+  ThreeGeneration_MixedB_Base_3gene                  TEST_UNSEEN    0.052512    0.003691  +0.048820
+  ThreeGeneration_MixedB_Aggressive_3gene            TEST_UNSEEN    0.026632    0.010482  +0.016150
+
+  SEEN    avg ratio2 = 0.0020  (24 configs)
+  UNSEEN  avg ratio2 = 0.0432  (12 configs)  ← ThreeGeneration scaling test
+
+============================================================
+[EVAL] 2026-07-11T16:58:32.659606
+============================================================
+Loaded PedigreeGNN_Vstar  device=cuda  node_feat_dim=13
+Action selection: Q_hat(s,i) = r_test(i,s) + E[V_hat(s')]  (derived from V*)
+TRAIN families: ['Trio', 'Nuclear']  — seen during training
+TEST  families: ['ThreeGeneration']   — UNSEEN topology, scaling benchmark
+step9 results loaded: 36 configs for comparison
+Pending: 36/36
+
+[TRAIN] Trio_LowHigh_Base_3gene
+  [Trio] 3 people  2 edges
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.2s)  range=[-0.1678, 0.0000]
+  True V_root=-0.085160  V_hat(root)=-0.083213
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.085160  (0.0s)
+  step9 ratio2=0.120612  delta=-0.120612  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08453), 'Parent2': np.float64(-0.08453), 'Child': np.float64(-0.08662)}
+      v_stop=-0.14415  best=Parent1  best_Q_hat=-0.08453
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04515), 'Child': np.float64(-0.04663)}
+      v_stop=-0.07828  best=Parent2  best_Q_hat=-0.04515
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1809, 0.0001]
+  True V_root=-0.088195  V_hat(root)=-0.085450
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.088195  (0.0s)
+  step9 ratio2=0.011718  delta=-0.011718  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08754), 'Parent2': np.float64(-0.08754), 'Child': np.float64(-0.09058)}
+      v_stop=-0.21284  best=Parent1  best_Q_hat=-0.08754
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04663), 'Child': np.float64(-0.04907)}
+      v_stop=-0.11608  best=Parent2  best_Q_hat=-0.04663
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00994
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1681, 0.0000]
+  True V_root=-0.086578  V_hat(root)=-0.085448
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.086578  (0.0s)
+  step9 ratio2=0.054671  delta=-0.054671  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08594), 'Parent2': np.float64(-0.08594), 'Child': np.float64(-0.08889)}
+      v_stop=-0.15411  best=Parent1  best_Q_hat=-0.08594
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04546), 'Child': np.float64(-0.04794)}
+      v_stop=-0.08128  best=Parent2  best_Q_hat=-0.04546
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1811, 0.0001]
+  True V_root=-0.091095  V_hat(root)=-0.090493
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.091095  (0.0s)
+  step9 ratio2=0.016770  delta=-0.016770  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.09029), 'Parent2': np.float64(-0.09029), 'Child': np.float64(-0.09347)}
+      v_stop=-0.22882  best=Parent1  best_Q_hat=-0.09029
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04774), 'Child': np.float64(-0.05109)}
+      v_stop=-0.12102  best=Parent2  best_Q_hat=-0.04774
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00994
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_LowLow_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1509, 0.0000]
+  True V_root=-0.032755  V_hat(root)=-0.031735
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.032755  (0.0s)
+  step9 ratio2=1.000000  delta=-1.000000  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.03704), 'Parent2': np.float64(-0.03704), 'Child': np.float64(-0.03354)}
+      v_stop=-0.04375  best=Child  best_Q_hat=-0.03354
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.01796), 'Parent2': np.float64(-0.01796)}
+      v_stop=-0.01122  best=Parent1  best_Q_hat=-0.01796
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1644, 0.0001]
+  True V_root=-0.038810  V_hat(root)=-0.037198
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.038810  (0.0s)
+  step9 ratio2=0.000038  delta=-0.000038  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.0397), 'Parent2': np.float64(-0.0397), 'Child': np.float64(-0.03847)}
+      v_stop=-0.06547  best=Child  best_Q_hat=-0.03847
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0215), 'Parent2': np.float64(-0.0215)}
+      v_stop=-0.01681  best=Parent2  best_Q_hat=-0.02150
+      → STOP
+    trace done after 1 steps
+
+[TRAIN] Trio_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1887, 0.0000]
+  True V_root=-0.160816  V_hat(root)=-0.159683
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000385  L=-0.160868  (0.0s)
+  step9 ratio2=0.006088  delta=-0.005703  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.15981), 'Parent2': np.float64(-0.15981), 'Child': np.float64(-0.16218)}
+      v_stop=-0.29506  best=Parent1  best_Q_hat=-0.15981
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.08798), 'Child': np.float64(-0.08804)}
+      v_stop=-0.16996  best=Parent2  best_Q_hat=-0.08798
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.2053, 0.0001]
+  True V_root=-0.171375  V_hat(root)=-0.170676
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000230  L=-0.171435  (0.0s)
+  step9 ratio2=0.014031  delta=-0.013800  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.1717), 'Parent2': np.float64(-0.1717), 'Child': np.float64(-0.17479)}
+      v_stop=-0.42975  best=Parent1  best_Q_hat=-0.17170
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0931), 'Child': np.float64(-0.09611)}
+      v_stop=-0.24976  best=Parent2  best_Q_hat=-0.09310
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00994
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedA_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1663, 0.0000]
+  True V_root=-0.078971  V_hat(root)=-0.077052
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.078971  (0.0s)
+  step9 ratio2=0.060488  delta=-0.060488  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.07779), 'Parent2': np.float64(-0.07779), 'Child': np.float64(-0.08039)}
+      v_stop=-0.13096  best=Parent1  best_Q_hat=-0.07779
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.04179), 'Child': np.float64(-0.04354)}
+      v_stop=-0.07063  best=Parent2  best_Q_hat=-0.04179
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1803, 0.0001]
+  True V_root=-0.082780  V_hat(root)=-0.082047
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.082780  (0.0s)
+  step9 ratio2=0.014540  delta=-0.014540  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.08165), 'Parent2': np.float64(-0.08165), 'Child': np.float64(-0.0851)}
+      v_stop=-0.19435  best=Parent1  best_Q_hat=-0.08165
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0438), 'Child': np.float64(-0.0462)}
+      v_stop=-0.10514  best=Parent2  best_Q_hat=-0.04380
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child': np.float64(-0.00994)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00994
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Trio_MixedB_Base_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1687, 0.0000]
+  True V_root=-0.097611  V_hat(root)=-0.092620
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.012366  L=-0.098458  (0.0s)
+  step9 ratio2=0.065461  delta=-0.053095  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.0961), 'Parent2': np.float64(-0.0961), 'Child': np.float64(-0.09504)}
+      v_stop=-0.16608  best=Child  best_Q_hat=-0.09504
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.04016), 'Parent2': np.float64(-0.04016)}
+      v_stop=-0.04847  best=Parent1  best_Q_hat=-0.04016
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02115)}
+      v_stop=-0.02423  best=Parent2  best_Q_hat=-0.02115
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Trio_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 4,872 states...
+  V_hat done (0.0s)  range=[-0.1813, 0.0001]
+  True V_root=-0.102889  V_hat(root)=-0.098410
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.012154  L=-0.104610  (0.0s)
+  step9 ratio2=0.013083  delta=-0.000928  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10125), 'Parent2': np.float64(-0.10125), 'Child': np.float64(-0.10091)}
+      v_stop=-0.24456  best=Child  best_Q_hat=-0.10091
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Parent1': np.float64(-0.04217), 'Parent2': np.float64(-0.04217)}
+      v_stop=-0.07204  best=Parent1  best_Q_hat=-0.04217
+      → TEST Parent1
+    step 2: tested=['Child', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.02175)}
+      v_stop=-0.03602  best=Parent2  best_Q_hat=-0.02175
+      → TEST Parent2
+    trace done after 3 steps
+
+[TRAIN] Nuclear_LowHigh_Base_3gene
+  [Nuclear] 4 people  4 edges
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3065, 0.0005]
+  True V_root=-0.114850  V_hat(root)=-0.115605
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.006479  L=-0.115507  (0.1s)
+  step9 ratio2=0.008048  delta=-0.001570  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11526), 'Parent2': np.float64(-0.11526), 'Child1': np.float64(-0.1155), 'Child2': np.float64(-0.1155)}
+      v_stop=-0.21623  best=Parent1  best_Q_hat=-0.11526
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06237), 'Child1': np.float64(-0.06386), 'Child2': np.float64(-0.06386)}
+      v_stop=-0.12052  best=Parent2  best_Q_hat=-0.06237
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.00999), 'Child2': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3316, 0.0003]
+  True V_root=-0.120209  V_hat(root)=-0.119771
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.120209  (0.1s)
+  step9 ratio2=0.000057  delta=-0.000057  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11993), 'Parent2': np.float64(-0.11993), 'Child1': np.float64(-0.12131), 'Child2': np.float64(-0.12131)}
+      v_stop=-0.31926  best=Parent1  best_Q_hat=-0.11993
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06432), 'Child1': np.float64(-0.06653), 'Child2': np.float64(-0.06653)}
+      v_stop=-0.17895  best=Parent2  best_Q_hat=-0.06432
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3069, 0.0005]
+  True V_root=-0.117990  V_hat(root)=-0.116684
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.117990  (0.1s)
+  step9 ratio2=0.001067  delta=-0.001067  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11746), 'Parent2': np.float64(-0.11746), 'Child1': np.float64(-0.11846), 'Child2': np.float64(-0.11846)}
+      v_stop=-0.23116  best=Parent1  best_Q_hat=-0.11746
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06279), 'Child1': np.float64(-0.06492), 'Child2': np.float64(-0.06492)}
+      v_stop=-0.12403  best=Parent2  best_Q_hat=-0.06279
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.00999), 'Child2': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3318, 0.0003]
+  True V_root=-0.124906  V_hat(root)=-0.123817
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.124906  (0.1s)
+  step9 ratio2=0.000018  delta=-0.000018  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.12433), 'Parent2': np.float64(-0.12433), 'Child1': np.float64(-0.12645), 'Child2': np.float64(-0.12645)}
+      v_stop=-0.34324  best=Parent1  best_Q_hat=-0.12433
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.06588), 'Child1': np.float64(-0.06872), 'Child2': np.float64(-0.06872)}
+      v_stop=-0.18483  best=Parent2  best_Q_hat=-0.06588
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.2923, 0.0005]
+  True V_root=-0.046913  V_hat(root)=-0.045103
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.011442  L=-0.047127  (0.1s)
+  step9 ratio2=0.000714  delta=+0.010728  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04624), 'Parent2': np.float64(-0.04624), 'Child1': np.float64(-0.04664), 'Child2': np.float64(-0.04664)}
+      v_stop=-0.06562  best=Parent1  best_Q_hat=-0.04624
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0238), 'Child1': np.float64(-0.02841), 'Child2': np.float64(-0.02841)}
+      v_stop=-0.03338  best=Parent2  best_Q_hat=-0.02380
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.00999), 'Child2': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00999
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3210, 0.0003]
+  True V_root=-0.048883  V_hat(root)=-0.048441
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.048883  (0.1s)
+  step9 ratio2=0.000347  delta=-0.000347  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.04921), 'Parent2': np.float64(-0.04921), 'Child1': np.float64(-0.05094), 'Child2': np.float64(-0.05094)}
+      v_stop=-0.09820  best=Parent1  best_Q_hat=-0.04921
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.0247), 'Child1': np.float64(-0.03181), 'Child2': np.float64(-0.03181)}
+      v_stop=-0.04999  best=Parent2  best_Q_hat=-0.02470
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3285, 0.0005]
+  True V_root=-0.224661  V_hat(root)=-0.224929
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000174  L=-0.224699  (0.1s)
+  step9 ratio2=0.002756  delta=-0.002582  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.22462), 'Parent2': np.float64(-0.22462), 'Child1': np.float64(-0.22442), 'Child2': np.float64(-0.22442)}
+      v_stop=-0.44258  best=Child1  best_Q_hat=-0.22442
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.10352), 'Parent2': np.float64(-0.10352), 'Child2': np.float64(-0.10353)}
+      v_stop=-0.18844  best=Parent1  best_Q_hat=-0.10352
+      → TEST Parent1
+    step 2: tested=['Child1', 'Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05484), 'Child2': np.float64(-0.05594)}
+      v_stop=-0.10065  best=Parent2  best_Q_hat=-0.05484
+      → TEST Parent2
+    step 3: tested=['Child1', 'Parent1', 'Parent2']
+      Q_hat (from V*): {'Child2': np.float64(-0.00999)}
+      v_stop=0.00000  best=Child2  best_Q_hat=-0.00999
+      → STOP
+    trace done after 3 steps
+
+[TRAIN] Nuclear_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3586, 0.0003]
+  True V_root=-0.242412  V_hat(root)=-0.241280
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000080  L=-0.242445  (0.1s)
+  step9 ratio2=0.003014  delta=-0.002933  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.24207), 'Parent2': np.float64(-0.24207), 'Child1': np.float64(-0.24315), 'Child2': np.float64(-0.24315)}
+      v_stop=-0.64463  best=Parent1  best_Q_hat=-0.24207
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.13527), 'Child1': np.float64(-0.13599), 'Child2': np.float64(-0.13599)}
+      v_stop=-0.39208  best=Parent2  best_Q_hat=-0.13527
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedA_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3057, 0.0005]
+  True V_root=-0.105324  V_hat(root)=-0.105175
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000811  L=-0.105398  (0.1s)
+  step9 ratio2=0.011035  delta=-0.010224  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.10622), 'Parent2': np.float64(-0.10622), 'Child1': np.float64(-0.10569), 'Child2': np.float64(-0.10569)}
+      v_stop=-0.19643  best=Child1  best_Q_hat=-0.10569
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.05219), 'Parent2': np.float64(-0.05219), 'Child2': np.float64(-0.04871)}
+      v_stop=-0.07488  best=Child2  best_Q_hat=-0.04871
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.02519), 'Parent2': np.float64(-0.02519)}
+      v_stop=-0.02100  best=Parent1  best_Q_hat=-0.02519
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3321, 0.0003]
+  True V_root=-0.112305  V_hat(root)=-0.112626
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.112305  (0.1s)
+  step9 ratio2=0.000047  delta=-0.000047  [SAME]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.11213), 'Parent2': np.float64(-0.11213), 'Child1': np.float64(-0.11245), 'Child2': np.float64(-0.11245)}
+      v_stop=-0.29153  best=Parent1  best_Q_hat=-0.11213
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.05988), 'Child1': np.float64(-0.06186), 'Child2': np.float64(-0.06186)}
+      v_stop=-0.16169  best=Parent2  best_Q_hat=-0.05988
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Base_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3072, 0.0005]
+  True V_root=-0.134518  V_hat(root)=-0.134293
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.006199  L=-0.135229  (0.1s)
+  step9 ratio2=0.006718  delta=-0.000519  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.13439), 'Parent2': np.float64(-0.13439), 'Child1': np.float64(-0.13436), 'Child2': np.float64(-0.13436)}
+      v_stop=-0.24912  best=Child1  best_Q_hat=-0.13436
+      → TEST Child1
+    step 1: tested=['Child1']
+      Q_hat (from V*): {'Parent1': np.float64(-0.0618), 'Parent2': np.float64(-0.0618), 'Child2': np.float64(-0.06097)}
+      v_stop=-0.09561  best=Child2  best_Q_hat=-0.06097
+      → TEST Child2
+    step 2: tested=['Child1', 'Child2']
+      Q_hat (from V*): {'Parent1': np.float64(-0.02949), 'Parent2': np.float64(-0.02949)}
+      v_stop=-0.02705  best=Parent1  best_Q_hat=-0.02949
+      → STOP
+    trace done after 2 steps
+
+[TRAIN] Nuclear_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 43,904 states...
+  V_hat done (0.0s)  range=[-0.3310, 0.0003]
+  True V_root=-0.142454  V_hat(root)=-0.140651
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.000000  L=-0.142454  (0.1s)
+  step9 ratio2=0.006162  delta=-0.006162  [BETTER]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Parent1': np.float64(-0.14198), 'Parent2': np.float64(-0.14198), 'Child1': np.float64(-0.14347), 'Child2': np.float64(-0.14347)}
+      v_stop=-0.36683  best=Parent1  best_Q_hat=-0.14198
+      → TEST Parent1
+    step 1: tested=['Parent1']
+      Q_hat (from V*): {'Parent2': np.float64(-0.07581), 'Child1': np.float64(-0.07776), 'Child2': np.float64(-0.07776)}
+      v_stop=-0.20523  best=Parent2  best_Q_hat=-0.07581
+      → TEST Parent2
+    step 2: tested=['Parent1', 'Parent2']
+      Q_hat (from V*): {'Child1': np.float64(-0.0098), 'Child2': np.float64(-0.0098)}
+      v_stop=0.00000  best=Child1  best_Q_hat=-0.00980
+      → STOP
+    trace done after 2 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Base_3gene
+  [ThreeGeneration] 5 people  4 edges
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.2s)  range=[-0.3316, 0.0027]
+  True V_root=-0.141294  V_hat(root)=-0.141927
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.023073  L=-0.143854  (1.6s)
+  step9 ratio2=0.001614  delta=+0.021458  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.13893), 'Grandmother': np.float64(-0.13893), 'Mother': np.float64(-0.1411), 'Father': np.float64(-0.15609), 'Child': np.float64(-0.13626)}
+      v_stop=-0.25227  best=Child  best_Q_hat=-0.13626
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.0853), 'Grandmother': np.float64(-0.0853), 'Mother': np.float64(-0.07436), 'Father': np.float64(-0.08939)}
+      v_stop=-0.12137  best=Mother  best_Q_hat=-0.07436
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.06483), 'Grandmother': np.float64(-0.06483), 'Father': np.float64(-0.06819)}
+      v_stop=-0.10025  best=Grandfather  best_Q_hat=-0.06483
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03383), 'Father': np.float64(-0.03783)}
+      v_stop=-0.05306  best=Grandmother  best_Q_hat=-0.03383
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00999)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00999
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3605, 0.0032]
+  True V_root=-0.146673  V_hat(root)=-0.146534
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.012770  L=-0.149556  (2.6s)
+  step9 ratio2=0.003174  delta=+0.009596  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.14603), 'Grandmother': np.float64(-0.14603), 'Mother': np.float64(-0.1483), 'Father': np.float64(-0.16082), 'Child': np.float64(-0.14322)}
+      v_stop=-0.37247  best=Child  best_Q_hat=-0.14322
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.08793), 'Grandmother': np.float64(-0.08793), 'Mother': np.float64(-0.07797), 'Father': np.float64(-0.09138)}
+      v_stop=-0.18032  best=Mother  best_Q_hat=-0.07797
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.06761), 'Grandmother': np.float64(-0.06761), 'Father': np.float64(-0.0707)}
+      v_stop=-0.14889  best=Grandfather  best_Q_hat=-0.06761
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03612), 'Father': np.float64(-0.03921)}
+      v_stop=-0.07892  best=Grandmother  best_Q_hat=-0.03612
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00913)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00913
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3307, 0.0027]
+  True V_root=-0.143984  V_hat(root)=-0.145176
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.007225  L=-0.144892  (2.1s)
+  step9 ratio2=0.005333  delta=+0.001892  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.14019), 'Grandmother': np.float64(-0.14019), 'Mother': np.float64(-0.14386), 'Father': np.float64(-0.16189), 'Child': np.float64(-0.14201)}
+      v_stop=-0.26969  best=Grandfather  best_Q_hat=-0.14019
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.08886), 'Mother': np.float64(-0.09101), 'Father': np.float64(-0.11133), 'Child': np.float64(-0.09923)}
+      v_stop=-0.18031  best=Grandmother  best_Q_hat=-0.08886
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.04212), 'Father': np.float64(-0.05456), 'Child': np.float64(-0.04283)}
+      v_stop=-0.08128  best=Mother  best_Q_hat=-0.04212
+      → TEST Mother
+    step 3: tested=['Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.01649), 'Child': np.float64(-0.0089)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00890
+      → STOP
+    trace done after 3 steps
+
+[TEST_UNSEEN] ThreeGeneration_MediumEven_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3599, 0.0032]
+  True V_root=-0.151915  V_hat(root)=-0.151059
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.011251  L=-0.154711  (2.4s)
+  step9 ratio2=0.005452  delta=+0.005799  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.15012), 'Grandmother': np.float64(-0.15012), 'Mother': np.float64(-0.15178), 'Father': np.float64(-0.16716), 'Child': np.float64(-0.14959)}
+      v_stop=-0.40044  best=Child  best_Q_hat=-0.14959
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.08883), 'Grandmother': np.float64(-0.08883), 'Mother': np.float64(-0.07734), 'Father': np.float64(-0.09178)}
+      v_stop=-0.18580  best=Mother  best_Q_hat=-0.07734
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.06989), 'Grandmother': np.float64(-0.06989), 'Father': np.float64(-0.07141)}
+      v_stop=-0.15389  best=Grandfather  best_Q_hat=-0.06989
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.0361), 'Father': np.float64(-0.03984)}
+      v_stop=-0.07995  best=Grandmother  best_Q_hat=-0.03610
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00913)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00913
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3132, 0.0027]
+  True V_root=-0.056015  V_hat(root)=-0.044819
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.281187  L=-0.061792  (0.6s)
+  step9 ratio2=0.038045  delta=+0.243142  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.04917), 'Grandmother': np.float64(-0.04917), 'Mother': np.float64(-0.05669), 'Father': np.float64(-0.07821), 'Child': np.float64(-0.04989)}
+      v_stop=-0.07656  best=Grandfather  best_Q_hat=-0.04917
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.02587), 'Mother': np.float64(-0.0379), 'Father': np.float64(-0.0555), 'Child': np.float64(-0.03788)}
+      v_stop=-0.04969  best=Grandmother  best_Q_hat=-0.02587
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.02246), 'Father': np.float64(-0.02941), 'Child': np.float64(-0.01675)}
+      v_stop=-0.02216  best=Child  best_Q_hat=-0.01675
+      → TEST Child
+    step 3: tested=['Child', 'Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.01133), 'Father': np.float64(-0.01525)}
+      v_stop=-0.00561  best=Mother  best_Q_hat=-0.01133
+      → STOP
+    trace done after 3 steps
+
+[TEST_UNSEEN] ThreeGeneration_LowLow_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3468, 0.0032]
+  True V_root=-0.062950  V_hat(root)=-0.057502
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.133522  L=-0.069842  (1.2s)
+  step9 ratio2=0.007052  delta=+0.126469  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.05689), 'Grandmother': np.float64(-0.05689), 'Mother': np.float64(-0.0665), 'Father': np.float64(-0.08115), 'Child': np.float64(-0.05341)}
+      v_stop=-0.11457  best=Child  best_Q_hat=-0.05341
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.03598), 'Grandmother': np.float64(-0.03598), 'Mother': np.float64(-0.03121), 'Father': np.float64(-0.03738)}
+      v_stop=-0.05006  best=Mother  best_Q_hat=-0.03121
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.03158), 'Grandmother': np.float64(-0.03158), 'Father': np.float64(-0.03204)}
+      v_stop=-0.04166  best=Grandfather  best_Q_hat=-0.03158
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.01722), 'Father': np.float64(-0.0206)}
+      v_stop=-0.02102  best=Grandmother  best_Q_hat=-0.01722
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00913)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00913
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3528, 0.0027]
+  True V_root=-0.272585  V_hat(root)=-0.269400
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.006344  L=-0.274132  (3.0s)
+  step9 ratio2=0.000419  delta=+0.005925  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.27064), 'Grandmother': np.float64(-0.27064), 'Mother': np.float64(-0.27517), 'Father': np.float64(-0.2859), 'Child': np.float64(-0.27475)}
+      v_stop=-0.51635  best=Grandfather  best_Q_hat=-0.27064
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.17884), 'Mother': np.float64(-0.18565), 'Father': np.float64(-0.2003), 'Child': np.float64(-0.1871)}
+      v_stop=-0.36844  best=Grandmother  best_Q_hat=-0.17884
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.07799), 'Father': np.float64(-0.09573), 'Child': np.float64(-0.08014)}
+      v_stop=-0.16996  best=Mother  best_Q_hat=-0.07799
+      → TEST Mother
+    step 3: tested=['Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.01649), 'Child': np.float64(-0.0089)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00890
+      → STOP
+    trace done after 3 steps
+
+[TEST_UNSEEN] ThreeGeneration_HighHigh_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3860, 0.0032]
+  True V_root=-0.291012  V_hat(root)=-0.288669
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.002277  L=-0.292062  (4.3s)
+  step9 ratio2=0.000262  delta=+0.002015  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.28877), 'Grandmother': np.float64(-0.28877), 'Mother': np.float64(-0.29481), 'Father': np.float64(-0.30312), 'Child': np.float64(-0.29317)}
+      v_stop=-0.75207  best=Grandfather  best_Q_hat=-0.28877
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.19214), 'Mother': np.float64(-0.19814), 'Father': np.float64(-0.21095), 'Child': np.float64(-0.20022)}
+      v_stop=-0.54038  best=Grandmother  best_Q_hat=-0.19214
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.08766), 'Father': np.float64(-0.09826), 'Child': np.float64(-0.09014)}
+      v_stop=-0.24976  best=Mother  best_Q_hat=-0.08766
+      → TEST Mother
+    step 3: tested=['Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.01731), 'Child': np.float64(-0.01055)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.01055
+      → STOP
+    trace done after 3 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3283, 0.0027]
+  True V_root=-0.130632  V_hat(root)=-0.131808
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.026337  L=-0.133227  (1.7s)
+  step9 ratio2=0.003027  delta=+0.023309  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.12862), 'Grandmother': np.float64(-0.12862), 'Mother': np.float64(-0.13042), 'Father': np.float64(-0.14583), 'Child': np.float64(-0.12628)}
+      v_stop=-0.22917  best=Child  best_Q_hat=-0.12628
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.07693), 'Grandmother': np.float64(-0.07693), 'Mother': np.float64(-0.06779), 'Father': np.float64(-0.08367)}
+      v_stop=-0.10925  best=Mother  best_Q_hat=-0.06779
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.06047), 'Grandmother': np.float64(-0.06047), 'Father': np.float64(-0.06363)}
+      v_stop=-0.09030  best=Grandfather  best_Q_hat=-0.06047
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03115), 'Father': np.float64(-0.03523)}
+      v_stop=-0.04757  best=Grandmother  best_Q_hat=-0.03115
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00999)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00999
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedA_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3577, 0.0032]
+  True V_root=-0.137365  V_hat(root)=-0.139190
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.015817  L=-0.140572  (2.4s)
+  step9 ratio2=0.004141  delta=+0.011676  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.13851), 'Grandmother': np.float64(-0.13851), 'Mother': np.float64(-0.14093), 'Father': np.float64(-0.15106), 'Child': np.float64(-0.13366)}
+      v_stop=-0.34012  best=Child  best_Q_hat=-0.13366
+      → TEST Child
+    step 1: tested=['Child']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.08143), 'Grandmother': np.float64(-0.08143), 'Mother': np.float64(-0.07152), 'Father': np.float64(-0.08572)}
+      v_stop=-0.16282  best=Mother  best_Q_hat=-0.07152
+      → TEST Mother
+    step 2: tested=['Child', 'Mother']
+      Q_hat (from V*): {'Grandfather': np.float64(-0.06392), 'Grandmother': np.float64(-0.06392), 'Father': np.float64(-0.06606)}
+      v_stop=-0.13455  best=Grandfather  best_Q_hat=-0.06392
+      → TEST Grandfather
+    step 3: tested=['Child', 'Grandfather', 'Mother']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.03378), 'Father': np.float64(-0.03701)}
+      v_stop=-0.07096  best=Grandmother  best_Q_hat=-0.03378
+      → TEST Grandmother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00913)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00913
+      → STOP
+    trace done after 4 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Base_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3319, 0.0027]
+  True V_root=-0.163278  V_hat(root)=-0.160040
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.014171  L=-0.165083  (1.9s)
+  step9 ratio2=0.003691  delta=+0.010479  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.15296), 'Grandmother': np.float64(-0.15296), 'Mother': np.float64(-0.16218), 'Father': np.float64(-0.17562), 'Child': np.float64(-0.15856)}
+      v_stop=-0.29065  best=Grandfather  best_Q_hat=-0.15296
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.09623), 'Mother': np.float64(-0.1022), 'Father': np.float64(-0.12077), 'Child': np.float64(-0.10933)}
+      v_stop=-0.19819  best=Grandmother  best_Q_hat=-0.09623
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.04761), 'Father': np.float64(-0.05859), 'Child': np.float64(-0.04773)}
+      v_stop=-0.08999  best=Mother  best_Q_hat=-0.04761
+      → TEST Mother
+    step 3: tested=['Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.01649), 'Child': np.float64(-0.0089)}
+      v_stop=0.00000  best=Child  best_Q_hat=-0.00890
+      → STOP
+    trace done after 3 steps
+
+[TEST_UNSEEN] ThreeGeneration_MixedB_Aggressive_3gene
+  Precomputing V_hat(s) for 1,054,528 states...
+  V_hat done (1.3s)  range=[-0.3616, 0.0032]
+  True V_root=-0.172544  V_hat(root)=-0.167708
+  Computing ratio2 (V*-derived greedy rollout)...
+  ratio2=0.013843  L=-0.176080  (3.1s)
+  step9 ratio2=0.010482  delta=+0.003360  [WORSE]
+  ROLLOUT TRACE (V*-derived actions):
+    step 0: tested={}
+      Q_hat (from V*): {'Grandfather': np.float64(-0.16417), 'Grandmother': np.float64(-0.16417), 'Mother': np.float64(-0.17009), 'Father': np.float64(-0.18226), 'Child': np.float64(-0.16723)}
+      v_stop=-0.42797  best=Grandfather  best_Q_hat=-0.16417
+      → TEST Grandfather
+    step 1: tested=['Grandfather']
+      Q_hat (from V*): {'Grandmother': np.float64(-0.10738), 'Mother': np.float64(-0.11166), 'Father': np.float64(-0.12501), 'Child': np.float64(-0.11642)}
+      v_stop=-0.29299  best=Grandmother  best_Q_hat=-0.10738
+      → TEST Grandmother
+    step 2: tested=['Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.0547), 'Father': np.float64(-0.05791), 'Child': np.float64(-0.05261)}
+      v_stop=-0.13318  best=Child  best_Q_hat=-0.05261
+      → TEST Child
+    step 3: tested=['Child', 'Grandfather', 'Grandmother']
+      Q_hat (from V*): {'Mother': np.float64(-0.02237), 'Father': np.float64(-0.02729)}
+      v_stop=-0.03602  best=Mother  best_Q_hat=-0.02237
+      → TEST Mother
+    step 4: tested=['Child', 'Grandfather', 'Grandmother', 'Mother']
+      Q_hat (from V*): {'Father': np.float64(-0.00913)}
+      v_stop=0.00000  best=Father  best_Q_hat=-0.00913
+      → STOP
+    trace done after 4 steps
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step10_structural_gnn/results/results.json
+
+  Key                                                Split        s10_ratio2   s9_ratio2     delta
+  --------------------------------------------------------------------------------------------------
+  Trio_LowHigh_Base_3gene                            TRAIN          0.000000    0.120612  -0.120612
+  Trio_LowHigh_Aggressive_3gene                      TRAIN          0.000000    0.011718  -0.011718
+  Trio_MediumEven_Base_3gene                         TRAIN          0.000000    0.054671  -0.054671
+  Trio_MediumEven_Aggressive_3gene                   TRAIN          0.000000    0.016770  -0.016770
+  Trio_LowLow_Base_3gene                             TRAIN          0.000000    1.000000  -1.000000
+  Trio_LowLow_Aggressive_3gene                       TRAIN          0.000000    0.000038  -0.000038
+  Trio_HighHigh_Base_3gene                           TRAIN          0.000385    0.006088  -0.005703
+  Trio_HighHigh_Aggressive_3gene                     TRAIN          0.000230    0.014031  -0.013800
+  Trio_MixedA_Base_3gene                             TRAIN          0.000000    0.060488  -0.060488
+  Trio_MixedA_Aggressive_3gene                       TRAIN          0.000000    0.014540  -0.014540
+  Trio_MixedB_Base_3gene                             TRAIN          0.012366    0.065461  -0.053095
+  Trio_MixedB_Aggressive_3gene                       TRAIN          0.012154    0.013083  -0.000928
+  Nuclear_LowHigh_Base_3gene                         TRAIN          0.006479    0.008048  -0.001570
+  Nuclear_LowHigh_Aggressive_3gene                   TRAIN          0.000000    0.000057  -0.000057
+  Nuclear_MediumEven_Base_3gene                      TRAIN          0.000000    0.001067  -0.001067
+  Nuclear_MediumEven_Aggressive_3gene                TRAIN          0.000000    0.000018  -0.000018
+  Nuclear_LowLow_Base_3gene                          TRAIN          0.011442    0.000714  +0.010728
+  Nuclear_LowLow_Aggressive_3gene                    TRAIN          0.000000    0.000347  -0.000347
+  Nuclear_HighHigh_Base_3gene                        TRAIN          0.000174    0.002756  -0.002582
+  Nuclear_HighHigh_Aggressive_3gene                  TRAIN          0.000080    0.003014  -0.002933
+  Nuclear_MixedA_Base_3gene                          TRAIN          0.000811    0.011035  -0.010224
+  Nuclear_MixedA_Aggressive_3gene                    TRAIN          0.000000    0.000047  -0.000047
+  Nuclear_MixedB_Base_3gene                          TRAIN          0.006199    0.006718  -0.000519
+  Nuclear_MixedB_Aggressive_3gene                    TRAIN          0.000000    0.006162  -0.006162
+  ThreeGeneration_LowHigh_Base_3gene                 TEST_UNSEEN    0.023073    0.001614  +0.021458
+  ThreeGeneration_LowHigh_Aggressive_3gene           TEST_UNSEEN    0.012770    0.003174  +0.009596
+  ThreeGeneration_MediumEven_Base_3gene              TEST_UNSEEN    0.007225    0.005333  +0.001892
+  ThreeGeneration_MediumEven_Aggressive_3gene        TEST_UNSEEN    0.011251    0.005452  +0.005799
+  ThreeGeneration_LowLow_Base_3gene                  TEST_UNSEEN    0.281187    0.038045  +0.243142
+  ThreeGeneration_LowLow_Aggressive_3gene            TEST_UNSEEN    0.133522    0.007052  +0.126469
+  ThreeGeneration_HighHigh_Base_3gene                TEST_UNSEEN    0.006344    0.000419  +0.005925
+  ThreeGeneration_HighHigh_Aggressive_3gene          TEST_UNSEEN    0.002277    0.000262  +0.002015
+  ThreeGeneration_MixedA_Base_3gene                  TEST_UNSEEN    0.026337    0.003027  +0.023309
+  ThreeGeneration_MixedA_Aggressive_3gene            TEST_UNSEEN    0.015817    0.004141  +0.011676
+  ThreeGeneration_MixedB_Base_3gene                  TEST_UNSEEN    0.014171    0.003691  +0.010479
+  ThreeGeneration_MixedB_Aggressive_3gene            TEST_UNSEEN    0.013843    0.010482  +0.003360
+
+  SEEN    avg ratio2 = 0.0021  (24 configs)
+  UNSEEN  avg ratio2 = 0.0457  (12 configs)  ← ThreeGeneration scaling test

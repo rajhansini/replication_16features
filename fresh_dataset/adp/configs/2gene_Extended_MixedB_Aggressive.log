@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:03:36.162915  genes=2  family=Extended  regime=MixedB  preset=Aggressive
+[CONFIG] Extended_MixedB_Aggressive_2gene (test)
+  states=107,728  V*(root)=-0.144345  V_stop(root)=-0.366141
+  ADP: ratio2=0.0453078684802224  ratio3=0.13375948292118905  policy_source=adp_policy  (474s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Extended_MixedB_Aggressive_2gene_adp.json

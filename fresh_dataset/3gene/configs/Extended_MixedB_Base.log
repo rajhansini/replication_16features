@@ -1,0 +1,7 @@
+[3gene ground truth, single config] 2026-08-16T02:54:22.166715
+
+──────────────────────────────────────────────────
+[CONFIG] Extended_MixedB_Base_3gene  (test, fresh-build)
+  states=9,190,992  V*(root)=-0.1483  V_stop(root)=-0.2734
+  myopic: L=-0.1604  ratio2=0.0970  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (1354s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/3gene/configs/Extended_MixedB_Base_3gene.json

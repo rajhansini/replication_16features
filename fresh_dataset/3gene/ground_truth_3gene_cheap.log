@@ -1,0 +1,184 @@
+[3gene ground truth, cheap configs] 2026-08-15T21:11:09.559392
+configs: 36
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_LowHigh_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0852  V_stop(root)=-0.1442
+  myopic: L=-0.0871  ratio2=0.0325  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_LowHigh_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0882  V_stop(root)=-0.2128
+  myopic: L=-0.0904  ratio2=0.0175  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MediumEven_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0866  V_stop(root)=-0.1541
+  myopic: L=-0.0890  ratio2=0.0363  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MediumEven_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0911  V_stop(root)=-0.2288
+  myopic: L=-0.0939  ratio2=0.0204  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_LowLow_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0328  V_stop(root)=-0.0437
+  myopic: L=-0.0396  ratio2=0.6245  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child']  match=False  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_LowLow_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0388  V_stop(root)=-0.0655
+  myopic: L=-0.0430  ratio2=0.1559  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child']  match=False  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_HighHigh_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.1393  V_stop(root)=-0.2594
+  myopic: L=-0.1408  ratio2=0.0123  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_HighHigh_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.1489  V_stop(root)=-0.3807
+  myopic: L=-0.1502  ratio2=0.0057  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MixedA_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0832  V_stop(root)=-0.1405
+  myopic: L=-0.0851  ratio2=0.0330  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MixedA_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0871  V_stop(root)=-0.2082
+  myopic: L=-0.0893  ratio2=0.0182  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MixedB_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0743  V_stop(root)=-0.1215
+  myopic: L=-0.0768  ratio2=0.0540  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_MixedB_Aggressive_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0765  V_stop(root)=-0.1799
+  myopic: L=-0.0796  ratio2=0.0299  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_LowHigh_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1149  V_stop(root)=-0.2162
+  myopic: L=-0.1200  ratio2=0.0507  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child1']  match=False  (10s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_LowHigh_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1202  V_stop(root)=-0.3193
+  myopic: L=-0.1256  ratio2=0.0272  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (12s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MediumEven_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1180  V_stop(root)=-0.2312
+  myopic: L=-0.1225  ratio2=0.0402  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (11s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MediumEven_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1249  V_stop(root)=-0.3432
+  myopic: L=-0.1308  ratio2=0.0272  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (11s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_LowLow_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.0469  V_stop(root)=-0.0656
+  myopic: L=-0.0516  ratio2=0.2510  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child1']  match=False  (12s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_LowLow_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.0489  V_stop(root)=-0.0982
+  myopic: L=-0.0577  ratio2=0.1785  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (11s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_HighHigh_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1936  V_stop(root)=-0.3891
+  myopic: L=-0.1990  ratio2=0.0278  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child1']  match=False  (13s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_HighHigh_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.2089  V_stop(root)=-0.5711
+  myopic: L=-0.2123  ratio2=0.0094  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (14s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MixedA_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1117  V_stop(root)=-0.2107
+  myopic: L=-0.1164  ratio2=0.0474  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child1']  match=False  (13s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MixedA_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1186  V_stop(root)=-0.3122
+  myopic: L=-0.1237  ratio2=0.0263  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (10s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MixedB_Base_3gene  (train, cached)
+  states=43,904  V*(root)=-0.0997  V_stop(root)=-0.1822
+  myopic: L=-0.1049  ratio2=0.0638  root_action=['test', 'Parent1']  dp_root_action=['test', 'Child1']  match=False  (12s)
+
+──────────────────────────────────────────────────
+[CONFIG] Nuclear_MixedB_Aggressive_3gene  (train, cached)
+  states=43,904  V*(root)=-0.1036  V_stop(root)=-0.2699
+  myopic: L=-0.1105  ratio2=0.0415  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (14s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1413  V_stop(root)=-0.2523
+  myopic: L=-0.1475  ratio2=0.0562  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (292s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1467  V_stop(root)=-0.3725
+  myopic: L=-0.1530  ratio2=0.0281  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (363s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1440  V_stop(root)=-0.2697
+  myopic: L=-0.1508  ratio2=0.0545  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (356s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1519  V_stop(root)=-0.4004
+  myopic: L=-0.1590  ratio2=0.0286  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (363s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.0560  V_stop(root)=-0.0766
+  myopic: L=-0.0700  ratio2=0.6830  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Father']  match=False  (342s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.0629  V_stop(root)=-0.1146
+  myopic: L=-0.0741  ratio2=0.2163  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (172s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.2352  V_stop(root)=-0.4540
+  myopic: L=-0.2409  ratio2=0.0259  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (151s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.2520  V_stop(root)=-0.6662
+  myopic: L=-0.2565  ratio2=0.0110  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (167s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1379  V_stop(root)=-0.2458
+  myopic: L=-0.1440  ratio2=0.0558  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (156s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1448  V_stop(root)=-0.3643
+  myopic: L=-0.1510  ratio2=0.0281  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (147s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Base_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1228  V_stop(root)=-0.2126
+  myopic: L=-0.1300  ratio2=0.0800  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (151s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Aggressive_3gene  (test, cached)
+  states=1,054,528  V*(root)=-0.1269  V_stop(root)=-0.3149
+  myopic: L=-0.1344  ratio2=0.0401  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (155s)
+
+TRAIN (n=24): avg myopic ratio2 = 0.0763

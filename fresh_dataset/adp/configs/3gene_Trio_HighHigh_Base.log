@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:04:01.445512  genes=3  family=Trio  regime=HighHigh  preset=Base
+[CONFIG] Trio_HighHigh_Base_3gene (train)
+  states=4,872  V*(root)=-0.139339  V_stop(root)=-0.259416
+  ADP: ratio2=0.0031661670043871587  ratio3=0.1007513251637145  policy_source=adp_policy  (9s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_HighHigh_Base_3gene_adp.json

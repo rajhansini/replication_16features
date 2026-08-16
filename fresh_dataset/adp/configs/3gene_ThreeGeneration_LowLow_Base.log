@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T02:09:01.735773  genes=3  family=ThreeGeneration  regime=LowLow  preset=Base
+[CONFIG] ThreeGeneration_LowLow_Base_3gene (test)
+  states=1,054,528  V*(root)=-0.056015  V_stop(root)=-0.076560

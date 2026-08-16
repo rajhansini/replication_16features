@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:04:22.150872  genes=3  family=Trio  regime=MixedB  preset=Base
+[CONFIG] Trio_MixedB_Base_3gene (train)
+  states=4,872  V*(root)=-0.074263  V_stop(root)=-0.121500
+  ADP: ratio2=0.05172237540530318  ratio3=0.22453504108062003  policy_source=adp_policy  (10s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_MixedB_Base_3gene_adp.json

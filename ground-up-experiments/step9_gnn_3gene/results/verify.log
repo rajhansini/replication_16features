@@ -1,0 +1,72 @@
+======================================================================
+PIPELINE VERIFICATION  —  2026-07-10T14:54:27.058500
+======================================================================
+
+Using config: Trio_LowHigh_Base_3gene
+
+[A] DP VALUE SANITY
+    Individuals:          ['Parent1', 'Parent2', 'Child']
+    Total states:         4,872
+    V_root (ds field):    -0.08515972
+    V_stop_root (ds):     -0.14415321
+    V*(empty state):      -0.08515973  OK — matches V_root
+    Fully-tested states:  3375
+    V*(fully-tested) != 0:0  (should be 0)
+      V*({'Parent1': (0, 0, 0), 'Parent2': (0, 0, 0), 'Child': (0, 0, 0)}) = 0.00000000
+      V*({'Parent1': (0, 0, 0), 'Parent2': (0, 0, 1), 'Child': (0, 0, 0)}) = 0.00000000
+      V*({'Parent1': (0, 0, 0), 'Child': (0, 0, 1), 'Parent2': (0, 0, 1)}) = 0.00000000
+
+[B] Q* FORMULA CHECK  —  Q*(s,i) = r_test(i,s) + E[V*(s')]
+
+    State: {'Parent1': (0, 0, 0), 'Parent2': (0, 0, 0)}
+      Parent1: TESTED → NaN
+      Parent2: TESTED → NaN
+      Child: r_test=-0.010000  E[V*]=0.000000  Q*=-0.010000
+
+    State: {'Parent1': (0, 0, 0), 'Parent2': (0, 0, 1)}
+      Parent1: TESTED → NaN
+      Parent2: TESTED → NaN
+      Child: r_test=-0.032500  E[V*]=0.000000  Q*=-0.032500
+
+    State: {'Parent1': (0, 0, 0), 'Parent2': (0, 0, 2)}
+      Parent1: TESTED → NaN
+      Parent2: TESTED → NaN
+      Child: r_test=-0.055000  E[V*]=0.000000  Q*=-0.055000
+
+    State: {'Parent1': (0, 0, 0), 'Parent2': (0, 1, 0)}
+      Parent1: TESTED → NaN
+      Parent2: TESTED → NaN
+      Child: r_test=-0.038000  E[V*]=0.000000  Q*=-0.038000
+
+    State: {'Parent1': (0, 0, 0), 'Parent2': (0, 1, 1)}
+      Parent1: TESTED → NaN
+      Parent2: TESTED → NaN
+      Child: r_test=-0.055500  E[V*]=0.000000  Q*=-0.055500
+
+[C] NODE FEATURE SANITY
+    Shape: (4872, 3, 10)  (expected (4872, 3, 10))
+    Prob cols not summing to 1 (first 100 states): 0  (should be 0)
+    is_tested flag wrong (first 100 states):        0  (should be 0)
+    Root-state node features:
+      Parent1: probs=[1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]  is_tested=1
+      Parent2: probs=[1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]  is_tested=1
+      Child: probs=[1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]  is_tested=1
+
+[D] MODEL OUTPUT SHAPE CHECK  (must be (B, N_people), not (B,))
+    Output shape: (4, 3)  (expected (4, 3))
+    Sample Q values per state (untrained model):
+      state 0: {'Parent1': -0.1456, 'Parent2': -0.1456, 'Child': -0.1424}
+      state 1: {'Parent1': -0.1456, 'Parent2': -0.1483, 'Child': -0.1411}
+      state 2: {'Parent1': -0.1456, 'Parent2': -0.1483, 'Child': -0.1414}
+      state 3: {'Parent1': -0.1456, 'Parent2': -0.1457, 'Child': -0.1404}
+
+[E] Q* LABEL MASK CHECK
+    Shape: (4872, 3)  (expected (4872, 3))
+    NaN entries   (tested persons):   13036
+    Valid entries (untested persons):  1580
+    Q* value range: [-0.177051,  -0.010000]
+
+======================================================================
+VERIFICATION DONE. Read verify.log for full output.
+======================================================================
+

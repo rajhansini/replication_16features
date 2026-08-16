@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:01:53.040829  genes=2  family=Extended  regime=LowLow  preset=Base
+[CONFIG] Extended_LowLow_Base_2gene (test)
+  states=107,728  V*(root)=-0.055291  V_stop(root)=-0.072586
+  ADP: ratio2=1.2965954910310273  ratio3=0.2762526344118876  policy_source=myopic_policy  (303s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Extended_LowLow_Base_2gene_adp.json

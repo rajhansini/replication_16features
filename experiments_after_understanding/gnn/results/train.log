@@ -1,0 +1,9 @@
+
+============================================================
+[GNN] 2026-07-14T17:27:08.848852
+node_feat=13  hidden=32  cost_dim=11  rounds=2
+architecture: MP x2 -> sum pool -> Linear(43->16) -> ReLU -> Linear(16->1)
+device=cpu  epochs=2
+train: ['Trio', 'Nuclear']  test: ['ThreeGeneration']
+  [Trio] 3 people, 2 edges
+  [Nuclear] 4 people, 4 edges

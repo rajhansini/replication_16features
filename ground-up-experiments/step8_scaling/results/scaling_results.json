@@ -1,0 +1,122 @@
+[
+  {
+    "family": "ThreeGeneration",
+    "regime": "LowHigh",
+    "n_genes": 2,
+    "genes": [
+      "GeneA",
+      "GeneB"
+    ],
+    "n_states_bfs": 20816,
+    "bfs_time_sec": 0.28597426414489746,
+    "feasible_for_dp": true,
+    "dp": {
+      "n_states": 20816,
+      "V_root": -0.10915810573616076,
+      "V_stop_root": -0.16831186344,
+      "elapsed_sec": 12.627055406570435,
+      "peak_mem_mb": 144.204872,
+      "feat_dim": 30,
+      "node_feat_dim_gnn": 7
+    }
+  },
+  {
+    "family": "ThreeGeneration",
+    "regime": "LowHigh",
+    "n_genes": 3,
+    "genes": [
+      "GeneA",
+      "GeneB",
+      "GeneC"
+    ],
+    "n_states_bfs": 1054528,
+    "bfs_time_sec": 15.373451709747314,
+    "feasible_for_dp": true,
+    "dp": {
+      "n_states": 1054528,
+      "V_root": -0.14129369019229165,
+      "V_stop_root": -0.25226811343999994,
+      "elapsed_sec": 1003.8195118904114,
+      "peak_mem_mb": 8943.714784,
+      "feat_dim": 45,
+      "node_feat_dim_gnn": 10
+    }
+  },
+  {
+    "family": "ThreeGeneration",
+    "regime": "MediumEven",
+    "n_genes": 2,
+    "genes": [
+      "GeneA",
+      "GeneB"
+    ],
+    "n_states_bfs": 20816,
+    "bfs_time_sec": 0.18667364120483398,
+    "feasible_for_dp": true,
+    "dp": {
+      "n_states": 20816,
+      "V_root": -0.11767682752538546,
+      "V_stop_root": -0.19936788479999984,
+      "elapsed_sec": 12.384187936782837,
+      "peak_mem_mb": 144.059872,
+      "feat_dim": 30,
+      "node_feat_dim_gnn": 7
+    }
+  },
+  {
+    "family": "ThreeGeneration",
+    "regime": "MediumEven",
+    "n_genes": 3,
+    "genes": [
+      "GeneA",
+      "GeneB",
+      "GeneC"
+    ],
+    "n_states_bfs": 1054528,
+    "bfs_time_sec": 15.280755758285522,
+    "feasible_for_dp": true,
+    "dp": {
+      "n_states": 1054528,
+      "V_root": -0.14398376923256767,
+      "V_stop_root": -0.26968596479999973,
+      "elapsed_sec": 1054.2318575382233,
+      "peak_mem_mb": 8943.714776,
+      "feat_dim": 45,
+      "node_feat_dim_gnn": 10
+    }
+  },
+  {
+    "family": "Extended",
+    "regime": "LowHigh",
+    "n_genes": 2,
+    "genes": [
+      "GeneA",
+      "GeneB"
+    ],
+    "n_states_bfs": 107728,
+    "bfs_time_sec": 1.2558956146240234,
+    "feasible_for_dp": true,
+    "dp": {
+      "n_states": 107728,
+      "V_root": -0.13064950160463917,
+      "V_stop_root": -0.21640096728,
+      "elapsed_sec": 90.2626621723175,
+      "peak_mem_mb": 904.624776,
+      "feat_dim": 36,
+      "node_feat_dim_gnn": 7
+    }
+  },
+  {
+    "family": "Extended",
+    "regime": "LowHigh",
+    "n_genes": 3,
+    "genes": [
+      "GeneA",
+      "GeneB",
+      "GeneC"
+    ],
+    "n_states_bfs": 9190992,
+    "bfs_time_sec": 175.97086715698242,
+    "feasible_for_dp": false
+  }
+]

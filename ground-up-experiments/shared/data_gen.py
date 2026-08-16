@@ -35,6 +35,13 @@ from genetic_dp.utils.pedigree_generator import generate_deterministic_pedigree
 # ─── family definitions ───────────────────────────────────────────────────────
 
 FAMILY_CASES = {
+    "Trio": [
+        ("Child", "Parent1", "Parent2"),
+    ],
+    "Nuclear": [
+        ("Child1", "Parent1", "Parent2"),
+        ("Child2", "Parent1", "Parent2"),
+    ],
     "ThreeGeneration": [
         ("Father", "Grandfather", "Grandmother"),
         ("Child", "Father", "Mother"),
@@ -57,14 +64,14 @@ ALLELE_FREQ_REGIMES = {
 # GeneB has different (smaller-magnitude) a/b and higher delta than GeneA.
 PRESETS = {
     "Base": {
-        "a_gene":     {"GeneA": -0.08, "GeneB": -0.06},
-        "b_gene":     {"GeneA": -0.04, "GeneB": -0.03},
-        "delta_gene": {"GeneA":  0.60, "GeneB":  0.70},
+        "a_gene":     {"GeneA": -0.08, "GeneB": -0.06, "GeneC": -0.05},
+        "b_gene":     {"GeneA": -0.04, "GeneB": -0.03, "GeneC": -0.025},
+        "delta_gene": {"GeneA":  0.60, "GeneB":  0.70, "GeneC":  0.75},
     },
     "Aggressive": {
-        "a_gene":     {"GeneA": -0.12, "GeneB": -0.09},
-        "b_gene":     {"GeneA": -0.06, "GeneB": -0.045},
-        "delta_gene": {"GeneA":  0.70, "GeneB":  0.80},
+        "a_gene":     {"GeneA": -0.12, "GeneB": -0.09, "GeneC": -0.075},
+        "b_gene":     {"GeneA": -0.06, "GeneB": -0.045, "GeneC": -0.0375},
+        "delta_gene": {"GeneA":  0.70, "GeneB":  0.80,  "GeneC":  0.80},
     },
 }
 
@@ -276,6 +283,24 @@ def build_single_gene_dataset(
     }
 
 
+# ─── k-gene vector helper ────────────────────────────────────────────────────
+
+def state_to_vector_k_genes(state, belief, individuals, genes) -> np.ndarray:
+    """k genes: 3k floats per person → vector of length n_people * 3 * len(genes)."""
+    from genetic_dp.models.belief import InferenceResult
+    entry = belief[state]
+    if isinstance(entry, InferenceResult):
+        per_gene = entry.get_per_gene_probs()
+    else:
+        per_gene = lift_tuple_posteriors_to_genes(entry, genes, GENOTYPE_STATES)
+    x = []
+    for person in individuals:
+        for gene in genes:
+            dist = per_gene[gene][person]
+            x.extend([dist[0], dist[1], dist[2]])
+    return np.array(x, dtype=np.float32)
+
+
 # ─── two-gene dataset ─────────────────────────────────────────────────────────
 
 def build_two_gene_dataset(
@@ -379,4 +404,104 @@ def build_two_gene_dataset(
         "n_genes":         2,
         "genes":           genes,
         "two_gene_states": two_gene_states,
+    }
+
+
+# ─── k-gene dataset (generalises build_two_gene_dataset to any k) ─────────────
+
+def build_multigene_dataset(
+    family_label: str = "ThreeGeneration",
+    allele_freqs: Optional[dict] = None,
+    preset_label: str = "Base",
+    genes: tuple = ("GeneA", "GeneB"),
+    fixed_cost: float = 0.01,
+    variable_cost: float = 0.02,
+) -> dict:
+    """
+    Build (X, Y) dataset for a k-gene exact DP run.
+
+    Generalises build_two_gene_dataset to any number of genes.
+    X has n_people * 3 * len(genes) features.
+    Node feature dim for GNN = 3 * len(genes) + 1 (tested flag added by GNN).
+    """
+    if allele_freqs is None:
+        allele_freqs = {g: 0.05 for g in genes}
+
+    preset = PRESETS[preset_label]
+    pedigree = generate_deterministic_pedigree(FAMILY_CASES[family_label])
+    individuals = pedigree.to_list()
+
+    child_cpds = _build_child_cpds(pedigree)
+
+    config = get_config(
+        individuals,
+        a_base=0.0, b_base=0.0, c_base=0.0, delta_base=0.0,
+        pedigree=pedigree,
+        genes=genes,
+        allele_freqs=allele_freqs,
+        per_gene_a={g: preset["a_gene"][g] for g in genes},
+        per_gene_b={g: preset["b_gene"][g] for g in genes},
+        per_gene_c={g: 0.0 for g in genes},
+        per_gene_delta={g: preset["delta_gene"][g] for g in genes},
+    )
+    config.fixed_cost = fixed_cost
+    config.variable_cost = variable_cost
+
+    k_gene_states = list(product(GENOTYPE_STATES, repeat=len(genes)))
+
+    belief = _build_factorized_belief_map(
+        pedigree, individuals, genes, allele_freqs, child_cpds, k_gene_states
+    )
+
+    mu0 = {frozenset(): 1.0}
+    V, policy = solve_exact_dp_primal(
+        individuals, k_gene_states, mu0, belief,
+        config.a, config.b, config.c, config.delta,
+        config.fixed_cost, config.variable_cost,
+        genes=genes,
+        a_gene=config.a_gene,
+        b_gene=config.b_gene,
+        c_gene=config.c_gene,
+        delta_gene=config.delta_gene,
+    )
+
+    root_entry = belief[frozenset()]
+    per_gene_root = root_entry.get_per_gene_probs()
+    p_root = root_entry.marginals
+    v_stop_root = float(sum(
+        r_reward(
+            k, p_root, config.a, config.b, config.c, config.delta,
+            per_gene_probs=per_gene_root,
+            a_gene=config.a_gene, b_gene=config.b_gene,
+            c_gene=config.c_gene, delta_gene=config.delta_gene,
+        )
+        for k in individuals
+    ))
+
+    states, X_list, Y_list = [], [], []
+    for state, v_star in V.items():
+        if state not in belief:
+            continue
+        states.append(state)
+        X_list.append(state_to_vector_k_genes(state, belief, individuals, genes))
+        Y_list.append(float(v_star))
+
+    return {
+        "states":       states,
+        "X":            np.stack(X_list),
+        "Y":            np.array(Y_list, dtype=np.float32),
+        "belief":       belief,
+        "V_star":       V,
+        "policy_dp":    policy,
+        "config":       config,
+        "individuals":  individuals,
+        "pedigree":     pedigree,
+        "V_root":       float(V[frozenset()]),
+        "V_stop_root":  v_stop_root,
+        "family_label": family_label,
+        "allele_freqs": allele_freqs,
+        "preset_label": preset_label,
+        "n_genes":      len(genes),
+        "genes":        genes,
+        "k_gene_states": k_gene_states,
     }

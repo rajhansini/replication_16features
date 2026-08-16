@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T02:47:00.051339  genes=3  family=Extended  regime=MixedA  preset=Aggressive
+[CONFIG] Extended_MixedA_Aggressive_3gene (test)
+  states=9,190,992  V*(root)=-0.176305  V_stop(root)=-0.468352

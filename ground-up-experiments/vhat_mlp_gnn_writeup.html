@@ -1,0 +1,1172 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"downloads":"downloads.DUzXFHNF.js","mcp":"mcp.CLzOm9JX.js","permissions":"permissions.C9OCnDjh.js","self":"self.DqF_PxOe.js"},"transforms":"_transforms.DYk1Ltlh.js","comments":"_comments.Dp6RDy7J.js"}</script><script>(function(){"use strict";const ce="modulepreload",le=function(e){return"/"+e},ue={},x=function(t,n,u){let o=Promise.resolve();function s(f){const a=new Event("vite:preloadError",{cancelable:!0});if(a.payload=f,window.dispatchEvent(a),!a.defaultPrevented)throw f}return o.then(f=>{for(const a of f||[])a.status==="rejected"&&s(a.reason);return t().catch(s)})},K=["light","dark","system"];function G(e){if(e==null||typeof e!="object")return!1;const t=e.__frame_init;return t!=null&&typeof t=="object"}function J(e){return e!=null&&typeof e=="object"&&e.__frame_size_poke===!0}function V(e){if(e==null||typeof e!="object")return!1;const t=e.__frame_theme;if(t==null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&K.includes(n)}function Y(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}function z(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let f=0;f<t.length;f++){const a=t[f];if(a&&a.matches&&a.matches("a[href],area[href]")){n=a;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const u=n.getAttribute("href");if(!u)return;let o,s;try{o=new URL(u,document.baseURI),s=new URL(document.baseURI).origin}catch{return}(o.protocol==="http:"||o.protocol==="https:")&&o.origin!==s&&(e.preventDefault(),parent.postMessage({__frame_nav:!0,url:o.href},"*"))}const D={};function T(e){if(window===top)return;const t=Date.now();t-(D[e]||0)<500||(D[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}const Q=2e3,U=["wheel","touchstart","touchmove","keydown","pointerdown"];let B=0;function X(e){e.isTrusted&&(B=Date.now())}function Z(){addEventListener("click",z,!0),addEventListener("auxclick",z,!0)}function ee(){for(let e=0;e<U.length;e++)addEventListener(U[e],X,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-B<Q&&T("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&T("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&T("click")},{capture:!0,passive:!0})}function te(e,t,n){const u=[...t.values()].filter(o=>o.targets.some(s=>s.startsWith(e+".")));return{wrap(o,s){const f=`${e}.${o}`,a=u.filter(i=>i.targets.includes(f));return a.length===0?(...i)=>{try{return s(...i)}catch(p){return Promise.reject(p)}}:(...i)=>{let p=i;for(const c of a){const l=c.module.parameters;if(l)try{p=l(p)}catch{return Promise.reject({code:"transform_error",id:c.id,scope:e,message:"parameters transform failed"})}}let h;try{h=s(...p)}catch(c){h=Promise.reject(c)}return h.then(c=>{for(let l=a.length-1;l>=0;l--){const m=a[l],d=m.module.returns;if(d)try{c=d(c)}catch{return n({id:m.id,scope:e,leg:"returns"}),c}}return c},c=>{for(let l=a.length-1;l>=0;l--){const m=a[l],d=m.module.throws;if(d)try{c=d(c)}catch{return n({id:m.id,scope:e,leg:"throws"}),Promise.reject(c)}}return Promise.reject(c)})}}}}function ne(e,t,n,u=()=>{}){const o=new Set(e.changes??[]),s=new Map;for(const f of o){const a=t[f];a&&s.set(f,a)}return{contract:e.contract,changes:o,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:s,shellOrigin:n.shellOrigin,mount:n.mount,pipe:f=>te(f,s,u)}}(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let u=0;for(let o=0;o<n.length;o++){const s=n[o];try{e(t,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[s]}catch{}try{e(t,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[s]=="function"&&u++}if(u&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:u},"*")}catch{}})();const re=1e4,oe=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function se(e){for(const t of oe)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}const R=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities??{}}),A=window.__FRAME_PREAMBLE?.transforms,k=window.__FRAME_PREAMBLE?.comments,C=/^[\w.-]+\.js$/,ie=/^[a-z][a-z0-9_-]{0,63}$/;let F=null,v=null;function N(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}let I=!1;function H(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,I=!0):I&&(delete t.dataset.theme,t.style.colorScheme="",I=!1)}const E={mcp:{watchTool:{handlerArg:3}}},P=new Map;function ae(e,t){const n=P.get(e);if(!n)return;Object.assign(n.impl,t),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const u=n.queue;n.queue=[];for(const o of u){const s=t[o.method];if(s)if(E[e]?.[o.method])try{o.resolve(s(...o.args))}catch{O(o,E[e][o.method].handlerArg,{code:"transform_error",message:`${e}.${o.method} rejected its arguments`})}else s(...o.args).then(o.resolve,o.reject);else{const f={code:"capability_removed",message:`${e}.${o.method} is not in this runtime`},a=E[e]?.[o.method];if(a){O(o,a.handlerArg,f);continue}o.reject(f)}}}function $(e,t){const n=P.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const u=n.queue;n.queue=[];for(const o of u){const s=E[e]?.[o.method];if(s){O(o,s.handlerArg,t);continue}o.reject(t)}}function O(e,t,n){if(e.syncState?.dead)return;const u=e.args[t];typeof u=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{u({type:"error",error:n})}catch(o){Y(o)}})}const q=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(q&&q.writable===!1)){Z(),ee();const e=q?.value??{};N(window,"claude",e);const t=i=>{const p={impl:Object.create(null),queue:[]};P.set(i,p);const h=new Proxy(p.impl,{get:(c,l)=>{if(typeof l!="string"||l==="then"||l==="toJSON"||l==="valueOf")return;if(l==="toString")return Object.prototype.toString;const m=E[i]?.[l];return m?(...d)=>{if(typeof d[m.handlerArg]!="function")throw new TypeError(`${i}.${l} requires a handler function`);const g=c[l];if(g)return g(...d);if(c.__settled){const _={dead:!1},S={args:[...d],syncState:_};return c.__settled().catch(j=>O(S,m.handlerArg,j)),()=>{_.dead=!0}}let y=null;const w={dead:!1};return p.queue.push({method:l,args:d,resolve:_=>{y=typeof _=="function"?_:null,w.dead&&y?.()},reject:()=>{},syncState:w}),()=>{w.dead=!0,y?.()}}:(...d)=>{const g=c[l]??c.__settled;return g?g(...d):new Promise((y,w)=>{p.queue.push({method:l,args:d,resolve:y,reject:w})})}},set:()=>!1});N(e,i,h)};for(const i of Object.keys(R)){if(e[i]!==void 0){N(e,i,e[i]);continue}t(i)}let n=null,u=null,o=0;const s=i=>{i.source!==parent||!se(i.origin)||G(i.data)&&(n=i.data.__frame_init,v=i.origin,removeEventListener("message",s),clearTimeout(o),u?.())};addEventListener("message",s),parent.postMessage({__frame_connect:!0},"*");const f=new Promise(i=>{u=i,o=setTimeout(()=>{removeEventListener("message",s),i()},re)}),a=document.readyState==="loading"?new Promise(i=>document.addEventListener("DOMContentLoaded",()=>i(),{once:!0})):Promise.resolve();f.then(async()=>{if(!n||!v){for(const r of P.keys())$(r,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}H(n.theme);const i=v;let p=!1;addEventListener("message",r=>{if(r.source!==parent||r.origin!==i)return;V(r.data)&&H(r.data.__frame_theme.theme);const b=r.data?.__fc_mode;b&&typeof b=="object"&&!p&&k&&C.test(k)&&(p=!0,h(k).then(L=>L.install?.(i,b.on===!0)).catch(()=>{}))});const h=r=>x(()=>import("/_runtime/"+r),void 0),c=Object.keys(n.capabilities??{});for(const r of c)Object.hasOwn(R,r)||ie.test(r)&&e[r]===void 0&&(t(r),$(r,{code:"capability_disabled",message:"capability not in this runtime generation"}));const l=c.filter(r=>Object.hasOwn(R,r)).map(r=>[r,R[r]]).filter(r=>typeof r[1]=="string"&&C.test(r[1])),[m,...d]=await Promise.allSettled([A&&C.test(A)?h(A):Promise.resolve({}),...l.map(([,r])=>h(r))]),g=v;F=ne(n,m.status==="fulfilled"&&m.value?.TRANSFORMS||{},{shellOrigin:g,mount:ae},r=>parent.postMessage({__frame_cap_telemetry:r},g));const y=r=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:r}},g),w=F;d.forEach((r,b)=>{const L=l[b][0];if(r.status!=="fulfilled"){y(L);return}try{r.value?.install?.(w)}catch{y(L)}});for(const[r,b]of P)b.queue.length===0&&Object.keys(b.impl).length>0||$(r,{code:c.includes(r)?"capability_disabled":"not_granted",message:"capability not available in this session"});await a,parent.postMessage({__frame_ready:!0},v);let _=-1,S=0;const j=()=>{S=0;const r=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);r!==_&&(_=r,parent.postMessage({__frame_size:!0,h:r},g))},M=()=>{S||(S=setTimeout(j,200))},W=new ResizeObserver(M);W.observe(document.documentElement),document.body&&W.observe(document.body),document.addEventListener("load",M,!0),document.fonts?.ready.then(M,()=>{}),addEventListener("beforeprint",()=>{_=-1,j()}),M(),addEventListener("message",r=>{r.source!==parent||r.origin!==g||J(r.data)&&(_=-1,M())})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>MLP & GNN on V̂(s): Data, Architecture, Training, Evaluation</title>
+<style>
+  :root{
+    --bg:#f4f3ef; --surface:#ffffff; --surface-2:#ebe9e2;
+    --ink:#1c1e1a; --ink-soft:#62655d; --line:#dad8cf;
+    --accent:#1f7a72; --accent-soft:#e3efec; --accent-ink:#0f4f49;
+    --mlp:#586573; --mlp-soft:#e7e9ec;
+    --amber:#a8702a; --amber-soft:#f3e6d3;
+    --code-bg:#1c1e1a; --code-ink:#e9e7de; --code-comment:#8b9c96; --code-key:#7fb8a8; --code-str:#c9a86a;
+    --shadow: 0 1px 2px rgba(20,20,15,.04), 0 8px 24px -12px rgba(20,20,15,.12);
+    --font-display:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --font-body:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14161a; --surface:#1b1e22; --surface-2:#21252a;
+      --ink:#eae8e0; --ink-soft:#9a9d93; --line:#2b2e32;
+      --accent:#4fc4b8; --accent-soft:#16302c; --accent-ink:#bdeee7;
+      --mlp:#98a2ad; --mlp-soft:#262a2f;
+      --amber:#d9a45c; --amber-soft:#332512;
+      --code-bg:#101214; --code-ink:#e9e7de; --code-comment:#6f8983; --code-key:#7fd7c4; --code-str:#e0bd82;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px -12px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161a; --surface:#1b1e22; --surface-2:#21252a;
+    --ink:#eae8e0; --ink-soft:#9a9d93; --line:#2b2e32;
+    --accent:#4fc4b8; --accent-soft:#16302c; --accent-ink:#bdeee7;
+    --mlp:#98a2ad; --mlp-soft:#262a2f;
+    --amber:#d9a45c; --amber-soft:#332512;
+    --code-bg:#101214; --code-ink:#e9e7de; --code-comment:#6f8983; --code-key:#7fd7c4; --code-str:#e0bd82;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px -12px rgba(0,0,0,.55);
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f3ef; --surface:#ffffff; --surface-2:#ebe9e2;
+    --ink:#1c1e1a; --ink-soft:#62655d; --line:#dad8cf;
+    --accent:#1f7a72; --accent-soft:#e3efec; --accent-ink:#0f4f49;
+    --mlp:#586573; --mlp-soft:#e7e9ec;
+    --amber:#a8702a; --amber-soft:#f3e6d3;
+    --code-bg:#1c1e1a; --code-ink:#e9e7de; --code-comment:#8b9c96; --code-key:#7fb8a8; --code-str:#c9a86a;
+    --shadow: 0 1px 2px rgba(20,20,15,.04), 0 8px 24px -12px rgba(20,20,15,.12);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent-soft); color:var(--accent-ink);}
+  a{color:var(--accent-ink);}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  .wrap{max-width:960px; margin:0 auto; padding:64px 24px 96px;}
+
+  /* ---------- header ---------- */
+  header.hero{margin-bottom:28px;}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-soft); margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--font-display); font-weight:600;
+    font-size:clamp(28px,4.2vw,42px); line-height:1.14; letter-spacing:-.01em;
+    margin:0 0 16px; text-wrap:balance; color:var(--ink);
+  }
+  .hero p.lede{
+    font-size:17px; color:var(--ink-soft); max-width:66ch; margin:0;
+  }
+  .hero code{font-family:var(--font-mono); font-size:.92em;}
+
+  .legend{
+    display:flex; gap:22px; flex-wrap:wrap; margin-top:26px;
+    padding-top:20px; border-top:1px solid var(--line);
+  }
+  .legend .item{display:flex; align-items:center; gap:9px; font-size:13.5px; color:var(--ink-soft); font-family:var(--font-mono);}
+  .swatch{width:11px; height:11px; border-radius:3px; flex:none;}
+  .swatch.mlp{background:var(--mlp);}
+  .swatch.gnn{background:var(--accent);}
+
+  /* ---------- quick nav ---------- */
+  nav.quicknav{
+    display:flex; flex-wrap:wrap; gap:8px; margin-bottom:56px;
+  }
+  nav.quicknav a{
+    font-family:var(--font-mono); font-size:12px; text-decoration:none; color:var(--ink-soft);
+    background:var(--surface); border:1px solid var(--line); padding:6px 12px; border-radius:20px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.quicknav a:hover{color:var(--accent-ink); border-color:var(--accent);}
+
+  /* ---------- generic section ---------- */
+  section{margin-bottom:64px; scroll-margin-top:24px;}
+  .section-head{margin-bottom:22px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent-ink); background:var(--accent-soft); display:inline-block;
+    padding:3px 9px; border-radius:4px; margin-bottom:12px;
+  }
+  h2{
+    font-family:var(--font-display); font-weight:600; font-size:25px; margin:0 0 8px; letter-spacing:-.005em;
+    text-wrap:balance;
+  }
+  h3.sub{
+    font-family:var(--font-display); font-weight:600; font-size:17px; margin:26px 0 10px; color:var(--ink);
+  }
+  .section-head p{color:var(--ink-soft); margin:0; max-width:70ch; font-size:15px;}
+  p.body-p{color:var(--ink-soft); font-size:14.5px; max-width:70ch; margin:0 0 14px;}
+  p.body-p b{color:var(--ink); font-weight:600;}
+
+  /* ---------- cards / notes ---------- */
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    box-shadow:var(--shadow);
+  }
+  .note{
+    border:1px solid var(--line); border-left:3px solid var(--amber); background:var(--amber-soft);
+    border-radius:0 8px 8px 0; padding:12px 16px; font-size:13px; color:var(--ink); margin:16px 0 0;
+  }
+  .note b{font-weight:600;}
+  .provenance{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--ink-soft); margin-top:10px;
+  }
+
+  /* ---------- stage-0 card ---------- */
+  .stage0{padding:26px 28px;}
+  .stage0 .fn{
+    font-family:var(--font-mono); font-size:14.5px; color:var(--ink);
+    background:var(--surface-2); display:inline-block; padding:5px 10px; border-radius:6px; margin-bottom:14px;
+  }
+  .feat-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;
+  }
+  @media (max-width:640px){.feat-grid{grid-template-columns:1fr;}}
+  .feat-box{
+    border:1px solid var(--line); border-radius:8px; padding:14px 16px; background:var(--surface-2);
+  }
+  .feat-box .n{font-family:var(--font-mono); font-size:22px; font-weight:600; color:var(--ink);}
+  .feat-box .dims{font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .feat-box .lbl{font-size:13px; color:var(--ink-soft); margin-top:6px;}
+
+  .io-grid{
+    display:grid; grid-template-columns:100px 1fr; gap:8px 16px; font-size:13.5px; margin-bottom:0;
+  }
+  .io-grid dt{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); padding-top:2px;}
+  .io-grid dd{margin:0; font-family:var(--font-mono); font-size:13px; color:var(--ink); background:var(--surface-2); padding:6px 10px; border-radius:6px;}
+
+  /* ---------- pipeline columns ---------- */
+  .tracks{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;
+  }
+  @media (max-width:760px){.tracks{grid-template-columns:1fr;}}
+  .track{border-radius:12px; padding:22px; border:1px solid var(--line);}
+  .track.mlp{background:linear-gradient(180deg, var(--mlp-soft), transparent 40%);}
+  .track.gnn{background:linear-gradient(180deg, var(--accent-soft), transparent 40%);}
+  .track-title{
+    display:flex; align-items:center; gap:10px; margin-bottom:4px;
+  }
+  .track-title .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .track.mlp .dot{background:var(--mlp);}
+  .track.gnn .dot{background:var(--accent);}
+  .track-title h3{font-family:var(--font-display); font-size:19px; margin:0; font-weight:600;}
+  .track-sub{font-size:12.5px; color:var(--ink-soft); margin:0 0 18px; font-family:var(--font-mono);}
+
+  .stage{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:13px 15px; margin-bottom:4px; box-shadow:var(--shadow);
+  }
+  .stage .fname{font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--ink);}
+  .stage .fshape{font-family:var(--font-mono); font-size:11.5px; color:var(--ink-soft); margin-top:3px;}
+  .stage .fdesc{font-size:13px; color:var(--ink-soft); margin-top:6px; line-height:1.45;}
+  .arrow{
+    display:flex; justify-content:center; padding:6px 0; color:var(--ink-soft); opacity:.55;
+  }
+  .track.gnn .arrow{color:var(--accent);}
+
+  .stage.repeat{position:relative;}
+  .repeat-badge{
+    position:absolute; top:-9px; right:12px; background:var(--accent); color:var(--bg);
+    font-family:var(--font-mono); font-size:10.5px; padding:2px 7px; border-radius:20px; font-weight:700;
+    letter-spacing:.02em;
+  }
+
+  .stage.output{
+    background:var(--surface-2); text-align:center; border-style:dashed;
+  }
+  .stage.output .fname{font-family:var(--font-display); font-size:17px;}
+
+  /* ---------- pedigree diagram ---------- */
+  .diagram-card{padding:24px 26px 22px;}
+  .diagram-card .cap{font-size:13px; color:var(--ink-soft); margin-top:14px; max-width:64ch;}
+  .diagram-card .cap b{color:var(--ink); font-weight:600;}
+  canvas#pedigree{width:100%; height:auto; display:block;}
+  .diagram-legend{
+    display:flex; gap:20px; flex-wrap:wrap; margin-top:4px; font-size:12.5px; color:var(--ink-soft); font-family:var(--font-mono);
+  }
+  .diagram-legend .item{display:flex; align-items:center; gap:7px;}
+  .diagram-legend .ln{width:16px; height:2px; background:var(--accent);}
+  .diagram-legend .rt{width:9px; height:9px; border-radius:50%; background:var(--ink-soft);}
+  .diagram-legend .lf{width:9px; height:9px; border-radius:50%; background:var(--accent);}
+
+  /* ---------- function reference cards ---------- */
+  .ref-card{padding:0; overflow:hidden; margin-bottom:22px;}
+  .ref-head{
+    padding:18px 24px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between;
+    align-items:baseline; gap:16px; flex-wrap:wrap;
+  }
+  .ref-sig{font-family:var(--font-mono); font-size:15px; font-weight:600; color:var(--ink);}
+  .ref-tag{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 9px; border-radius:20px; flex:none;
+  }
+  .ref-tag.mlp{background:var(--mlp-soft); color:var(--mlp);}
+  .ref-tag.gnn{background:var(--accent-soft); color:var(--accent-ink);}
+  .ref-body{padding:20px 24px 24px;}
+  .ref-purpose{font-size:15px; margin:0 0 18px; color:var(--ink); max-width:66ch;}
+  .ref-body .io-grid{margin-bottom:18px;}
+  .steps{margin:0 0 18px; padding-left:0; list-style:none;}
+  .steps li{
+    display:flex; gap:12px; padding:8px 0; border-top:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);
+  }
+  .steps li:first-child{border-top:none;}
+  .steps .idx{font-family:var(--font-mono); color:var(--accent-ink); flex:none; font-weight:700; font-size:12.5px; padding-top:1px;}
+  .steps b{color:var(--ink); font-weight:600;}
+  .steps code{font-family:var(--font-mono); font-size:.93em; background:var(--surface-2); padding:1px 5px; border-radius:4px;}
+
+  pre.code{
+    background:var(--code-bg); color:var(--code-ink); border-radius:8px; padding:16px 18px;
+    overflow-x:auto; font-family:var(--font-mono); font-size:12.5px; line-height:1.6; margin:0;
+  }
+  pre.code .c{color:var(--code-comment);}
+  pre.code .k{color:var(--code-key);}
+  pre.code .s{color:var(--code-str);}
+
+  /* ---------- formula box ---------- */
+  .formula{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:16px 20px; font-family:var(--font-mono); font-size:14px; color:var(--ink);
+    overflow-x:auto; margin:14px 0;
+  }
+  .formula .line{padding:3px 0; white-space:nowrap;}
+  .formula .tag{
+    color:var(--ink-soft); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-right:10px;
+  }
+  .formula.gnn{border-left:3px solid var(--accent);}
+  .formula.myopic{border-left:3px solid var(--mlp);}
+  .formula.adp{border-left:3px solid var(--amber);}
+
+  /* ---------- tables (shared) ---------- */
+  .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--surface); box-shadow:var(--shadow); margin-bottom:10px;}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:13.5px;}
+  th,td{text-align:left; padding:11px 16px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  thead th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--ink-soft); background:var(--surface-2); font-weight:600;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.total td{font-weight:600; background:var(--surface-2);}
+  td.num{font-family:var(--font-mono); text-align:right;}
+  th.num{text-align:right;}
+  td.grp{font-weight:600; color:var(--ink);}
+  td.best{color:var(--accent-ink); font-weight:700;}
+  td.worst{color:var(--amber); font-weight:700;}
+
+  .split-tables{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:700px){.split-tables{grid-template-columns:1fr;}}
+  .split-tables h4{
+    font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--ink-soft); margin:0 0 8px;
+  }
+
+  footer{
+    border-top:1px solid var(--line); padding-top:24px; margin-top:12px;
+    font-size:12px; color:var(--ink-soft); font-family:var(--font-mono);
+  }
+  footer .grp{color:var(--ink); font-weight:600; margin:14px 0 4px; font-family:var(--font-body); font-size:11px; text-transform:uppercase; letter-spacing:.06em;}
+  footer .grp:first-child{margin-top:0;}
+  footer div.item{margin-bottom:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    * {animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">experiments_after_understanding &middot; mlp, gnn, two_gene, myopic</p>
+    <h1>How V̂(s) is built, trained, and scored</h1>
+    <p class="lede">Two models — an MLP and a GNN — learn to approximate the exact-DP optimal value function
+    V*(s) for a sequential genetic-testing problem over a pedigree. This is a full method reference: the raw
+    features, how each model turns them into an embedding, how training works, how the resulting policy is
+    evaluated, and the final head-to-head numbers against two non-learned baselines — a training-free myopic
+    heuristic, and an ADP linear-value baseline. 2-gene and 3-gene are now trained under matched conditions
+    (see the Training section) after a methodology fix applied this session.</p>
+    <div class="legend">
+      <div class="item"><span class="swatch mlp"></span> MLP &mdash; no message passing</div>
+      <div class="item"><span class="swatch gnn"></span> GNN &mdash; message passing (2 rounds)</div>
+    </div>
+  </header>
+
+  <nav class="quicknav">
+    <a href="#dataset">Dataset &amp; split</a>
+    <a href="#features">Raw features</a>
+    <a href="#embeddings">Embeddings</a>
+    <a href="#reference">Function reference</a>
+    <a href="#training">Training</a>
+    <a href="#evaluation">Evaluation</a>
+    <a href="#results">Results</a>
+    <a href="#seed-stability">Seed stability</a>
+  </nav>
+
+  <!-- ============ DATASET & SPLIT ============ -->
+  <section id="dataset">
+    <div class="section-head">
+      <span class="kicker">Dataset &amp; split</span>
+      <h2>Train on two families, test on a third, unseen one</h2>
+      <p>Both models are trained on <b>Trio</b> and <b>Nuclear</b> pedigrees and evaluated, without any further
+      fitting, on <b>ThreeGeneration</b> &mdash; a family topology neither model has seen. Every family is
+      instantiated across <b>6 allele-frequency regimes &times; 2 cost presets = 12 configs</b>. Ground-truth
+      labels (V*(s) and the exact belief propagation used at evaluation time) come from exact dynamic
+      programming, cached per config as a pickle.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Family</th><th>Role</th><th class="num">People</th><th class="num">Parent&rarr;child edges</th><th>Individuals</th></tr></thead>
+        <tbody>
+          <tr><td class="grp">Trio</td><td>train</td><td class="num">3</td><td class="num">2</td><td>Parent1, Parent2, Child</td></tr>
+          <tr><td class="grp">Nuclear</td><td>train</td><td class="num">4</td><td class="num">4</td><td>Parent1, Parent2, Child1, Child2</td></tr>
+          <tr><td class="grp">ThreeGeneration</td><td><b>test</b> (unseen topology)</td><td class="num">5</td><td class="num">4</td><td>Grandfather, Grandmother, Mother, Father, Child</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">source: FAMILY_CASES in ground-up-experiments/shared/data_gen.py; edge counts logged in two_gene/results/run.log, "[0] Building pedigree structures"</p>
+
+    <h3 class="sub">Allele-frequency regimes</h3>
+    <p class="body-p">The 2-gene and 3-gene experiments define their 6 regimes <b>independently</b> &mdash;
+    values are not simply "the 2-gene regime plus a third gene." <code>HighHigh</code> and <code>MixedB</code>
+    in particular differ between the two.</p>
+    <div class="split-tables">
+      <div>
+        <h4>2-gene &mdash; shared/data_gen.py ALLELE_FREQ_REGIMES</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Regime</th><th class="num">GeneA</th><th class="num">GeneB</th></tr></thead>
+            <tbody>
+              <tr><td>LowHigh</td><td class="num">0.02</td><td class="num">0.15</td></tr>
+              <tr><td>MediumEven</td><td class="num">0.08</td><td class="num">0.08</td></tr>
+              <tr><td>LowLow</td><td class="num">0.02</td><td class="num">0.02</td></tr>
+              <tr><td>HighHigh</td><td class="num">0.15</td><td class="num">0.15</td></tr>
+              <tr><td>MixedA</td><td class="num">0.02</td><td class="num">0.10</td></tr>
+              <tr><td>MixedB</td><td class="num">0.05</td><td class="num">0.12</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h4>3-gene &mdash; step9_gnn_3gene/build_datasets.py ALLELE_FREQS</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Regime</th><th class="num">GeneA</th><th class="num">GeneB</th><th class="num">GeneC</th></tr></thead>
+            <tbody>
+              <tr><td>LowHigh</td><td class="num">0.02</td><td class="num">0.15</td><td class="num">0.10</td></tr>
+              <tr><td>MediumEven</td><td class="num">0.08</td><td class="num">0.08</td><td class="num">0.08</td></tr>
+              <tr><td>LowLow</td><td class="num">0.02</td><td class="num">0.02</td><td class="num">0.02</td></tr>
+              <tr><td>HighHigh</td><td class="num">0.20</td><td class="num">0.20</td><td class="num">0.20</td></tr>
+              <tr><td>MixedA</td><td class="num">0.02</td><td class="num">0.08</td><td class="num">0.15</td></tr>
+              <tr><td>MixedB</td><td class="num">0.15</td><td class="num">0.08</td><td class="num">0.02</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub">Cost presets</h3>
+    <p class="body-p">Both experiments <b>do</b> share the same coefficient dictionary
+    (<code>shared/data_gen.py PRESETS</code>) &mdash; every dataset builder (<code>build_multigene_dataset</code>,
+    <code>build_two_gene_dataset</code>) reads <code>preset = PRESETS[preset_label]</code> from this one dict.
+    The 2-gene runs simply never read the GeneC entries.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Preset</th><th>Coefficient</th><th class="num">GeneA</th><th class="num">GeneB</th><th class="num">GeneC</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" rowspan="3">Base</td><td>a_gene</td><td class="num">&minus;0.08</td><td class="num">&minus;0.06</td><td class="num">&minus;0.05</td></tr>
+          <tr><td>b_gene</td><td class="num">&minus;0.04</td><td class="num">&minus;0.03</td><td class="num">&minus;0.025</td></tr>
+          <tr><td>delta_gene</td><td class="num">0.60</td><td class="num">0.70</td><td class="num">0.75</td></tr>
+          <tr><td class="grp" rowspan="3">Aggressive</td><td>a_gene</td><td class="num">&minus;0.12</td><td class="num">&minus;0.09</td><td class="num">&minus;0.075</td></tr>
+          <tr><td>b_gene</td><td class="num">&minus;0.06</td><td class="num">&minus;0.045</td><td class="num">&minus;0.0375</td></tr>
+          <tr><td>delta_gene</td><td class="num">0.70</td><td class="num">0.80</td><td class="num">0.80</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">State counts</h3>
+    <p class="body-p">A "state" is a partially-tested pedigree: a set of (person, observed-genotype) pairs plus
+    the resulting belief over everyone untested. State counts are purely combinatorial &mdash; fixed by family
+    topology and gene count, identical across all 6 regimes for a given family/gene-count.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Family</th><th class="num">States/config (2-gene)</th><th class="num">States/config (3-gene)</th><th class="num">Configs</th><th class="num">Total (2-gene)</th><th class="num">Total (3-gene)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="grp">Trio</td><td class="num">432</td><td class="num">4,872</td><td class="num">12</td><td class="num">5,184</td><td class="num">58,464</td></tr>
+          <tr><td class="grp">Nuclear</td><td class="num">2,264</td><td class="num">43,904</td><td class="num">12</td><td class="num">27,168</td><td class="num">526,848</td></tr>
+          <tr class="total"><td class="grp">Train pool (Trio+Nuclear)</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">24</td><td class="num">32,352</td><td class="num">585,312</td></tr>
+          <tr><td class="grp">ThreeGeneration</td><td>test</td><td class="num">20,816</td><td class="num">1,054,528</td><td class="num">12</td></tr>
+          <tr class="total"><td class="grp">Test pool</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">12</td><td class="num">249,792</td><td class="num">12,654,336</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">2-gene: two_gene/results/run.log (2026-07-16T12:06:34 run, logs every config's state count directly). 3-gene per-family counts: ground-up-experiments/step9_gnn_3gene/results/train.log and SUMMARY.md (same cache dir used by mlp/run.py and gnn/run.py). 3-gene train total cross-checked against mlp/results/run.log ("states: 585,312") — 12&times;4,872 + 12&times;43,904 = 585,312 exactly.</p>
+
+    <div class="note"><b>Train/val split (3-gene only):</b> mlp/run.py and gnn/run.py additionally hold out
+    the last 20% of each of the 24 training configs as validation (<code>val_frac=0.2</code>, taken
+    positionally &mdash; not shuffled before the cut). That splits the 585,312-state train pool into
+    <b>468,264 states used for gradient updates</b> and <b>117,048 held out as validation</b>
+    (Trio: 3,898/974 per config &times;12; Nuclear: 35,124/8,780 per config &times;12). The 2-gene runs
+    (two_gene/run.py) have <b>no validation split at all</b> — all 32,352 train states are used for gradient
+    updates, and only train loss is ever logged.</div>
+  </section>
+
+  <!-- ============ STAGE 0 : shared raw input ============ -->
+  <section id="features">
+    <div class="section-head">
+      <span class="kicker">Stage 0 &middot; shared by both models</span>
+      <h2>Raw per-person features</h2>
+      <p>Before either model runs, every state is turned into a fixed-size tensor: one row per person in the
+      pedigree, built by <code>load_dataset()</code> (3-gene) / <code>ds_to_tensors()</code> (2-gene). This is
+      plain feature construction &mdash; nothing here is learned yet.</p>
+    </div>
+    <div class="card stage0">
+      <span class="fn">load_dataset(key, struct_feats, device) &rarr; {"{"}nf, gf, y{"}"}</span>
+      <div class="io-grid">
+        <dt>input</dt><dd>cached DP dataset (states, belief array X, labels Y, config) + struct_feats (n_people, 3)</dd>
+        <dt>output</dt><dd>nf: (N_states, n_people, NODE_FEAT) &middot; gf: (N_states, COST_DIM) &middot; y: (N_states,)</dd>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-box"><div class="n">beliefs</div><div class="dims">3 &times; n_genes dims</div><div class="lbl">P(genotype = 0, 1, 2) per gene, from the exact-DP belief state &mdash; 9 dims for 3 genes, 6 for 2</div></div>
+        <div class="feat-box"><div class="n">is_tested</div><div class="dims">1 dim</div><div class="lbl">1.0 if this person has already been tested in state <code>s</code>, else 0.0</div></div>
+        <div class="feat-box"><div class="n">structural</div><div class="dims">3 dims</div><div class="lbl"><code>n_parents, n_children, depth</code> &mdash; fixed per family, from <code>compute_structural_features()</code></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PIPELINES ============ -->
+  <section id="embeddings">
+    <div class="section-head">
+      <span class="kicker">Stage 1&ndash;3 &middot; per model</span>
+      <h2>Two ways to turn a family into one vector</h2>
+      <p>Both take the same <code>(nf, cost_vec)</code> pair and must collapse the "N people" axis into a single
+      fixed-length vector before the final head can read it. That collapse step is the embedding.</p>
+    </div>
+
+    <div class="tracks">
+      <!-- MLP -->
+      <div class="track mlp">
+        <div class="track-title"><span class="dot"></span><h3>MLP</h3></div>
+        <p class="track-sub">mlp/run.py &middot; MLP.forward()</p>
+
+        <div class="stage">
+          <div class="fname">node_feats</div>
+          <div class="fshape">(B, N_people, 13)</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">.mean(dim=1)</div>
+          <div class="fshape">(B, N_people, 13) &rarr; (B, 13)</div>
+          <div class="fdesc">Unweighted average across people. Grandparent, parent, and child rows count
+          identically &mdash; this is the entire "embedding" step.</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">concat(pooled, cost_vec)</div>
+          <div class="fshape">(B, 13) + (B, 11) &rarr; (B, 24)</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">Linear&rarr;ReLU&rarr;Linear</div>
+          <div class="fshape">24 &rarr; 32 &rarr; 1</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage output"><div class="fname">V̂(s)</div></div>
+      </div>
+
+      <!-- GNN -->
+      <div class="track gnn">
+        <div class="track-title"><span class="dot"></span><h3>GNN</h3></div>
+        <p class="track-sub">gnn/run.py &middot; GNN._message_pass() + forward()</p>
+
+        <div class="stage">
+          <div class="fname">node_feats</div>
+          <div class="fshape">(B, N_people, 13)</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage repeat">
+          <span class="repeat-badge">&times;2 rounds</span>
+          <div class="fname">_message_pass()</div>
+          <div class="fshape">(B, N, F) &rarr; (B, N, 32)</div>
+          <div class="fdesc">Every parent&rarr;child edge sends a learned message; each child sums its incoming
+          messages and updates its own embedding from them. Round 2 repeats this on round-1's output, so
+          grandchildren end up encoding grandparents too.</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">h.mean(dim=1)</div>
+          <div class="fshape">(B, N_people, 32) &rarr; (B, 32)</div>
+          <div class="fdesc">Same mean pool as the MLP &mdash; but now over embeddings that already encode
+          each person's relatives, not just their own raw features.</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">concat(pooled, cost_vec)</div>
+          <div class="fshape">(B, 32) + (B, 11) &rarr; (B, 43)</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage">
+          <div class="fname">Linear&rarr;ReLU&rarr;Linear</div>
+          <div class="fshape">43 &rarr; 16 &rarr; 1</div>
+        </div>
+        <div class="arrow">&darr;</div>
+        <div class="stage output"><div class="fname">V̂(s)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PEDIGREE DIAGRAM ============ -->
+  <section>
+    <div class="section-head">
+      <span class="kicker">What "message passing" does, concretely</span>
+      <h2>Two rounds over the ThreeGeneration pedigree</h2>
+      <p>Edges only run parent &rarr; child (<code>build_edge_index()</code>). Messages flow one way, so after
+      two rounds a person's embedding reflects everyone <em>up to two generations above them</em> &mdash; never
+      below.</p>
+    </div>
+    <div class="card diagram-card">
+      <canvas id="pedigree" width="820" height="300"></canvas>
+      <div class="diagram-legend">
+        <div class="item"><span class="ln"></span> parent &rarr; child edge (fires every round)</div>
+        <div class="item"><span class="lf"></span> traveling message</div>
+      </div>
+      <p class="cap"><b>Round 1:</b> Father absorbs Grandfather + Grandmother; Child absorbs Father + Mother
+      (Father's round-0 features only). <b>Round 2:</b> the same 4 edges fire again, but Father's embedding now
+      already contains the grandparents &mdash; so Child's round-2 update inherits them second-hand. Grandfather,
+      Grandmother, and Mother have no incoming edges: their embeddings only ever reflect their own features.</p>
+    </div>
+  </section>
+
+  <!-- ============ FUNCTION REFERENCE ============ -->
+  <section id="reference">
+    <div class="section-head">
+      <span class="kicker">Function reference</span>
+      <h2>The three functions that build embeddings</h2>
+      <p>Source: <code>experiments_after_understanding/mlp/run.py</code> and
+      <code>experiments_after_understanding/gnn/run.py</code> (3-gene). The 2-gene versions in
+      <code>two_gene/run.py</code> are line-for-line identical logic, just <code>NODE_FEAT=10</code> /
+      <code>COST_DIM=8</code>.</p>
+    </div>
+
+    <!-- MLP.forward -->
+    <div class="card ref-card">
+      <div class="ref-head">
+        <span class="ref-sig">MLP.forward(node_feats, cost_vec)</span>
+        <span class="ref-tag mlp">mlp/run.py</span>
+      </div>
+      <div class="ref-body">
+        <p class="ref-purpose">The whole model in one call: pool people into a single vector, glue on the cost
+        vector, run a 2-layer MLP. No parameter here is aware of <em>who</em> a person is related to.</p>
+        <dl class="io-grid">
+          <dt>input</dt><dd>node_feats (B, N_people, 13) &middot; cost_vec (B, 11)</dd>
+          <dt>output</dt><dd>V̂ &mdash; (B,) scalar per state</dd>
+        </dl>
+        <ol class="steps">
+          <li><span class="idx">1</span><span><b>pooled = node_feats.mean(dim=1)</b> &mdash; average every
+          person's 13-dim row into one 13-dim vector. This <em>is</em> the embedding: unlearned, order-
+          and structure-blind, just an arithmetic mean.</span></li>
+          <li><span class="idx">2</span><span><b>x = cat([pooled, cost_vec])</b> &mdash; append the 11-dim cost
+          vector (test costs, allele-effect coefficients), giving a 24-dim input.</span></li>
+          <li><span class="idx">3</span><span><b>self.net(x)</b> &mdash; <code>Linear(24&rarr;32) &rarr; ReLU &rarr;
+          Linear(32&rarr;1)</code>, squeezed to a scalar.</span></li>
+        </ol>
+        <pre class="code"><span class="k">def</span> forward(self, node_feats, cost_vec):
+    pooled = node_feats.mean(dim=<span class="s">1</span>)                 <span class="c"># (B, 13) — mean pool: size-invariant</span>
+    x      = torch.cat([pooled, cost_vec], dim=-<span class="s">1</span>)  <span class="c"># (B, 24)</span>
+    <span class="k">return</span> self.net(x).squeeze(-<span class="s">1</span>)             <span class="c"># (B,)</span></pre>
+      </div>
+    </div>
+
+    <!-- GNN._message_pass -->
+    <div class="card ref-card">
+      <div class="ref-head">
+        <span class="ref-sig">GNN._message_pass(h, src, dst, msg_fn, upd_fn)</span>
+        <span class="ref-tag gnn">gnn/run.py</span>
+      </div>
+      <div class="ref-body">
+        <p class="ref-purpose">This is the actual embedding-builder. Called once per round (twice total). Takes
+        the current per-person embeddings and returns updated ones that have absorbed one hop of relatives.</p>
+        <dl class="io-grid">
+          <dt>input</dt><dd>h (B, N, F) &middot; src, dst (E,) edge index &middot; msg_fn, upd_fn (this round's 2 small nets)</dd>
+          <dt>output</dt><dd>h_new &mdash; (B, N, 32) updated per-person embeddings</dd>
+        </dl>
+        <ol class="steps">
+          <li><span class="idx">1</span><span><b>msg_in = cat([h[src], h[dst]])</b> &mdash; for every
+          parent&rarr;child edge, pair the parent's embedding with the child's current embedding &rarr;
+          (B, E, 2F).</span></li>
+          <li><span class="idx">2</span><span><b>msgs = msg_fn(msg_in)</b> &mdash; a learned
+          <code>Linear&rarr;ReLU</code> turns each pair into a 32-dim message &rarr; (B, E, 32).</span></li>
+          <li><span class="idx">3</span><span><b>agg = scatter_add(msgs, dst)</b> &mdash; sum every message
+          landing at the same child; a person with two parents receives and sums two messages &rarr;
+          (B, N, 32).</span></li>
+          <li><span class="idx">4</span><span><b>h_new = upd_fn(cat([h, agg]))</b> &mdash; a second learned
+          layer combines each person's <em>own</em> previous embedding with what arrived, producing the
+          updated embedding. People with no incoming edges (roots) get <code>agg=0</code> and are updated
+          from their own features only.</span></li>
+        </ol>
+        <pre class="code"><span class="k">def</span> _message_pass(self, h, src, dst, msg_fn, upd_fn):
+    msg_in = torch.cat([h[:, src, :], h[:, dst, :]], dim=-<span class="s">1</span>)  <span class="c"># (B, E, 2F)</span>
+    msgs   = msg_fn(msg_in)                                     <span class="c"># (B, E, H)</span>
+
+    agg = torch.zeros(B, N, H, device=h.device)
+    idx = dst.unsqueeze(<span class="s">0</span>).unsqueeze(-<span class="s">1</span>).expand(B, -<span class="s">1</span>, H)
+    agg.scatter_add_(<span class="s">1</span>, idx, msgs)                              <span class="c"># sum at each dst node</span>
+
+    <span class="k">return</span> upd_fn(torch.cat([h, agg], dim=-<span class="s">1</span>))                 <span class="c"># (B, N, H)</span></pre>
+      </div>
+    </div>
+
+    <!-- GNN.forward -->
+    <div class="card ref-card">
+      <div class="ref-head">
+        <span class="ref-sig">GNN.forward(node_feats, edge_index, cost_vec)</span>
+        <span class="ref-tag gnn">gnn/run.py</span>
+      </div>
+      <div class="ref-body">
+        <p class="ref-purpose">Orchestrates <code>_message_pass()</code> for <code>n_rounds=2</code>, then pools
+        &mdash; mirrors <code>MLP.forward</code> exactly from the pooling step onward, so any performance
+        difference between the two models comes entirely from what happens before this point.</p>
+        <dl class="io-grid">
+          <dt>input</dt><dd>node_feats (B, N_people, 13) &middot; edge_index (2, E) &middot; cost_vec (B, 11)</dd>
+          <dt>output</dt><dd>V̂ &mdash; (B,) scalar per state</dd>
+        </dl>
+        <pre class="code"><span class="k">def</span> forward(self, node_feats, edge_index, cost_vec):
+    h   = node_feats
+    src, dst = edge_index[<span class="s">0</span>], edge_index[<span class="s">1</span>]
+
+    <span class="k">for</span> msg_fn, upd_fn <span class="k">in</span> zip(self.msg_layers, self.upd_layers):   <span class="c"># 2 rounds</span>
+        h = self._message_pass(h, src, dst, msg_fn, upd_fn)   <span class="c"># (B, N, 32)</span>
+
+    pooled = h.mean(dim=<span class="s">1</span>)                            <span class="c"># (B, 32) — mean pool: size-invariant</span>
+    x      = torch.cat([pooled, cost_vec], dim=-<span class="s">1</span>)  <span class="c"># (B, 43)</span>
+    <span class="k">return</span> self.head(x).squeeze(-<span class="s">1</span>)              <span class="c"># (B,)</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIMENSIONS TABLE ============ -->
+  <section id="dimensions">
+    <div class="section-head">
+      <span class="kicker">2-gene vs 3-gene</span>
+      <h2>Same architecture, different tensor sizes</h2>
+      <p>two_gene/run.py reuses the identical <code>MLP</code> / <code>GNN</code> classes with smaller feature
+      dimensions &mdash; nothing structural changes.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Quantity</th><th class="num">2-gene</th><th class="num">3-gene</th><th>Breakdown</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="grp">NODE_FEAT</td><td class="num">10</td><td class="num">13</td><td>3&times;n_genes beliefs + 1 is_tested + 3 structural</td></tr>
+          <tr><td class="grp">COST_DIM</td><td class="num">8</td><td class="num">11</td><td>3&times;n_genes (a, b, &delta;) + fixed_cost + variable_cost</td></tr>
+          <tr><td class="grp">HIDDEN</td><td class="num">32</td><td class="num">32</td><td>message dim / pooled embedding width, both models</td></tr>
+          <tr><td class="grp">MLP params</td><td class="num">641</td><td class="num">833</td><td>Linear(NODE_FEAT+COST_DIM&rarr;32)&rarr;Linear(32&rarr;1)</td></tr>
+          <tr><td class="grp">GNN params</td><td class="num">6,881</td><td class="num">7,217</td><td>2 rounds of msg+upd nets + head</td></tr>
+          <tr><td class="grp">Message rounds</td><td class="num">2</td><td class="num">2</td><td><code>N_ROUNDS</code>, fixed in both</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ TRAINING ============ -->
+  <section id="training">
+    <div class="section-head">
+      <span class="kicker">Training mechanism</span>
+      <h2>Supervised regression to exact-DP labels</h2>
+      <p>MLP and GNN are trained identically: minimize MSE between V̂(s) and the exact-DP label V*(s) for every
+      state in the training pool, with Adam. Myopic is <b>not trained</b> at all — it is a closed-form
+      one-step-lookahead policy computed directly from the cached exact belief states. ADP is also
+      <b>not trained on Trio/Nuclear</b> — see the callout below the table.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Optimizer</th><th>Loss</th><th class="num">Epochs</th><th class="num">Batch size</th><th>Train/val split</th><th>Early stopping</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="grp">MLP (3-gene)</td><td>Adam, lr=1e-3</td><td>MSE vs V*(s)</td><td class="num">500</td><td class="num">512</td><td>80/20 per-config, positional</td><td>none</td></tr>
+          <tr><td class="grp">GNN (3-gene)</td><td>Adam, lr=1e-3</td><td>MSE vs V*(s)</td><td class="num">500</td><td class="num">512</td><td>80/20 per-config, positional</td><td>none</td></tr>
+          <tr><td class="grp">MLP (2-gene)</td><td>Adam, lr=1e-3</td><td>MSE vs V*(s)</td><td class="num">500</td><td class="num">512</td><td>80/20 per-config, positional</td><td>none</td></tr>
+          <tr><td class="grp">GNN (2-gene)</td><td>Adam, lr=1e-3</td><td>MSE vs V*(s)</td><td class="num">500</td><td class="num">512</td><td>80/20 per-config, positional</td><td>none</td></tr>
+          <tr><td class="grp">Myopic</td><td colspan="5">no training — closed-form policy, computed directly at evaluation time</td></tr>
+          <tr><td class="grp">ADP</td><td colspan="5">no training on Trio/Nuclear — theta fit by Bellman LP <i>directly against each test config</i> (see callout)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">mlp/run.py, gnn/run.py, two_gene/run.py: train()/train_model() — Adam(lr=1e-3), MSELoss, val_frac=0.2 (per-config, positional), epochs=500, batch_size=512, no early stopping in any of the three scripts. myopic/run.py: myopic_policy_value() — no nn.Module, no optimizer. adp/run.py, two_gene/adp_run.py: solve_adp() — scipy.optimize.linprog, no nn.Module.</p>
+
+    <div class="note"><b>2-gene originally had no validation split at all</b> — <code>two_gene/run.py</code>'s
+    <code>train_model()</code> was a separately-written function that never carried over the <code>val_frac</code>
+    split logic from <code>mlp/run.py</code>/<code>gnn/run.py</code>'s <code>train()</code>; it trained on 100%
+    of the 32,352 states with no held-out signal at all. This was fixed (patched into <code>train_model()</code>
+    to match exactly) and both 2-gene models were retrained fresh; the numbers throughout this document now
+    reflect that fix. The pre-fix run is preserved at
+    <code>two_gene/results/pre_valsplit_backup/</code> for audit purposes — see the instability callout in
+    Results below for why that before/after comparison matters.</div>
+
+    <div class="note"><b>ADP is not the same kind of baseline as MLP/GNN/Myopic.</b> <code>adp/run.py</code> /
+    <code>two_gene/adp_run.py</code> fit <code>theta</code> by solving a Bellman-consistency linear program
+    (<code>solve_adp()</code>) whose constraints come directly from <b>each ThreeGeneration test config's own</b>
+    states, beliefs, and transition probabilities — never from Trio/Nuclear, and never from V*(s) labels, but
+    with full access to the exact structure of the very family it's then scored on. That is fundamentally
+    different from MLP/GNN's zero-shot Trio+Nuclear&rarr;ThreeGeneration transfer, so ADP's numbers are
+    reported alongside the others for completeness but are <b>not a fair apples-to-apples comparison</b> to
+    MLP/GNN/Myopic.</div>
+
+    <h3 class="sub">What one epoch actually does (mlp/run.py, gnn/run.py identical structure)</h3>
+    <pre class="code"><span class="k">for</span> epoch <span class="k">in</span> range(<span class="s">1</span>, epochs + <span class="s">1</span>):
+    model.train()
+    <span class="k">for</span> g <span class="k">in</span> train_groups:                       <span class="c"># one group per training config (24 total)</span>
+        perm = torch.randperm(M, device=device)     <span class="c"># reshuffle this config's states every epoch</span>
+        <span class="k">for</span> start <span class="k">in</span> range(<span class="s">0</span>, M, batch_size):    <span class="c"># batch_size = 512</span>
+            pred = model(g[<span class="s">"nf"</span>][sl], g[<span class="s">"gf"</span>][sl])   <span class="c"># (+ g["ei"] for GNN)</span>
+            loss = mse(pred, g[<span class="s">"y"</span>][sl])
+            loss.backward(); optimizer.step()
+
+    <span class="c"># mlp/run.py, gnn/run.py only: held-out val_groups scored every epoch, logged every 50th</span>
+    model.eval()
+    <span class="k">with</span> torch.no_grad():
+        <span class="k">for</span> g <span class="k">in</span> val_groups:
+            val_loss += mse(model(...), g[<span class="s">"y"</span>][...]).item()</pre>
+    <p class="body-p" style="margin-top:14px;">Minibatches are drawn <b>within each of the 24 training configs
+    separately</b> (never mixed across configs in one batch), reshuffled every epoch. Final weights are
+    whatever the model looks like after the full epoch budget — no checkpoint selection on best-val, since
+    nothing in the main training loop compares epochs against each other.</p>
+
+    <div class="note"><b>gnn_proper_val/ variant, not used below:</b> a separate script
+    (<code>gnn_proper_val/run.py</code>) holds one whole regime (MixedB) out of training as a proper
+    generalization-val set and adds early stopping (patience=50). It reports avg ratio2 = 0.0386 on the same
+    12 ThreeGeneration test configs, but under a <i>different</i> 20-config training split, so it is not
+    apples-to-apples with the MLP/Myopic numbers below and is intentionally excluded from the results tables.</div>
+
+    <h3 class="sub">The val loss nobody acts on</h3>
+    <p class="body-p">Because none of the four scripts implement early stopping or best-checkpoint saving, the
+    weights actually used for every result below are whatever exists after epoch 500 &mdash; regardless of
+    whether that's the best point training ever reached. Comparing each run's <i>own</i> logged val loss at its
+    minimum against its val loss at epoch 500 (the checkpoint actually shipped):</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th class="num">Val loss minimum</th><th class="num">@ epoch</th><th class="num">Val loss @ epoch 500 (shipped)</th><th class="num">Degradation</th></tr></thead>
+        <tbody>
+          <tr><td class="grp">MLP (2-gene)</td><td class="num">0.001148</td><td class="num">150</td><td class="num">0.003541</td><td class="num worst">+208%</td></tr>
+          <tr><td class="grp">GNN (2-gene)</td><td class="num">0.000151</td><td class="num">50</td><td class="num">0.001294</td><td class="num worst">+757%</td></tr>
+          <tr><td class="grp">MLP (3-gene)</td><td class="num">0.001915</td><td class="num">50</td><td class="num">0.002349</td><td class="num worst">+23%</td></tr>
+          <tr><td class="grp">GNN (3-gene)</td><td class="num">0.000147</td><td class="num">450</td><td class="num">0.000156</td><td class="num">+6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body-p">Three of the four runs are shipping a checkpoint that is, by their own held-out metric,
+    substantially worse than one they already passed through &mdash; 2-gene GNN's shipped checkpoint is
+    <b>8.5&times; worse</b> than its epoch-50 minimum. Only 3-gene GNN's late-epoch weights happen to be close
+    to its own best. This directly undercuts every "MLP vs GNN" or "2-gene vs 3-gene" comparison in the Results
+    section below: at least some of the measured gap is a training-loop bug, not an architecture or gene-count
+    effect.</p>
+    <p class="provenance">Val loss traces: two_gene/results/run.log (2026-07-16T20:58:12 run, epochs logged every 50), mlp/results/run.log (2026-07-16T12:06:30 run), gnn/results/run.log (2026-07-14T21:41:37 run — the run backing the currently-reported gnn/results.json).</p>
+  </section>
+
+  <!-- ============ EVALUATION ============ -->
+  <section id="evaluation">
+    <div class="section-head">
+      <span class="kicker">Evaluation mechanism</span>
+      <h2>Greedy rollout, scored by exact expectation</h2>
+      <p>All three policies (Myopic, MLP, GNN) are scored the same way, on the same 12 ThreeGeneration configs,
+      by <code>rollout()</code> in <code>exputils/eval.py</code> (myopic uses its own near-identical
+      <code>myopic_policy_value()</code> in <code>myopic/run.py</code>). The only thing that differs between
+      policies is which score each uses to pick the next person to test.</p>
+    </div>
+
+    <h3 class="sub">Per-step decision rule</h3>
+    <p class="body-p">At every state <code>s</code>, for every untested person <code>i</code>, each policy scores
+    the option of testing them next:</p>
+    <div class="formula gnn">
+      <div class="line"><span class="tag">MLP / GNN</span>Q̂(s, i) = r_test(i, s) + &Sigma;<sub>g</sub> P(g | s, i) &middot; <b>V̂(s &cup; {(i,g)})</b></div>
+    </div>
+    <div class="formula myopic">
+      <div class="line"><span class="tag">Myopic</span>Q_myopic(s, i) = r_test(i, s) + &Sigma;<sub>g</sub> P(g | s, i) &middot; <b>V_stop(s &cup; {(i,g)})</b></div>
+    </div>
+    <div class="formula adp">
+      <div class="line"><span class="tag">ADP</span>Q_ADP(s, i) = r_test(i, s) + &Sigma;<sub>g</sub> P(g | s, i) &middot; <b>&phi;(s &cup; {(i,g)}) &middot; &theta;</b></div>
+    </div>
+    <p class="body-p">The difference is entirely in the bolded term. MLP/GNN plug in the <b>trained model's
+    estimate of the true optimal future value</b> at the hypothetical next state &mdash; in principle a
+    multi-step-lookahead estimate, if V̂ were accurate. Myopic plugs in the <b>exact value of stopping
+    immediately</b> after that one test — a genuine one-step lookahead, computed exactly, with no learned
+    approximation and no foresight beyond the next test. ADP plugs in a <b>linear function of 16 hand-designed
+    "ABCD" features</b> (<code>&phi;(s)</code>), with the weight vector <code>&theta;</code> fit once per test
+    config by solving a Bellman-consistency LP against that config's own exact states (never trained on
+    Trio/Nuclear, never regressed on V* — see the training-mechanism caveat above). All four policies then
+    apply the same rule: stop if <code>max_i Q(s,i) &le; v_stop(s)</code>, else test
+    <code>argmax_i Q(s,i)</code>, where <code>v_stop(s) = &Sigma;<sub>k not tested</sub> r_reward(k)</code> is
+    the exact cost of stopping right now.</p>
+
+    <h3 class="sub">Scoring the induced policy: exact expectation, not sampling</h3>
+    <p class="body-p">Once a policy picks its action at every state, the achieved value <code>L</code> is
+    <b>not</b> a Monte-Carlo average over sampled rollouts. It is computed by recursing through the actual exact-DP
+    state graph, weighting every branch by its true transition probability:</p>
+    <pre class="code"><span class="k">def</span> value_at(state):                        <span class="c"># memoized</span>
+    <span class="k">if</span> no untested people: <span class="k">return</span> <span class="s">0.0</span>
+    best_i = argmax_i Q(state, i)               <span class="c"># policy-specific Q from above</span>
+    <span class="k">if</span> Q(state, best_i) &lt;= v_stop(state):
+        <span class="k">return</span> v_stop(state)                   <span class="c"># policy stops here</span>
+    <span class="k">return</span> r_test(best_i, state) + sum(
+        P(g | state, best_i) * value_at(state &cup; {(best_i, g)})
+        <span class="k">for</span> g <span class="k">in</span> genotypes
+    )                                            <span class="c"># exact expectation over test outcomes</span>
+
+L = value_at(root_state)</pre>
+    <p class="body-p">This means <code>L</code> is the <i>true</i> expected value of following that policy from
+    the root — every possible test-result branch is included, weighted exactly, not one sampled path.</p>
+
+    <h3 class="sub">ratio2 — the metric in every results table</h3>
+    <div class="formula">
+      <div class="line">ratio2 = ( V* &minus; L ) &divide; ( V* &minus; V_stop(root) )</div>
+    </div>
+    <p class="body-p"><code>V*</code> is the true optimum from exact DP (same for every policy on a given
+    config — it doesn't depend on the model). <code>V_stop(root)</code> is the value of testing <i>no one at
+    all</i>. So: <b>ratio2 = 0</b> means the policy matches the exact optimum; <b>ratio2 = 1</b> means it does
+    exactly as poorly as never testing anyone; <b>ratio2 &gt; 1</b> means it is worse than doing nothing at
+    all — which does happen in the tables below (MLP, LowLow_Base, both gene counts).</p>
+    <p class="provenance">exputils/eval.py: rollout(), _q_hat(), _stop_val() &mdash; used by mlp/run.py, gnn/run.py, two_gene/run.py. myopic/run.py: myopic_policy_value(), compute_v_stop(), compute_r_test() &mdash; structurally the same value_at() recursion, different Q.</p>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results">
+    <div class="section-head">
+      <span class="kicker">Results</span>
+      <h2>ratio2 on ThreeGeneration, by regime &times; preset</h2>
+      <p>Lower is better; 0 = optimal. All values recomputed directly from each run's <code>results.json</code>
+      for this document — see provenance notes under each table.</p>
+    </div>
+
+    <h3 class="sub">2-gene <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-soft); text-transform:none; letter-spacing:0; background:var(--accent-soft); padding:2px 8px; border-radius:4px; margin-left:8px;">fresh run, post val-split fix</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Regime &middot; preset</th><th class="num">Myopic</th><th class="num">MLP</th><th class="num">GNN</th><th class="num">ADP</th></tr></thead>
+        <tbody>
+          <tr><td>LowHigh &middot; Base</td><td class="num best">0.0154</td><td class="num worst">0.1681</td><td class="num">0.0719</td><td class="num">0.1090</td></tr>
+          <tr><td>LowHigh &middot; Aggressive</td><td class="num">0.0401</td><td class="num worst">0.0649</td><td class="num best">0.0246</td><td class="num">0.0498</td></tr>
+          <tr><td>MediumEven &middot; Base</td><td class="num best">0.0526</td><td class="num worst">0.1297</td><td class="num">0.0982</td><td class="num">0.0948</td></tr>
+          <tr><td>MediumEven &middot; Aggressive</td><td class="num">0.0431</td><td class="num worst">0.0587</td><td class="num best">0.0307</td><td class="num">0.0478</td></tr>
+          <tr><td>LowLow &middot; Base</td><td class="num best">0.0643</td><td class="num">1.0000</td><td class="num">1.1766</td><td class="num worst">1.5655</td></tr>
+          <tr><td>LowLow &middot; Aggressive</td><td class="num best">0.0771</td><td class="num worst">0.5905</td><td class="num">0.3339</td><td class="num">0.4134</td></tr>
+          <tr><td>HighHigh &middot; Base</td><td class="num best">0.0151</td><td class="num worst">0.0616</td><td class="num">0.0171</td><td class="num">0.0428</td></tr>
+          <tr><td>HighHigh &middot; Aggressive</td><td class="num best">0.0149</td><td class="num worst">0.0256</td><td class="num">0.0153</td><td class="num">0.0209</td></tr>
+          <tr><td>MixedA &middot; Base</td><td class="num best">0.0195</td><td class="num worst">0.2943</td><td class="num">0.1766</td><td class="num">0.1939</td></tr>
+          <tr><td>MixedA &middot; Aggressive</td><td class="num">0.0811</td><td class="num worst">0.1024</td><td class="num best">0.0451</td><td class="num">0.0847</td></tr>
+          <tr><td>MixedB &middot; Base</td><td class="num best">0.0425</td><td class="num worst">0.1345</td><td class="num">0.0821</td><td class="num">0.0942</td></tr>
+          <tr><td>MixedB &middot; Aggressive</td><td class="num">0.0400</td><td class="num worst">0.0570</td><td class="num best">0.0211</td><td class="num">0.0463</td></tr>
+          <tr class="total"><td class="grp">AVG</td><td class="num grp best">0.0421</td><td class="num grp">0.2240</td><td class="num grp">0.1744</td><td class="num grp worst">0.2303</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">two_gene/results/myopic_results.json (2026-07-15T14:38:54 — deterministic, unaffected by later fixes) &middot; two_gene/results/results.json["mlp"|"gnn"] (2026-07-16T20:58:12 run, val-split fix applied) &middot; two_gene/results/adp_results.json (2026-07-16, new script).</p>
+
+    <div class="note"><b>Run-to-run instability, demonstrated:</b> before the val-split fix, GNN's avg ratio2
+    on this exact table was <b>0.0485</b> (best of all four policies) — after the fix, it's <b>0.1744</b>.
+    The single biggest driver: <code>LowLow_Base</code> alone moved from <b>0.0040</b> to <b>1.1766</b> — a
+    ~295&times; change — from a code change that only affects which 20% of training data gets held out.
+    No script in this pipeline sets a random seed (checked: no <code>torch.manual_seed</code> anywhere in
+    mlp/, gnn/, two_gene/, myopic/, gnn_proper_val/, or adp/), so this is most likely ordinary seed variance,
+    not a real effect of the fix — which means <b>neither the old nor the new number should be treated as
+    "the" GNN result</b> without repeating the run under multiple seeds.</div>
+
+    <h3 class="sub">3-gene</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Regime &middot; preset</th><th class="num">Myopic</th><th class="num">MLP</th><th class="num">GNN</th><th class="num">ADP</th></tr></thead>
+        <tbody>
+          <tr><td>LowHigh &middot; Base</td><td class="num best">0.0240</td><td class="num worst">0.0714</td><td class="num">0.0387</td><td class="num">0.0562</td></tr>
+          <tr><td>LowHigh &middot; Aggressive</td><td class="num">0.0193</td><td class="num worst">0.0346</td><td class="num best">0.0181</td><td class="num">0.0281</td></tr>
+          <tr><td>MediumEven &middot; Base</td><td class="num">0.0341</td><td class="num worst">0.0610</td><td class="num best">0.0326</td><td class="num">0.0545</td></tr>
+          <tr><td>MediumEven &middot; Aggressive</td><td class="num">0.0250</td><td class="num">0.0286</td><td class="num best">0.0171</td><td class="num worst">0.0286</td></tr>
+          <tr><td>LowLow &middot; Base</td><td class="num best">0.0380</td><td class="num worst">0.8807</td><td class="num">0.2922</td><td class="num">0.6830</td></tr>
+          <tr><td>LowLow &middot; Aggressive</td><td class="num">0.0646</td><td class="num worst">0.3095</td><td class="num best">0.0250</td><td class="num">0.2163</td></tr>
+          <tr><td>HighHigh &middot; Base</td><td class="num best">0.0079</td><td class="num worst">0.0210</td><td class="num">0.0127</td><td class="num">0.0208</td></tr>
+          <tr><td>HighHigh &middot; Aggressive</td><td class="num">0.0094</td><td class="num worst">0.0105</td><td class="num best">0.0025</td><td class="num">0.0082</td></tr>
+          <tr><td>MixedA &middot; Base</td><td class="num best">0.0316</td><td class="num worst">0.0812</td><td class="num">0.0482</td><td class="num">0.0611</td></tr>
+          <tr><td>MixedA &middot; Aggressive</td><td class="num">0.0227</td><td class="num worst">0.0389</td><td class="num best">0.0115</td><td class="num">0.0323</td></tr>
+          <tr><td>MixedB &middot; Base</td><td class="num">0.0261</td><td class="num worst">0.0642</td><td class="num best">0.0253</td><td class="num">0.0492</td></tr>
+          <tr><td>MixedB &middot; Aggressive</td><td class="num">0.0196</td><td class="num worst">0.0285</td><td class="num best">0.0124</td><td class="num">0.0255</td></tr>
+          <tr class="total"><td class="grp">AVG</td><td class="num grp best">0.0269</td><td class="num grp worst">0.1358</td><td class="num grp">0.0447</td><td class="num grp">0.1053</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">myopic/results/results.json &middot; mlp/results/results.json (2026-07-16T12:06:30 run) &middot; gnn/results/results.json &middot; adp/results/results.json.</p>
+    <div class="note"><b>Caveat on the 3-gene GNN column:</b> <code>gnn/results/results.json</code> is dated
+    2026-07-14T23:11, but <code>gnn/run.py</code> was subsequently edited 2026-07-16T12:36 without a re-run
+    since. The edit did not touch model dimensions — recomputing the parameter count from the current
+    <code>NODE_FEAT/HIDDEN/COST_DIM</code> constants in the file still gives exactly 7,217, matching the
+    checkpoint — but any non-architectural change in that edit would not be reflected in these numbers.</div>
+
+    <h3 class="sub">Reading the tables together</h3>
+    <ul style="padding-left:20px; color:var(--ink-soft); font-size:14.5px; line-height:1.7;">
+      <li><b>Myopic wins on average in every column, both settings</b> (0.0421 / 0.0269) despite requiring no
+      training data and no learned parameters at all — it remains the strongest, cheapest baseline on this
+      task even after fixing 2-gene's methodology and adding ADP.</li>
+      <li><b>MLP is the worst-or-near-worst policy on average in both settings</b> (2-gene: 0.2240; 3-gene:
+      0.1358, worst in that table) and produces the single largest same-family failure in the 3-gene table
+      (<code>LowLow_Base</code> = 0.8807, worse than testing no one at all).</li>
+      <li><b>ADP is now the worst policy on average in 2-gene</b> (0.2303) and second-worst in 3-gene (0.1053)
+      — despite having privileged access to each test family's own exact structure (see the training-mechanism
+      caveat). Its own <code>LowLow_Base</code> numbers are the worst single value in <i>both</i> tables
+      (2-gene: 1.5655; 3-gene: 0.6830) — this regime is hard for every approximate method here, not a
+      MLP-specific weakness.</li>
+      <li><b>GNN is the best of the three non-myopic methods in both settings</b> post-fix (2-gene: 0.1744;
+      3-gene: 0.0447), but still doesn't beat myopic on average, and the 2-gene number is exactly the one shown
+      above to be unstable across a single unseeded rerun — treat it as a rough indicator, not a settled result.</li>
+      <li><b>None of this rules out that the ranking is mostly a training-loop artifact</b>: the val-loss
+      table above shows 2-gene GNN's shipped checkpoint is 8.5&times; worse than its own best; a version of
+      this pipeline with best-val checkpointing (not yet run) could plausibly change every number in both
+      tables.</li>
+    </ul>
+    <div class="note"><b>Treat every single-run number above as illustrative, not conclusive.</b> The
+    section immediately below reruns MLP and GNN under 3 different random seeds — same architecture, same
+    data, same split, same epochs, nothing changed except the seed — and the results are substantially
+    different from any single run shown here. Read that section for the numbers that should actually inform
+    any conclusion about MLP vs GNN vs Myopic.</div>
+  </section>
+
+  <!-- ============ SEED STABILITY ============ -->
+  <section id="seed-stability">
+    <div class="section-head">
+      <span class="kicker">Seed stability &middot; 3 seeds, same everything else</span>
+      <h2>The single-run numbers above were not representative</h2>
+      <p>None of the original scripts set a random seed anywhere (checked: no <code>torch.manual_seed</code> in
+      mlp/, gnn/, two_gene/, myopic/, gnn_proper_val/, or adp/). To find out whether that mattered, three new,
+      separate scripts — <code>mlp/run_seeds.py</code>, <code>gnn/run_seeds.py</code>,
+      <code>two_gene/run_seeds.py</code> — were written as backward-compatible copies of the originals (the
+      originals are untouched; these just add <code>--seed</code>, call <code>torch.manual_seed(seed)</code>
+      before model init, and write to <code>results/seed_runs/seed{N}/</code> instead of overwriting
+      <code>results/</code>). Each was run for seeds <code>0, 1, 2</code> — architecture, data, split, epochs
+      (500), batch size (512), optimizer, and loss all identical to the canonical runs, only the seed differs.
+      All 9 jobs (SLURM 2107149/2107150/2107151) completed successfully.</p>
+    </div>
+
+    <h3 class="sub">Mean &plusmn; std ratio2 across 3 seeds (myopic shown for reference — it's deterministic, no seed variance)</h3>
+
+    <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin:22px 0 8px;">2-gene</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Regime &middot; preset</th><th class="num">Myopic</th><th class="num">MLP (mean &plusmn; std)</th><th class="num">GNN (mean &plusmn; std)</th></tr></thead>
+        <tbody>
+          <tr><td>LowHigh &middot; Base</td><td class="num">0.0154</td><td class="num">0.4450 &plusmn; 0.4807</td><td class="num">0.0977 &plusmn; 0.0160</td></tr>
+          <tr><td>LowHigh &middot; Aggressive</td><td class="num">0.0401</td><td class="num">0.0735 &plusmn; 0.0108</td><td class="num">0.0461 &plusmn; 0.0116</td></tr>
+          <tr><td>MediumEven &middot; Base</td><td class="num">0.0526</td><td class="num">0.4195 &plusmn; 0.5027</td><td class="num">0.0893 &plusmn; 0.0135</td></tr>
+          <tr><td>MediumEven &middot; Aggressive</td><td class="num">0.0431</td><td class="num">0.0589 &plusmn; 0.0042</td><td class="num">0.0498 &plusmn; 0.0030</td></tr>
+          <tr><td>LowLow &middot; Base</td><td class="num">0.0643</td><td class="num worst">1.4180 &plusmn; 0.7239</td><td class="num">0.6407 &plusmn; 0.7552</td></tr>
+          <tr><td>LowLow &middot; Aggressive</td><td class="num">0.0771</td><td class="num">0.8636 &plusmn; 0.2362</td><td class="num">0.2480 &plusmn; 0.0786</td></tr>
+          <tr><td>HighHigh &middot; Base</td><td class="num">0.0151</td><td class="num">0.0580 &plusmn; 0.0034</td><td class="num">0.0469 &plusmn; 0.0019</td></tr>
+          <tr><td>HighHigh &middot; Aggressive</td><td class="num">0.0149</td><td class="num">0.0243 &plusmn; 0.0031</td><td class="num">0.0208 &plusmn; 0.0006</td></tr>
+          <tr><td>MixedA &middot; Base</td><td class="num">0.0195</td><td class="num">0.5253 &plusmn; 0.4111</td><td class="num">0.1482 &plusmn; 0.0381</td></tr>
+          <tr><td>MixedA &middot; Aggressive</td><td class="num">0.0811</td><td class="num">0.4085 &plusmn; 0.5124</td><td class="num">0.0874 &plusmn; 0.0094</td></tr>
+          <tr><td>MixedB &middot; Base</td><td class="num">0.0425</td><td class="num">0.4227 &plusmn; 0.5000</td><td class="num">0.0873 &plusmn; 0.0140</td></tr>
+          <tr><td>MixedB &middot; Aggressive</td><td class="num">0.0400</td><td class="num">0.0653 &plusmn; 0.0080</td><td class="num">0.0428 &plusmn; 0.0085</td></tr>
+          <tr class="total"><td class="grp">AVG</td><td class="num grp best">0.0421</td><td class="num grp worst">0.3985 &plusmn; 0.1830</td><td class="num grp">0.1338 &plusmn; 0.0668</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin:22px 0 8px;">3-gene</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Regime &middot; preset</th><th class="num">Myopic</th><th class="num">MLP (mean &plusmn; std)</th><th class="num">GNN (mean &plusmn; std)</th></tr></thead>
+        <tbody>
+          <tr><td>LowHigh &middot; Base</td><td class="num">0.0240</td><td class="num">0.0737 &plusmn; 0.0059</td><td class="num">0.0356 &plusmn; 0.0122</td></tr>
+          <tr><td>LowHigh &middot; Aggressive</td><td class="num">0.0193</td><td class="num">0.0321 &plusmn; 0.0020</td><td class="num">0.0153 &plusmn; 0.0047</td></tr>
+          <tr><td>MediumEven &middot; Base</td><td class="num">0.0341</td><td class="num">0.0701 &plusmn; 0.0054</td><td class="num">0.0434 &plusmn; 0.0161</td></tr>
+          <tr><td>MediumEven &middot; Aggressive</td><td class="num">0.0250</td><td class="num">0.0320 &plusmn; 0.0015</td><td class="num">0.0156 &plusmn; 0.0035</td></tr>
+          <tr><td>LowLow &middot; Base</td><td class="num">0.0380</td><td class="num worst">1.0000 &plusmn; 0.0000</td><td class="num">0.5767 &plusmn; 0.1938</td></tr>
+          <tr><td>LowLow &middot; Aggressive</td><td class="num">0.0646</td><td class="num">0.6655 &plusmn; 0.3484</td><td class="num">0.0614 &plusmn; 0.0687</td></tr>
+          <tr><td>HighHigh &middot; Base</td><td class="num">0.0079</td><td class="num">0.0244 &plusmn; 0.0036</td><td class="num">0.0128 &plusmn; 0.0012</td></tr>
+          <tr><td>HighHigh &middot; Aggressive</td><td class="num">0.0094</td><td class="num">0.0087 &plusmn; 0.0017</td><td class="num">0.0063 &plusmn; 0.0005</td></tr>
+          <tr><td>MixedA &middot; Base</td><td class="num">0.0316</td><td class="num">0.0892 &plusmn; 0.0125</td><td class="num">0.0450 &plusmn; 0.0164</td></tr>
+          <tr><td>MixedA &middot; Aggressive</td><td class="num">0.0227</td><td class="num">0.0368 &plusmn; 0.0038</td><td class="num">0.0153 &plusmn; 0.0041</td></tr>
+          <tr><td>MixedB &middot; Base</td><td class="num">0.0261</td><td class="num">0.0642 &plusmn; 0.0053</td><td class="num">0.0341 &plusmn; 0.0070</td></tr>
+          <tr><td>MixedB &middot; Aggressive</td><td class="num">0.0196</td><td class="num">0.0294 &plusmn; 0.0015</td><td class="num">0.0233 &plusmn; 0.0006</td></tr>
+          <tr class="total"><td class="grp">AVG</td><td class="num grp best">0.0269</td><td class="num grp worst">0.1772 &plusmn; 0.0266</td><td class="num grp">0.0737 &plusmn; 0.0143</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="provenance">experiments_after_understanding/{mlp,gnn}/results/seed_runs/seed{0,1,2}/results.json &middot; experiments_after_understanding/two_gene/results/seed_runs/seed{0,1,2}/results.json. AVG row = mean (and std) of each seed's own 12-config average, not the mean of the 12 per-config means shown — the two are close but not identical.</p>
+
+    <h3 class="sub">MLP has a collapse failure mode GNN never shows</h3>
+    <p class="body-p">Counting how often the induced rollout policy tests <b>nobody at all</b> (ratio2 exactly
+    1.0000, i.e. it stops at the root state) across all 36 seed&times;config runs per setting:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th class="num">Collapsed to "test no one"</th></tr></thead>
+        <tbody>
+          <tr><td class="grp">MLP (3-gene)</td><td class="num worst">4 / 36 (11%)</td></tr>
+          <tr><td class="grp">MLP (2-gene)</td><td class="num worst">9 / 36 (25%)</td></tr>
+          <tr><td class="grp">GNN (3-gene)</td><td class="num best">0 / 36 (0%)</td></tr>
+          <tr><td class="grp">GNN (2-gene)</td><td class="num best">0 / 36 (0%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body-p">A quarter of the time, 2-gene MLP's trained V̂ makes every possible test look worse than
+    doing nothing at the very first decision — even in regimes (e.g. <code>LowHigh_Base</code>, one of three
+    seeds) where testing is clearly valuable, as shown by myopic and GNN both testing productively there in
+    the same regime. GNN never does this, in either gene count, across all 36 runs. This is a reproducible
+    architectural weakness specific to the mean-pool MLP, not a description of "MLP is somewhat worse on
+    average" &mdash; it's a distinct, discrete failure mode with its own rate.</p>
+
+    <h3 class="sub">What changes once you stop trusting a single run</h3>
+    <ul style="padding-left:20px; color:var(--ink-soft); font-size:14.5px; line-height:1.7;">
+      <li><b>Myopic's advantage over both neural models is larger than the single-run tables suggested, not
+      smaller.</b> 3-gene GNN's true average (0.0737) is 65% worse than the single lucky run reported earlier
+      (0.0447); 2-gene MLP's true average (0.3985) is roughly double either single run shown above (0.2240 /
+      0.2333).</li>
+      <li><b>GNN is consistently more stable than MLP</b> (lower std in nearly every regime, in both gene
+      counts) in addition to having a better mean — and never exhibits the collapse-to-root failure mode.</li>
+      <li><b>Some regimes are unstable for every method, not just the weak ones</b>: <code>LowLow_Base</code>
+      has enormous std even for GNN (2-gene: &plusmn;0.7552; 3-gene: &plusmn;0.1938) — this looks like a
+      property of the regime itself (rare alleles, low signal), not something either architecture can fix by
+      training harder.</li>
+      <li><b>Three seeds is still not enough to report tight confidence intervals</b> &mdash; it's enough to
+      prove the single-run numbers were unreliable, not enough to pin down the "true" mean precisely. Treat
+      the values in this section as a much better estimate than anything above, but still not a final answer.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="grp">Embeddings / architecture</div>
+    <div class="item">experiments_after_understanding/mlp/run.py — MLP class, load_dataset(), compute_structural_features()</div>
+    <div class="item">experiments_after_understanding/gnn/run.py — GNN class, _message_pass(), build_edge_index()</div>
+    <div class="item">experiments_after_understanding/two_gene/run.py — same architecture, GENES=(GeneA, GeneB)</div>
+
+    <div class="grp">Dataset</div>
+    <div class="item">ground-up-experiments/shared/data_gen.py — FAMILY_CASES, ALLELE_FREQ_REGIMES, PRESETS</div>
+    <div class="item">ground-up-experiments/step9_gnn_3gene/build_datasets.py — 3-gene ALLELE_FREQS</div>
+    <div class="item">ground-up-experiments/step9_gnn_3gene/results/train.log, SUMMARY.md — 3-gene state counts</div>
+
+    <div class="grp">Training / evaluation</div>
+    <div class="item">experiments_after_understanding/exputils/eval.py — rollout(), _q_hat(), _stop_val()</div>
+    <div class="item">experiments_after_understanding/myopic/run.py — myopic_policy_value()</div>
+    <div class="item">experiments_after_understanding/adp/run.py — solve_adp(), greedy_policy_value() (3-gene)</div>
+    <div class="item">experiments_after_understanding/two_gene/adp_run.py — same, 2-gene, added this session</div>
+    <div class="item">experiments_after_understanding/mlp/, gnn/, two_gene/, myopic/, adp/results/*.json + *.log</div>
+    <div class="item">experiments_after_understanding/two_gene/results/pre_valsplit_backup/ — results.json, run.log, mlp.pt, gnn.pt from before the val-split fix</div>
+
+    <div class="grp">Fixes applied this session (SLURM jobs 2106311, 2106312)</div>
+    <div class="item">submit_2gene.sh — rerun after patching train_model() in two_gene/run.py to add val_frac=0.2 split (matches mlp/gnn)</div>
+    <div class="item">submit_2gene_adp.sh — new job running two_gene/adp_run.py</div>
+
+    <div class="grp">Seed stability check (SLURM jobs 2107149, 2107150, 2107151 — array 0-2 each)</div>
+    <div class="item">experiments_after_understanding/mlp/run_seeds.py, gnn/run_seeds.py, two_gene/run_seeds.py — new, separate, backward-compatible (originals untouched)</div>
+    <div class="item">submit_mlp_seeds.sh, submit_gnn_seeds.sh, submit_2gene_seeds.sh — SLURM array jobs, --array=0-2</div>
+    <div class="item">.../results/seed_runs/seed{0,1,2}/results.json + run.log — 9 independent runs, all COMPLETED</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('pedigree');
+  const ctx = canvas.getContext('2d');
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const W = 820, H = 300;
+  canvas.width = W * DPR; canvas.height = H * DPR;
+  ctx.scale(DPR, DPR);
+
+  function cssVar(name){
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // positions mirror generate_deterministic_pedigree(FAMILY_CASES["ThreeGeneration"]):
+  // Father's parents = Grandfather, Grandmother ; Child's parents = Father, Mother
+  const nodes = {
+    Grandfather: {x: 170, y: 60},
+    Grandmother: {x: 330, y: 60},
+    Mother:      {x: 610, y: 170},
+    Father:      {x: 250, y: 170},
+    Child:       {x: 430, y: 280},
+  };
+  const edges = [
+    ['Grandfather','Father'], ['Grandmother','Father'],
+    ['Father','Child'], ['Mother','Child'],
+  ];
+  const roots = new Set(['Grandfather','Grandmother','Mother']);
+
+  let t = 0;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function draw(){
+    const ink = cssVar('--ink-soft');
+    const inkStrong = cssVar('--ink');
+    const accent = cssVar('--accent');
+    const surface = cssVar('--surface');
+
+    ctx.clearRect(0,0,W,H);
+
+    // edges
+    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = ink;
+    ctx.globalAlpha = 0.5;
+    edges.forEach(([a,b])=>{
+      const p1 = nodes[a], p2 = nodes[b];
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+
+    // traveling messages
+    edges.forEach(([a,b], ei)=>{
+      const p1 = nodes[a], p2 = nodes[b];
+      const phase = reduceMotion ? 0.5 : ((t/70 + ei*0.28) % 1);
+      const mx = p1.x + (p2.x - p1.x) * phase;
+      const my = p1.y + (p2.y - p1.y) * phase;
+      ctx.beginPath();
+      ctx.arc(mx, my, 4, 0, Math.PI*2);
+      ctx.fillStyle = accent;
+      ctx.fill();
+    });
+
+    // nodes
+    Object.entries(nodes).forEach(([name, p])=>{
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 26, 0, Math.PI*2);
+      ctx.fillStyle = surface;
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = roots.has(name) ? ink : accent;
+      ctx.stroke();
+
+      ctx.fillStyle = inkStrong;
+      ctx.font = '600 12px ui-monospace, "SF Mono", Menlo, monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(name, p.x, p.y - 38);
+
+      ctx.font = '10px ui-monospace, "SF Mono", Menlo, monospace';
+      ctx.fillStyle = ink;
+      ctx.fillText(roots.has(name) ? 'no incoming edges' : 'receives messages', p.x, p.y + 42);
+    });
+
+    t += 1;
+    if(!reduceMotion) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body></html>

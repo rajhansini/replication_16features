@@ -1,0 +1,7 @@
+[3gene ground truth, single config] 2026-08-08T03:53:15.122106
+
+──────────────────────────────────────────────────
+[CONFIG] Extended_MediumEven_Aggressive_3gene  (test, fresh-build)
+  states=9,190,992  V*(root)=-0.1858  V_stop(root)=-0.5149
+  myopic: L=-0.1966  ratio2=0.0328  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (1336s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/3gene/configs/Extended_MediumEven_Aggressive_3gene.json

@@ -1,0 +1,16 @@
+{
+  "V_root": -0.16327800052738312,
+  "V_stop_root": -0.29064522815999994,
+  "L_myopic_TRUE": -0.1695423569504627,
+  "ratio2_TRUE": 0.04918342449243506,
+  "root_action_myopic": [
+    "test",
+    "Grandfather"
+  ],
+  "root_action_dp": [
+    "test",
+    "Grandfather"
+  ],
+  "n_states": 1054528,
+  "key": "ThreeGeneration_MixedB_Base_3gene"
+}

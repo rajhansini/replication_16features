@@ -1,0 +1,19 @@
+[extended_fourway] 2026-07-26T19:45:40.642156  genes=3  seed=2  family=Extended (OOD -- never trained on)  GNN=E6 sumpool  MLP=E6 sumpool  only=MediumEven/Base
+loaded GNN (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_gnn_sumpool/seed_runs/seed2/gnn_q_e6.pt
+loaded MLP (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_mlp_sumpool/seed_runs/seed2/mlp_q_e6.pt
+
+==========================================================================================
+Extended_MediumEven_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1753  V_stop(root)=-0.3467
+  ratio2: myopic=0.0638  gnn=0.0441  mlp=0.1643
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST Child      TEST Mother     partial
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST Child      TEST Mother     none
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Mother     partial
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Mother     TEST Mother     partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=4/7=0.571  mlp=5/7=0.714  all4=2/7=0.286
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed2/configs_e6/MediumEven_Base.json

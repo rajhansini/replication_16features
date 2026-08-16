@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:53:01.421915  genes=2  family=ThreeGeneration  regime=HighHigh  preset=Aggressive
+[CONFIG] ThreeGeneration_HighHigh_Aggressive_2gene (test)
+  states=20,816  V*(root)=-0.190984  V_stop(root)=-0.471197
+  ADP: ratio2=0.013646761768532552  ratio3=0.10204427137793896  policy_source=adp_policy  (71s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/ThreeGeneration_HighHigh_Aggressive_2gene_adp.json

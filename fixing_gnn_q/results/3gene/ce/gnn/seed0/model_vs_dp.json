@@ -1,0 +1,609 @@
+{
+  "genes": 3,
+  "seed": 0,
+  "variant": "ce",
+  "model": "gnn",
+  "overall": {
+    "n_match": 42,
+    "n_total": 64,
+    "rate": 0.65625,
+    "root_match": 11,
+    "root_total": 12
+  },
+  "per_config": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "n_match": 3,
+      "n_total": 6,
+      "rate": 0.5
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "n_match": 2,
+      "n_total": 6,
+      "rate": 0.3333333333333333
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "n_match": 4,
+      "n_total": 6,
+      "rate": 0.6666666666666666
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 6,
+      "rate": 0.6666666666666666
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8
+    }
+  },
+  "detail": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "n_match": 3,
+      "n_total": 6,
+      "rate": 0.5,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "dp": "TEST Father",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Mother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Mother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "STOP",
+          "match": false
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "n_match": 2,
+      "n_total": 6,
+      "rate": 0.3333333333333333,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Father",
+          "dp": "TEST Grandfather",
+          "match": false
+        },
+        {
+          "step": 1,
+          "state": "{Father:(0, 0, 0)}",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Mother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Mother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "STOP",
+          "match": false
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "n_match": 4,
+      "n_total": 6,
+      "rate": 0.6666666666666666,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "dp": "TEST Child",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 6,
+      "rate": 0.6666666666666666,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Father",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 5,
+          "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "n_match": 3,
+      "n_total": 5,
+      "rate": 0.6,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "n_match": 4,
+      "n_total": 5,
+      "rate": 0.8,
+      "steps": [
+        {
+          "step": 0,
+          "state": "root",
+          "gnn": "TEST Grandfather",
+          "dp": "TEST Grandfather",
+          "match": true
+        },
+        {
+          "step": 1,
+          "state": "{Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Child",
+          "dp": "TEST Grandmother",
+          "match": false
+        },
+        {
+          "step": 2,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0)}",
+          "gnn": "TEST Mother",
+          "dp": "TEST Mother",
+          "match": true
+        },
+        {
+          "step": 3,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "TEST Grandmother",
+          "dp": "TEST Grandmother",
+          "match": true
+        },
+        {
+          "step": 4,
+          "state": "{Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}",
+          "gnn": "STOP",
+          "dp": "STOP",
+          "match": true
+        }
+      ]
+    }
+  }
+}

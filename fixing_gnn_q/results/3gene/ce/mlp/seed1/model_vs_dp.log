@@ -1,0 +1,149 @@
+[model_vs_dp] 2026-07-22T22:24:12.988054  genes=3  seed=1  variant=ce  model=mlp
+output -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/mlp/seed1
+loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed1/mlp_q_ce.pt  params=1249
+
+================================================================================
+ThreeGeneration_LowHigh_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}    TEST Mother     TEST Mother         YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_LowHigh_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}    TEST Mother     TEST Mother         YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MediumEven_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}    TEST Mother     TEST Mother         YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MediumEven_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}    TEST Mother     TEST Mother         YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_LowLow_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              STOP            TEST Father         NO
+  agreement with DP (ground truth): 0/1 = 0.000
+
+================================================================================
+ThreeGeneration_LowLow_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST Mother     TEST Grandfather    NO
+  1    {Mother:(0, 0, 0)}                                TEST GrandfatherTEST Father         NO
+  2    {Grandfather:(0, 0, 0), Mother:(0, 0, 0)}         TEST GrandmotherTEST Grandmother    YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 2/6 = 0.333
+
+================================================================================
+ThreeGeneration_HighHigh_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST Child      TEST Grandfather    NO
+  1    {Child:(0, 0, 0)}                                 TEST GrandfatherTEST Mother         NO
+  2    {Child:(0, 0, 0), Grandfather:(0, 0, 0)}          TEST GrandmotherTEST Mother         NO
+  3    {Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Father     TEST Mother         NO
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother         YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 2/6 = 0.333
+
+================================================================================
+ThreeGeneration_HighHigh_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST Child      TEST Grandfather    NO
+  1    {Child:(0, 0, 0)}                                 TEST GrandfatherTEST Grandfather    YES
+  2    {Child:(0, 0, 0), Grandfather:(0, 0, 0)}          TEST GrandmotherTEST Mother         NO
+  3    {Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Father     TEST Mother         NO
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother         YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MixedA_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST Mother     TEST Grandfather    NO
+  1    {Mother:(0, 0, 0)}                                TEST GrandfatherTEST Grandfather    YES
+  2    {Grandfather:(0, 0, 0), Mother:(0, 0, 0)}         TEST GrandmotherTEST Grandmother    YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MixedA_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST Mother     TEST Grandfather    NO
+  1    {Mother:(0, 0, 0)}                                TEST GrandfatherTEST Grandfather    YES
+  2    {Grandfather:(0, 0, 0), Mother:(0, 0, 0)}         TEST GrandmotherTEST Grandmother    YES
+  3    {Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Father     STOP                NO
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}TEST Child      STOP                NO
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/6 = 0.500
+
+================================================================================
+ThreeGeneration_MixedB_Base_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST Child      TEST Grandmother    NO
+  2    {Child:(0, 0, 0), Grandfather:(0, 0, 0)}          TEST Father     TEST Mother         NO
+  3    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0)}TEST GrandmotherTEST Grandmother    YES
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother         YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MixedB_Aggressive_3gene
+================================================================================
+  step state                                             MLP             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0, 0)}                           TEST Child      TEST Grandmother    NO
+  2    {Child:(0, 0, 0), Grandfather:(0, 0, 0)}          TEST GrandmotherTEST Mother         NO
+  3    {Child:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Father     TEST Mother         NO
+  4    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0)}TEST Mother     TEST Mother         YES
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/6 = 0.500
+
+================================================================================
+OVERALL
+  agreement with DP (ground truth): 36/67 = 0.537
+  root-state agreement:             6/12 = 0.500
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/mlp/seed1/model_vs_dp.json
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/3gene/ce/mlp/seed1/model_vs_dp.log

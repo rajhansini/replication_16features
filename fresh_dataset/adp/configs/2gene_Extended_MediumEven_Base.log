@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:55:36.990040  genes=2  family=Extended  regime=MediumEven  preset=Base
+[CONFIG] Extended_MediumEven_Base_2gene (test)
+  states=107,728  V*(root)=-0.142093  V_stop(root)=-0.256330
+  ADP: ratio2=0.10689632793352111  ratio3=0.26180100952158136  policy_source=adp_policy  (499s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Extended_MediumEven_Base_2gene_adp.json

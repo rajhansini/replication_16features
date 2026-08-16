@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:51:12.992960  genes=2  family=Nuclear  regime=HighHigh  preset=Base
+[CONFIG] Nuclear_HighHigh_Base_2gene (train)
+  states=2,264  V*(root)=-0.150552  V_stop(root)=-0.275724
+  ADP: ratio2=0.012510562238625018  ratio3=0.1434778445700147  policy_source=adp_policy  (5s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_HighHigh_Base_2gene_adp.json

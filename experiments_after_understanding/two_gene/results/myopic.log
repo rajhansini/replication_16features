@@ -1,0 +1,140 @@
+
+============================================================
+[MYOPIC 2-GENE] 2026-07-15T14:38:54.905061
+policy: Q_myopic(s,i) = r_test(i,s) + Σ_g P(g|s,i)·V_stop(s')
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Base_2gene
+  states=20816  V*(root)=-0.1092  V_stop(root)=-0.1683
+  ratio2=0.0154  L=-0.1101  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Aggressive_2gene
+  states=20816  V*(root)=-0.1114  V_stop(root)=-0.2475
+  ratio2=0.0401  L=-0.1168  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Base_2gene
+  states=20816  V*(root)=-0.1177  V_stop(root)=-0.1994
+  ratio2=0.0526  L=-0.1220  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Aggressive_2gene
+  states=20816  V*(root)=-0.1227  V_stop(root)=-0.2956
+  ratio2=0.0431  L=-0.1302  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Base_2gene
+  states=20816  V*(root)=-0.0456  V_stop(root)=-0.0565
+  ratio2=0.0643  L=-0.0463  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Aggressive_2gene
+  states=20816  V*(root)=-0.0521  V_stop(root)=-0.0845
+  ratio2=0.0771  L=-0.0546  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Base_2gene
+  states=20816  V*(root)=-0.1819  V_stop(root)=-0.3217
+  ratio2=0.0151  L=-0.1841  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Aggressive_2gene
+  states=20816  V*(root)=-0.1910  V_stop(root)=-0.4712
+  ratio2=0.0149  L=-0.1952  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Base_2gene
+  states=20816  V*(root)=-0.0876  V_stop(root)=-0.1338
+  ratio2=0.0195  L=-0.0885  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Aggressive_2gene
+  states=20816  V*(root)=-0.0913  V_stop(root)=-0.1983
+  ratio2=0.0811  L=-0.1000  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Base_2gene
+  states=20816  V*(root)=-0.1158  V_stop(root)=-0.1925
+  ratio2=0.0425  L=-0.1191  (1s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Aggressive_2gene
+  states=20816  V*(root)=-0.1194  V_stop(root)=-0.2848
+  ratio2=0.0400  L=-0.1260  (1s)
+
+============================================================
+MYOPIC 2-gene avg ratio2 = 0.0421
+
+============================================================
+[MYOPIC 2-GENE, Kanix's canonical myopic_greedy] 2026-07-25T19:54:55.224206
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Base_2gene
+  states=20816  V*(root)=-0.1092  V_stop(root)=-0.1683
+
+============================================================
+[MYOPIC 2-GENE, Kanix's canonical myopic_greedy] 2026-07-25T20:35:24.470194
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Base_2gene
+  states=20816  V*(root)=-0.1092  V_stop(root)=-0.1683
+  ratio2=0.1090  L=-0.1156  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowHigh_Aggressive_2gene
+  states=20816  V*(root)=-0.1114  V_stop(root)=-0.2475
+  ratio2=0.0498  L=-0.1182  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Base_2gene
+  states=20816  V*(root)=-0.1177  V_stop(root)=-0.1994
+  ratio2=0.0948  L=-0.1254  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MediumEven_Aggressive_2gene
+  states=20816  V*(root)=-0.1227  V_stop(root)=-0.2956
+  ratio2=0.0478  L=-0.1310  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Base_2gene
+  states=20816  V*(root)=-0.0456  V_stop(root)=-0.0565
+  ratio2=1.5655  L=-0.0626  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_LowLow_Aggressive_2gene
+  states=20816  V*(root)=-0.0521  V_stop(root)=-0.0845
+  ratio2=0.4134  L=-0.0655  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Base_2gene
+  states=20816  V*(root)=-0.1819  V_stop(root)=-0.3217
+  ratio2=0.0428  L=-0.1879  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_HighHigh_Aggressive_2gene
+  states=20816  V*(root)=-0.1910  V_stop(root)=-0.4712
+  ratio2=0.0210  L=-0.1969  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Base_2gene
+  states=20816  V*(root)=-0.0876  V_stop(root)=-0.1338
+  ratio2=0.1939  L=-0.0965  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedA_Aggressive_2gene
+  states=20816  V*(root)=-0.0913  V_stop(root)=-0.1983
+  ratio2=0.0847  L=-0.1004  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Base_2gene
+  states=20816  V*(root)=-0.1158  V_stop(root)=-0.1925
+  ratio2=0.0942  L=-0.1231  (2s)
+
+──────────────────────────────────────────────────
+[CONFIG] ThreeGeneration_MixedB_Aggressive_2gene
+  states=20816  V*(root)=-0.1194  V_stop(root)=-0.2848
+  ratio2=0.0463  L=-0.1271  (2s)
+
+============================================================
+MYOPIC 2-gene avg ratio2 = 0.2303

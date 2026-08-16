@@ -1,0 +1,125 @@
+[extended_fourway] 2026-07-25T23:15:21.420568  genes=3  seed=0  family=Extended (OOD -- never trained on)  GNN=E4 bidir  MLP=E2 ce
+loaded GNN /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e4_gnn_bidir/seed_runs/seed0/gnn_q_e4.pt
+loaded MLP /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed0/mlp_q_ce.pt
+
+==========================================================================================
+Extended_LowHigh_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1712  V_stop(root)=-0.3243
+  ratio2: myopic=0.0711  gnn=0.0683  mlp=0.0728
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Child        TEST GrandfatherTEST Mother     TEST Grandfathernone
+  1    {Grandfather:(0, 0, 0)}                                     TEST Child        TEST Father     TEST GrandmotherTEST Grandmothernone
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherSTOP            TEST Grandmothernone
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      STOP            TEST Child      none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=2/7=0.286  gnn=2/7=0.286  mlp=2/7=0.286  all4=2/7=0.286
+
+==========================================================================================
+Extended_LowHigh_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1787  V_stop(root)=-0.4789
+  ratio2: myopic=0.0338  gnn=0.0334  mlp=0.0617
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST GrandmotherTEST Grandmotherpartial
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST GrandmotherTEST Grandmothernone
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=6/7=0.857  mlp=5/7=0.714  all4=3/7=0.429
+
+==========================================================================================
+Extended_MediumEven_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1753  V_stop(root)=-0.3467
+  ratio2: myopic=0.0638  gnn=0.0606  mlp=0.0815
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherSTOP            TEST Child      none
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      STOP            TEST Child      none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=4/7=0.571  mlp=4/7=0.571  all4=3/7=0.429
+
+==========================================================================================
+Extended_MediumEven_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1858  V_stop(root)=-0.5149
+  ratio2: myopic=0.0328  gnn=0.0439  mlp=0.0689
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST GrandmotherTEST Grandmotherpartial
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST GrandmotherTEST Child      none
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=6/7=0.857  mlp=5/7=0.714  all4=3/7=0.429
+
+==========================================================================================
+Extended_LowLow_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.0667  V_stop(root)=-0.0984
+  ratio2: myopic=0.6292  gnn=0.1949  mlp=0.2293
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Uncle        TEST GrandfatherTEST Child      TEST Grandfathernone
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST Child      TEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Child      TEST Grandmothernone
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Child      STOP            none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            TEST Mother     partial
+  agreement vs DP: myopic=1/6=0.167  gnn=1/6=0.167  mlp=1/6=0.167  all4=0/6=0.000
+
+==========================================================================================
+Extended_LowLow_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.0725  V_stop(root)=-0.1473
+  ratio2: myopic=0.2500  gnn=0.2156  mlp=0.0636
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Mother     TEST Grandmotherpartial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      STOP            STOP            none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            TEST Mother     partial
+  agreement vs DP: myopic=2/6=0.333  gnn=4/6=0.667  mlp=2/6=0.333  all4=1/6=0.167
+
+==========================================================================================
+Extended_HighHigh_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.3369  V_stop(root)=-0.6639
+  ratio2: myopic=0.0292  gnn=0.0164  mlp=0.0601
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Uncle        TEST GrandfatherTEST Mother     TEST Grandfathernone
+  1    {Grandfather:(0, 0, 0)}                                     TEST Child        TEST Father     TEST Father     TEST Uncle      none
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST Mother     TEST Child      none
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Child        TEST GrandmotherTEST Child      TEST Child      partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Child        TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=3/7=0.429  mlp=4/7=0.571  all4=2/7=0.286
+
+==========================================================================================
+Extended_HighHigh_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.3622  V_stop(root)=-0.9669
+  ratio2: myopic=0.0106  gnn=0.0093  mlp=0.0254
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST Mother     TEST Grandfatherpartial
+  1    {Grandfather:(0, 0, 0)}                                     TEST Mother       TEST Father     TEST GrandmotherTEST Uncle      none
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST Mother     TEST Child      none
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Grandmother  TEST GrandmotherTEST Mother     TEST Child      partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/7=0.571  gnn=3/7=0.429  mlp=3/7=0.429  all4=2/7=0.286
+
+==========================================================================================
+Extended_MixedA_Base_3gene
+==========================================================================================

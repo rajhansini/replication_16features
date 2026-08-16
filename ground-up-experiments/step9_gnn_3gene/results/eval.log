@@ -1,0 +1,572 @@
+
+============================================================
+[EVAL] 2026-07-01T12:15:33.144074
+============================================================
+Loaded model from /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/gnn3_model.pt  device=cuda
+Pending: 4/4
+
+[TRAIN] ThreeGeneration_LowHigh_Base_3gene
+  pedigree: 5 people, 4 edges
+  batch GNN inference on 1,054,528 states...
+  inference done (2.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.002395  L=-0.141559  (1.4s)
+
+[TRAIN] ThreeGeneration_LowHigh_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.6s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003389  L=-0.147438  (9.8s)
+
+[TRAIN] ThreeGeneration_MediumEven_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.6s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.005699  L=-0.144700  (2.0s)
+
+[TEST] ThreeGeneration_MediumEven_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.005861  L=-0.153372  (5.1s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/results.json
+
+  Key                                                Split    ratio2      V_root      V_stop
+  ----------------------------------------------------------------------------------------
+  ThreeGeneration_LowHigh_Base_3gene                 TRAIN  0.002395   -0.141294   -0.252268
+  ThreeGeneration_LowHigh_Aggressive_3gene           TRAIN  0.003389   -0.146673   -0.372471
+  ThreeGeneration_MediumEven_Base_3gene              TRAIN  0.005699   -0.143984   -0.269686
+  ThreeGeneration_MediumEven_Aggressive_3gene        TEST   0.005861   -0.151915   -0.400441
+
+============================================================
+[EVAL] 2026-07-01T19:40:38.619084
+============================================================
+Loaded model from /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/gnn3_model.pt  device=cuda
+Pending: 36/36
+
+[TRAIN] Trio_LowHigh_Base_3gene
+  [Trio] pedigree: 3 people, 2 edges
+  batch GNN inference on 4,872 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.120781  L=-0.092285  (0.0s)
+
+[TRAIN] Trio_LowHigh_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.011718  L=-0.089655  (0.0s)
+
+[TRAIN] Trio_MediumEven_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.054671  L=-0.090270  (0.0s)
+
+[TEST] Trio_MediumEven_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.016480  L=-0.093365  (0.0s)
+
+[TRAIN] Trio_LowLow_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=1.000000  L=-0.043748  (0.0s)
+
+[TRAIN] Trio_LowLow_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000027  L=-0.038811  (0.0s)
+
+[TRAIN] Trio_HighHigh_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.006088  L=-0.161633  (0.0s)
+
+[TEST] Trio_HighHigh_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.010632  L=-0.174123  (0.0s)
+
+[TRAIN] Trio_MixedA_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.099484  L=-0.084143  (0.0s)
+
+[TRAIN] Trio_MixedA_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.013885  L=-0.084329  (0.0s)
+
+[TRAIN] Trio_MixedB_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.065461  L=-0.102094  (0.0s)
+
+[TRAIN] Trio_MixedB_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.012651  L=-0.104681  (0.0s)
+
+[TRAIN] Nuclear_LowHigh_Base_3gene
+  [Nuclear] pedigree: 4 people, 4 edges
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.005771  L=-0.115436  (0.1s)
+
+[TRAIN] Nuclear_LowHigh_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.014481  L=-0.123091  (0.1s)
+
+[TRAIN] Nuclear_MediumEven_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.001086  L=-0.118113  (0.1s)
+
+[TEST] Nuclear_MediumEven_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.018252  L=-0.128891  (0.1s)
+
+[TRAIN] Nuclear_LowLow_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.001176  L=-0.046935  (0.1s)
+
+[TRAIN] Nuclear_LowLow_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.042527  L=-0.050981  (0.1s)
+
+[TRAIN] Nuclear_HighHigh_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003366  L=-0.225395  (0.1s)
+
+[TEST] Nuclear_HighHigh_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003067  L=-0.243646  (0.2s)
+
+[TRAIN] Nuclear_MixedA_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.004195  L=-0.105706  (0.1s)
+
+[TRAIN] Nuclear_MixedA_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.018921  L=-0.115696  (0.1s)
+
+[TRAIN] Nuclear_MixedB_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.009194  L=-0.135572  (0.1s)
+
+[TRAIN] Nuclear_MixedB_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.015831  L=-0.146006  (0.1s)
+
+[TRAIN] ThreeGeneration_LowHigh_Base_3gene
+  [ThreeGeneration] pedigree: 5 people, 4 edges
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.007827  L=-0.142162  (2.2s)
+
+[TRAIN] ThreeGeneration_LowHigh_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003618  L=-0.147490  (6.6s)
+
+[TRAIN] ThreeGeneration_MediumEven_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.004103  L=-0.144500  (2.3s)
+
+[TEST] ThreeGeneration_MediumEven_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.002692  L=-0.152584  (5.3s)
+
+[TRAIN] ThreeGeneration_LowLow_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000004  L=-0.056015  (0.4s)
+
+[TRAIN] ThreeGeneration_LowLow_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.007034  L=-0.063313  (1.0s)
+
+[TRAIN] ThreeGeneration_HighHigh_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.006397  L=-0.274145  (4.8s)
+
+[TEST] ThreeGeneration_HighHigh_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.001164  L=-0.291549  (12.6s)
+
+[TRAIN] ThreeGeneration_MixedA_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.004502  L=-0.131076  (1.9s)
+
+[TRAIN] ThreeGeneration_MixedA_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003305  L=-0.138035  (6.6s)
+
+[TRAIN] ThreeGeneration_MixedB_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.021375  L=-0.166000  (4.1s)
+
+[TRAIN] ThreeGeneration_MixedB_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.010725  L=-0.175283  (5.5s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/results.json
+
+  Key                                                Split    ratio2      V_root      V_stop
+  ----------------------------------------------------------------------------------------
+  Trio_LowHigh_Base_3gene                            TRAIN  0.120781   -0.085160   -0.144153
+  Trio_LowHigh_Aggressive_3gene                      TRAIN  0.011718   -0.088195   -0.212841
+  Trio_MediumEven_Base_3gene                         TRAIN  0.054671   -0.086578   -0.154106
+  Trio_MediumEven_Aggressive_3gene                   TEST   0.016480   -0.091095   -0.228824
+  Trio_LowLow_Base_3gene                             TRAIN  1.000000   -0.032755   -0.043748
+  Trio_LowLow_Aggressive_3gene                       TRAIN  0.000027   -0.038810   -0.065467
+  Trio_HighHigh_Base_3gene                           TRAIN  0.006088   -0.160816   -0.295056
+  Trio_HighHigh_Aggressive_3gene                     TEST   0.010632   -0.171375   -0.429754
+  Trio_MixedA_Base_3gene                             TRAIN  0.099484   -0.078971   -0.130956
+  Trio_MixedA_Aggressive_3gene                       TRAIN  0.013885   -0.082780   -0.194354
+  Trio_MixedB_Base_3gene                             TRAIN  0.065461   -0.097611   -0.166083
+  Trio_MixedB_Aggressive_3gene                       TRAIN  0.012651   -0.102889   -0.244555
+  Nuclear_LowHigh_Base_3gene                         TRAIN  0.005771   -0.114850   -0.216230
+  Nuclear_LowHigh_Aggressive_3gene                   TRAIN  0.014481   -0.120209   -0.319261
+  Nuclear_MediumEven_Base_3gene                      TRAIN  0.001086   -0.117990   -0.231159
+  Nuclear_MediumEven_Aggressive_3gene                TEST   0.018252   -0.124906   -0.343236
+  Nuclear_LowLow_Base_3gene                          TRAIN  0.001176   -0.046913   -0.065623
+  Nuclear_LowLow_Aggressive_3gene                    TRAIN  0.042527   -0.048883   -0.098201
+  Nuclear_HighHigh_Base_3gene                        TRAIN  0.003366   -0.224661   -0.442584
+  Nuclear_HighHigh_Aggressive_3gene                  TEST   0.003067   -0.242412   -0.644630
+  Nuclear_MixedA_Base_3gene                          TRAIN  0.004195   -0.105324   -0.196434
+  Nuclear_MixedA_Aggressive_3gene                    TRAIN  0.018921   -0.112305   -0.291531
+  Nuclear_MixedB_Base_3gene                          TRAIN  0.009194   -0.134518   -0.249124
+  Nuclear_MixedB_Aggressive_3gene                    TRAIN  0.015831   -0.142454   -0.366833
+  ThreeGeneration_LowHigh_Base_3gene                 TRAIN  0.007827   -0.141294   -0.252268
+  ThreeGeneration_LowHigh_Aggressive_3gene           TRAIN  0.003618   -0.146673   -0.372471
+  ThreeGeneration_MediumEven_Base_3gene              TRAIN  0.004103   -0.143984   -0.269686
+  ThreeGeneration_MediumEven_Aggressive_3gene        TEST   0.002692   -0.151915   -0.400441
+  ThreeGeneration_LowLow_Base_3gene                  TRAIN  0.000004   -0.056015   -0.076560
+  ThreeGeneration_LowLow_Aggressive_3gene            TRAIN  0.007034   -0.062950   -0.114568
+  ThreeGeneration_HighHigh_Base_3gene                TRAIN  0.006397   -0.272585   -0.516348
+  ThreeGeneration_HighHigh_Aggressive_3gene          TEST   0.001164   -0.291012   -0.752069
+  ThreeGeneration_MixedA_Base_3gene                  TRAIN  0.004502   -0.130632   -0.229172
+  ThreeGeneration_MixedA_Aggressive_3gene            TRAIN  0.003305   -0.137365   -0.340119
+  ThreeGeneration_MixedB_Base_3gene                  TRAIN  0.021375   -0.163278   -0.290645
+  ThreeGeneration_MixedB_Aggressive_3gene            TRAIN  0.010725   -0.172544   -0.427972
+
+============================================================
+[EVAL] 2026-07-03T13:50:45.701141
+============================================================
+Loaded model from /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/gnn3_model.pt  device=cuda
+Pending: 36/36
+
+[TRAIN] Trio_LowHigh_Base_3gene
+  [Trio] pedigree: 3 people, 2 edges
+  batch GNN inference on 4,872 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.120612  L=-0.092275  (0.0s)
+
+[TRAIN] Trio_LowHigh_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.011718  L=-0.089655  (0.0s)
+
+[TRAIN] Trio_MediumEven_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.054671  L=-0.090270  (0.0s)
+
+[TEST] Trio_MediumEven_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.016770  L=-0.093405  (0.0s)
+
+[TRAIN] Trio_LowLow_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=1.000000  L=-0.043748  (0.0s)
+
+[TRAIN] Trio_LowLow_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000038  L=-0.038811  (0.0s)
+
+[TRAIN] Trio_HighHigh_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.006088  L=-0.161633  (0.0s)
+
+[TEST] Trio_HighHigh_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.014031  L=-0.175001  (0.0s)
+
+[TRAIN] Trio_MixedA_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.060488  L=-0.082115  (0.0s)
+
+[TRAIN] Trio_MixedA_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.014540  L=-0.084403  (0.0s)
+
+[TRAIN] Trio_MixedB_Base_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.065461  L=-0.102094  (0.0s)
+
+[TRAIN] Trio_MixedB_Aggressive_3gene
+  batch GNN inference on 4,872 states...
+  inference done (0.0s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.013083  L=-0.104742  (0.0s)
+
+[TRAIN] Nuclear_LowHigh_Base_3gene
+  [Nuclear] pedigree: 4 people, 4 edges
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.008048  L=-0.115666  (0.1s)
+
+[TRAIN] Nuclear_LowHigh_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000057  L=-0.120220  (0.1s)
+
+[TRAIN] Nuclear_MediumEven_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.001067  L=-0.118110  (0.1s)
+
+[TEST] Nuclear_MediumEven_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000018  L=-0.124910  (0.1s)
+
+[TRAIN] Nuclear_LowLow_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000714  L=-0.046926  (0.1s)
+
+[TRAIN] Nuclear_LowLow_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000347  L=-0.048901  (0.1s)
+
+[TRAIN] Nuclear_HighHigh_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.002756  L=-0.225262  (0.1s)
+
+[TEST] Nuclear_HighHigh_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003014  L=-0.243624  (0.1s)
+
+[TRAIN] Nuclear_MixedA_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.011035  L=-0.106329  (0.1s)
+
+[TRAIN] Nuclear_MixedA_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000047  L=-0.112313  (0.4s)
+
+[TRAIN] Nuclear_MixedB_Base_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.006718  L=-0.135288  (0.1s)
+
+[TRAIN] Nuclear_MixedB_Aggressive_3gene
+  batch GNN inference on 43,904 states...
+  inference done (0.1s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.006162  L=-0.143836  (0.1s)
+
+[TRAIN] ThreeGeneration_LowHigh_Base_3gene
+  [ThreeGeneration] pedigree: 5 people, 4 edges
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.001614  L=-0.141473  (2.1s)
+
+[TRAIN] ThreeGeneration_LowHigh_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003174  L=-0.147389  (3.6s)
+
+[TRAIN] ThreeGeneration_MediumEven_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.8s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.005333  L=-0.144654  (8.7s)
+
+[TEST] ThreeGeneration_MediumEven_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.005452  L=-0.153270  (3.9s)
+
+[TRAIN] ThreeGeneration_LowLow_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.8s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.038045  L=-0.056797  (0.4s)
+
+[TRAIN] ThreeGeneration_LowLow_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.007052  L=-0.063314  (1.7s)
+
+[TRAIN] ThreeGeneration_HighHigh_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.8s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000419  L=-0.272688  (3.8s)
+
+[TEST] ThreeGeneration_HighHigh_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.8s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.000262  L=-0.291133  (6.8s)
+
+[TRAIN] ThreeGeneration_MixedA_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.8s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003027  L=-0.130930  (2.1s)
+
+[TRAIN] ThreeGeneration_MixedA_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.004141  L=-0.138205  (3.3s)
+
+[TRAIN] ThreeGeneration_MixedB_Base_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.003691  L=-0.163748  (2.8s)
+
+[TRAIN] ThreeGeneration_MixedB_Aggressive_3gene
+  batch GNN inference on 1,054,528 states...
+  inference done (1.7s)
+  computing ratio2 (greedy rollout)...
+  ratio2=0.010482  L=-0.175221  (5.0s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step9_gnn_3gene/results/results.json
+
+  Key                                                Split    ratio2      V_root      V_stop
+  ----------------------------------------------------------------------------------------
+  Trio_LowHigh_Base_3gene                            TRAIN  0.120612   -0.085160   -0.144153
+  Trio_LowHigh_Aggressive_3gene                      TRAIN  0.011718   -0.088195   -0.212841
+  Trio_MediumEven_Base_3gene                         TRAIN  0.054671   -0.086578   -0.154106
+  Trio_MediumEven_Aggressive_3gene                   TEST   0.016770   -0.091095   -0.228824
+  Trio_LowLow_Base_3gene                             TRAIN  1.000000   -0.032755   -0.043748
+  Trio_LowLow_Aggressive_3gene                       TRAIN  0.000038   -0.038810   -0.065467
+  Trio_HighHigh_Base_3gene                           TRAIN  0.006088   -0.160816   -0.295056
+  Trio_HighHigh_Aggressive_3gene                     TEST   0.014031   -0.171375   -0.429754
+  Trio_MixedA_Base_3gene                             TRAIN  0.060488   -0.078971   -0.130956
+  Trio_MixedA_Aggressive_3gene                       TRAIN  0.014540   -0.082780   -0.194354
+  Trio_MixedB_Base_3gene                             TRAIN  0.065461   -0.097611   -0.166083
+  Trio_MixedB_Aggressive_3gene                       TRAIN  0.013083   -0.102889   -0.244555
+  Nuclear_LowHigh_Base_3gene                         TRAIN  0.008048   -0.114850   -0.216230
+  Nuclear_LowHigh_Aggressive_3gene                   TRAIN  0.000057   -0.120209   -0.319261
+  Nuclear_MediumEven_Base_3gene                      TRAIN  0.001067   -0.117990   -0.231159
+  Nuclear_MediumEven_Aggressive_3gene                TEST   0.000018   -0.124906   -0.343236
+  Nuclear_LowLow_Base_3gene                          TRAIN  0.000714   -0.046913   -0.065623
+  Nuclear_LowLow_Aggressive_3gene                    TRAIN  0.000347   -0.048883   -0.098201
+  Nuclear_HighHigh_Base_3gene                        TRAIN  0.002756   -0.224661   -0.442584
+  Nuclear_HighHigh_Aggressive_3gene                  TEST   0.003014   -0.242412   -0.644630
+  Nuclear_MixedA_Base_3gene                          TRAIN  0.011035   -0.105324   -0.196434
+  Nuclear_MixedA_Aggressive_3gene                    TRAIN  0.000047   -0.112305   -0.291531
+  Nuclear_MixedB_Base_3gene                          TRAIN  0.006718   -0.134518   -0.249124
+  Nuclear_MixedB_Aggressive_3gene                    TRAIN  0.006162   -0.142454   -0.366833
+  ThreeGeneration_LowHigh_Base_3gene                 TRAIN  0.001614   -0.141294   -0.252268
+  ThreeGeneration_LowHigh_Aggressive_3gene           TRAIN  0.003174   -0.146673   -0.372471
+  ThreeGeneration_MediumEven_Base_3gene              TRAIN  0.005333   -0.143984   -0.269686
+  ThreeGeneration_MediumEven_Aggressive_3gene        TEST   0.005452   -0.151915   -0.400441
+  ThreeGeneration_LowLow_Base_3gene                  TRAIN  0.038045   -0.056015   -0.076560
+  ThreeGeneration_LowLow_Aggressive_3gene            TRAIN  0.007052   -0.062950   -0.114568
+  ThreeGeneration_HighHigh_Base_3gene                TRAIN  0.000419   -0.272585   -0.516348
+  ThreeGeneration_HighHigh_Aggressive_3gene          TEST   0.000262   -0.291012   -0.752069
+  ThreeGeneration_MixedA_Base_3gene                  TRAIN  0.003027   -0.130632   -0.229172
+  ThreeGeneration_MixedA_Aggressive_3gene            TRAIN  0.004141   -0.137365   -0.340119
+  ThreeGeneration_MixedB_Base_3gene                  TRAIN  0.003691   -0.163278   -0.290645
+  ThreeGeneration_MixedB_Aggressive_3gene            TRAIN  0.010482   -0.172544   -0.427972

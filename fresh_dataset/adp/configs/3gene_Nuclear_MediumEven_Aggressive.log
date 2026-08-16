@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:04:38.018525  genes=3  family=Nuclear  regime=MediumEven  preset=Aggressive
+[CONFIG] Nuclear_MediumEven_Aggressive_3gene (train)
+  states=43,904  V*(root)=-0.124906  V_stop(root)=-0.343236
+  ADP: ratio2=0.0018537038809682352  ratio3=0.06544967411224394  policy_source=adp_policy  (128s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_MediumEven_Aggressive_3gene_adp.json

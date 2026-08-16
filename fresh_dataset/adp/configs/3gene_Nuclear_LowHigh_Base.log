@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:04:28.986719  genes=3  family=Nuclear  regime=LowHigh  preset=Base
+[CONFIG] Nuclear_LowHigh_Base_3gene (train)
+  states=43,904  V*(root)=-0.114850  V_stop(root)=-0.216230
+  ADP: ratio2=0.02171412272849838  ratio3=0.1603405146038265  policy_source=adp_policy  (112s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_LowHigh_Base_3gene_adp.json

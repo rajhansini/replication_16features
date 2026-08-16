@@ -1,0 +1,164 @@
+
+============================================================
+[MLP-Q] 2026-07-17T23:48:11.686439  mode=both  epochs=200  seed=2
+
+============================================================
+[GNN-Q] 2026-07-17T23:48:11.688151  mode=both  epochs=200  seed=2
+Parameters: 7729
+
+[1] Building (s,a,Q*) tensors for 24 train configs...
+    [Trio_LowHigh_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowHigh_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MediumEven_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MediumEven_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowLow_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowLow_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_HighHigh_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_HighHigh_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+Parameters: 1249
+
+[1] Building (s,a,Q*) tensors for 24 train configs...
+    [Trio_MixedA_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowHigh_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowHigh_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedA_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MediumEven_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedB_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MediumEven_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedB_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowLow_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_LowLow_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_HighHigh_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_HighHigh_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedA_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedA_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedB_Base_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Trio_MixedB_Aggressive_3gene] 4,872 states -> 1,580 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowHigh_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowHigh_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowHigh_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowHigh_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MediumEven_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MediumEven_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MediumEven_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MediumEven_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowLow_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowLow_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowLow_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_LowLow_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_HighHigh_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_HighHigh_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_HighHigh_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_HighHigh_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedA_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedA_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedA_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedA_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedB_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedB_Base_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    [Nuclear_MixedB_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    total (s,a) rows: 289,728
+    [Nuclear_MixedB_Aggressive_3gene] 43,904 states -> 22,564 (s,a) rows (0.0s, cached after first run)
+    total (s,a) rows: 289,728
+
+[2] Training...
+
+[2] Training...
+    epoch    1  mse=0.00184
+    epoch    1  mse=0.00190
+    epoch   20  mse=0.00028
+    epoch   40  mse=0.00025
+    epoch   60  mse=0.00021
+    epoch   80  mse=0.00018
+    epoch  100  mse=0.00016
+    epoch  120  mse=0.00013
+    epoch   20  mse=0.00016
+    epoch  140  mse=0.00012
+    epoch  160  mse=0.00011
+    epoch  180  mse=0.00009
+    epoch  200  mse=0.00008
+    done in 60.7s
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/mlp_q.pt
+
+[3] Eval on TEST_KEYS (12 configs), action agreement vs DP...
+    epoch   40  mse=0.00004
+  [ThreeGeneration_LowHigh_Base_3gene] action agreement on DP trajectory: 2/4
+    epoch   60  mse=0.00005
+    epoch   80  mse=0.00004
+  [ThreeGeneration_LowHigh_Aggressive_3gene] action agreement on DP trajectory: 2/4
+    epoch  100  mse=0.00003
+  [ThreeGeneration_MediumEven_Base_3gene] action agreement on DP trajectory: 3/4
+    epoch  120  mse=0.00003
+  [ThreeGeneration_MediumEven_Aggressive_3gene] action agreement on DP trajectory: 2/4
+    epoch  140  mse=0.00002
+  [ThreeGeneration_LowLow_Base_3gene] action agreement on DP trajectory: 1/3
+    epoch  160  mse=0.00002
+    epoch  180  mse=0.00002
+  [ThreeGeneration_LowLow_Aggressive_3gene] action agreement on DP trajectory: 2/4
+    epoch  200  mse=0.00002
+    done in 379.7s
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/gnn_q.pt
+
+[3] Eval on TEST_KEYS (12 configs), action agreement vs DP...
+  [ThreeGeneration_HighHigh_Base_3gene] action agreement on DP trajectory: 1/5
+  [ThreeGeneration_LowHigh_Base_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_LowHigh_Aggressive_3gene] action agreement on DP trajectory: 3/4
+  [ThreeGeneration_HighHigh_Aggressive_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MixedA_Base_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MediumEven_Base_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MixedA_Aggressive_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MediumEven_Aggressive_3gene] action agreement on DP trajectory: 3/4
+  [ThreeGeneration_LowLow_Base_3gene] action agreement on DP trajectory: 1/3
+  [ThreeGeneration_MixedB_Base_3gene] action agreement on DP trajectory: 3/4
+  [ThreeGeneration_LowLow_Aggressive_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MixedB_Aggressive_3gene] action agreement on DP trajectory: 3/4
+  overall action agreement: 25/48 = 0.521
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/results.json
+  [ThreeGeneration_HighHigh_Base_3gene] action agreement on DP trajectory: 3/5
+  [ThreeGeneration_HighHigh_Aggressive_3gene] action agreement on DP trajectory: 3/4
+  [ThreeGeneration_MixedA_Base_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MixedA_Aggressive_3gene] action agreement on DP trajectory: 3/4
+  [ThreeGeneration_MixedB_Base_3gene] action agreement on DP trajectory: 2/4
+  [ThreeGeneration_MixedB_Aggressive_3gene] action agreement on DP trajectory: 2/4
+  overall action agreement: 28/48 = 0.583
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/results_gnn.json
+
+============================================================
+[MLP-Q] 2026-07-19T03:01:28.933630  mode=eval  epochs=200  seed=2
+
+============================================================
+[GNN-Q] 2026-07-19T03:01:28.934338  mode=eval  epochs=200  seed=2
+Parameters: 1249
+
+[3] Eval on TEST_KEYS (12 configs), real greedy-Q(s,a) rollout vs exact DP (q_rollout)...
+Parameters: 7729
+
+[3] Eval on TEST_KEYS (12 configs), real greedy-Q(s,a) rollout vs exact DP (q_rollout)...
+  [ThreeGeneration_LowHigh_Base_3gene]  ratio2=0.0507  L=-0.1469  V*=-0.1413
+  [ThreeGeneration_LowHigh_Base_3gene]  ratio2=0.0694  L=-0.1490  V*=-0.1413
+  [ThreeGeneration_LowHigh_Aggressive_3gene]  ratio2=0.0271  L=-0.1528  V*=-0.1467
+  [ThreeGeneration_LowHigh_Aggressive_3gene]  ratio2=0.0316  L=-0.1538  V*=-0.1467
+  [ThreeGeneration_MediumEven_Base_3gene]  ratio2=0.0629  L=-0.1519  V*=-0.1440
+  [ThreeGeneration_MediumEven_Base_3gene]  ratio2=0.0578  L=-0.1513  V*=-0.1440
+  [ThreeGeneration_MediumEven_Aggressive_3gene]  ratio2=0.0292  L=-0.1592  V*=-0.1519
+  [ThreeGeneration_MediumEven_Aggressive_3gene]  ratio2=0.0287  L=-0.1591  V*=-0.1519
+  [ThreeGeneration_LowLow_Base_3gene]  ratio2=0.1130  L=-0.0583  V*=-0.0560
+  [ThreeGeneration_LowLow_Base_3gene]  ratio2=1.0000  L=-0.0766  V*=-0.0560
+  [ThreeGeneration_LowLow_Aggressive_3gene]  ratio2=0.3353  L=-0.0803  V*=-0.0629
+  [ThreeGeneration_LowLow_Aggressive_3gene]  ratio2=0.2214  L=-0.0744  V*=-0.0629
+  [ThreeGeneration_HighHigh_Base_3gene]  ratio2=0.0326  L=-0.2805  V*=-0.2726
+  [ThreeGeneration_HighHigh_Base_3gene]  ratio2=0.0219  L=-0.2779  V*=-0.2726
+  [ThreeGeneration_HighHigh_Aggressive_3gene]  ratio2=0.0100  L=-0.2956  V*=-0.2910
+  [ThreeGeneration_HighHigh_Aggressive_3gene]  ratio2=0.0105  L=-0.2959  V*=-0.2910
+  [ThreeGeneration_MixedA_Base_3gene]  ratio2=0.0732  L=-0.1378  V*=-0.1306
+  [ThreeGeneration_MixedA_Base_3gene]  ratio2=0.0449  L=-0.1351  V*=-0.1306
+  [ThreeGeneration_MixedA_Aggressive_3gene]  ratio2=0.0370  L=-0.1449  V*=-0.1374
+  [ThreeGeneration_MixedA_Aggressive_3gene]  ratio2=0.0493  L=-0.1474  V*=-0.1374
+  [ThreeGeneration_MixedB_Base_3gene]  ratio2=0.0583  L=-0.1707  V*=-0.1633
+  [ThreeGeneration_MixedB_Base_3gene]  ratio2=0.0596  L=-0.1709  V*=-0.1633
+  [ThreeGeneration_MixedB_Aggressive_3gene]  ratio2=0.0277  L=-0.1796  V*=-0.1725
+  TEST avg ratio2 = 0.1474
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/results.json
+  [ThreeGeneration_MixedB_Aggressive_3gene]  ratio2=0.0507  L=-0.1855  V*=-0.1725
+  TEST avg ratio2 = 0.0612
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/seed_runs/seed2/results_gnn.json

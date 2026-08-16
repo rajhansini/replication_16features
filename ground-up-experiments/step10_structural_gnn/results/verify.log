@@ -1,0 +1,44 @@
+======================================================================
+STEP10 PIPELINE VERIFICATION  —  2026-07-11T15:40:45.984196
+======================================================================
+Model: PedigreeGNN_Vstar  output=scalar V*(s) per state
+node_feat_dim=13: beliefs(9) + is_tested(1) + structural(3)
+
+Using config: Trio_LowHigh_Base_3gene
+
+[A] NODE FEATURE SHAPE
+    Expected: (4872, 3, 13)
+    Got:      (4872, 3, 13)  OK
+
+[B] V* LABELS SHAPE AND RANGE
+    Shape: (4872,)  (expected (4872,))
+    V* range: [-0.166976,  0.000000]
+    Note: states in DP order — states[0] is terminal (V*=0), root is states[-1]
+    V*(root state idx -1): -0.085160  (ds V_root=-0.085160)
+
+[C] STRUCTURAL FEATURES PER PERSON
+    Parent1              n_parents=0  n_children=1  depth=0
+    Parent2              n_parents=0  n_children=1  depth=0
+    Child                n_parents=2  n_children=0  depth=1
+
+[D] STRUCTURAL BROADCAST — same across all states
+    Mismatches in first 100 states: 0  (should be 0)
+
+[E] BELIEF FEATURES — prob sums to 1 per gene
+    Prob-sum errors in first 50 states: 0  (should be 0)
+
+[F] MODEL OUTPUT SHAPE — must be (B,) scalar, NOT (B,N)
+    Output shape: (4,)  (expected (4,)  — one V* per state)
+    Sample V* predictions (untrained): [0.12061093747615814, 0.1172122061252594, 0.1178470328450203, 0.12408588081598282]
+    True V* for same states:           [0.0, 0.0, 0.0, 0.0]
+    OK — scalar output confirmed
+
+[G] COMPARISON: step9 (Q* per person) vs step10 (V* scalar)
+    step9 node_feat_dim=10  output=(B,N)  trains on Q*(s,i) labels
+    step10 node_feat_dim=13 output=(B,)   trains on V*(s)  labels (exact DP)
+    Action in step10: argmax_i [r_test(i,s) + E_g[V_hat(s')]] — derived at eval
+
+======================================================================
+VERIFICATION DONE. All checks passed.
+======================================================================
+

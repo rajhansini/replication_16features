@@ -1,0 +1,19 @@
+[extended_fourway] 2026-08-09T19:17:05.209609  genes=3  seed=2  family=Extended (OOD -- never trained on)  GNN=E7 neighborpool  MLP=E2 ce  only=MixedB/Aggressive
+loaded GNN (e7) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e7_gnn_neighborpool/seed_runs/seed2/gnn_q_e7.pt
+loaded MLP (e7) /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed2/mlp_q_ce.pt
+
+==========================================================================================
+Extended_MixedB_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.2121  V_stop(root)=-0.5502
+  ratio2: myopic=0.0311  gnn=0.0193  mlp=0.1055
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST Father     TEST Grandfatherpartial
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST GrandmotherTEST Grandmotherpartial
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Grandmother  TEST GrandmotherTEST Mother     TEST Mother     partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     STOP            partial
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/7=0.571  gnn=5/7=0.714  mlp=5/7=0.714  all4=1/7=0.143
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed2/configs_e7/MixedB_Aggressive.json

@@ -1,0 +1,149 @@
+[e6_fourway] 2026-07-26T15:55:31.387828  genes=2  seed=1  variant=E6 (sum pooling, both GNN and MLP)
+loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_gnn_sumpool_2gene/seed_runs/seed1/gnn_q_e6_2gene.pt
+loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_mlp_sumpool_2gene/seed_runs/seed1/mlp_q_e6_2gene.pt
+
+==========================================================================================
+ThreeGeneration_LowHigh_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST Child      STOP            none
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     TEST Mother     partial
+  agreement vs DP: myopic=2/5=0.400  gnn=1/5=0.200  mlp=1/5=0.200  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_LowHigh_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Grandmother  TEST GrandmotherTEST Child      STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/6=0.667  gnn=3/6=0.500  mlp=3/6=0.500  all4=2/6=0.333
+
+==========================================================================================
+ThreeGeneration_MediumEven_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST Mother     STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     STOP            partial
+  agreement vs DP: myopic=2/5=0.400  gnn=3/5=0.600  mlp=2/5=0.400  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_MediumEven_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Grandmother  TEST GrandmotherTEST Mother     STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/6=0.667  gnn=4/6=0.667  mlp=3/6=0.500  all4=2/6=0.333
+
+==========================================================================================
+ThreeGeneration_LowLow_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Child        TEST GrandfatherTEST Father     STOP            none
+  1    {Grandfather:(0, 0)}                              TEST Child        TEST Father     TEST GrandmotherSTOP            none
+  2    {Father:(0, 0), Grandfather:(0, 0)}               STOP              TEST GrandmotherTEST Mother     STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              TEST Child      TEST Mother     STOP            partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     STOP            partial
+  agreement vs DP: myopic=1/5=0.200  gnn=0/5=0.000  mlp=3/5=0.600  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_LowLow_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Father       TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST Mother     STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Mother     STOP            partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     STOP            partial
+  agreement vs DP: myopic=1/5=0.200  gnn=4/5=0.800  mlp=1/5=0.200  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_HighHigh_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST GrandfatherSTOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Child        TEST Father     TEST GrandmotherSTOP            none
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Grandmother  TEST GrandmotherTEST Child      STOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/6=0.667  gnn=3/6=0.500  mlp=3/6=0.500  all4=2/6=0.333
+
+==========================================================================================
+ThreeGeneration_HighHigh_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST Child      partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST Child      STOP            none
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/6=0.500  gnn=4/6=0.667  mlp=4/6=0.667  all4=2/6=0.333
+
+==========================================================================================
+ThreeGeneration_MixedA_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Father       TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST GrandmotherSTOP            none
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     STOP            partial
+  agreement vs DP: myopic=1/5=0.200  gnn=3/5=0.600  mlp=2/5=0.400  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_MixedA_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Grandmother  TEST GrandmotherTEST GrandmotherSTOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     STOP            partial
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/6=0.667  gnn=5/6=0.833  mlp=2/6=0.333  all4=1/6=0.167
+
+==========================================================================================
+ThreeGeneration_MixedB_Base_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Mother       TEST GrandmotherTEST GrandmotherSTOP            none
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP              STOP            TEST Mother     TEST Mother     partial
+  agreement vs DP: myopic=2/5=0.400  gnn=1/5=0.200  mlp=1/5=0.200  all4=0/5=0.000
+
+==========================================================================================
+ThreeGeneration_MixedB_Aggressive_2gene
+==========================================================================================
+  step state                                             DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                              TEST Grandfather  TEST GrandfatherTEST Father     STOP            partial
+  1    {Grandfather:(0, 0)}                              TEST Grandmother  TEST Father     TEST GrandmotherSTOP            partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Grandmother  TEST GrandmotherTEST GrandmotherSTOP            partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Child      TEST Child      TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=4/6=0.667  gnn=4/6=0.667  mlp=3/6=0.500  all4=2/6=0.333
+
+==========================================================================================
+OVERALL (whole trajectory)
+  vs DP: myopic=32/66=0.485  gnn=35/66=0.530  mlp=28/66=0.424  all4=11/66=0.167
+OVERALL (root / first action only)
+  vs DP: myopic=9/12  gnn=4/12  mlp=0/12
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/2gene/seed1/e6_fourway.json
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/2gene/seed1/e6_fourway.log

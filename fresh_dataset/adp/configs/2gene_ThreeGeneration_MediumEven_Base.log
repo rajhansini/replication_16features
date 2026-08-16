@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:51:36.164843  genes=2  family=ThreeGeneration  regime=MediumEven  preset=Base
+[CONFIG] ThreeGeneration_MediumEven_Base_2gene (test)
+  states=20,816  V*(root)=-0.117677  V_stop(root)=-0.199368
+  ADP: ratio2=0.033385680062073105  ratio3=0.17313319634655697  policy_source=adp_policy  (74s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/ThreeGeneration_MediumEven_Base_2gene_adp.json

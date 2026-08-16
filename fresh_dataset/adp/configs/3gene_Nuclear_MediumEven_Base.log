@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:11:31.922099  genes=3  family=Nuclear  regime=MediumEven  preset=Base
+[CONFIG] Nuclear_MediumEven_Base_3gene (train)
+  states=43,904  V*(root)=-0.117990  V_stop(root)=-0.231159
+  ADP: ratio2=0.013798999134348443  ratio3=0.14556422216602388  policy_source=adp_policy  (114s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_MediumEven_Base_3gene_adp.json

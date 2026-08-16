@@ -1,0 +1,18 @@
+[extended_fourway] 2026-08-09T17:54:31.306828  genes=3  seed=1  family=Extended (OOD -- never trained on)  GNN=E7 neighborpool  MLP=E2 ce  only=LowLow/Base
+loaded GNN (e7) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e7_gnn_neighborpool/seed_runs/seed1/gnn_q_e7.pt
+loaded MLP (e7) /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed1/mlp_q_ce.pt
+
+==========================================================================================
+Extended_LowLow_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.0667  V_stop(root)=-0.0984
+  ratio2: myopic=0.6292  gnn=0.5021  mlp=0.2247
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Uncle        TEST GrandfatherTEST Child      TEST Grandfathernone
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Mother     TEST Grandmotherpartial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=1/6=0.167  gnn=4/6=0.667  mlp=2/6=0.333  all4=1/6=0.167
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed1/configs_e7/LowLow_Base.json

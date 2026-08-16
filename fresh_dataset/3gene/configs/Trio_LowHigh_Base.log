@@ -1,0 +1,7 @@
+[3gene ground truth, single config] 2026-08-08T03:02:46.022761
+
+──────────────────────────────────────────────────
+[CONFIG] Trio_LowHigh_Base_3gene  (train, cached)
+  states=4,872  V*(root)=-0.0852  V_stop(root)=-0.1442
+  myopic: L=-0.0871  ratio2=0.0325  root_action=['test', 'Parent1']  dp_root_action=['test', 'Parent1']  match=True  (0s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/3gene/configs/Trio_LowHigh_Base_3gene.json

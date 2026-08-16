@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:56:17.993486  genes=2  family=Trio  regime=LowLow  preset=Aggressive
+[CONFIG] Trio_LowLow_Aggressive_2gene (train)
+  states=432  V*(root)=-0.031512  V_stop(root)=-0.048259
+  ADP: ratio2=0.313249499036003  ratio3=0.032083158608126515  policy_source=adp_policy  (2s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_LowLow_Aggressive_2gene_adp.json

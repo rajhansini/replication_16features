@@ -1,0 +1,85 @@
+======================================================================
+STEP5 PIPELINE VERIFICATION  —  2026-07-10T01:31:32.504019
+======================================================================
+
+Using config: Extended__Base__0.02
+
+[A] DP VALUE SANITY
+    Individuals:         ['Grandfather', 'Grandmother', 'Mother', 'Father', 'Uncle', 'Child']
+    Total states:        107,728
+    V_root (ds field):   -0.13064950
+    V_stop_root (ds):    -0.21640097
+    V*(empty state):     -0.13064950  OK — matches V_root
+    Fully-tested states: 24025
+    V*(fully-tested)!=0: 0  (should be 0)
+      V*({'Father': (0, 0), 'Uncle': (0, 0), 'Child': (0, 0), 'Mother': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}) = 0.00000000
+      V*({'Father': (0, 0), 'Uncle': (0, 0), 'Mother': (0, 1), 'Child': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}) = 0.00000000
+      V*({'Father': (0, 0), 'Child': (0, 1), 'Uncle': (0, 0), 'Mother': (0, 1), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}) = 0.00000000
+
+[B] Q* FORMULA CHECK  —  Q*(s,i) = r_test(i,s) + E[V*(s')]
+
+    State: {'Father': (0, 0), 'Uncle': (0, 0), 'Mother': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}
+      Grandfather: TESTED → NaN
+      Grandmother: TESTED → NaN
+      Mother: TESTED → NaN
+      Father: TESTED → NaN
+      Uncle: TESTED → NaN
+      Child: r_test=-0.010000  E[V*]=0.000000  Q*=-0.010000
+
+    State: {'Father': (0, 0), 'Child': (0, 0), 'Mother': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}
+      Grandfather: TESTED → NaN
+      Grandmother: TESTED → NaN
+      Mother: TESTED → NaN
+      Father: TESTED → NaN
+      Uncle: r_test=-0.010000  E[V*]=0.000000  Q*=-0.010000
+      Child: TESTED → NaN
+
+    State: {'Uncle': (0, 0), 'Child': (0, 0), 'Mother': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}
+      Grandfather: TESTED → NaN
+      Grandmother: TESTED → NaN
+      Mother: TESTED → NaN
+      Father: r_test=-0.010000  E[V*]=0.000000  Q*=-0.010000
+      Uncle: TESTED → NaN
+      Child: TESTED → NaN
+
+    State: {'Father': (0, 0), 'Uncle': (0, 0), 'Mother': (0, 1), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}
+      Grandfather: TESTED → NaN
+      Grandmother: TESTED → NaN
+      Mother: TESTED → NaN
+      Father: TESTED → NaN
+      Uncle: TESTED → NaN
+      Child: r_test=-0.038000  E[V*]=0.000000  Q*=-0.038000
+
+    State: {'Father': (0, 0), 'Mother': (0, 1), 'Child': (0, 0), 'Grandfather': (0, 0), 'Grandmother': (0, 0)}
+      Grandfather: TESTED → NaN
+      Grandmother: TESTED → NaN
+      Mother: TESTED → NaN
+      Father: TESTED → NaN
+      Uncle: r_test=-0.010000  E[V*]=0.000000  Q*=-0.010000
+      Child: TESTED → NaN
+
+[C] NODE FEATURE SANITY
+    Node features shape (single state): (6, 7)  (expected (6, 7))
+    Bad entries in first 50 states (prob!=1 or wrong flag): 0  (should be 0)
+    Root-state node features:
+      Grandfather: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+      Grandmother: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+      Mother: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+      Father: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+      Uncle: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+      Child: [0.9603999853134155, 0.03920000046491623, 0.00039999998989515007, 0.7225000262260437, 0.2549999952316284, 0.02250000089406967, 0.0]
+
+[D] MODEL OUTPUT SHAPE CHECK  (must be (B, N_people), not (B,))
+    Output shape: (4, 6)  (expected (4, 6))
+    Sample Q values (untrained): {'Grandfather': 0.0991, 'Grandmother': 0.0991, 'Mother': 0.0991, 'Father': 0.0986, 'Uncle': 0.0986, 'Child': 0.0989}
+
+[E] Q* LABEL MASK CHECK
+    Shape: (107728, 6)  (expected (107728, 6))
+    NaN entries   (tested persons):  513240
+    Valid entries (untested persons): 133128
+    Q* value range: [-0.368258,  -0.010000]
+
+======================================================================
+VERIFICATION DONE. Read verify.log.
+======================================================================
+

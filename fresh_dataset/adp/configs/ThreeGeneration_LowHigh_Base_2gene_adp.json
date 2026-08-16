@@ -1,0 +1,15 @@
+{
+  "genes": 2,
+  "family": "ThreeGeneration",
+  "regime": "LowHigh",
+  "preset": "Base",
+  "split": "test",
+  "V_star": -0.1091581057361629,
+  "V_stop": -0.16831186344000088,
+  "ADP_phi": -0.09354938625575221,
+  "production_policy_value": -0.11560805266755414,
+  "production_policy_source": "myopic_policy",
+  "adp_ratio2_deployed_policy": 0.10903697722271258,
+  "adp_ratio3_certificate": 0.2638669137226759,
+  "seconds": 71.9
+}

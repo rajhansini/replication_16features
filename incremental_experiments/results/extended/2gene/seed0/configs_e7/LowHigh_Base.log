@@ -1,0 +1,18 @@
+[extended_fourway] 2026-08-09T15:13:26.109298  genes=2  seed=0  family=Extended (OOD -- never trained on)  GNN=E6 sumpool  MLP=E6 sumpool  only=LowHigh/Base
+loaded GNN (e7) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e7_gnn_neighborpool_2gene/seed_runs/seed0/gnn_q_e7_2gene.pt
+loaded MLP (e7) /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce_2gene/seed_runs/seed0/mlp_q_ce_2gene.pt
+
+==========================================================================================
+Extended_LowHigh_Base_2gene
+==========================================================================================
+  states=107,728  V*(root)=-0.1306  V_stop(root)=-0.2164
+  ratio2: myopic=0.1429  gnn=0.0699  mlp=0.1874
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Child        TEST GrandfatherTEST Child      TEST Father     partial
+  1    {Grandfather:(0, 0)}                                        TEST Grandmother  TEST Father     TEST GrandmotherTEST Father     partial
+  2    {Father:(0, 0), Grandfather:(0, 0)}                         TEST Grandmother  TEST Uncle      TEST GrandmotherTEST Mother     partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Uncle:(0, 0)}           TEST Mother       TEST GrandmotherTEST GrandmotherTEST Mother     partial
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Uncle:(0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Child      partial
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Uncle:(0, 0)}STOP              STOP            STOP            TEST Mother     partial
+  agreement vs DP: myopic=1/6=0.167  gnn=5/6=0.833  mlp=1/6=0.167  all4=0/6=0.000
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/2gene/seed0/configs_e7/LowHigh_Base.json

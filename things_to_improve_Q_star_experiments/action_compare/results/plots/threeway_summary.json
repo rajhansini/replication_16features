@@ -1,0 +1,412 @@
+{
+  "2gene": {
+    "n_steps_mean": 53.0,
+    "gnn_mistakes_per_seed": 23.0,
+    "mlp_mistakes_per_seed": 21.0,
+    "gnn_mistake_rate": 0.43396226415094336,
+    "mlp_mistake_rate": 0.3962264150943396,
+    "gnn_match_rate": 0.5660377358490566,
+    "mlp_match_rate": 0.6037735849056604,
+    "by_step": {
+      "0": {
+        "n": 36,
+        "gnn_err": 36,
+        "mlp_err": 35,
+        "gnn_mistake_rate": 1.0,
+        "mlp_mistake_rate": 0.9722222222222222
+      },
+      "1": {
+        "n": 36,
+        "gnn_err": 13,
+        "mlp_err": 9,
+        "gnn_mistake_rate": 0.3611111111111111,
+        "mlp_mistake_rate": 0.25
+      },
+      "2": {
+        "n": 33,
+        "gnn_err": 20,
+        "mlp_err": 19,
+        "gnn_mistake_rate": 0.6060606060606061,
+        "mlp_mistake_rate": 0.5757575757575758
+      },
+      "3": {
+        "n": 18,
+        "gnn_err": 0,
+        "mlp_err": 0,
+        "gnn_mistake_rate": 0.0,
+        "mlp_mistake_rate": 0.0
+      },
+      "4": {
+        "n": 18,
+        "gnn_err": 0,
+        "mlp_err": 0,
+        "gnn_mistake_rate": 0.0,
+        "mlp_mistake_rate": 0.0
+      },
+      "5": {
+        "n": 18,
+        "gnn_err": 0,
+        "mlp_err": 0,
+        "gnn_mistake_rate": 0.0,
+        "mlp_mistake_rate": 0.0
+      }
+    },
+    "per_seed": [
+      {
+        "n_steps": 53,
+        "gnn_mistakes": 20,
+        "mlp_mistakes": 19,
+        "both_mistakes": 19,
+        "gnn_mistake_rate": 0.37735849056603776,
+        "mlp_mistake_rate": 0.3584905660377358,
+        "gnn_match_rate": 0.6226415094339622,
+        "mlp_match_rate": 0.6415094339622642,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 12,
+            "mlp_err": 11
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 1,
+            "mlp_err": 1
+          },
+          "2": {
+            "n": 11,
+            "gnn_err": 7,
+            "mlp_err": 7
+          },
+          "3": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "4": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 0,
+        "overall_follow_myopic": {
+          "n_total": 53,
+          "rate_all3": 0.6226415094339622,
+          "rate_gnn_mlp": 0.9811320754716981,
+          "rate_gnn_myopic": 0.6226415094339622,
+          "rate_mlp_myopic": 0.6415094339622641
+        }
+      },
+      {
+        "n_steps": 53,
+        "gnn_mistakes": 31,
+        "mlp_mistakes": 20,
+        "both_mistakes": 20,
+        "gnn_mistake_rate": 0.5849056603773585,
+        "mlp_mistake_rate": 0.37735849056603776,
+        "gnn_match_rate": 0.41509433962264153,
+        "mlp_match_rate": 0.6226415094339622,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 12,
+            "mlp_err": 12
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 12,
+            "mlp_err": 1
+          },
+          "2": {
+            "n": 11,
+            "gnn_err": 7,
+            "mlp_err": 7
+          },
+          "3": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "4": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 1,
+        "overall_follow_myopic": {
+          "n_total": 53,
+          "rate_all3": 0.41509433962264153,
+          "rate_gnn_mlp": 0.5471698113207547,
+          "rate_gnn_myopic": 0.41509433962264153,
+          "rate_mlp_myopic": 0.6226415094339622
+        }
+      },
+      {
+        "n_steps": 53,
+        "gnn_mistakes": 18,
+        "mlp_mistakes": 24,
+        "both_mistakes": 17,
+        "gnn_mistake_rate": 0.33962264150943394,
+        "mlp_mistake_rate": 0.4528301886792453,
+        "gnn_match_rate": 0.6603773584905661,
+        "mlp_match_rate": 0.5471698113207547,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 12,
+            "mlp_err": 12
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 0,
+            "mlp_err": 7
+          },
+          "2": {
+            "n": 11,
+            "gnn_err": 6,
+            "mlp_err": 5
+          },
+          "3": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "4": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 6,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 2,
+        "overall_follow_myopic": {
+          "n_total": 53,
+          "rate_all3": 0.5283018867924528,
+          "rate_gnn_mlp": 0.660377358490566,
+          "rate_gnn_myopic": 0.660377358490566,
+          "rate_mlp_myopic": 0.5471698113207547
+        }
+      }
+    ]
+  },
+  "3gene": {
+    "n_steps_mean": 66.0,
+    "gnn_mistakes_per_seed": 21.333333333333332,
+    "mlp_mistakes_per_seed": 21.666666666666668,
+    "gnn_mistake_rate": 0.32323232323232326,
+    "mlp_mistake_rate": 0.3282828282828283,
+    "gnn_match_rate": 0.6767676767676768,
+    "mlp_match_rate": 0.6717171717171717,
+    "by_step": {
+      "0": {
+        "n": 36,
+        "gnn_err": 32,
+        "mlp_err": 19,
+        "gnn_mistake_rate": 0.8888888888888888,
+        "mlp_mistake_rate": 0.5277777777777778
+      },
+      "1": {
+        "n": 36,
+        "gnn_err": 10,
+        "mlp_err": 31,
+        "gnn_mistake_rate": 0.2777777777777778,
+        "mlp_mistake_rate": 0.8611111111111112
+      },
+      "2": {
+        "n": 36,
+        "gnn_err": 10,
+        "mlp_err": 9,
+        "gnn_mistake_rate": 0.2777777777777778,
+        "mlp_mistake_rate": 0.25
+      },
+      "3": {
+        "n": 30,
+        "gnn_err": 3,
+        "mlp_err": 6,
+        "gnn_mistake_rate": 0.1,
+        "mlp_mistake_rate": 0.2
+      },
+      "4": {
+        "n": 30,
+        "gnn_err": 9,
+        "mlp_err": 0,
+        "gnn_mistake_rate": 0.3,
+        "mlp_mistake_rate": 0.0
+      },
+      "5": {
+        "n": 30,
+        "gnn_err": 0,
+        "mlp_err": 0,
+        "gnn_mistake_rate": 0.0,
+        "mlp_mistake_rate": 0.0
+      }
+    },
+    "per_seed": [
+      {
+        "n_steps": 66,
+        "gnn_mistakes": 26,
+        "mlp_mistakes": 12,
+        "both_mistakes": 7,
+        "gnn_mistake_rate": 0.3939393939393939,
+        "mlp_mistake_rate": 0.18181818181818182,
+        "gnn_match_rate": 0.6060606060606061,
+        "mlp_match_rate": 0.8181818181818181,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 12,
+            "mlp_err": 0
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 6,
+            "mlp_err": 7
+          },
+          "2": {
+            "n": 12,
+            "gnn_err": 3,
+            "mlp_err": 3
+          },
+          "3": {
+            "n": 10,
+            "gnn_err": 1,
+            "mlp_err": 2
+          },
+          "4": {
+            "n": 10,
+            "gnn_err": 4,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 10,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 0,
+        "overall_follow_myopic": {
+          "n_total": 66,
+          "rate_all3": 0.5303030303030303,
+          "rate_gnn_mlp": 0.6060606060606061,
+          "rate_gnn_myopic": 0.6060606060606061,
+          "rate_mlp_myopic": 0.8181818181818182
+        }
+      },
+      {
+        "n_steps": 66,
+        "gnn_mistakes": 15,
+        "mlp_mistakes": 27,
+        "both_mistakes": 13,
+        "gnn_mistake_rate": 0.22727272727272727,
+        "mlp_mistake_rate": 0.4090909090909091,
+        "gnn_match_rate": 0.7727272727272727,
+        "mlp_match_rate": 0.5909090909090908,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 10,
+            "mlp_err": 11
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 0,
+            "mlp_err": 12
+          },
+          "2": {
+            "n": 12,
+            "gnn_err": 4,
+            "mlp_err": 3
+          },
+          "3": {
+            "n": 10,
+            "gnn_err": 1,
+            "mlp_err": 1
+          },
+          "4": {
+            "n": 10,
+            "gnn_err": 0,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 10,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 1,
+        "overall_follow_myopic": {
+          "n_total": 66,
+          "rate_all3": 0.5606060606060606,
+          "rate_gnn_mlp": 0.6212121212121212,
+          "rate_gnn_myopic": 0.7727272727272727,
+          "rate_mlp_myopic": 0.5909090909090909
+        }
+      },
+      {
+        "n_steps": 66,
+        "gnn_mistakes": 23,
+        "mlp_mistakes": 26,
+        "both_mistakes": 16,
+        "gnn_mistake_rate": 0.3484848484848485,
+        "mlp_mistake_rate": 0.3939393939393939,
+        "gnn_match_rate": 0.6515151515151515,
+        "mlp_match_rate": 0.6060606060606061,
+        "by_step": {
+          "0": {
+            "n": 12,
+            "gnn_err": 10,
+            "mlp_err": 8
+          },
+          "1": {
+            "n": 12,
+            "gnn_err": 4,
+            "mlp_err": 12
+          },
+          "2": {
+            "n": 12,
+            "gnn_err": 3,
+            "mlp_err": 3
+          },
+          "3": {
+            "n": 10,
+            "gnn_err": 1,
+            "mlp_err": 3
+          },
+          "4": {
+            "n": 10,
+            "gnn_err": 5,
+            "mlp_err": 0
+          },
+          "5": {
+            "n": 10,
+            "gnn_err": 0,
+            "mlp_err": 0
+          }
+        },
+        "seed": 2,
+        "overall_follow_myopic": {
+          "n_total": 66,
+          "rate_all3": 0.5,
+          "rate_gnn_mlp": 0.6212121212121212,
+          "rate_gnn_myopic": 0.6515151515151515,
+          "rate_mlp_myopic": 0.6060606060606061
+        }
+      }
+    ]
+  }
+}

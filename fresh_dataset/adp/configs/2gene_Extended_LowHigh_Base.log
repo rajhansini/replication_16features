@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:55:26.431375  genes=2  family=Extended  regime=LowHigh  preset=Base
+[CONFIG] Extended_LowHigh_Base_2gene (test)
+  states=107,728  V*(root)=-0.130650  V_stop(root)=-0.216401
+  ADP: ratio2=0.08674707100237335  ratio3=0.28760917670223507  policy_source=adp_policy  (490s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Extended_LowHigh_Base_2gene_adp.json

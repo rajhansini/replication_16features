@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:06:33.350159  genes=3  family=Nuclear  regime=MixedA  preset=Base
+[CONFIG] Nuclear_MixedA_Base_3gene (train)
+  states=43,904  V*(root)=-0.111706  V_stop(root)=-0.210686
+  ADP: ratio2=0.023060994487426687  ratio3=0.15616881063962865  policy_source=adp_policy  (124s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_MixedA_Base_3gene_adp.json

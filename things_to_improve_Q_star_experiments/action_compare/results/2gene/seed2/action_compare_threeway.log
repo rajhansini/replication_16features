@@ -1,0 +1,383 @@
+[action_compare_threeway] 2026-07-21T12:15:55.041233  genes=2  seed=2
+output -> /net/projects/ranalab/rajhansini/replication_16features/things_to_improve_Q_star_experiments/action_compare/results/2gene/seed2
+loaded /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed2/gnn_q_2gene.pt  params=7393
+loaded /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed2/mlp_q_2gene.pt  params=961
+
+================================================================================
+ThreeGeneration_LowHigh_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Father     partial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.200  mlp~myo=0.400
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     TEST Father     partial
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherSTOP            partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP            TEST Mother     STOP            partial
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=2/6=0.333  gnn~mlp=0.500  gnn~myo=0.500  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherSTOP            partial
+  agreement on this trajectory: all3=1/3=0.333  gnn~mlp=0.667  gnn~myo=0.333  mlp~myo=0.333
+
+================================================================================
+ThreeGeneration_LowHigh_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Grandmotherpartial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.400  mlp~myo=0.200
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     TEST Grandmotherno
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.667  gnn~myo=0.667  mlp~myo=0.667
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST GrandfatherTEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST Mother     partial
+  3    {Child:(0, 0), Father:(0, 0), Mother:(0, 0)}      TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.667  gnn~myo=0.667  mlp~myo=0.500
+
+================================================================================
+ThreeGeneration_MediumEven_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST GrandfatherTEST Father     no
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Grandmotherpartial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.000  gnn~myo=0.400  mlp~myo=0.200
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST GrandmotherTEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Father     TEST Child      partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Child      TEST Child      TEST Child      ALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     STOP            partial
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=2/6=0.333  gnn~mlp=0.500  gnn~myo=0.667  mlp~myo=0.333
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Mother     TEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherSTOP            partial
+  agreement on this trajectory: all3=0/3=0.000  gnn~mlp=0.333  gnn~myo=0.333  mlp~myo=0.000
+
+================================================================================
+ThreeGeneration_MediumEven_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST GrandfatherTEST Father     no
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Grandmotherpartial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.000  gnn~myo=0.400  mlp~myo=0.200
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST GrandmotherTEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Child      TEST Child      ALL
+  3    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Father     TEST Mother     partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.500  gnn~myo=0.833  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Mother     TEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.667  gnn~myo=0.833  mlp~myo=0.667
+
+================================================================================
+ThreeGeneration_LowLow_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child      TEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Child      STOP            partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/4=0.000  gnn~mlp=0.500  gnn~myo=0.250  mlp~myo=0.250
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child      TEST Child      partial
+  2    {Child:(0, 0), Grandfather:(0, 0)}                STOP            TEST Father     STOP            partial
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=1/4=0.250  gnn~mlp=0.500  gnn~myo=0.500  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Father:(0, 0)}                                   STOP            TEST Child      STOP            partial
+  agreement on this trajectory: all3=0/2=0.000  gnn~mlp=0.500  gnn~myo=0.500  mlp~myo=0.000
+
+================================================================================
+ThreeGeneration_LowLow_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child      TEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Child      TEST Child      ALL
+  3    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=1/4=0.250  gnn~mlp=0.500  gnn~myo=0.500  mlp~myo=0.500
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child      TEST Child      partial
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     STOP            no
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=1/4=0.250  gnn~mlp=0.500  gnn~myo=0.250  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST GrandfatherTEST GrandfatherTEST Father     partial
+  1    {Father:(0, 0)}                                   TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Father:(0, 0)}                     STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=2/3=0.667  gnn~mlp=1.000  gnn~myo=0.667  mlp~myo=0.667
+
+================================================================================
+ThreeGeneration_HighHigh_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST Father     TEST Father     TEST Father     ALL
+  3    {Child:(0, 0), Father:(0, 0), Mother:(0, 0)}      TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.833  gnn~myo=0.667  mlp~myo=0.667
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST GrandmotherTEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Father     TEST Child      partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Child      TEST Child      TEST Child      ALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.500  gnn~myo=0.833  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST GrandfatherTEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.667  gnn~myo=0.833  mlp~myo=0.667
+
+================================================================================
+ThreeGeneration_HighHigh_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST Father     TEST Father     TEST Father     ALL
+  3    {Child:(0, 0), Father:(0, 0), Mother:(0, 0)}      TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.833  gnn~myo=0.667  mlp~myo=0.667
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST GrandmotherTEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Father     TEST Child      partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Child      TEST Child      TEST Child      ALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.500  gnn~myo=0.833  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST GrandfatherTEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST Mother     partial
+  3    {Child:(0, 0), Father:(0, 0), Mother:(0, 0)}      TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.667  gnn~myo=0.667  mlp~myo=0.500
+
+================================================================================
+ThreeGeneration_MixedA_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Father     partial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.200  mlp~myo=0.400
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child      TEST Child      partial
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     TEST Father     partial
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherSTOP            STOP            partial
+  agreement on this trajectory: all3=0/4=0.000  gnn~mlp=0.000  gnn~myo=0.000  mlp~myo=0.750
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherSTOP            STOP            partial
+  agreement on this trajectory: all3=1/3=0.333  gnn~mlp=0.333  gnn~myo=0.333  mlp~myo=0.667
+
+================================================================================
+ThreeGeneration_MixedA_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Grandmotherpartial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.400  mlp~myo=0.200
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     TEST Grandmotherno
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.667  gnn~myo=0.667  mlp~myo=0.667
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=5/6=0.833  gnn~mlp=0.833  gnn~myo=0.833  mlp~myo=0.833
+
+================================================================================
+ThreeGeneration_MixedB_Base_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Father     partial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.200  mlp~myo=0.400
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Grandfather:(0, 0)}                TEST Mother     TEST Father     TEST Father     partial
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherSTOP            partial
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     STOP            partial
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=2/6=0.333  gnn~mlp=0.667  gnn~myo=0.333  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST Child      TEST Child      ALL
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherSTOP            partial
+  agreement on this trajectory: all3=1/3=0.333  gnn~mlp=0.667  gnn~myo=0.333  mlp~myo=0.333
+
+================================================================================
+ThreeGeneration_MixedB_Aggressive_2gene
+================================================================================
+
+  --- trajectory: follow GNN (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Child:(0, 0)}                                    TEST Mother     TEST Mother     TEST Father     partial
+  2    {Child:(0, 0), Mother:(0, 0)}                     TEST GrandfatherTEST Father     TEST Father     partial
+  3    {Child:(0, 0), Grandfather:(0, 0), Mother:(0, 0)} TEST GrandmotherTEST Father     TEST Grandmotherpartial
+  4    {Child:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            TEST Father     STOP            partial
+  agreement on this trajectory: all3=0/5=0.000  gnn~mlp=0.200  gnn~myo=0.400  mlp~myo=0.200
+
+  --- trajectory: follow MLP (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Grandfather:(0, 0)}                              TEST Child      TEST GrandmotherTEST Child      partial
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Child      TEST Father     TEST Child      partial
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Child      TEST Child      TEST Child      ALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=3/6=0.500  gnn~mlp=0.500  gnn~myo=0.833  mlp~myo=0.500
+
+  --- trajectory: follow MYOPIC (most-likely outcomes) ---
+  step state                                             GNN             MLP             MYOPIC          agree
+  0    root                                              TEST Child      TEST GrandfatherTEST Father     no
+  1    {Father:(0, 0)}                                   TEST Child      TEST GrandfatherTEST Child      partial
+  2    {Child:(0, 0), Father:(0, 0)}                     TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherTEST GrandmotherTEST GrandmotherALL
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother     TEST Mother     ALL
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP            STOP            ALL
+  agreement on this trajectory: all3=4/6=0.667  gnn~mlp=0.667  gnn~myo=0.833  mlp~myo=0.667
+
+================================================================================
+OVERALL
+  follow-GNN     traj: all3=0.150  gnn~mlp=0.333  gnn~myo=0.400  mlp~myo=0.367
+  follow-MLP     traj: all3=0.424  gnn~mlp=0.515  gnn~myo=0.606  mlp~myo=0.530
+  follow-MYOPIC  traj: all3=0.528  gnn~mlp=0.660  gnn~myo=0.660  mlp~myo=0.547
+saved -> /net/projects/ranalab/rajhansini/replication_16features/things_to_improve_Q_star_experiments/action_compare/results/2gene/seed2/action_compare_threeway.json
+saved -> /net/projects/ranalab/rajhansini/replication_16features/things_to_improve_Q_star_experiments/action_compare/results/2gene/seed2/action_compare_threeway.log

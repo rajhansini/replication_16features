@@ -1,0 +1,16 @@
+{
+  "V_root": -0.06294973215316814,
+  "V_stop_root": -0.11456770247999984,
+  "L_myopic_TRUE": -0.07411226707156522,
+  "ratio2_TRUE": 0.21625288339930426,
+  "root_action_myopic": [
+    "test",
+    "Grandfather"
+  ],
+  "root_action_dp": [
+    "test",
+    "Grandfather"
+  ],
+  "n_states": 1054528,
+  "key": "ThreeGeneration_LowLow_Aggressive_3gene"
+}

@@ -1,0 +1,30 @@
+GNN-Q / MLP-Q mistakes vs MYOPIC (reference)
+============================================================
+Reference trajectory: follow MYOPIC, most-likely genotype outcomes.
+A 'mistake' = GNN or MLP picks a different action than myopic at that state.
+Note: myopic is the stronger baseline on ratio2 — matching it is desirable,
+but it is not exact DP.
+
+[2gene]  ~53 myopic decisions / seed
+  GNN-Q: 23.0 mistakes/seed  (43.4% ± 10.8%)  → match myopic 56.6%
+  MLP-Q: 21.0 mistakes/seed  (39.6% ± 4.1%)  → match myopic 60.4%
+  Verdict: MLP closer to myopic than GNN (Δ mistake rate 3.8 pp).
+  At root (step 0, n=36): GNN mistake 100%, MLP mistake 97%
+  Example mismatches (seed 0):
+    [ThreeGeneration_LowHigh_Base_2gene] step0 myopic=TEST Father | GNN=TEST Child ; MLP=TEST Child
+    [ThreeGeneration_LowHigh_Base_2gene] step2 myopic=STOP | GNN=TEST Grandfather ; MLP=TEST Grandfather
+    [ThreeGeneration_LowHigh_Aggressive_2gene] step0 myopic=TEST Father | GNN=TEST Child ; MLP=TEST Child
+    [ThreeGeneration_LowHigh_Aggressive_2gene] step2 myopic=TEST Mother | GNN=TEST Grandfather ; MLP=TEST Grandfather
+    [ThreeGeneration_MediumEven_Base_2gene] step0 myopic=TEST Father | GNN=TEST Child ; MLP=TEST Child
+
+[3gene]  ~66 myopic decisions / seed
+  GNN-Q: 21.3 mistakes/seed  (32.3% ± 7.0%)  → match myopic 67.7%
+  MLP-Q: 21.7 mistakes/seed  (32.8% ± 10.4%)  → match myopic 67.2%
+  Verdict: GNN closer to myopic than MLP (Δ mistake rate 0.5 pp).
+  At root (step 0, n=36): GNN mistake 89%, MLP mistake 53%
+  Example mismatches (seed 0):
+    [ThreeGeneration_LowHigh_Base_3gene] step0 myopic=TEST Father | GNN=TEST Grandfather
+    [ThreeGeneration_LowHigh_Base_3gene] step1 myopic=TEST Child | GNN=TEST Grandfather
+    [ThreeGeneration_LowHigh_Base_3gene] step3 myopic=TEST Mother | GNN=TEST Grandmother ; MLP=TEST Grandmother
+    [ThreeGeneration_LowHigh_Base_3gene] step4 myopic=TEST Grandmother | GNN=STOP
+    [ThreeGeneration_LowHigh_Aggressive_3gene] step0 myopic=TEST Father | GNN=TEST Grandfather

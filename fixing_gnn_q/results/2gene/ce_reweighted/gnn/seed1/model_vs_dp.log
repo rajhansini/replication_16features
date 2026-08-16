@@ -1,0 +1,143 @@
+[model_vs_dp] 2026-07-22T22:24:16.352385  genes=2  seed=1  variant=ce_reweighted  model=gnn
+output -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/2gene/ce_reweighted/gnn/seed1
+loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/gnn_q_ce_reweighted_2gene/seed_runs/seed1/gnn_q_ce_rw_2gene.pt  params=7393
+
+================================================================================
+ThreeGeneration_LowHigh_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST Father     TEST Grandfather    NO
+  1    {Father:(0, 0)}                                   TEST GrandfatherTEST Mother         NO
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST GrandmotherTEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 2/5 = 0.400
+
+================================================================================
+ThreeGeneration_LowHigh_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/5 = 0.800
+
+================================================================================
+ThreeGeneration_MediumEven_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/5 = 0.800
+
+================================================================================
+ThreeGeneration_MediumEven_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/5 = 0.800
+
+================================================================================
+ThreeGeneration_LowLow_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST Father     TEST Child          NO
+  1    {Father:(0, 0)}                                   TEST GrandfatherSTOP                NO
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Child      STOP                NO
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherSTOP                NO
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 1/5 = 0.200
+
+================================================================================
+ThreeGeneration_LowLow_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST Father     TEST Father         YES
+  1    {Father:(0, 0)}                                   TEST GrandfatherTEST Mother         NO
+  2    {Father:(0, 0), Grandfather:(0, 0)}               TEST Child      TEST Mother         NO
+  3    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0)} TEST GrandmotherSTOP                NO
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 2/5 = 0.400
+
+================================================================================
+ThreeGeneration_HighHigh_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Child          NO
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/5 = 0.600
+
+================================================================================
+ThreeGeneration_HighHigh_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/5 = 0.800
+
+================================================================================
+ThreeGeneration_MixedA_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST Father     TEST Father         YES
+  1    {Father:(0, 0)}                                   TEST Mother     TEST Mother         YES
+  2    {Father:(0, 0), Mother:(0, 0)}                    TEST GrandfatherSTOP                NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherSTOP                NO
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 3/5 = 0.600
+
+================================================================================
+ThreeGeneration_MixedA_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Child      TEST Mother         NO
+  4    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  5    {Child:(0, 0), Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/6 = 0.667
+
+================================================================================
+ThreeGeneration_MixedB_Base_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST Father     TEST Grandfather    NO
+  1    {Father:(0, 0)}                                   TEST Mother     TEST Mother         YES
+  2    {Father:(0, 0), Mother:(0, 0)}                    TEST GrandfatherSTOP                NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Mother:(0, 0)}TEST GrandmotherSTOP                NO
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 2/5 = 0.400
+
+================================================================================
+ThreeGeneration_MixedB_Aggressive_2gene
+================================================================================
+  step state                                             GNN             DP (ground truth)   match
+  0    root                                              TEST GrandfatherTEST Grandfather    YES
+  1    {Grandfather:(0, 0)}                              TEST GrandmotherTEST Grandmother    YES
+  2    {Grandfather:(0, 0), Grandmother:(0, 0)}          TEST Father     TEST Mother         NO
+  3    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0)}TEST Mother     TEST Mother         YES
+  4    {Father:(0, 0), Grandfather:(0, 0), Grandmother:(0, 0), Mother:(0, 0)}STOP            STOP                YES
+  agreement with DP (ground truth): 4/5 = 0.800
+
+================================================================================
+OVERALL
+  agreement with DP (ground truth): 37/61 = 0.607
+  root-state agreement:             9/12 = 0.750
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/2gene/ce_reweighted/gnn/seed1/model_vs_dp.json
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/2gene/ce_reweighted/gnn/seed1/model_vs_dp.log

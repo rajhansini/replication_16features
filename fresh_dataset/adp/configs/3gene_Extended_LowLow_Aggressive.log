@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T02:37:50.316278  genes=3  family=Extended  regime=LowLow  preset=Aggressive
+[CONFIG] Extended_LowLow_Aggressive_3gene (test)
+  states=9,190,992  V*(root)=-0.072469  V_stop(root)=-0.147301

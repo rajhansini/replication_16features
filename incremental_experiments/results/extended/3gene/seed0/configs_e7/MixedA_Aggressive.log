@@ -1,0 +1,19 @@
+[extended_fourway] 2026-08-09T17:26:29.813787  genes=3  seed=0  family=Extended (OOD -- never trained on)  GNN=E7 neighborpool  MLP=E2 ce  only=MixedA/Aggressive
+loaded GNN (e7) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e7_gnn_neighborpool/seed_runs/seed0/gnn_q_e7.pt
+loaded MLP (e7) /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed0/mlp_q_ce.pt
+
+==========================================================================================
+Extended_MixedA_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1669  V_stop(root)=-0.4373
+  ratio2: myopic=0.0371  gnn=0.0658  mlp=0.0603
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Child      TEST Grandmothernone
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Child      TEST Child      none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     STOP            TEST Mother     partial
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=3/7=0.429  mlp=4/7=0.571  all4=2/7=0.286
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed0/configs_e7/MixedA_Aggressive.json

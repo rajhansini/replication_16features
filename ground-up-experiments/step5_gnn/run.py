@@ -40,6 +40,23 @@ from genetic_dp.models.reward  import r_reward, r_reward_test
 
 # ─── state → graph ───────────────────────────────────────────────────────────
 
+def config_to_cost_vec(config, genes) -> np.ndarray:
+    """Extract scalar cost params as a flat vector for GNN conditioning.
+
+    For each gene: [a_base, b_base, delta] (founder's values = preset scalars).
+    Then: [fixed_cost, variable_cost].
+    dim = 3*n_genes + 2  (8 for 2 genes, 11 for 3 genes).
+    """
+    vec = []
+    for g in genes:
+        vec.append(min(config.a_gene[g].values(), key=abs))
+        vec.append(min(config.b_gene[g].values(), key=abs))
+        vec.append(list(config.delta_gene[g].values())[0])
+    vec.append(config.fixed_cost)
+    vec.append(config.variable_cost)
+    return np.array(vec, dtype=np.float32)
+
+
 def state_to_graph(state, belief, individuals, pedigree, genes=("GeneA", "GeneB")):
     """
     Convert a belief state into (node_features, edge_index).
@@ -79,6 +96,62 @@ def state_to_graph(state, belief, individuals, pedigree, genes=("GeneA", "GeneB"
     return feats, edge_index
 
 
+def compute_q_labels(ds: dict, individuals: list, genes: tuple) -> tuple[list, np.ndarray]:
+    """
+    Compute Q*(s, i) for every state s and person i.
+    Q*(s, i) = r_test(i, s) + E[V*(s')] for untested persons; NaN for tested.
+    Returns (states_list, q_array) where q_array is (N_states, N_people).
+    """
+    v_star  = ds["V_star"]   # {state: V*} from exact DP
+    belief  = ds["belief"]
+    config  = ds["config"]
+    states  = list(v_star.keys())
+    N       = len(states)
+    P       = len(individuals)
+    pid     = {p: j for j, p in enumerate(individuals)}
+
+    q = np.full((N, P), np.nan, dtype=np.float32)
+
+    for i_s, s in enumerate(states):
+        tested = {person for person, _ in s}
+        if len(tested) == P:
+            continue
+
+        entry = belief[s]
+        if isinstance(entry, InferenceResult):
+            per_gene   = entry.get_per_gene_probs()
+            tuple_pmfs = entry.get_tuple_pmfs()
+        else:
+            per_gene   = lift_tuple_posteriors_to_genes(entry, genes, GENOTYPE_STATES)
+            tuple_pmfs = None
+
+        for person in individuals:
+            if person in tested:
+                continue
+            j = pid[person]
+
+            r_i = float(r_reward_test(
+                person, None, config.a, config.b, config.c, config.delta,
+                config.fixed_cost, config.variable_cost,
+                per_gene_probs=per_gene,
+                a_gene=config.a_gene, c_gene=config.c_gene,
+                delta_gene=config.delta_gene,
+            ))
+
+            pmf = (tuple_pmfs or {}).get(person, {})
+            if not pmf and not isinstance(entry, InferenceResult):
+                pmf = entry.get(person, {})
+
+            exp_val = sum(
+                prob * v_star.get(frozenset(s | {(person, g)}), 0.0)
+                for g, prob in pmf.items() if prob > 1e-12
+            )
+
+            q[i_s, j] = r_i + exp_val
+
+    return states, q
+
+
 # ─── training loop for GNN ───────────────────────────────────────────────────
 
 def train_gnn(datasets_list, model: PedigreeGNN,
@@ -87,102 +160,89 @@ def train_gnn(datasets_list, model: PedigreeGNN,
               device: str = "cpu", print_every: int = 50,
               ckpt_path=None, ckpt_every: int = 50,
               history=None) -> tuple[PedigreeGNN, dict]:
-    """Train GNN with checkpointing and resume support."""
+    """Train GNN on Q*(s,i) labels with masked MSE loss."""
     model     = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    criterion = nn.MSELoss()
 
     if history is None:
         history = {"train_loss": [], "val_loss": []}
 
-    # Accept pre-built samples list or build from datasets
-    if len(datasets_list) == 1 and "_samples" in datasets_list[0]:
-        samples = datasets_list[0]["_samples"]
-    else:
-        samples = []
+    samples = datasets_list[0].get("_samples", [])
+    if not samples:
         for ds in datasets_list:
-            pedigree    = ds["pedigree"]
             individuals = ds["individuals"]
+            pedigree    = ds["pedigree"]
             belief      = ds["belief"]
             genes       = ds.get("genes", ("GeneA", "GeneB"))
-            for state, v_star in ds["V_star"].items():
-                entry = belief[state]
-                marg  = entry.marginals if isinstance(entry, InferenceResult) else entry
-                if sum(marg[individuals[0]].values()) < 1e-9: continue
+            cost_vec    = config_to_cost_vec(ds["config"], genes)
+            states, q_labels = compute_q_labels(ds, individuals, genes)
+            for i_s, state in enumerate(states):
                 nf, ei = state_to_graph(state, belief, individuals, pedigree, genes)
-                samples.append((nf, ei, float(v_star)))
+                samples.append((nf, ei, cost_vec, q_labels[i_s]))
 
-    # Group by shared edge_index (same dataset = same pedigree topology).
-    # Within a group every graph has identical edge structure, only node features differ.
-    # This lets us batch as (B, N, F) and do pure matrix ops — no per-sample Python loop.
-    from collections import defaultdict
-
-    # samples: list of (nf np.ndarray (N,F), ei np.ndarray (2,E), y float)
-    # Key = canonical edge_index bytes (unique per topology)
+    # Group by edge_index topology
     groups: dict[bytes, dict] = {}
-    for nf, ei, y in samples:
+    for nf, ei, gf, q in samples:
         key = ei.tobytes()
         if key not in groups:
-            groups[key] = {
-                "ei": torch.LongTensor(ei).to(device),
-                "nf": [], "y": [],
-            }
+            groups[key] = {"ei": torch.LongTensor(ei).to(device), "nf": [], "gf": [], "q": []}
         groups[key]["nf"].append(nf)
-        groups[key]["y"].append(y)
+        groups[key]["gf"].append(gf)
+        groups[key]["q"].append(q)
 
-    # Convert to tensors: nf → (M, N, F),  y → (M,)
     for g in groups.values():
-        g["nf"] = torch.FloatTensor(np.stack(g["nf"])).to(device)  # (M, N, F)
-        g["y"]  = torch.FloatTensor(g["y"]).to(device)             # (M,)
+        g["nf"] = torch.FloatTensor(np.stack(g["nf"])).to(device)
+        g["gf"] = torch.FloatTensor(np.stack(g["gf"])).to(device)
+        g["q"]  = torch.FloatTensor(np.stack(g["q"])).to(device)   # (M, N_people)
 
-    def iter_batches(groups, batch_size, shuffle=True):
-        for g in groups.values():
-            M   = g["nf"].shape[0]
-            idx = torch.randperm(M) if shuffle else torch.arange(M)
-            for start in range(0, M, batch_size):
-                sl = idx[start: start + batch_size]
-                yield g["nf"][sl], g["ei"], g["y"][sl]
+    def masked_mse(q_pred, q_true):
+        mask = ~torch.isnan(q_true)
+        return ((q_pred[mask] - q_true[mask]) ** 2).mean()
 
-    n_total = sum(g["nf"].shape[0] for g in groups.values())
-    n_val   = max(1, int(n_total * val_frac))
-    n_train = n_total - n_val
-
-    # Split each group into train/val
     train_groups, val_groups = {}, {}
     for key, g in groups.items():
-        M     = g["nf"].shape[0]
-        n_v   = max(1, int(M * val_frac))
-        n_t   = M - n_v
-        train_groups[key] = {"ei": g["ei"], "nf": g["nf"][:n_t], "y": g["y"][:n_t]}
-        val_groups[key]   = {"ei": g["ei"], "nf": g["nf"][n_t:], "y": g["y"][n_t:]}
+        M   = g["nf"].shape[0]
+        n_v = max(1, int(M * val_frac))
+        n_t = M - n_v
+        train_groups[key] = {"ei": g["ei"], "nf": g["nf"][:n_t], "gf": g["gf"][:n_t], "q": g["q"][:n_t]}
+        val_groups[key]   = {"ei": g["ei"], "nf": g["nf"][n_t:], "gf": g["gf"][n_t:], "q": g["q"][n_t:]}
 
+    n_train = sum(g["nf"].shape[0] for g in train_groups.values())
+    n_val   = sum(g["nf"].shape[0] for g in val_groups.values())
     batch_size = 256
 
     for epoch in range(start_epoch, epochs + 1):
         model.train()
         train_loss = 0.0
-        for nf_b, ei_b, y_b in iter_batches(train_groups, batch_size, shuffle=True):
-            optimizer.zero_grad()
-            preds = model.forward_batch(nf_b, ei_b)
-            loss  = criterion(preds, y_b)
-            loss.backward()
-            optimizer.step()
-            train_loss += loss.item() * len(y_b)
+        for g in train_groups.values():
+            M   = g["nf"].shape[0]
+            idx = torch.randperm(M)
+            for start in range(0, M, batch_size):
+                sl = idx[start: start + batch_size]
+                optimizer.zero_grad()
+                q_pred = model.forward_batch(g["nf"][sl], g["ei"], g["gf"][sl])
+                loss   = masked_mse(q_pred, g["q"][sl])
+                loss.backward()
+                optimizer.step()
+                train_loss += loss.item() * len(sl)
         train_loss /= n_train
 
         model.eval()
         val_loss = 0.0
         with torch.no_grad():
-            for nf_b, ei_b, y_b in iter_batches(val_groups, batch_size, shuffle=False):
-                val_loss += criterion(model.forward_batch(nf_b, ei_b), y_b).item() * len(y_b)
+            for g in val_groups.values():
+                M = g["nf"].shape[0]
+                for start in range(0, M, batch_size):
+                    end = min(start + batch_size, M)
+                    q_pred = model.forward_batch(g["nf"][start:end], g["ei"], g["gf"][start:end])
+                    val_loss += masked_mse(q_pred, g["q"][start:end]).item() * (end - start)
         val_loss /= n_val
 
         history["train_loss"].append(train_loss)
         history["val_loss"].append(val_loss)
 
         if epoch % print_every == 0:
-            print(f"  epoch {epoch:4d}/{epochs}  "
-                  f"train_loss={train_loss:.6f}  val_loss={val_loss:.6f}")
+            print(f"  epoch {epoch:4d}/{epochs}  train_loss={train_loss:.6f}  val_loss={val_loss:.6f}")
 
         if ckpt_path is not None and epoch % ckpt_every == 0:
             tmp = Path(str(ckpt_path) + ".tmp")
@@ -200,26 +260,22 @@ def compute_ratio2_gnn(model: PedigreeGNN, ds: dict, device: str = "cpu") -> tup
     config      = ds["config"]
     pedigree    = ds["pedigree"]
     genes       = ds.get("genes", ("GeneA", "GeneB"))
-    gen_states  = ds.get("two_gene_states")
+    pid         = {p: j for j, p in enumerate(individuals)}
 
+    cost_vec = torch.FloatTensor(config_to_cost_vec(config, genes)).to(device)
     model.eval()
-    memo: dict = {}
 
-    def _net_val(state) -> float:
-        if state in memo:
-            return memo[state]
+    def _gnn_q(state) -> np.ndarray:
+        """Run GNN on state → (N_people,) Q values."""
         nf, ei = state_to_graph(state, belief, individuals, pedigree, genes)
         with torch.no_grad():
-            v = model(
+            return model(
                 torch.FloatTensor(nf).to(device),
                 torch.LongTensor(ei).to(device),
-            ).item()
-        memo[state] = v
-        return v
+                cost_vec,
+            ).cpu().numpy()   # (N_people,)
 
     def _stop_val(per_gene, tested):
-        # Use per_gene directly — avoids wrongly calling lift_tuple_posteriors_to_genes
-        # on entry.marginals which is GeneA-only, not tuple posteriors.
         return float(sum(
             r_reward(k, None, config.a, config.b, config.c, config.delta,
                      per_gene_probs=per_gene,
@@ -239,12 +295,12 @@ def compute_ratio2_gnn(model: PedigreeGNN, ds: dict, device: str = "cpu") -> tup
     def _get_entry(state):
         entry = belief[state]
         if isinstance(entry, InferenceResult):
-            marg     = entry.marginals
-            per_gene = entry.get_per_gene_probs()
+            marg       = entry.marginals
+            per_gene   = entry.get_per_gene_probs()
             tuple_pmfs = entry.get_tuple_pmfs()
         else:
-            marg = entry
-            per_gene = lift_tuple_posteriors_to_genes(entry, genes, GENOTYPE_STATES)
+            marg       = entry
+            per_gene   = lift_tuple_posteriors_to_genes(entry, genes, GENOTYPE_STATES)
             tuple_pmfs = None
         return marg, per_gene, tuple_pmfs
 
@@ -261,45 +317,28 @@ def compute_ratio2_gnn(model: PedigreeGNN, ds: dict, device: str = "cpu") -> tup
         marg, per_gene, tuple_pmfs = _get_entry(state)
         tested = {i for i, _ in state}
         v_stop = _stop_val(per_gene, tested)
+
         if len(tested) == len(individuals):
             true_memo[state] = 0.0
             return 0.0
 
-        best_net_q  = v_stop
-        best_person = None
-        for i in individuals:
-            if i in tested:
-                continue
-            r_i     = _test_r(i, per_gene)
-            pmf_i   = _pmf_for_person(tuple_pmfs, marg, i)
-            exp_net = 0.0
-            for g, prob_g in pmf_i.items():
-                if prob_g <= 1e-12:
-                    continue
-                next_s = frozenset(state | {(i, g)})
-                if next_s not in belief:
-                    continue
-                exp_net += prob_g * _net_val(next_s)
-            q_i = r_i + exp_net
-            if q_i > best_net_q:
-                best_net_q  = q_i
-                best_person = i
+        # Pick action using GNN Q values directly
+        q_vec    = _gnn_q(state)                              # (N_people,)
+        untested = [i for i in individuals if i not in tested]
+        best_person = max(untested, key=lambda i: q_vec[pid[i]])
+        best_q      = float(q_vec[pid[best_person]])
 
-        if best_person is None:
+        if best_q <= v_stop:
             true_memo[state] = v_stop
             return v_stop
 
         r_best   = _test_r(best_person, per_gene)
         pmf_best = _pmf_for_person(tuple_pmfs, marg, best_person)
-        exp_true = 0.0
-        for g, prob_g in pmf_best.items():
-            if prob_g <= 1e-12:
-                continue
-            next_s = frozenset(state | {(best_person, g)})
-            if next_s not in belief:
-                continue
-            exp_true += prob_g * value_at(next_s)
-
+        exp_true = sum(
+            prob_g * value_at(frozenset(state | {(best_person, g)}))
+            for g, prob_g in pmf_best.items()
+            if prob_g > 1e-12 and frozenset(state | {(best_person, g)}) in belief
+        )
         result = r_best + exp_true
         true_memo[state] = result
         return result
@@ -371,7 +410,7 @@ def main(device: str = "cpu", target_epochs: int = 500, fresh: bool = False):
 
     # ── 2. Train GNN (with checkpointing every 50 epochs) ────────────────────
     log(f"\n[2] Training GNN:")
-    model = PedigreeGNN(node_feat_dim=7, hidden_dim=32, n_rounds=2)
+    model = PedigreeGNN(node_feat_dim=7, hidden_dim=32, n_rounds=2, global_feat_dim=8)
 
     start_epoch = 1
     history     = {"train_loss": [], "val_loss": []}
@@ -385,7 +424,7 @@ def main(device: str = "cpu", target_epochs: int = 500, fresh: bool = False):
         log(f"    Starting fresh (0/{target_epochs})")
 
     if start_epoch <= target_epochs:
-        # Load train datasets into sample list
+        # Load train datasets, compute Q* labels
         samples = []
         for cfg in CONFIGS:
             key = cfg_key(cfg)
@@ -395,14 +434,131 @@ def main(device: str = "cpu", target_epochs: int = 500, fresh: bool = False):
             pedigree    = ds["pedigree"]
             belief      = ds["belief"]
             genes       = ds.get("genes", ("GeneA", "GeneB"))
-            for state, v_star in ds["V_star"].items():
-                entry = belief[state]
-                marg  = entry.marginals if isinstance(entry, InferenceResult) else entry
-                if sum(marg[individuals[0]].values()) < 1e-9: continue
+            cost_vec    = config_to_cost_vec(ds["config"], genes)
+            states, q_labels = compute_q_labels(ds, individuals, genes)
+            for i_s, state in enumerate(states):
                 nf, ei = state_to_graph(state, belief, individuals, pedigree, genes)
-                samples.append((nf, ei, float(v_star)))
+                samples.append((nf, ei, cost_vec, q_labels[i_s]))
             del ds
         log(f"    Train samples: {len(samples)}")
+
+        # ── Verification block (writes to verify.log) ─────────────────────
+        vlog_path = results_dir / "verify.log"
+        vlog_f    = open(vlog_path, "w")
+        def vlog(msg=""):
+            print(msg, flush=True); vlog_f.write(msg + "\n"); vlog_f.flush()
+
+        vlog(f"{'='*70}")
+        vlog(f"STEP5 PIPELINE VERIFICATION  —  {datetime.now().isoformat()}")
+        vlog(f"{'='*70}")
+
+        _vcfg = TRAIN_CFGS[0]
+        _vkey = cfg_key(_vcfg)
+        vlog(f"\nUsing config: {_vkey}")
+        with open(cache_dir / f"{_vkey}.pkl", "rb") as f:
+            _vds = pickle.load(f)
+
+        _vind    = _vds["individuals"]
+        _vstar   = _vds["V_star"]       # {frozenset: float}
+        _vstates = list(_vstar.keys())
+        _vbelief = _vds["belief"]
+        _vconfig = _vds["config"]
+        _vgenes  = _vds.get("genes", ("GeneA", "GeneB"))
+        _vpedigree = _vds["pedigree"]
+
+        # [A] DP value sanity
+        vlog(f"\n[A] DP VALUE SANITY")
+        vlog(f"    Individuals:         {_vind}")
+        vlog(f"    Total states:        {len(_vstates):,}")
+        vlog(f"    V_root (ds field):   {_vds['V_root']:.8f}")
+        vlog(f"    V_stop_root (ds):    {_vds['V_stop_root']:.8f}")
+        _v_root_dp = _vstar.get(frozenset(), float("nan"))
+        _match = abs(_v_root_dp - _vds["V_root"]) < 1e-6
+        vlog(f"    V*(empty state):     {_v_root_dp:.8f}  {'OK — matches V_root' if _match else 'MISMATCH!'}")
+        _full  = [s for s in _vstates if len(s) == len(_vind)]
+        _nz    = sum(1 for s in _full if abs(_vstar[s]) > 1e-6)
+        vlog(f"    Fully-tested states: {len(_full)}")
+        vlog(f"    V*(fully-tested)!=0: {_nz}  (should be 0)")
+        for _s in _full[:3]:
+            vlog(f"      V*({dict(_s)}) = {_vstar[_s]:.8f}")
+
+        # [B] Q* formula check
+        vlog(f"\n[B] Q* FORMULA CHECK  —  Q*(s,i) = r_test(i,s) + E[V*(s')]")
+        _partial = [s for s in _vstates if 0 < len(s) < len(_vind)][:5]
+        for _s in _partial:
+            vlog(f"\n    State: {dict(_s)}")
+            _tested = {p for p, _ in _s}
+            _entry  = _vbelief[_s]
+            if isinstance(_entry, InferenceResult):
+                _pg   = _entry.get_per_gene_probs()
+                _pmfs = _entry.get_tuple_pmfs()
+            else:
+                _pg   = lift_tuple_posteriors_to_genes(_entry, _vgenes, GENOTYPE_STATES)
+                _pmfs = None
+            for _p in _vind:
+                if _p in _tested:
+                    vlog(f"      {_p}: TESTED → NaN"); continue
+                _ri = float(r_reward_test(
+                    _p, None, _vconfig.a, _vconfig.b, _vconfig.c, _vconfig.delta,
+                    _vconfig.fixed_cost, _vconfig.variable_cost,
+                    per_gene_probs=_pg, a_gene=_vconfig.a_gene,
+                    c_gene=_vconfig.c_gene, delta_gene=_vconfig.delta_gene,
+                ))
+                _pmf = (_pmfs or {}).get(_p, {})
+                _ev  = sum(prob * _vstar.get(frozenset(_s | {(_p, g)}), 0.0)
+                           for g, prob in _pmf.items() if prob > 1e-12)
+                vlog(f"      {_p}: r_test={_ri:.6f}  E[V*]={_ev:.6f}  Q*={_ri+_ev:.6f}")
+
+        # [C] Node feature sanity
+        vlog(f"\n[C] NODE FEATURE SANITY")
+        _nf0, _ei0 = state_to_graph(frozenset(), _vbelief, _vind, _vpedigree, _vgenes)
+        vlog(f"    Node features shape (single state): {_nf0.shape}  (expected ({len(_vind)}, 7))")
+        _n_bad = 0
+        for _ss in _vstates[:50]:
+            _nfs, _ = state_to_graph(_ss, _vbelief, _vind, _vpedigree, _vgenes)
+            _tested_ss = {p for p, _ in _ss}
+            for _j, _pp in enumerate(_vind):
+                for _gi in range(len(_vgenes)):
+                    if abs(_nfs[_j, _gi*3:_gi*3+3].sum() - 1.0) > 1e-3:
+                        _n_bad += 1
+                _exp_flag = 1.0 if _pp in _tested_ss else 0.0
+                if abs(_nfs[_j, 6] - _exp_flag) > 0.5:
+                    _n_bad += 1
+        vlog(f"    Bad entries in first 50 states (prob!=1 or wrong flag): {_n_bad}  (should be 0)")
+        vlog(f"    Root-state node features:")
+        for _j, _pp in enumerate(_vind):
+            vlog(f"      {_pp}: {_nf0[_j].tolist()}")
+
+        # [D] Model output shape
+        vlog(f"\n[D] MODEL OUTPUT SHAPE CHECK  (must be (B, N_people), not (B,))")
+        _mtest = PedigreeGNN(node_feat_dim=7, hidden_dim=32, n_rounds=2, global_feat_dim=8)
+        _mtest.eval()
+        _cv_v = config_to_cost_vec(_vconfig, _vgenes)
+        _nft_v = torch.FloatTensor(np.stack([_nf0]*4))
+        _eit_v = torch.LongTensor(_ei0)
+        _gft_v = torch.FloatTensor(np.tile(_cv_v, (4, 1)))
+        with torch.no_grad():
+            _out_v = _mtest.forward_batch(_nft_v, _eit_v, _gft_v)
+        vlog(f"    Output shape: {tuple(_out_v.shape)}  (expected (4, {len(_vind)}))")
+        vlog(f"    Sample Q values (untrained): { {_vind[_j]: round(float(_out_v[0,_j]),4) for _j in range(len(_vind))} }")
+
+        # [E] Q* label NaN check
+        vlog(f"\n[E] Q* LABEL MASK CHECK")
+        _, _ql_v = compute_q_labels(_vds, _vind, _vgenes)
+        _nan_cnt   = int(np.isnan(_ql_v).sum())
+        _valid_cnt = int((~np.isnan(_ql_v)).sum())
+        vlog(f"    Shape: {_ql_v.shape}  (expected ({len(_vstates)}, {len(_vind)}))")
+        vlog(f"    NaN entries   (tested persons):  {_nan_cnt}")
+        vlog(f"    Valid entries (untested persons): {_valid_cnt}")
+        vlog(f"    Q* value range: [{float(np.nanmin(_ql_v)):.6f},  {float(np.nanmax(_ql_v)):.6f}]")
+
+        vlog(f"\n{'='*70}")
+        vlog(f"VERIFICATION DONE. Read verify.log.")
+        vlog(f"{'='*70}\n")
+        vlog_f.close()
+        log(f"    Verification written → {vlog_path}")
+        del _vds
+        # ── End verification ──────────────────────────────────────────────────
 
         model, history = train_gnn(
             [{"_samples": samples}], model,
@@ -431,6 +587,47 @@ def main(device: str = "cpu", target_epochs: int = 500, fresh: bool = False):
         t0 = time.time()
         ratio2, L = compute_ratio2_gnn(model, ds, device=device)
         log(f"    ratio2={ratio2:.6f}  ({time.time()-t0:.1f}s)")
+
+        # rollout trace
+        log(f"    ROLLOUT TRACE:")
+        _rind = ds["individuals"]; _rpid = {p: j for j, p in enumerate(_rind)}
+        _rcfg = ds["config"]; _rgb = ds["belief"]; _rgenes = ds.get("genes", ("GeneA","GeneB"))
+        _rcv  = torch.FloatTensor(config_to_cost_vec(_rcfg, _rgenes)).to(device)
+        def _r_pg5(st):
+            e = _rgb[st]
+            if isinstance(e, InferenceResult):
+                return e.get_per_gene_probs(), e.get_tuple_pmfs()
+            return lift_tuple_posteriors_to_genes(e, _rgenes, GENOTYPE_STATES), None
+        def _r_vs5(pg, tested):
+            return float(sum(r_reward(k, None, _rcfg.a, _rcfg.b, _rcfg.c, _rcfg.delta,
+                per_gene_probs=pg, a_gene=_rcfg.a_gene, b_gene=_rcfg.b_gene,
+                c_gene=_rcfg.c_gene, delta_gene=_rcfg.delta_gene)
+                for k in _rind if k not in tested))
+        _rst = frozenset(); _rstep5 = 0
+        while len({p for p, _ in _rst}) < len(_rind) and _rstep5 < 15:
+            _tested5 = {p for p, _ in _rst}
+            _pg5, _  = _r_pg5(_rst)
+            _vs5     = _r_vs5(_pg5, _tested5)
+            _untst5  = [p for p in _rind if p not in _tested5]
+            _nf5, _ei5 = state_to_graph(_rst, _rgb, _rind, ds["pedigree"], _rgenes)
+            with torch.no_grad():
+                _qv5 = model(torch.FloatTensor(_nf5).to(device), torch.LongTensor(_ei5).to(device), _rcv).cpu().numpy()
+            _qs5 = {p: float(_qv5[_rpid[p]]) for p in _untst5}
+            _best5 = max(_untst5, key=lambda p: _qs5[p])
+            _bq5   = _qs5[_best5]
+            log(f"      step {_rstep5}: tested={sorted(_tested5) or '{}'}")
+            log(f"        Q: { {p: round(v,5) for p, v in _qs5.items()} }  v_stop={_vs5:.5f}")
+            if _bq5 <= _vs5:
+                log(f"        → STOP (best_Q={_bq5:.5f} <= v_stop={_vs5:.5f})"); break
+            log(f"        → TEST {_best5}")
+            _pg5r, _pmfs5 = _r_pg5(_rst)
+            _pmf5b = (_pmfs5 or {}).get(_best5, {})
+            if not _pmf5b:
+                _pmf5b = _pg5r.get(_best5, {})
+            _mlg5 = max(_pmf5b, key=lambda g: _pmf5b[g]) if _pmf5b else None
+            if _mlg5 is None: break
+            _rst = frozenset(_rst | {(_best5, _mlg5)}); _rstep5 += 1
+        log(f"      trace done ({_rstep5} steps)")
 
         all_results[key] = {
             "split": split, "ratio2": float(ratio2), "L": float(L),

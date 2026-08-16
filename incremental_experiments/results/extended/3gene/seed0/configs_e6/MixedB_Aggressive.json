@@ -1,0 +1,101 @@
+{
+  "n_total": 7,
+  "n_dp_myopic": 4,
+  "n_dp_gnn": 4,
+  "n_dp_mlp": 4,
+  "n_all4": 2,
+  "rate_dp_myopic": 0.5714285714285714,
+  "rate_dp_gnn": 0.5714285714285714,
+  "rate_dp_mlp": 0.5714285714285714,
+  "rate_all4": 0.2857142857142857,
+  "steps": [
+    {
+      "step": 0,
+      "state": "root",
+      "dp": "TEST Grandfather",
+      "myopic": "TEST Grandfather",
+      "gnn": "TEST Mother",
+      "mlp": "TEST Uncle",
+      "dp_myopic_match": true,
+      "dp_gnn_match": false,
+      "dp_mlp_match": false,
+      "all4_match": false
+    },
+    {
+      "step": 1,
+      "state": "{Grandfather:(0, 0, 0)}",
+      "dp": "TEST Grandmother",
+      "myopic": "TEST Father",
+      "gnn": "TEST Grandmother",
+      "mlp": "TEST Uncle",
+      "dp_myopic_match": false,
+      "dp_gnn_match": true,
+      "dp_mlp_match": false,
+      "all4_match": false
+    },
+    {
+      "step": 2,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0)}",
+      "dp": "TEST Grandmother",
+      "myopic": "TEST Uncle",
+      "gnn": "TEST Grandmother",
+      "mlp": "TEST Grandmother",
+      "dp_myopic_match": false,
+      "dp_gnn_match": true,
+      "dp_mlp_match": true,
+      "all4_match": false
+    },
+    {
+      "step": 3,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "TEST Grandmother",
+      "myopic": "TEST Grandmother",
+      "gnn": "TEST Child",
+      "mlp": "TEST Grandmother",
+      "dp_myopic_match": true,
+      "dp_gnn_match": false,
+      "dp_mlp_match": true,
+      "all4_match": false
+    },
+    {
+      "step": 4,
+      "state": "{Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "TEST Mother",
+      "myopic": "TEST Child",
+      "gnn": "TEST Child",
+      "mlp": "TEST Child",
+      "dp_myopic_match": false,
+      "dp_gnn_match": false,
+      "dp_mlp_match": false,
+      "all4_match": false
+    },
+    {
+      "step": 5,
+      "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "TEST Mother",
+      "myopic": "TEST Mother",
+      "gnn": "TEST Mother",
+      "mlp": "TEST Mother",
+      "dp_myopic_match": true,
+      "dp_gnn_match": true,
+      "dp_mlp_match": true,
+      "all4_match": true
+    },
+    {
+      "step": 6,
+      "state": "{Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}",
+      "dp": "STOP",
+      "myopic": "STOP",
+      "gnn": "STOP",
+      "mlp": "STOP",
+      "dp_myopic_match": true,
+      "dp_gnn_match": true,
+      "dp_mlp_match": true,
+      "all4_match": true
+    }
+  ],
+  "ratio2_myopic": 0.03107433515812595,
+  "ratio2_gnn": 0.03223428450031548,
+  "ratio2_mlp": 0.06603263855232197,
+  "V_root": -0.21210612239837856
+}

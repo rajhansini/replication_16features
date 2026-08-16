@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T02:06:59.366481  genes=3  family=Nuclear  regime=MixedB  preset=Aggressive
+[CONFIG] Nuclear_MixedB_Aggressive_3gene (train)
+  states=43,904  V*(root)=-0.103563  V_stop(root)=-0.269907
+  ADP: ratio2=0.006271735434694126  ratio3=0.08861908061191519  policy_source=adp_policy  (117s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_MixedB_Aggressive_3gene_adp.json

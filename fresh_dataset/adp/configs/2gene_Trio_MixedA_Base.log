@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T01:57:17.570728  genes=2  family=Trio  regime=MixedA  preset=Base
+[CONFIG] Trio_MixedA_Base_2gene (train)
+  states=432  V*(root)=-0.052147  V_stop(root)=-0.076459

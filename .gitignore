@@ -6,3 +6,5 @@ __pycache__/
 *.ilp
 *.pkl
 cache/
+slurm_*.log
+run.log

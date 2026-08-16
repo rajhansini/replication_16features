@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:57:17.312625  genes=2  family=Trio  regime=MixedA  preset=Aggressive
+[CONFIG] Trio_MixedA_Aggressive_2gene (train)
+  states=432  V*(root)=-0.055753  V_stop(root)=-0.113314
+  ADP: ratio2=0.0016971566243420973  ratio3=0.01473025010109563  policy_source=adp_policy  (2s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_MixedA_Aggressive_2gene_adp.json

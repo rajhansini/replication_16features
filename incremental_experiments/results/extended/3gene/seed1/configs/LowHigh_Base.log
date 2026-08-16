@@ -1,0 +1,19 @@
+[extended_fourway] 2026-07-26T04:13:28.962699  genes=3  seed=1  family=Extended (OOD -- never trained on)  GNN=E4 bidir  MLP=E2 ce  only=LowHigh/Base
+loaded GNN /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e4_gnn_bidir/seed_runs/seed1/gnn_q_e4.pt
+loaded MLP /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed1/mlp_q_ce.pt
+
+==========================================================================================
+Extended_LowHigh_Base_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1712  V_stop(root)=-0.3243
+  ratio2: myopic=0.0711  gnn=0.0503  mlp=0.1270
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Child        TEST GrandfatherTEST Uncle      TEST Grandfathernone
+  1    {Grandfather:(0, 0, 0)}                                     TEST Child        TEST Father     TEST Mother     TEST Grandmothernone
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST GrandmotherTEST Mother     partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     TEST Mother     ALL
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=2/7=0.286  gnn=3/7=0.429  mlp=4/7=0.571  all4=2/7=0.286
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed1/configs/LowHigh_Base.json

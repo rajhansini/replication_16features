@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:56:47.596299  genes=2  family=Nuclear  regime=LowLow  preset=Base
+[CONFIG] Nuclear_LowLow_Base_2gene (train)
+  states=2,264  V*(root)=-0.038284  V_stop(root)=-0.048391
+  ADP: ratio2=0.26728750965297926  ratio3=0.12253543735545573  policy_source=adp_policy  (6s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Nuclear_LowLow_Base_2gene_adp.json

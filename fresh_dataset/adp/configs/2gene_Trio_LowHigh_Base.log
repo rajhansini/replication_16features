@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T01:58:48.813914  genes=2  family=Trio  regime=LowHigh  preset=Base
+[CONFIG] Trio_LowHigh_Base_2gene (train)
+  states=432  V*(root)=-0.065314  V_stop(root)=-0.096178

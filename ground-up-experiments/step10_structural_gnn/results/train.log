@@ -1,0 +1,450 @@
+
+======================================================================
+[TRAIN] 2026-07-10T23:16:18.926883
+======================================================================
+STEP 10 — Structural GNN
+node_feat_dim=13 (step9=10, +3 structural: n_parents, n_children, depth)
+cost_dim=11  device=cpu  epochs=500
+cache → step9 (reused, no recomputation)
+train configs: 30  test configs: 6
+
+[1] STRUCTURAL FEATURES PER FAMILY (static, from pedigree topology):
+
+  [Trio]  people=['Parent1', 'Parent2', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            1        0
+  Parent2                       0            1        0
+  Child                         2            0        1
+
+  [Nuclear]  people=['Parent1', 'Parent2', 'Child1', 'Child2']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            2        0
+  Parent2                       0            2        0
+  Child1                        2            0        1
+  Child2                        2            0        1
+
+  [ThreeGeneration]  people=['Grandfather', 'Grandmother', 'Mother', 'Father', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Grandfather                   0            1        0
+  Grandmother                   0            1        0
+  Mother                        0            1        0
+  Father                        2            1        1
+  Child                         2            0        1
+
+[2] Cache check (reusing step9 cache):
+    Trio_LowHigh_Base_3gene  [OK]
+    Trio_LowHigh_Aggressive_3gene  [OK]
+    Trio_MediumEven_Base_3gene  [OK]
+    Trio_LowLow_Base_3gene  [OK]
+    Trio_LowLow_Aggressive_3gene  [OK]
+    Trio_HighHigh_Base_3gene  [OK]
+    Trio_MixedA_Base_3gene  [OK]
+    Trio_MixedA_Aggressive_3gene  [OK]
+    Trio_MixedB_Base_3gene  [OK]
+    Trio_MixedB_Aggressive_3gene  [OK]
+    Nuclear_LowHigh_Base_3gene  [OK]
+    Nuclear_LowHigh_Aggressive_3gene  [OK]
+    Nuclear_MediumEven_Base_3gene  [OK]
+    Nuclear_LowLow_Base_3gene  [OK]
+    Nuclear_LowLow_Aggressive_3gene  [OK]
+    Nuclear_HighHigh_Base_3gene  [OK]
+    Nuclear_MixedA_Base_3gene  [OK]
+    Nuclear_MixedA_Aggressive_3gene  [OK]
+    Nuclear_MixedB_Base_3gene  [OK]
+    Nuclear_MixedB_Aggressive_3gene  [OK]
+    ThreeGeneration_LowHigh_Base_3gene  [OK]
+    ThreeGeneration_LowHigh_Aggressive_3gene  [OK]
+    ThreeGeneration_MediumEven_Base_3gene  [OK]
+    ThreeGeneration_LowLow_Base_3gene  [OK]
+    ThreeGeneration_LowLow_Aggressive_3gene  [OK]
+    ThreeGeneration_HighHigh_Base_3gene  [OK]
+    ThreeGeneration_MixedA_Base_3gene  [OK]
+    ThreeGeneration_MixedA_Aggressive_3gene  [OK]
+    ThreeGeneration_MixedB_Base_3gene  [OK]
+    ThreeGeneration_MixedB_Aggressive_3gene  [OK]
+
+[3] Loading data and computing Q* labels with structural features:
+    Trio_LowHigh_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_LowHigh_Aggressive_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_MediumEven_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_LowLow_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_LowLow_Aggressive_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_HighHigh_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_MixedA_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_MixedA_Aggressive_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_MixedB_Base_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Trio_MixedB_Aggressive_3gene: 4,872 states  nf.shape=(4872, 3, 13)
+      Q* labels done  (0.1s)  valid=1,580
+    Nuclear_LowHigh_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (0.9s)  valid=22,564
+    Nuclear_LowHigh_Aggressive_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.0s)  valid=22,564
+    Nuclear_MediumEven_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.3s)  valid=22,564
+    Nuclear_LowLow_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.6s)  valid=22,564
+    Nuclear_LowLow_Aggressive_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.6s)  valid=22,564
+    Nuclear_HighHigh_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.4s)  valid=22,564
+    Nuclear_MixedA_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.5s)  valid=22,564
+    Nuclear_MixedA_Aggressive_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.5s)  valid=22,564
+    Nuclear_MixedB_Base_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.6s)  valid=22,564
+    Nuclear_MixedB_Aggressive_3gene: 43,904 states  nf.shape=(43904, 4, 13)
+      Q* labels done  (1.4s)  valid=22,564
+    ThreeGeneration_LowHigh_Base_3gene: 1,054,528 states  nf.shape=(1054528, 5, 13)
+      Q* labels done  (44.1s)  valid=623,916
+
+======================================================================
+[TRAIN] 2026-07-10T23:22:49.189200
+======================================================================
+STEP 10 — Correct GNN: V*(s) prediction + structural node features
+Model: PedigreeGNN_Vstar  output=scalar V*(s) per state
+node_feat_dim=13  (9 beliefs + 1 is_tested + 3 structural)
+cost_dim=11  device=cpu  epochs=500
+Training target: V*(s) from ds['Y'] — same as exact DP output
+Action selection: derived from V* at eval time (not predicted directly)
+Cache: reusing step9 (no recomputation)
+train configs: 30  test configs: 6
+
+[1] STRUCTURAL FEATURES (static per family, from pedigree topology):
+
+  [Trio]  individuals=['Parent1', 'Parent2', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            1        0
+  Parent2                       0            1        0
+  Child                         2            0        1
+
+  [Nuclear]  individuals=['Parent1', 'Parent2', 'Child1', 'Child2']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            2        0
+  Parent2                       0            2        0
+  Child1                        2            0        1
+  Child2                        2            0        1
+
+  [ThreeGeneration]  individuals=['Grandfather', 'Grandmother', 'Mother', 'Father', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Grandfather                   0            1        0
+  Grandmother                   0            1        0
+  Mother                        0            1        0
+  Father                        2            1        1
+  Child                         2            0        1
+
+[2] Cache check:
+    Trio_LowHigh_Base_3gene  [OK]
+    Trio_LowHigh_Aggressive_3gene  [OK]
+    Trio_MediumEven_Base_3gene  [OK]
+    Trio_LowLow_Base_3gene  [OK]
+    Trio_LowLow_Aggressive_3gene  [OK]
+    Trio_HighHigh_Base_3gene  [OK]
+    Trio_MixedA_Base_3gene  [OK]
+    Trio_MixedA_Aggressive_3gene  [OK]
+    Trio_MixedB_Base_3gene  [OK]
+    Trio_MixedB_Aggressive_3gene  [OK]
+    Nuclear_LowHigh_Base_3gene  [OK]
+    Nuclear_LowHigh_Aggressive_3gene  [OK]
+    Nuclear_MediumEven_Base_3gene  [OK]
+    Nuclear_LowLow_Base_3gene  [OK]
+    Nuclear_LowLow_Aggressive_3gene  [OK]
+    Nuclear_HighHigh_Base_3gene  [OK]
+    Nuclear_MixedA_Base_3gene  [OK]
+    Nuclear_MixedA_Aggressive_3gene  [OK]
+    Nuclear_MixedB_Base_3gene  [OK]
+    Nuclear_MixedB_Aggressive_3gene  [OK]
+    ThreeGeneration_LowHigh_Base_3gene  [OK]
+    ThreeGeneration_LowHigh_Aggressive_3gene  [OK]
+    ThreeGeneration_MediumEven_Base_3gene  [OK]
+    ThreeGeneration_LowLow_Base_3gene  [OK]
+    ThreeGeneration_LowLow_Aggressive_3gene  [OK]
+    ThreeGeneration_HighHigh_Base_3gene  [OK]
+    ThreeGeneration_MixedA_Base_3gene  [OK]
+    ThreeGeneration_MixedA_Aggressive_3gene  [OK]
+    ThreeGeneration_MixedB_Base_3gene  [OK]
+    ThreeGeneration_MixedB_Aggressive_3gene  [OK]
+
+[3] Loading data and building V* training pairs:
+    Trio_LowHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1670, 0.0000]  (0.0s)
+    Trio_LowHigh_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1796, 0.0000]  (0.0s)
+    Trio_MediumEven_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1676, 0.0000]  (0.0s)
+    Trio_LowLow_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1501, 0.0000]  (0.0s)
+    Trio_LowLow_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1638, 0.0000]  (0.0s)
+    Trio_HighHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1890, 0.0000]  (0.0s)
+    Trio_MixedA_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1668, 0.0000]  (0.0s)
+    Trio_MixedA_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1795, 0.0000]  (0.0s)
+    Trio_MixedB_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1684, 0.0000]  (0.0s)
+    Trio_MixedB_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1814, 0.0000]  (0.0s)
+    Nuclear_LowHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3065, 0.0000]  (0.6s)
+    Nuclear_LowHigh_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3312, 0.0000]  (0.6s)
+    Nuclear_MediumEven_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3068, 0.0000]  (0.9s)
+    Nuclear_LowLow_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.2908, 0.0000]  (1.2s)
+    Nuclear_LowLow_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3210, 0.0000]  (1.2s)
+    Nuclear_HighHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3288, 0.0000]  (1.0s)
+    Nuclear_MixedA_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3066, 0.0000]  (1.1s)
+    Nuclear_MixedA_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3321, 0.0000]  (1.1s)
+    Nuclear_MixedB_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3067, 0.0000]  (1.2s)
+    Nuclear_MixedB_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3314, 0.0000]  (1.0s)
+    ThreeGeneration_LowHigh_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3117, 0.0000]  (35.0s)
+    ThreeGeneration_LowHigh_Aggressive_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3441, 0.0000]  (32.0s)
+    ThreeGeneration_MediumEven_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3121, 0.0000]  (38.5s)
+    ThreeGeneration_LowLow_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.2940, 0.0000]  (37.1s)
+    ThreeGeneration_LowLow_Aggressive_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3190, 0.0000]  (35.8s)
+    ThreeGeneration_HighHigh_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3364, 0.0000]  (37.3s)
+    ThreeGeneration_MixedA_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3117, 0.0000]  (35.3s)
+    ThreeGeneration_MixedA_Aggressive_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3455, 0.0000]  (38.8s)
+    ThreeGeneration_MixedB_Base_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3123, 0.0000]  (36.3s)
+    ThreeGeneration_MixedB_Aggressive_3gene: 1,054,528 states  nf=(1054528, 5, 13)  V* range=[-0.3416, 0.0000]  (35.1s)
+    [Trio] 48,720 states  nf=(48720, 3, 13)  V* range=[-0.1890, 0.0000]
+    [Nuclear] 439,040 states  nf=(439040, 4, 13)  V* range=[-0.3321, 0.0000]
+    [ThreeGeneration] 10,545,280 states  nf=(10545280, 5, 13)  V* range=[-0.3455, 0.0000]
+    Total states: 11,033,040
+    Verification written → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step10_structural_gnn/results/verify.log
+
+[5] Training PedigreeGNN_Vstar:
+    Starting fresh (0/500)
+    Params: 7,217  node_feat_dim=13  hidden=32  rounds=2
+
+======================================================================
+[TRAIN] 2026-07-10T23:54:35.617221
+======================================================================
+STEP 10 — Correct GNN: V*(s) prediction + structural node features
+Model: PedigreeGNN_Vstar  output=scalar V*(s) per state
+node_feat_dim=13  (9 beliefs + 1 is_tested + 3 structural)
+cost_dim=11  device=cpu  epochs=500
+Training target: V*(s) from ds['Y'] — same as exact DP output
+Action selection: derived from V* at eval time (not predicted directly)
+Cache: reusing step9 (no recomputation)
+TRAIN families: ['Trio', 'Nuclear']  (24 configs)
+TEST  families: ['ThreeGeneration']  (unseen bigger family — scaling benchmark)
+
+[1] STRUCTURAL FEATURES (static per family, from pedigree topology):
+
+  [Trio]  individuals=['Parent1', 'Parent2', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            1        0
+  Parent2                       0            1        0
+  Child                         2            0        1
+
+  [Nuclear]  individuals=['Parent1', 'Parent2', 'Child1', 'Child2']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            2        0
+  Parent2                       0            2        0
+  Child1                        2            0        1
+  Child2                        2            0        1
+
+  [ThreeGeneration]  individuals=['Grandfather', 'Grandmother', 'Mother', 'Father', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Grandfather                   0            1        0
+  Grandmother                   0            1        0
+  Mother                        0            1        0
+  Father                        2            1        1
+  Child                         2            0        1
+
+[2] Cache check:
+    Trio_LowHigh_Base_3gene  [OK]
+    Trio_LowHigh_Aggressive_3gene  [OK]
+    Trio_MediumEven_Base_3gene  [OK]
+    Trio_MediumEven_Aggressive_3gene  [OK]
+    Trio_LowLow_Base_3gene  [OK]
+    Trio_LowLow_Aggressive_3gene  [OK]
+    Trio_HighHigh_Base_3gene  [OK]
+    Trio_HighHigh_Aggressive_3gene  [OK]
+    Trio_MixedA_Base_3gene  [OK]
+    Trio_MixedA_Aggressive_3gene  [OK]
+    Trio_MixedB_Base_3gene  [OK]
+    Trio_MixedB_Aggressive_3gene  [OK]
+    Nuclear_LowHigh_Base_3gene  [OK]
+    Nuclear_LowHigh_Aggressive_3gene  [OK]
+    Nuclear_MediumEven_Base_3gene  [OK]
+    Nuclear_MediumEven_Aggressive_3gene  [OK]
+    Nuclear_LowLow_Base_3gene  [OK]
+    Nuclear_LowLow_Aggressive_3gene  [OK]
+    Nuclear_HighHigh_Base_3gene  [OK]
+    Nuclear_HighHigh_Aggressive_3gene  [OK]
+    Nuclear_MixedA_Base_3gene  [OK]
+    Nuclear_MixedA_Aggressive_3gene  [OK]
+    Nuclear_MixedB_Base_3gene  [OK]
+    Nuclear_MixedB_Aggressive_3gene  [OK]
+
+[3] Loading data and building V* training pairs:
+    Trio_LowHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1670, 0.0000]  (0.0s)
+    Trio_LowHigh_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1796, 0.0000]  (0.0s)
+    Trio_MediumEven_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1676, 0.0000]  (0.0s)
+    Trio_MediumEven_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1806, 0.0000]  (0.1s)
+    Trio_LowLow_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1501, 0.0000]  (0.0s)
+    Trio_LowLow_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1638, 0.0000]  (0.0s)
+    Trio_HighHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1890, 0.0000]  (0.0s)
+    Trio_HighHigh_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.2044, 0.0000]  (0.1s)
+    Trio_MixedA_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1668, 0.0000]  (0.0s)
+    Trio_MixedA_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1795, 0.0000]  (0.0s)
+    Trio_MixedB_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1684, 0.0000]  (0.0s)
+    Trio_MixedB_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1814, 0.0000]  (0.0s)
+    Nuclear_LowHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3065, 0.0000]  (0.6s)
+    Nuclear_LowHigh_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3312, 0.0000]  (0.6s)
+    Nuclear_MediumEven_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3068, 0.0000]  (1.2s)
+    Nuclear_MediumEven_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3319, 0.0000]  (1.2s)
+    Nuclear_LowLow_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.2908, 0.0000]  (1.2s)
+    Nuclear_LowLow_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3210, 0.0000]  (1.1s)
+    Nuclear_HighHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3288, 0.0000]  (1.2s)
+    Nuclear_HighHigh_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3579, 0.0000]  (1.2s)
+    Nuclear_MixedA_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3066, 0.0000]  (1.2s)
+    Nuclear_MixedA_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3321, 0.0000]  (1.1s)
+    Nuclear_MixedB_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3067, 0.0000]  (1.2s)
+    Nuclear_MixedB_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3314, 0.0000]  (1.1s)
+    [Trio] 58,464 states  nf=(58464, 3, 13)  V* range=[-0.2044, 0.0000]
+    [Nuclear] 526,848 states  nf=(526848, 4, 13)  V* range=[-0.3579, 0.0000]
+    Total states: 585,312
+    Verification written → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step10_structural_gnn/results/verify.log
+
+[5] Training PedigreeGNN_Vstar:
+    Starting fresh (0/500)
+    Params: 7,217  node_feat_dim=13  hidden=32  rounds=2
+  epoch   50/500  train=0.000004  val=0.000030
+  epoch  100/500  train=0.000004  val=0.000025
+  epoch  150/500  train=0.000003  val=0.000013
+  epoch  200/500  train=0.000003  val=0.000007
+  epoch  250/500  train=0.000002  val=0.000005
+  epoch  300/500  train=0.000000  val=0.000001
+  epoch  350/500  train=0.000000  val=0.000001
+  epoch  400/500  train=0.000000  val=0.000001
+  epoch  450/500  train=0.000000  val=0.000001
+  epoch  500/500  train=0.000000  val=0.000001
+    Done in 3033.6s
+
+[DONE] model saved → gnn_structural_model.pt
+       final train_loss=0.000000  val_loss=0.000001
+Run eval.py next.
+
+======================================================================
+[TRAIN] 2026-07-11T15:39:53.554095
+======================================================================
+STEP 10 — Correct GNN: V*(s) prediction + structural node features
+Model: PedigreeGNN_Vstar  output=scalar V*(s) per state
+node_feat_dim=13  (9 beliefs + 1 is_tested + 3 structural)
+cost_dim=11  device=cpu  epochs=500
+Training target: V*(s) from ds['Y'] — same as exact DP output
+Action selection: derived from V* at eval time (not predicted directly)
+Cache: reusing step9 (no recomputation)
+TRAIN families: ['Trio', 'Nuclear']  (24 configs)
+TEST  families: ['ThreeGeneration']  (unseen bigger family — scaling benchmark)
+
+[1] STRUCTURAL FEATURES (static per family, from pedigree topology):
+
+  [Trio]  individuals=['Parent1', 'Parent2', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            1        0
+  Parent2                       0            1        0
+  Child                         2            0        1
+
+  [Nuclear]  individuals=['Parent1', 'Parent2', 'Child1', 'Child2']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Parent1                       0            2        0
+  Parent2                       0            2        0
+  Child1                        2            0        1
+  Child2                        2            0        1
+
+  [ThreeGeneration]  individuals=['Grandfather', 'Grandmother', 'Mother', 'Father', 'Child']
+  Person                n_parents   n_children    depth
+  ------------------------------------------------------
+  Grandfather                   0            1        0
+  Grandmother                   0            1        0
+  Mother                        0            1        0
+  Father                        2            1        1
+  Child                         2            0        2
+
+[2] Cache check:
+    Trio_LowHigh_Base_3gene  [OK]
+    Trio_LowHigh_Aggressive_3gene  [OK]
+    Trio_MediumEven_Base_3gene  [OK]
+    Trio_MediumEven_Aggressive_3gene  [OK]
+    Trio_LowLow_Base_3gene  [OK]
+    Trio_LowLow_Aggressive_3gene  [OK]
+    Trio_HighHigh_Base_3gene  [OK]
+    Trio_HighHigh_Aggressive_3gene  [OK]
+    Trio_MixedA_Base_3gene  [OK]
+    Trio_MixedA_Aggressive_3gene  [OK]
+    Trio_MixedB_Base_3gene  [OK]
+    Trio_MixedB_Aggressive_3gene  [OK]
+    Nuclear_LowHigh_Base_3gene  [OK]
+    Nuclear_LowHigh_Aggressive_3gene  [OK]
+    Nuclear_MediumEven_Base_3gene  [OK]
+    Nuclear_MediumEven_Aggressive_3gene  [OK]
+    Nuclear_LowLow_Base_3gene  [OK]
+    Nuclear_LowLow_Aggressive_3gene  [OK]
+    Nuclear_HighHigh_Base_3gene  [OK]
+    Nuclear_HighHigh_Aggressive_3gene  [OK]
+    Nuclear_MixedA_Base_3gene  [OK]
+    Nuclear_MixedA_Aggressive_3gene  [OK]
+    Nuclear_MixedB_Base_3gene  [OK]
+    Nuclear_MixedB_Aggressive_3gene  [OK]
+
+[3] Loading data and building V* training pairs:
+    Trio_LowHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1670, 0.0000]  (0.0s)
+    Trio_LowHigh_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1796, 0.0000]  (0.0s)
+    Trio_MediumEven_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1676, 0.0000]  (0.0s)
+    Trio_MediumEven_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1806, 0.0000]  (0.0s)
+    Trio_LowLow_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1501, 0.0000]  (0.0s)
+    Trio_LowLow_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1638, 0.0000]  (0.0s)
+    Trio_HighHigh_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1890, 0.0000]  (0.0s)
+    Trio_HighHigh_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.2044, 0.0000]  (0.1s)
+    Trio_MixedA_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1668, 0.0000]  (0.0s)
+    Trio_MixedA_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1795, 0.0000]  (0.0s)
+    Trio_MixedB_Base_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1684, 0.0000]  (0.0s)
+    Trio_MixedB_Aggressive_3gene: 4,872 states  nf=(4872, 3, 13)  V* range=[-0.1814, 0.0000]  (0.0s)
+    Nuclear_LowHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3065, 0.0000]  (0.5s)
+    Nuclear_LowHigh_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3312, 0.0000]  (0.6s)
+    Nuclear_MediumEven_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3068, 0.0000]  (1.3s)
+    Nuclear_MediumEven_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3319, 0.0000]  (1.1s)
+    Nuclear_LowLow_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.2908, 0.0000]  (1.1s)
+    Nuclear_LowLow_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3210, 0.0000]  (1.0s)
+    Nuclear_HighHigh_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3288, 0.0000]  (1.1s)
+    Nuclear_HighHigh_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3579, 0.0000]  (1.0s)
+    Nuclear_MixedA_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3066, 0.0000]  (1.2s)
+    Nuclear_MixedA_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3321, 0.0000]  (1.0s)
+    Nuclear_MixedB_Base_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3067, 0.0000]  (1.1s)
+    Nuclear_MixedB_Aggressive_3gene: 43,904 states  nf=(43904, 4, 13)  V* range=[-0.3314, 0.0000]  (1.0s)
+    [Trio] 58,464 states  nf=(58464, 3, 13)  V* range=[-0.2044, 0.0000]
+    [Nuclear] 526,848 states  nf=(526848, 4, 13)  V* range=[-0.3579, 0.0000]
+    Total states: 585,312
+    Verification written → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step10_structural_gnn/results/verify.log
+
+[5] Training PedigreeGNN_Vstar:
+    Starting fresh (0/500)
+    Params: 7,217  node_feat_dim=13  hidden=32  rounds=2
+  epoch   50/500  train=0.000000  val=0.000001
+  epoch  100/500  train=0.000000  val=0.000001
+  epoch  150/500  train=0.000000  val=0.000000
+  epoch  200/500  train=0.000000  val=0.000000
+  epoch  250/500  train=0.000000  val=0.000000
+  epoch  300/500  train=0.000000  val=0.000000
+  epoch  350/500  train=0.000000  val=0.000000
+  epoch  400/500  train=0.000000  val=0.000000
+  epoch  450/500  train=0.000000  val=0.000000
+  epoch  500/500  train=0.000000  val=0.000000
+    Done in 2555.0s
+
+[DONE] model saved → gnn_structural_model.pt
+       final train_loss=0.000000  val_loss=0.000000
+Run eval.py next.

@@ -1,0 +1,15 @@
+
+============================================================
+[MLP-Q] 2026-07-17T15:40:16.560166  mode=both  epochs=5
+Parameters: 1249
+
+[1] Building (s,a,Q*) tensors for 1 train configs...
+    [Trio_LowHigh_Base_3gene] 4,872 states -> 1,580 (s,a) rows (1.0s, cached after first run)
+    total (s,a) rows: 1,580
+
+[2] Training...
+    epoch    1  mse=0.00219
+    done in 17.1s
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results/mlp_q.pt
+
+[3] Eval on TEST_KEYS (12 configs), action agreement vs DP...

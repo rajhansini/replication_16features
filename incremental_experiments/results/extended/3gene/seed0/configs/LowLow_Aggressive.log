@@ -1,0 +1,18 @@
+[extended_fourway] 2026-07-26T03:46:42.202479  genes=3  seed=0  family=Extended (OOD -- never trained on)  GNN=E4 bidir  MLP=E2 ce  only=LowLow/Aggressive
+loaded GNN /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e4_gnn_bidir/seed_runs/seed0/gnn_q_e4.pt
+loaded MLP /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed0/mlp_q_ce.pt
+
+==========================================================================================
+Extended_LowLow_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.0725  V_stop(root)=-0.1473
+  ratio2: myopic=0.2500  gnn=0.2156  mlp=0.0636
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST GrandfatherTEST GrandfatherALL
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Mother       TEST Uncle      TEST GrandmotherTEST Grandmothernone
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Mother     TEST Grandmotherpartial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      STOP            STOP            none
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            TEST Mother     partial
+  agreement vs DP: myopic=2/6=0.333  gnn=4/6=0.667  mlp=2/6=0.333  all4=1/6=0.167
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed0/configs/LowLow_Aggressive.json

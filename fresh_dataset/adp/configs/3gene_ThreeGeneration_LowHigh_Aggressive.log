@@ -1,0 +1,3 @@
+[adp_ground_truth] 2026-08-16T02:15:15.019600  genes=3  family=ThreeGeneration  regime=LowHigh  preset=Aggressive
+[CONFIG] ThreeGeneration_LowHigh_Aggressive_3gene (test)
+  states=1,054,528  V*(root)=-0.146673  V_stop(root)=-0.372471

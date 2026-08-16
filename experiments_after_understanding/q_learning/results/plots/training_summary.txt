@@ -1,0 +1,15 @@
+Q-track training diagnostics — results
+============================================================
+
+seed 0:
+  MLP-Q: epoch1=0.004720  epoch500=0.000070  n_logged=26
+  GNN-Q: epoch1=0.000780  epoch500=0.000010  n_logged=26
+
+seed 1:
+  MLP-Q: epoch1=0.008180  epoch500=0.000070  n_logged=26
+  GNN-Q: epoch1=0.002110  epoch500=0.000000  n_logged=26
+
+seed 2:
+  MLP-Q: epoch1=0.001900  epoch500=0.000060  n_logged=26
+  GNN-Q: epoch1=0.001840  epoch500=0.000010  n_logged=26
+

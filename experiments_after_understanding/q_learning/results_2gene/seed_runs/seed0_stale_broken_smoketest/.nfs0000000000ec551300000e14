@@ -1,0 +1,104 @@
+
+============================================================
+[2GENE-MLP-Q] 2026-07-18T13:13:11.785970  mode=both  epochs=5  seed=0
+Parameters: 961
+
+[1] Generating 24 train configs + building (s,a,Q*) tensors...
+    [Trio_LowHigh_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowHigh_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MediumEven_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MediumEven_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowLow_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowLow_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_HighHigh_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_HighHigh_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedA_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedA_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedB_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedB_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Nuclear_LowHigh_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowHigh_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MediumEven_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MediumEven_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowLow_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowLow_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_HighHigh_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_HighHigh_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedA_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedA_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedB_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedB_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    total (s,a) rows: 25,104
+
+[2] Training...
+    epoch    1  mse=0.00299
+    done in 87.6s
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed0/mlp_q_2gene.pt
+
+[3] Per-state action agreement on 12 test configs (100 sampled states each)...
+    [ThreeGeneration_LowHigh_Base_2gene] 43/100 = 0.430
+    [ThreeGeneration_LowHigh_Aggressive_2gene] 70/100 = 0.700
+    [ThreeGeneration_MediumEven_Base_2gene] 48/100 = 0.480
+    [ThreeGeneration_MediumEven_Aggressive_2gene] 68/100 = 0.680
+    [ThreeGeneration_LowLow_Base_2gene] 52/100 = 0.520
+    [ThreeGeneration_LowLow_Aggressive_2gene] 65/100 = 0.650
+    [ThreeGeneration_HighHigh_Base_2gene] 73/100 = 0.730
+    [ThreeGeneration_HighHigh_Aggressive_2gene] 66/100 = 0.660
+    [ThreeGeneration_MixedA_Base_2gene] 57/100 = 0.570
+    [ThreeGeneration_MixedA_Aggressive_2gene] 73/100 = 0.730
+    [ThreeGeneration_MixedB_Base_2gene] 53/100 = 0.530
+    [ThreeGeneration_MixedB_Aggressive_2gene] 68/100 = 0.680
+    overall per-state action agreement: 736/1200 = 0.613
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed0/results.json
+
+============================================================
+[2GENE-GNN-Q] 2026-07-18T13:20:39.839099  mode=both  epochs=5  seed=0
+Parameters: 7393
+
+[1] Generating 24 train configs + building (s,a,Q*) tensors...
+    [Trio_LowHigh_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowHigh_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MediumEven_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MediumEven_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowLow_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_LowLow_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_HighHigh_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_HighHigh_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedA_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedA_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedB_Base_2gene] 432 states -> 236 (s,a) rows
+    [Trio_MixedB_Aggressive_2gene] 432 states -> 236 (s,a) rows
+    [Nuclear_LowHigh_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowHigh_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MediumEven_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MediumEven_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowLow_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_LowLow_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_HighHigh_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_HighHigh_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedA_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedA_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedB_Base_2gene] 2,264 states -> 1,856 (s,a) rows
+    [Nuclear_MixedB_Aggressive_2gene] 2,264 states -> 1,856 (s,a) rows
+    total (s,a) rows: 25,104
+
+[2] Training...
+    epoch    1  mse=0.00193
+    done in 403.2s
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed0/gnn_q_2gene.pt
+
+[3] Per-state action agreement on 12 test configs (100 sampled states each)...
+    [ThreeGeneration_LowHigh_Base_2gene] 72/100 = 0.720
+    [ThreeGeneration_LowHigh_Aggressive_2gene] 70/100 = 0.700
+    [ThreeGeneration_MediumEven_Base_2gene] 67/100 = 0.670
+    [ThreeGeneration_MediumEven_Aggressive_2gene] 70/100 = 0.700
+    [ThreeGeneration_LowLow_Base_2gene] 64/100 = 0.640
+    [ThreeGeneration_LowLow_Aggressive_2gene] 77/100 = 0.770
+    [ThreeGeneration_HighHigh_Base_2gene] 55/100 = 0.550
+    [ThreeGeneration_HighHigh_Aggressive_2gene] 73/100 = 0.730
+    [ThreeGeneration_MixedA_Base_2gene] 71/100 = 0.710
+    [ThreeGeneration_MixedA_Aggressive_2gene] 76/100 = 0.760
+    [ThreeGeneration_MixedB_Base_2gene] 60/100 = 0.600
+    [ThreeGeneration_MixedB_Aggressive_2gene] 74/100 = 0.740
+    overall per-state action agreement: 829/1200 = 0.691
+    saved -> /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed0/results_gnn.json

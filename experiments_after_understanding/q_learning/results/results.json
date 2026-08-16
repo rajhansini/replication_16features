@@ -1,0 +1,53 @@
+{
+  "per_config": {
+    "ThreeGeneration_LowHigh_Base_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_LowHigh_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_MediumEven_Base_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_MediumEven_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_LowLow_Base_3gene": {
+      "steps": 3,
+      "action_agreement": 0.6666666666666666
+    },
+    "ThreeGeneration_LowLow_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_HighHigh_Base_3gene": {
+      "steps": 5,
+      "action_agreement": 0.6
+    },
+    "ThreeGeneration_HighHigh_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 0.5
+    },
+    "ThreeGeneration_MixedA_Base_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_MixedA_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_MixedB_Base_3gene": {
+      "steps": 4,
+      "action_agreement": 0.75
+    },
+    "ThreeGeneration_MixedB_Aggressive_3gene": {
+      "steps": 4,
+      "action_agreement": 1.0
+    }
+  },
+  "overall_action_agreement": 0.7291666666666666
+}

@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:55:29.735777  genes=2  family=Extended  regime=LowHigh  preset=Aggressive
+[CONFIG] Extended_LowHigh_Aggressive_2gene (test)
+  states=107,728  V*(root)=-0.133724  V_stop(root)=-0.318195
+  ADP: ratio2=0.05006142599387892  ratio3=0.14141171915731868  policy_source=adp_policy  (476s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Extended_LowHigh_Aggressive_2gene_adp.json

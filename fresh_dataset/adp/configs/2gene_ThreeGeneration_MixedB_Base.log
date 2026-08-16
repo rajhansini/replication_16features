@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:54:18.620786  genes=2  family=ThreeGeneration  regime=MixedB  preset=Base
+[CONFIG] ThreeGeneration_MixedB_Base_2gene (test)
+  states=20,816  V*(root)=-0.115839  V_stop(root)=-0.192521
+  ADP: ratio2=0.09422868481035807  ratio3=0.21648144204142478  policy_source=myopic_policy  (68s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/ThreeGeneration_MixedB_Base_2gene_adp.json

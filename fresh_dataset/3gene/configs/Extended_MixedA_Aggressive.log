@@ -1,0 +1,7 @@
+[3gene ground truth, single config] 2026-08-16T02:47:25.039759
+
+──────────────────────────────────────────────────
+[CONFIG] Extended_MixedA_Aggressive_3gene  (test, fresh-build)
+  states=9,190,992  V*(root)=-0.1763  V_stop(root)=-0.4684
+  myopic: L=-0.1862  ratio2=0.0339  root_action=['test', 'Grandfather']  dp_root_action=['test', 'Grandfather']  match=True  (1477s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/3gene/configs/Extended_MixedA_Aggressive_3gene.json

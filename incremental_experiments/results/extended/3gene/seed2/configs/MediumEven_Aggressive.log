@@ -1,0 +1,19 @@
+[extended_fourway] 2026-07-26T04:41:40.814046  genes=3  seed=2  family=Extended (OOD -- never trained on)  GNN=E4 bidir  MLP=E2 ce  only=MediumEven/Aggressive
+loaded GNN /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e4_gnn_bidir/seed_runs/seed2/gnn_q_e4.pt
+loaded MLP /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce/seed_runs/seed2/mlp_q_ce.pt
+
+==========================================================================================
+Extended_MediumEven_Aggressive_3gene
+==========================================================================================
+  states=9,190,992  V*(root)=-0.1858  V_stop(root)=-0.5149
+  ratio2: myopic=0.0328  gnn=0.0146  mlp=0.1116
+  step state                                                       DP (truth)        MYOPIC          GNN             MLP             agree
+  0    root                                                        TEST Grandfather  TEST GrandfatherTEST Mother     TEST Grandfatherpartial
+  1    {Grandfather:(0, 0, 0)}                                     TEST Grandmother  TEST Father     TEST GrandmotherTEST Grandmotherpartial
+  2    {Father:(0, 0, 0), Grandfather:(0, 0, 0)}                   TEST Grandmother  TEST Uncle      TEST GrandmotherTEST Grandmotherpartial
+  3    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Uncle:(0, 0, 0)}  TEST Mother       TEST GrandmotherTEST Mother     TEST Mother     partial
+  4    {Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Child      TEST Mother     TEST Mother     partial
+  5    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Uncle:(0, 0, 0)}TEST Mother       TEST Mother     TEST Mother     STOP            partial
+  6    {Child:(0, 0, 0), Father:(0, 0, 0), Grandfather:(0, 0, 0), Grandmother:(0, 0, 0), Mother:(0, 0, 0), Uncle:(0, 0, 0)}STOP              STOP            STOP            STOP            ALL
+  agreement vs DP: myopic=3/7=0.429  gnn=6/7=0.857  mlp=6/7=0.857  all4=1/7=0.143
+saved -> /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/extended/3gene/seed2/configs/MediumEven_Aggressive.json

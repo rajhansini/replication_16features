@@ -1,0 +1,5 @@
+[adp_ground_truth] 2026-08-16T01:54:10.284415  genes=2  family=ThreeGeneration  regime=MixedA  preset=Aggressive
+[CONFIG] ThreeGeneration_MixedA_Aggressive_2gene (test)
+  states=20,816  V*(root)=-0.091319  V_stop(root)=-0.198299
+  ADP: ratio2=0.01030455513080374  ratio3=0.11633475108613701  policy_source=adp_policy  (71s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/ThreeGeneration_MixedA_Aggressive_2gene_adp.json
