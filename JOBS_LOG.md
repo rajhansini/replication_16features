@@ -10,9 +10,7 @@ To check status yourself: `squeue -u $(whoami) | grep <jobname>` or
 
 ## Currently running / pending
 
-| Job ID | Name | Purpose | Status (as of last update) |
-|---|---|---|---|
-| 2204396 | ovfit_probe | Full overfit-probe array: curve / randlabel / configholdout x GNN+MLP x 3 seeds, 500 epochs, 18 tasks. All on the FAIR rotate split (TRAIN=Trio+ThreeGeneration, TEST=Nuclear) | SUBMITTED. Smoke-tested first (2204343, 4/4 clean). Reference cost: the comparable e6_split rotate GNN tasks ran ~22min, MLP ~4min; `curve` adds a per-epoch validation forward pass on top. |
+None. All submitted jobs have finished.
 
 ### Resume logic (added 2026-08-23)
 
@@ -36,6 +34,7 @@ use the same pattern:
 
 | Job ID | Name | Purpose | Result |
 |---|---|---|---|
+| 2204396 | ovfit_probe | Overfit probes: curve / randlabel / configholdout x GNN+MLP x 3 seeds, 500 epochs, on the FAIR rotate split (TRAIN=Trio+ThreeGeneration, TEST=Nuclear) | **COMPLETE, 18/18, 0 errors.** Three results: (1) real but shallow overfitting -- GNN val loss bottoms at ep150-250 then drifts up only ~2-3%; MLP shows none. (2) Neither model can memorize shuffled targets -- shuffled-target R2 sits at mean-predictor level (GNN -0.16 to -0.44), and total loss is HIGHER under shuffling. (3) Config-level and family-level generalization gaps are the same size (~1.7x vs ~1.6x), so neither config memorization nor a specific topology-transfer failure is supported. Analysis: `analyze_overfit_probes.py`. |
 | 2204343 | ovfit_smoke | 2-epoch smoke of all three overfit probes on the real partition | COMPLETE, 4/4, exit 0. All probes emitted their expected fields; `configholdout` produced all three ratio2 numbers. seed99 output dirs deleted so they do not pollute the results tree. |
 | 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | **COMPLETE, 30/30, 0 errors.** The last LOO GNN fold beat the 4h wall by minutes, so the resume machinery never had to fire. Headline: the standard-split "overfitting" is mostly a split artifact -- swapping Nuclear -> ThreeGeneration in TRAIN (same 2 families, same 24 configs) raises GNN TRAIN error ~6x and collapses the gap from 8.3x/3.1x (E0/E6) to 1.3x/1.1x. Confirmed on both E0 and E6, so not rung-specific. |
 | 2204292 | e6_split (resume) | Resubmit of the 0-29 array with resume logic, `--dependency=afterany:2202164` | CANCELLED (scancel) -- 2202164 finished all 30 tasks on its own, so every task would have been a <1s no-op. Cancelled rather than let it hold queue slots under `QOSMaxJobsPerUserLimit`. The resume machinery it added stays in the scripts. |
