@@ -12,8 +12,7 @@ To check status yourself: `squeue -u $(whoami) | grep <jobname>` or
 
 | Job ID | Name | Purpose | Status (as of last update) |
 |---|---|---|---|
-| 2204343 | ovfit_smoke | 2-epoch smoke test of `overfit_probes_2gene.py` (curve/gnn, curve/mlp, randlabel/gnn, configholdout/mlp) on the real partition before the full array | PENDING -- `QOSMaxJobsPerUserLimit`. Exists because the login node is CPU-throttled and makes these scripts look pathologically slow (same trap as job 2202143). |
-| (pending smoke) | ovfit_probe | Full 18-task overfit-probe array: 3 probes x GNN/MLP x 3 seeds, 500 epochs | NOT YET SUBMITTED -- held until 2204343 confirms the script runs clean. `submit_overfit_probes.sh` is written and ready. |
+| 2204396 | ovfit_probe | Full overfit-probe array: curve / randlabel / configholdout x GNN+MLP x 3 seeds, 500 epochs, 18 tasks. All on the FAIR rotate split (TRAIN=Trio+ThreeGeneration, TEST=Nuclear) | SUBMITTED. Smoke-tested first (2204343, 4/4 clean). Reference cost: the comparable e6_split rotate GNN tasks ran ~22min, MLP ~4min; `curve` adds a per-epoch validation forward pass on top. |
 
 ### Resume logic (added 2026-08-23)
 
@@ -37,6 +36,7 @@ use the same pattern:
 
 | Job ID | Name | Purpose | Result |
 |---|---|---|---|
+| 2204343 | ovfit_smoke | 2-epoch smoke of all three overfit probes on the real partition | COMPLETE, 4/4, exit 0. All probes emitted their expected fields; `configholdout` produced all three ratio2 numbers. seed99 output dirs deleted so they do not pollute the results tree. |
 | 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | **COMPLETE, 30/30, 0 errors.** The last LOO GNN fold beat the 4h wall by minutes, so the resume machinery never had to fire. Headline: the standard-split "overfitting" is mostly a split artifact -- swapping Nuclear -> ThreeGeneration in TRAIN (same 2 families, same 24 configs) raises GNN TRAIN error ~6x and collapses the gap from 8.3x/3.1x (E0/E6) to 1.3x/1.1x. Confirmed on both E0 and E6, so not rung-specific. |
 | 2204292 | e6_split (resume) | Resubmit of the 0-29 array with resume logic, `--dependency=afterany:2202164` | CANCELLED (scancel) -- 2202164 finished all 30 tasks on its own, so every task would have been a <1s no-op. Cancelled rather than let it hold queue slots under `QOSMaxJobsPerUserLimit`. The resume machinery it added stays in the scripts. |
 | 2204260 | overfit2g_eval | Standard-split (TRAIN=Trio+Nuclear, TEST=ThreeGeneration) TRAIN-vs-TEST overfit check, 2-gene, E0/E1/E2/E4/E6, 3 seeds | COMPLETE, 3/3, 24s. Result: the overfit gap is a **GNN** phenomenon, not an MLP one -- every GNN rung degrades 3-16x from TRAIN to TEST, every MLP rung is ~1x (E1/E2 MLP even slightly negative). E6 has the SMALLEST GNN gap (3.1x vs E0's 8.3x). |
