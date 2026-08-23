@@ -14,7 +14,6 @@ To check status yourself: `squeue -u $(whoami) | grep <jobname>` or
 |---|---|---|---|
 | 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | 22/30 done, 0 errors. Remaining 8 = GNN folds of loo_trio/loo_nuclear/loo_threegen (all train on Extended, heaviest combo), at epoch 400-480 of 500 with ~50min of a 4h wall left. Expected to TIME OUT -- this job predates the resume logic, so it will be picked up by 2204292 below. No work is lost: checkpoint.pt is written every epoch. |
 | 2204292 | e6_split (resume) | Same 0-29 array, resubmitted with resume logic, `--dependency=afterany:2202164` | PENDING (Dependency) -- starts the moment 2202164 fully ends. The 22 finished tasks exit in <1s via the skip guard; the 8 unfinished ones resume from their last checkpointed epoch. |
-| 2204260 | overfit2g_eval | Standard-split (Trio+Nuclear train / ThreeGeneration test) TRAIN-vs-TEST overfit check, now extended to include E6 alongside E0/E1/E2/E4 | PENDING -- `QOSMaxJobsPerUserLimit`, queued behind the e6_split jobs. Expected fast (~30s) once running, based on job 2202143's timing. |
 
 ### Resume logic (added 2026-08-23)
 
@@ -36,6 +35,7 @@ requeueing across several 4h slots. `submit_e6_split_experiment.sh` +
 
 | Job ID | Name | Purpose | Result |
 |---|---|---|---|
+| 2204260 | overfit2g_eval | Standard-split (TRAIN=Trio+Nuclear, TEST=ThreeGeneration) TRAIN-vs-TEST overfit check, 2-gene, E0/E1/E2/E4/E6, 3 seeds | COMPLETE, 3/3, 24s. Result: the overfit gap is a **GNN** phenomenon, not an MLP one -- every GNN rung degrades 3-16x from TRAIN to TEST, every MLP rung is ~1x (E1/E2 MLP even slightly negative). E6 has the SMALLEST GNN gap (3.1x vs E0's 8.3x). |
 | 2199861-2199871 | gnn_q_seeds / mlp_q_seeds / e1_gnn_train / e1_mlp_train / gnn_q_ce_train / mlp_q_ce_train / e4_gnn_bidir_train / e5_gnn_rounds3_train / e6_sumpool_train / e7_neighborpool_train / e9_combopool_train | Retrain E0-E9 (3-gene) on corrected allele-frequency data | ALL COMPLETE, 108/108 sub-tasks, 0 errors. E6 is the best rung (avg TEST ratio2 = 0.056 vs E0's 0.058, 3-seed avg). |
 | 2201157 | (unnamed) | E0 2-gene split experiments: rotate + add x GNN+MLP x 3 seeds (12 tasks) | COMPLETE, 12/12, 0 errors. Not used further -- E0 isn't the rung that matters, superseded by the E6 version (2202164). |
 | 2202143 | e6_smoke | Diagnostic smoke test for e6_split_experiment.py on the real peanut-cpu partition (after the same script looked pathologically slow on the shared login node) | COMPLETE, 38s total. Confirmed the "slowness" was login-node CPU throttling, not a bug -- unblocked the real 2202164 submission. |
