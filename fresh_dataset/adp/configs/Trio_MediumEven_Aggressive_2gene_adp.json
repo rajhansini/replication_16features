@@ -1,0 +1,15 @@
+{
+  "genes": 2,
+  "family": "Trio",
+  "regime": "MediumEven",
+  "preset": "Aggressive",
+  "split": "train",
+  "V_star": -0.07398924250841891,
+  "V_stop": -0.16890494975999962,
+  "ADP_phi": -0.07187211668298336,
+  "production_policy_value": -0.07401781540824355,
+  "production_policy_source": "adp_policy",
+  "adp_ratio2_deployed_policy": 0.0003010344720805956,
+  "adp_ratio3_certificate": 0.02230532634418412,
+  "seconds": 1.6
+}

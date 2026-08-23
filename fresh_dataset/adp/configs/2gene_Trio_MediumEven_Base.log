@@ -1,3 +1,5 @@
-[adp_ground_truth] 2026-08-16T02:05:06.630797  genes=2  family=Trio  regime=MediumEven  preset=Base
+[adp_ground_truth] 2026-08-16T07:15:08.364608  genes=2  family=Trio  regime=MediumEven  preset=Base
 [CONFIG] Trio_MediumEven_Base_2gene (train)
   states=432  V*(root)=-0.071245  V_stop(root)=-0.113925
+  ADP: ratio2=0.056965586403045894  ratio3=0.21787091334366915  policy_source=adp_policy  (1s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_MediumEven_Base_2gene_adp.json

@@ -1,3 +1,5 @@
-[adp_ground_truth] 2026-08-16T02:05:05.959542  genes=2  family=Trio  regime=MediumEven  preset=Aggressive
+[adp_ground_truth] 2026-08-16T07:21:41.685453  genes=2  family=Trio  regime=MediumEven  preset=Aggressive
 [CONFIG] Trio_MediumEven_Aggressive_2gene (train)
   states=432  V*(root)=-0.073989  V_stop(root)=-0.168905
+  ADP: ratio2=0.0003010344720805956  ratio3=0.02230532634418412  policy_source=adp_policy  (2s)
+saved -> /net/projects/ranalab/rajhansini/replication_16features/fresh_dataset/adp/configs/Trio_MediumEven_Aggressive_2gene_adp.json

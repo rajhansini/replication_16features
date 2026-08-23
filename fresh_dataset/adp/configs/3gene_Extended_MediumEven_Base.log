@@ -1,3 +1,3 @@
-[adp_ground_truth] 2026-08-16T02:20:02.502811  genes=3  family=Extended  regime=MediumEven  preset=Base
+[adp_ground_truth] 2026-08-16T10:04:02.704450  genes=3  family=Extended  regime=MediumEven  preset=Base
 [CONFIG] Extended_MediumEven_Base_3gene (test)
   states=9,190,992  V*(root)=-0.175349  V_stop(root)=-0.346739

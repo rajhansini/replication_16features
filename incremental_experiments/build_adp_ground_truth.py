@@ -40,10 +40,33 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(EXPERIMENTS))
 
 from shared.data_gen import build_two_gene_dataset, build_multigene_dataset  # noqa: E402
+import genetic_dp.experiments.core as _gdp_core  # noqa: E402
 from genetic_dp.experiments.core import run_and_compare_solvers  # noqa: E402
 from replicate import direct16_env, BENCHMARK_ENV  # noqa: E402
 sys.path.insert(0, str(ROOT / "scripts"))
 from run_multigene_ratio45_new_settings import _extract_metrics  # noqa: E402 -- Kanix's own metric extraction, not a reimplementation
+
+# _save_belief_snapshot is a pure disk-cache side effect (pickle.dump the
+# already-computed, already-in-memory belief_exact dict, so a FUTURE process
+# could skip rebuilding it). Not needed for this run's correctness -- and we
+# already force EXACT_DP_CACHE_IN_MEMORY_ONLY=1 (same as replicate.py) to
+# guarantee every config solves fresh, so we never wanted cross-run snapshot
+# reuse anyway. On the largest configs (3-gene Extended, 9.19M states) this
+# save crashes with `_pickle.PicklingError: memo id too large for LONG_BINGET`
+# -- a pickle format ceiling, not a bug in the computed result. Wrap it so a
+# failed cache write can't crash a correctly-computed answer; don't touch
+# Kanix's actual file.
+_real_save_belief_snapshot = _gdp_core._save_belief_snapshot
+
+
+def _safe_save_belief_snapshot(cache_key, belief_exact):
+    try:
+        _real_save_belief_snapshot(cache_key, belief_exact)
+    except Exception as exc:  # noqa: BLE001 -- best-effort cache write only
+        print(f"[warn] belief snapshot save failed ({exc!r}) -- continuing without disk cache")
+
+
+_gdp_core._save_belief_snapshot = _safe_save_belief_snapshot
 
 GENES_2 = ("GeneA", "GeneB")
 GENES_3 = ("GeneA", "GeneB", "GeneC")
