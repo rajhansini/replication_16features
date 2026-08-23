@@ -83,7 +83,8 @@ def build_configs(families):
     ]
 
 
-def evaluate_rollout_cached(mod, model, configs, ds_cache, struct_cache, extra_cache, device, log):
+def evaluate_rollout_cached(mod, model, configs, ds_cache, struct_cache, extra_cache, device, log,
+                            partial_path=None):
     """Same as mod.evaluate_rollout, but reuses an already-solved ds from
     ds_cache (populated during training-tensor building) instead of
     re-running build_two_gene_dataset's exact-DP solve a second time for
@@ -93,11 +94,25 @@ def evaluate_rollout_cached(mod, model, configs, ds_cache, struct_cache, extra_c
     duplication alone was the dominant cost. Not used for TEST configs
     (never pre-built, no savings there). mod is gnn_mod or mlp_mod (same
     q_rollout/precompute_qhat either way, just different arg lists).
+
+    If partial_path is given, per-config results are flushed to it as they
+    land and reloaded on startup, so a run killed by the SLURM wall clock
+    mid-eval resumes at the next unevaluated config instead of redoing the
+    whole 36-config TRAIN sweep.
     """
     import numpy as _np
     results = {}
+    if partial_path is not None and partial_path.exists():
+        try:
+            results = json.loads(partial_path.read_text())
+        except json.JSONDecodeError:  # killed mid-write -- just start this stage over
+            results = {}
+        if results:
+            log(f"  [RESUME] {len(results)}/{len(configs)} configs already evaluated -- skipping those")
     for fam, reg, pre in configs:
         key = f"{fam}_{reg}_{pre}_2gene"
+        if key in results:
+            continue
         if key in ds_cache:
             ds = ds_cache[key]
         else:
@@ -114,6 +129,8 @@ def evaluate_rollout_cached(mod, model, configs, ds_cache, struct_cache, extra_c
 
         log(f"  [{key}]  ratio2={ratio2:.4f}  L={L:.4f}  V*={ds['V_root']:.4f}")
         results[key] = {"ratio2": ratio2, "L": L, "V_root": ds["V_root"]}
+        if partial_path is not None:
+            partial_path.write_text(json.dumps(results, indent=2))
 
     avg = float(_np.mean([r["ratio2"] for r in results.values()]))
     log(f"  avg ratio2 = {avg:.4f}")
@@ -139,7 +156,27 @@ def run_gnn(train_families, test_families, results_dir, epochs, groups_per_batch
     model_path = results_dir / "gnn_q_e6_split.pt"
     ds_cache = {}
 
-    if mode in ("train", "both"):
+    # --- resume ------------------------------------------------------------
+    # checkpoint.pt is written every epoch, so a task killed by the SLURM wall
+    # clock (or requeued) restarts mid-training rather than from scratch. If it
+    # already reached the final epoch there is nothing left to train: skip
+    # block [1] entirely -- 36 exact-DP solves plus state-group tensors, the
+    # dominant cost -- and go straight to eval, which rebuilds each dataset on
+    # demand as it needs it.
+    resume_epoch = 0
+    if ckpt_path.exists():
+        resume_epoch = int(torch.load(ckpt_path, map_location=dev)["epoch"])
+    training_done = resume_epoch >= epochs
+
+    if mode in ("train", "both") and training_done:
+        log(f"\n[RESUME] checkpoint already at epoch {resume_epoch}/{epochs} -- "
+            f"training complete, skipping [1] and [2]")
+        model.load_state_dict(torch.load(ckpt_path, map_location=dev)["model_state"])
+        if not model_path.exists():
+            torch.save(model.state_dict(), model_path)
+            log(f"    saved -> {model_path}")
+
+    if mode in ("train", "both") and not training_done:
         log(f"\n[1] Generating {len(train_configs)} train configs ({train_families}) + building state-grouped tensors...")
         edge_index_t = {fam: torch.tensor(edge_cache[fam], device=dev) for fam in edge_cache}
         per_config = []
@@ -194,7 +231,8 @@ def run_gnn(train_families, test_families, results_dir, epochs, groups_per_batch
         if mode == "eval":
             model.load_state_dict(torch.load(model_path, map_location=dev))
         log(f"\n[3] Eval on TRAIN configs ({train_families}) -- overfit check...")
-        train_results, train_avg = evaluate_rollout_cached(gnn_mod, model, train_configs, ds_cache, struct_cache, edge_cache, dev, log)
+        train_results, train_avg = evaluate_rollout_cached(gnn_mod, model, train_configs, ds_cache, struct_cache, edge_cache, dev, log,
+                                                           partial_path=results_dir / "eval_train_partial.json")
         log(f"\n[4] Eval on TEST configs ({test_families})...")
         test_results, test_avg = gnn_mod.evaluate_rollout(model, test_configs, struct_cache, edge_cache, dev, log)
         (results_dir / "results_e6.json").write_text(json.dumps(
@@ -223,7 +261,27 @@ def run_mlp(train_families, test_families, results_dir, epochs, groups_per_batch
     model_path = results_dir / "mlp_q_e6_split.pt"
     ds_cache = {}
 
-    if mode in ("train", "both"):
+    # --- resume ------------------------------------------------------------
+    # checkpoint.pt is written every epoch, so a task killed by the SLURM wall
+    # clock (or requeued) restarts mid-training rather than from scratch. If it
+    # already reached the final epoch there is nothing left to train: skip
+    # block [1] entirely -- 36 exact-DP solves plus state-group tensors, the
+    # dominant cost -- and go straight to eval, which rebuilds each dataset on
+    # demand as it needs it.
+    resume_epoch = 0
+    if ckpt_path.exists():
+        resume_epoch = int(torch.load(ckpt_path, map_location=dev)["epoch"])
+    training_done = resume_epoch >= epochs
+
+    if mode in ("train", "both") and training_done:
+        log(f"\n[RESUME] checkpoint already at epoch {resume_epoch}/{epochs} -- "
+            f"training complete, skipping [1] and [2]")
+        model.load_state_dict(torch.load(ckpt_path, map_location=dev)["model_state"])
+        if not model_path.exists():
+            torch.save(model.state_dict(), model_path)
+            log(f"    saved -> {model_path}")
+
+    if mode in ("train", "both") and not training_done:
         log(f"\n[1] Generating {len(train_configs)} train configs ({train_families}) + building state-grouped tensors...")
         per_config = []
         for fam, reg, pre in train_configs:
@@ -276,7 +334,8 @@ def run_mlp(train_families, test_families, results_dir, epochs, groups_per_batch
         if mode == "eval":
             model.load_state_dict(torch.load(model_path, map_location=dev))
         log(f"\n[3] Eval on TRAIN configs ({train_families}) -- overfit check...")
-        train_results, train_avg = evaluate_rollout_cached(mlp_mod, model, train_configs, ds_cache, struct_cache, None, dev, log)
+        train_results, train_avg = evaluate_rollout_cached(mlp_mod, model, train_configs, ds_cache, struct_cache, None, dev, log,
+                                                           partial_path=results_dir / "eval_train_partial.json")
         log(f"\n[4] Eval on TEST configs ({test_families})...")
         test_results, test_avg = mlp_mod.evaluate_rollout(model, test_configs, struct_cache, dev, log)
         (results_dir / "results_e6.json").write_text(json.dumps(
@@ -297,6 +356,8 @@ def main():
     p.add_argument("--lambda_ce", type=float, default=1.0)
     p.add_argument("--mode", default="both", choices=["train", "eval", "both"])
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--force", action="store_true",
+                   help="redo this (exp,kind,seed) even if results_e6.json already exists")
     args = p.parse_args()
 
     random.seed(args.seed)
@@ -308,6 +369,19 @@ def main():
 
     results_dir = RESULTS_ROOT / f"e6_split_{args.exp}" / args.kind / "seed_runs" / f"seed{args.seed}"
     results_dir.mkdir(parents=True, exist_ok=True)
+
+    # Idempotent resubmit: the whole 0-29 array can be re-submitted after a
+    # timeout and every already-finished task exits here in under a second,
+    # so only the unfinished ones actually run.
+    done_marker = results_dir / "results_e6.json"
+    if done_marker.exists() and not args.force:
+        print(f"[SKIP] exp={args.exp} kind={args.kind} seed={args.seed} already complete "
+              f"({done_marker}). Use --force to redo.", flush=True)
+        return
+    if args.force:
+        for stale in (results_dir / "eval_train_partial.json", results_dir / "checkpoint.pt"):
+            stale.unlink(missing_ok=True)
+
     log_f = open(results_dir / "run.log", "a")
 
     def log(msg=""):

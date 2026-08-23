@@ -12,8 +12,25 @@ To check status yourself: `squeue -u $(whoami) | grep <jobname>` or
 
 | Job ID | Name | Purpose | Status (as of last update) |
 |---|---|---|---|
-| 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | 21/30 done, 0 errors. Remaining 9 = GNN variants of the 3 leave-one-out folds (all include Extended in TRAIN, heaviest combo). ~2hr elapsed on those, 4hr limit. |
-| 2204260 | overfit2g_eval | Standard-split (Trio+Nuclear train / ThreeGeneration test) TRAIN-vs-TEST overfit check, now extended to include E6 alongside E0/E1/E2/E4 | PENDING -- queued behind e6_split on peanut-cpu, should start once slots free up. Expected fast (~30s) once running, based on job 2202143's timing. |
+| 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | 22/30 done, 0 errors. Remaining 8 = GNN folds of loo_trio/loo_nuclear/loo_threegen (all train on Extended, heaviest combo), at epoch 400-480 of 500 with ~50min of a 4h wall left. Expected to TIME OUT -- this job predates the resume logic, so it will be picked up by 2204292 below. No work is lost: checkpoint.pt is written every epoch. |
+| 2204292 | e6_split (resume) | Same 0-29 array, resubmitted with resume logic, `--dependency=afterany:2202164` | PENDING (Dependency) -- starts the moment 2202164 fully ends. The 22 finished tasks exit in <1s via the skip guard; the 8 unfinished ones resume from their last checkpointed epoch. |
+| 2204260 | overfit2g_eval | Standard-split (Trio+Nuclear train / ThreeGeneration test) TRAIN-vs-TEST overfit check, now extended to include E6 alongside E0/E1/E2/E4 | PENDING -- `QOSMaxJobsPerUserLimit`, queued behind the e6_split jobs. Expected fast (~30s) once running, based on job 2202143's timing. |
+
+### Resume logic (added 2026-08-23)
+
+Every partition on this cluster (`general`, `peanut-cpu`, `threedle-*`) has a
+hard **4h MaxTime** -- there is no longer limit to ask for. The leave-one-out
+GNN folds do not fit in 4h, so they can only finish by checkpointing and
+requeueing across several 4h slots. `submit_e6_split_experiment.sh` +
+`incremental_experiments/e6_split_experiment.py` now do that:
+
+- `#SBATCH --signal=B:USR1@300` fires 5 min before the wall clock; the trap
+  calls `scontrol requeue` so the task restarts instead of dying.
+- Training resumes from `checkpoint.pt` (written every epoch, already existed).
+- TRAIN-side eval resumes from `eval_train_partial.json` (flushed per config).
+- A finished `(exp,kind,seed)` exits in <1s via a `results_e6.json` skip guard,
+  so **the whole 0-29 array can be resubmitted at any time and only does the
+  work that is actually missing**. `--force` redoes one from scratch.
 
 ## Finished
 
