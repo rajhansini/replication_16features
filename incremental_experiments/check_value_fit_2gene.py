@@ -49,6 +49,7 @@ mlp_mod = _load("vf_mlp", HERE / "e6_train_two_gene_mlp_q.py")
 tg = gnn_mod.tg
 
 TRAIN_FAMILIES = ["Trio", "ThreeGeneration"]   # fair-split TRAIN, see overfit_probes_2gene.py
+TEST_FAMILIES  = ["Nuclear"]                   # fair-split TEST (never trained on)
 
 
 def rank_accuracy(pred, y, s_idx):
@@ -91,9 +92,10 @@ def main():
     model.load_state_dict(ck["model_state"])
     model.eval()
     print(f"{args.kind} seed{args.seed}, checkpoint epoch {ck['epoch']} -- TRAIN configs of the fair split\n")
-    print(f"{'config':<44}{'R2':>8}{'corr':>7}{'sd pred/sd y':>14}{'rank acc':>10}{'states':>9}")
+    print(f"{'split config':<44}{'R2':>8}{'corr':>7}{'sd pred/sd y':>14}{'rank acc':>10}{'states':>9}")
 
-    for fam in TRAIN_FAMILIES:
+    for fam in TRAIN_FAMILIES + TEST_FAMILIES:
+        split = "TRAIN" if fam in TRAIN_FAMILIES else "TEST "
         ped = tg.generate_deterministic_pedigree(tg.FAMILY_CASES[fam])
         ind = ped.to_list()
         sc = tg.compute_structural_features(ped, ind)
@@ -114,7 +116,7 @@ def main():
             r2 = 1 - ((pred - y) ** 2).mean().item() / var
             corr = torch.corrcoef(torch.stack([pred, y]))[0, 1].item()
             acc, n_states = rank_accuracy(pred, y, s_idx)
-            print(f"{key:<44}{r2:>8.2f}{corr:>7.2f}"
+            print(f"{split} {key:<38}{r2:>8.2f}{corr:>7.2f}"
                   f"{pred.std().item()/y.std().item():>13.1f}x{acc:>10.3f}{n_states:>9,}")
 
 

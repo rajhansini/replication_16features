@@ -10,7 +10,30 @@ To check status yourself: `squeue -u $(whoami) | grep <jobname>` or
 
 ## Currently running / pending
 
-None. All submitted jobs have finished.
+Full re-derivation of every number in the E0-E9 PI briefing artifact, so that
+no figure on that page predates the 3-gene allele-frequency fix (2026-08-15/16)
+or the E0-E9 retrain (2026-08-22).
+
+| Job ID | Name | Purpose | Status |
+|---|---|---|---|
+| 2206182 | fourway_rerun | Four-way action logs (DP vs myopic vs GNN-Q vs MLP-Q; root action + whole trajectory) for all 8 rungs x {3-gene, 2-gene} x 3 seeds, 48 tasks | PENDING. Regenerates every root-agreement and whole-trajectory figure. The stale ones on disk are dated 07-25 -> 08-10. |
+| 2206212 | verify_myopic_TRUE | Myopic baseline re-verification with Kanix's canonical `myopic_greedy`, 6 regimes x 2 presets x {2,3}-gene, 24 tasks | PENDING. Regenerates the myopic ratio2 reference (currently 0.105 3-gene / 0.230 2-gene, both from 07-25). |
+| 2206213 | extended_fourway | Extended-family (OOD) four-way log, {2,3}-gene x 3 seeds, 6 tasks | PENDING. Regenerates the Extended / OOD section (currently from 07-25/26). |
+
+### Verified: the 3-gene dataset cache IS the corrected data
+
+Checked before submitting, because regenerating logs against stale inputs would
+just produce new wrong numbers. `ground-up-experiments/step9_gnn_3gene/results/cache`
+holds 36 pickles, and the mtimes line up exactly with the bug:
+
+| Regime | Files | Dated |
+|---|---|---|
+| HighHigh, MixedA, MixedB | 6 each | **08-15** (regenerated -- these are the three regimes whose GeneA/GeneB frequencies were wrong) |
+| LowHigh, MediumEven, LowLow | 6 each | 06-30 / 07-01 (untouched -- these were always correct) |
+
+So the fourway rerun reads corrected 3-gene data. `log_*_fourway.py` also calls
+`genetic_dp.policy.baselines.myopic_greedy` directly, so its myopic rows are
+canonical by construction.
 
 ### Resume logic (added 2026-08-23)
 
@@ -34,6 +57,7 @@ use the same pattern:
 
 | Job ID | Name | Purpose | Result |
 |---|---|---|---|
+| 2204396 (artifact) | — | 3-gene ratio2 figures in the PI briefing artifact replaced from the corrected retrain | DONE 2026-08-23. Per-rung tables, master table, all 12 per-config rows, and every vs-previous-rung delta. Four directional claims flipped (E1 batching no longer a uniform win; E4 bidirectional MP now regresses at 3-gene; E7/E9 now better than E4; E6 MLP 0.214 -> 0.821) and the prose was rewritten to match. 2-gene verified unchanged and correct. |
 | 2204396 | ovfit_probe | Overfit probes: curve / randlabel / configholdout x GNN+MLP x 3 seeds, 500 epochs, on the FAIR rotate split (TRAIN=Trio+ThreeGeneration, TEST=Nuclear) | **COMPLETE, 18/18, 0 errors.** Three results: (1) real but shallow overfitting -- GNN val loss bottoms at ep150-250 then drifts up only ~2-3%; MLP shows none. (2) Neither model can memorize shuffled targets -- shuffled-target R2 sits at mean-predictor level (GNN -0.16 to -0.44), and total loss is HIGHER under shuffling. (3) Config-level and family-level generalization gaps are the same size (~1.7x vs ~1.6x), so neither config memorization nor a specific topology-transfer failure is supported. Analysis: `analyze_overfit_probes.py`. |
 | 2204343 | ovfit_smoke | 2-epoch smoke of all three overfit probes on the real partition | COMPLETE, 4/4, exit 0. All probes emitted their expected fields; `configholdout` produced all three ratio2 numbers. seed99 output dirs deleted so they do not pollute the results tree. |
 | 2202164 | e6_split | E6 2-gene split experiments: rotate/add/loo_trio/loo_nuclear/loo_threegen x GNN+MLP x 3 seeds (30 tasks) | **COMPLETE, 30/30, 0 errors.** The last LOO GNN fold beat the 4h wall by minutes, so the resume machinery never had to fire. Headline: the standard-split "overfitting" is mostly a split artifact -- swapping Nuclear -> ThreeGeneration in TRAIN (same 2 families, same 24 configs) raises GNN TRAIN error ~6x and collapses the gap from 8.3x/3.1x (E0/E6) to 1.3x/1.1x. Confirmed on both E0 and E6, so not rung-specific. |
