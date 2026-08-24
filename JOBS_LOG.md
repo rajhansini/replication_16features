@@ -18,7 +18,8 @@ or the E0-E9 retrain (2026-08-22).
 |---|---|---|---|
 | 2206182 | fourway_rerun | Four-way action logs (DP vs myopic vs GNN-Q vs MLP-Q; root action + whole trajectory) for all 8 rungs x {3-gene, 2-gene} x 3 seeds, 48 tasks | PENDING. Regenerates every root-agreement and whole-trajectory figure. The stale ones on disk are dated 07-25 -> 08-10. |
 | 2206212 | verify_myopic_TRUE | Myopic baseline re-verification with Kanix's canonical `myopic_greedy`, 6 regimes x 2 presets x {2,3}-gene, 24 tasks | PENDING. Regenerates the myopic ratio2 reference (currently 0.105 3-gene / 0.230 2-gene, both from 07-25). |
-| 2206213 | extended_fourway | Extended-family (OOD) four-way log, {2,3}-gene x 3 seeds, 6 tasks | PENDING. Regenerates the Extended / OOD section (currently from 07-25/26). |
+| 2206213 | extended_fourway | Extended-family (OOD) four-way log, **variant e4 only**, {2,3}-gene x 3 seeds, 6 tasks | RUNNING (2-gene half done). |
+| 2206261 | ext_e6e7_rerun | Extended-family four-way for the **E6 and E7** variants, {2,3}-gene x 3 seeds, 12 tasks | SUBMITTED. Needed because 2206213 covers only variant e4, and the pre-existing `submit_extended_fourway_e6.sh` / `_e7.sh` are 2-gene only -- the briefing quotes 3-gene E6/E7 Extended rows too, sourced from `extended/3gene/*/configs_e6`,`configs_e7` (07-26 / 08-09, both pre-fix). Without this the Extended section would still be half stale. |
 
 ### Verified: the 3-gene dataset cache IS the corrected data
 
