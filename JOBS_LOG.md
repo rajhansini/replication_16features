@@ -147,8 +147,31 @@ Note the per-config mode (`--regime X --preset Y`, driven by
 immune to this -- one config per task, own JSON written immediately. It remains
 the alternative if the resume path is ever in doubt.
 
-**Not yet resubmitted.** 3-gene Extended (e4/e6/e7 x 3 seeds) is still stale
-07-26 / 08-09 data, and re-running it is ~108 config-solves either way.
+**Resubmitted and COMPLETE** as 2207525 (e4) / 2207526 (e6+e7), 9 tasks,
+**9/9 tasks, 108/108 configs, 0 errors**, finished 2026-08-24 12:33.
+
+The resume machinery fired in production exactly as designed: at 08:05 all nine
+tasks hit the 4h wall, the USR1 trap requeued them, and each restart logged
+`[resume] N/12 configs already solved` and skipped that work. Three tasks needed
+two requeues (`Restarts=2`). Under the old code all nine would have produced
+nothing, a second time.
+
+Result -- 3-gene Extended (OOD, never trained on), 12 configs, seeds 0/1/2,
+ratio2 (lower = better):
+
+| Variant | GNN old -> new | MLP old -> new | myopic old -> new |
+|---|---|---|---|
+| E4 | 0.0656 -> 0.0771 | 0.1406 -> 0.2366 | 0.1107 -> 0.1146 |
+| E6 | 0.0500 -> 0.0730 | 0.2273 -> **0.8956** | 0.1107 -> 0.1146 |
+| E7 | 0.0740 -> 0.0689 | 0.1406 -> 0.2366 | 0.1107 -> 0.1146 |
+
+Two findings. (1) **GNN-Q beats myopic out-of-distribution at all three
+variants** (0.069-0.077 vs 0.115). (2) **E6's MLP collapsed to 0.896**, i.e.
+barely better than testing nobody. That is corroborated by two independent
+measurements on the corrected data -- E6 MLP standard-family ratio2 went
+0.214 -> 0.821, and its whole-trajectory DP agreement dropped 0.710 -> 0.565.
+E6 remains the strongest rung on the GNN side; its MLP is now the worst of any
+variant.
 
 
 ## Finished
