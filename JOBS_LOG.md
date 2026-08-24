@@ -174,6 +174,40 @@ E6 remains the strongest rung on the GNN side; its MLP is now the worst of any
 variant.
 
 
+### E0-E9 briefing artifact fully updated (2026-08-24)
+
+`claude.ai/code/artifact/c1d8a29e-ab37-4d88-aa83-9493714f72f3` -- every 3-gene
+figure replaced from the regenerated logs. 2-gene tables were left byte-identical
+on purpose: the regeneration re-derived them and they came back the same, so
+there was nothing to change and no reason to disturb the hand-placed
+best/worst highlighting.
+
+Replaced: all 7 rung sections' 3-gene root + whole-trajectory tables, the master
+table, the per-config breakdown, and the whole Extended/OOD section. Denominators
+moved with the data -- 3-gene whole-traj **210 -> 207**, Extended **246 -> 243** --
+because those trajectories are walked along myopic's own path and myopic's values
+shifted with the corrected data.
+
+**Trap worth remembering:** the per-rung "vs." delta column is measured against
+the PREVIOUS rung, not against E0 -- E1 vs E0, E2 vs E1, E4 vs E2, and E6/E7/E9
+all vs E4. A first pass recomputed every delta against E0 and silently corrupted
+the 2-gene columns (which are otherwise correct); caught by diffing the 2-gene
+tables against the original and requiring zero changes.
+
+Five directional claims were inverted by the new data and were rewritten in place:
+
+| Rung | Claim that no longer held |
+|---|---|
+| E4 | 3-gene root read as "flat, tied with E2 at 23/36" -- it is a collapse, 80.6% -> 30.6% |
+| E6 | "MLP root more than doubles in both gene counts" -- true only at 2-gene; at 3-gene it collapses 83.3% -> 11.1% |
+| E7 | "the single worst root number anywhere on this page" -- no longer; E0's own 11.1% is |
+| E9 | "a comprehensive loss to every simpler alternative" -- now beats E4 and E7 on 3-gene root and ratio2; still decisively worst on whole-trajectory |
+| Extended | "MLP-Q beats every GNN-Q variant on both root and whole-trajectory" -- still wins root (52.8%), now loses whole-trajectory to all three (61.3% vs E4 67.9%) |
+
+Note the artifact is shared by link and **viewers see a pinned earlier version**
+until the share pin is moved -- updating the page does not update what a
+link-holder sees.
+
 ## Finished
 
 | Job ID | Name | Purpose | Result |
