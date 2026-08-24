@@ -8,3 +8,4 @@ __pycache__/
 cache/
 slurm_*.log
 run.log
+partial*/

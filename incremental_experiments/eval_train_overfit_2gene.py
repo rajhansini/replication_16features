@@ -69,6 +69,8 @@ def main():
     e2_gnn_mod = _load_module("e2_gnn_overfit", FIXING / "train_two_gene_gnn_q_ce.py")
     e2_mlp_mod = _load_module("e2_mlp_overfit", FIXING / "train_two_gene_mlp_q_ce.py")
     e4_gnn_mod = _load_module("e4_gnn_overfit", HERE / "e4_train_two_gene_gnn_q.py")
+    e6_gnn_mod = _load_module("e6_gnn_overfit", HERE / "e6_train_two_gene_gnn_q.py")
+    e6_mlp_mod = _load_module("e6_mlp_overfit", HERE / "e6_train_two_gene_mlp_q.py")
 
     # (rung, kind, ModelClass, checkpoint_path, module_whose_evaluate_rollout_to_use)
     rungs = [
@@ -79,6 +81,8 @@ def main():
         ("E2", "gnn", e0_gnn_mod.GNNQ, FIXING / "results" / "gnn_q_ce_2gene" / "seed_runs" / f"seed{seed}" / "gnn_q_ce_2gene.pt", e2_gnn_mod),
         ("E2", "mlp", e0_mlp_mod.MLPQ, FIXING / "results" / "mlp_q_ce_2gene" / "seed_runs" / f"seed{seed}" / "mlp_q_ce_2gene.pt", e2_mlp_mod),
         ("E4", "gnn", e4_gnn_mod.GNNQBidir, HERE / "results" / "e4_gnn_bidir_2gene" / "seed_runs" / f"seed{seed}" / "gnn_q_e4_2gene.pt", e4_gnn_mod),
+        ("E6", "gnn", e6_gnn_mod.GNNQBidirSumPool, HERE / "results" / "e6_gnn_sumpool_2gene" / "seed_runs" / f"seed{seed}" / "gnn_q_e6_2gene.pt", e6_gnn_mod),
+        ("E6", "mlp", e6_mlp_mod.MLPQSumPool, HERE / "results" / "e6_mlp_sumpool_2gene" / "seed_runs" / f"seed{seed}" / "mlp_q_e6_2gene.pt", e6_mlp_mod),
     ]
 
     results = {}

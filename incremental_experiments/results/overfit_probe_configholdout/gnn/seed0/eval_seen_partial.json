@@ -1,0 +1,82 @@
+{
+  "Trio_LowHigh_Base_2gene": {
+    "ratio2": 0.16956302277712115,
+    "L": -0.07054728368356049,
+    "V_root": -0.06531382579499093
+  },
+  "Trio_LowHigh_Aggressive_2gene": {
+    "ratio2": 0.0007051474546105769,
+    "L": -0.06751542334256853,
+    "V_root": -0.06746327307539142
+  },
+  "Trio_MediumEven_Base_2gene": {
+    "ratio2": 0.005737551438355962,
+    "L": -0.07148961000261264,
+    "V_root": -0.07124473260970346
+  },
+  "Trio_MediumEven_Aggressive_2gene": {
+    "ratio2": 0.0007293909487613221,
+    "L": -0.07405847316618386,
+    "V_root": -0.07398924250841928
+  },
+  "Trio_LowLow_Base_2gene": {
+    "ratio2": 0.04919644770927229,
+    "L": -0.027329232034872405,
+    "V_root": -0.027074084855040002
+  },
+  "Trio_LowLow_Aggressive_2gene": {
+    "ratio2": 0.6337793427743781,
+    "L": -0.042125668926905606,
+    "V_root": -0.03151163702137601
+  },
+  "Trio_HighHigh_Base_2gene": {
+    "ratio2": 0.006354503022871581,
+    "L": -0.10902770655120313,
+    "V_root": -0.10854942487203126
+  },
+  "Trio_HighHigh_Aggressive_2gene": {
+    "ratio2": 0.003999317717054302,
+    "L": -0.1142881848078125,
+    "V_root": -0.11366593279508401
+  },
+  "ThreeGeneration_LowHigh_Base_2gene": {
+    "ratio2": 0.07600424334501595,
+    "L": -0.11365404233145547,
+    "V_root": -0.10915810573616076
+  },
+  "ThreeGeneration_LowHigh_Aggressive_2gene": {
+    "ratio2": 0.030127635386345022,
+    "L": -0.11548617249907808,
+    "V_root": -0.11138583628040535
+  },
+  "ThreeGeneration_MediumEven_Base_2gene": {
+    "ratio2": 0.05348510111941904,
+    "L": -0.12204608198427046,
+    "V_root": -0.11767682752538546
+  },
+  "ThreeGeneration_MediumEven_Aggressive_2gene": {
+    "ratio2": 0.0232733112363329,
+    "L": -0.12675743826652872,
+    "V_root": -0.12273466987403277
+  },
+  "ThreeGeneration_LowLow_Base_2gene": {
+    "ratio2": 1.3823038215813925,
+    "L": -0.06060904766230594,
+    "V_root": -0.04559156102426238
+  },
+  "ThreeGeneration_LowLow_Aggressive_2gene": {
+    "ratio2": 0.3166106769291399,
+    "L": -0.06232602260827496,
+    "V_root": -0.052074723550082004
+  },
+  "ThreeGeneration_HighHigh_Base_2gene": {
+    "ratio2": 0.013081940959463944,
+    "L": -0.18376745149701007,
+    "V_root": -0.1819393993738608
+  },
+  "ThreeGeneration_HighHigh_Aggressive_2gene": {
+    "ratio2": 0.007541684064447815,
+    "L": -0.19309715215100254,
+    "V_root": -0.19098387266114014
+  }
+}

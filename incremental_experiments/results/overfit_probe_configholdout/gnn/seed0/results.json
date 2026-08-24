@@ -1,0 +1,15 @@
+{
+  "probe": "configholdout",
+  "kind": "gnn",
+  "seed": 0,
+  "epochs": 500,
+  "train_families": [
+    "Trio",
+    "ThreeGeneration"
+  ],
+  "final_train_loss": 0.14971133384720553,
+  "final_train_mse": 0.02089611257958625,
+  "ratio2_seen_configs": 0.17328082115399887,
+  "ratio2_heldout_configs_seen_families": 0.03782581641837776,
+  "ratio2_unseen_family": 0.21592686955161147
+}

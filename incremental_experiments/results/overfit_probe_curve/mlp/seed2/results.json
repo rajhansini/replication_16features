@@ -1,0 +1,14 @@
+{
+  "probe": "curve",
+  "kind": "mlp",
+  "seed": 2,
+  "epochs": 500,
+  "train_families": [
+    "Trio",
+    "ThreeGeneration"
+  ],
+  "final_train_loss": 0.16436037869148312,
+  "final_train_mse": 0.01158174627787611,
+  "ratio2_seen_configs": 0.26708026481464614,
+  "ratio2_unseen_family": 0.2554117775002356
+}

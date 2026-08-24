@@ -1,0 +1,15 @@
+{
+  "probe": "configholdout",
+  "kind": "mlp",
+  "seed": 0,
+  "epochs": 500,
+  "train_families": [
+    "Trio",
+    "ThreeGeneration"
+  ],
+  "final_train_loss": 0.1646563564427197,
+  "final_train_mse": 0.010869605859625152,
+  "ratio2_seen_configs": 0.7150963603163838,
+  "ratio2_heldout_configs_seen_families": 0.5777673910230496,
+  "ratio2_unseen_family": 0.8347132526384766
+}

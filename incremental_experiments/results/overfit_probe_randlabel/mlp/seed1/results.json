@@ -1,0 +1,12 @@
+{
+  "probe": "randlabel",
+  "kind": "mlp",
+  "seed": 1,
+  "epochs": 500,
+  "train_families": [
+    "Trio",
+    "ThreeGeneration"
+  ],
+  "final_train_loss": 0.17949798765281835,
+  "final_train_mse": 0.00235410753278605
+}

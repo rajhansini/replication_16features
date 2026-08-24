@@ -1,4 +1,4 @@
-[e0_fourway] 2026-07-25T19:55:56.306808  genes=2  seed=2  variant=E0 (baseline MSE)
+[e0_fourway] 2026-08-24T03:07:09.338025  genes=2  seed=2  variant=E0 (baseline MSE)
 loaded /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed2/gnn_q_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/experiments_after_understanding/q_learning/results_2gene/seed_runs/seed2/mlp_q_2gene.pt
 

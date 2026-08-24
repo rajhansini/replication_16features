@@ -1,4 +1,4 @@
-[e4_fourway] 2026-07-25T19:56:27.445855  genes=2  seed=2  variant=E4 (GNN: bidirectional message passing; MLP: unchanged from E2)
+[e4_fourway] 2026-08-24T03:07:08.778849  genes=2  seed=2  variant=E4 (GNN: bidirectional message passing; MLP: unchanged from E2)
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e4_gnn_bidir_2gene/seed_runs/seed2/gnn_q_e4_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce_2gene/seed_runs/seed2/mlp_q_ce_2gene.pt
 

@@ -1,4 +1,4 @@
-[extended_fourway] 2026-08-09T15:32:41.143477  genes=2  seed=2  family=Extended (OOD -- never trained on)  GNN=E7 neighborpool  MLP=E2 ce
+[extended_fourway] 2026-08-23T19:33:26.479968  genes=2  seed=2  family=Extended (OOD -- never trained on)  GNN=E7 neighborpool  MLP=E2 ce
 loaded GNN (e7) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e7_gnn_neighborpool_2gene/seed_runs/seed2/gnn_q_e7_2gene.pt
 loaded MLP (e7) /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce_2gene/seed_runs/seed2/mlp_q_ce_2gene.pt
 

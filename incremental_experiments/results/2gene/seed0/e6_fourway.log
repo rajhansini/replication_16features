@@ -1,4 +1,4 @@
-[e6_fourway] 2026-07-26T15:55:31.387621  genes=2  seed=0  variant=E6 (sum pooling, both GNN and MLP)
+[e6_fourway] 2026-08-24T03:07:08.778930  genes=2  seed=0  variant=E6 (sum pooling, both GNN and MLP)
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_gnn_sumpool_2gene/seed_runs/seed0/gnn_q_e6_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_mlp_sumpool_2gene/seed_runs/seed0/mlp_q_e6_2gene.pt
 

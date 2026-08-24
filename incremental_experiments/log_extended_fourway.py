@@ -32,6 +32,8 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import os
+import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -49,6 +51,52 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(EXPERIMENTS))
 sys.path.insert(0, str(EXP_ROOT))
 sys.path.insert(0, str(Q_DIR))
+
+
+def _run_token():
+    """Identity of the CURRENT SLURM submission.
+
+    `scontrol requeue` preserves the job id, a fresh `sbatch` does not. That is
+    exactly the distinction the resume logic needs: "I am picking up my own
+    work after the 4h wall" vs "I am a new submission that must not inherit
+    anything". Returns None off SLURM, which disables resume entirely.
+    """
+    for var in ("SLURM_ARRAY_JOB_ID", "SLURM_JOB_ID"):
+        v = os.environ.get(var)
+        if v:
+            return f"{var}={v}:task={os.environ.get('SLURM_ARRAY_TASK_ID', '-')}"
+    return None
+
+
+def _load_partials(partial_dir, token, genes_n, force=False):
+    """Return {config_key: entry} for configs already finished in THIS submission.
+
+    Partials belonging to any other submission are DELETED, never reused.
+    Silently folding in a config that was solved against superseded data or
+    superseded checkpoints is precisely the failure this regeneration pass
+    exists to undo -- a resume that quietly resurrects stale numbers would be
+    worse than no resume at all.
+    """
+    stamp = partial_dir / "_run.json"
+    fresh = force or token is None or not stamp.exists()
+    if not fresh:
+        try:
+            fresh = json.loads(stamp.read_text()).get("token") != token
+        except (json.JSONDecodeError, OSError):
+            fresh = True
+    if fresh:
+        if partial_dir.exists():
+            shutil.rmtree(partial_dir)
+        partial_dir.mkdir(parents=True, exist_ok=True)
+        stamp.write_text(json.dumps({"token": token}, indent=2))
+        return {}
+    out = {}
+    for f in sorted(partial_dir.glob("*.json")):
+        if f.name == "_run.json":
+            continue
+        reg, _, pre = f.stem.rpartition("_")
+        out[f"Extended_{reg}_{pre}_{genes_n}gene"] = json.loads(f.read_text())
+    return out
 
 
 def _load_module(name, path):
@@ -259,7 +307,8 @@ def walk_and_log(state0, q_hat_gnn, q_hat_mlp, policy_dp, individuals, belief,
     }
 
 
-def run(genes_n, seed, device, log, only_regime=None, only_preset=None, variant="e4"):
+def run(genes_n, seed, device, log, only_regime=None, only_preset=None, variant="e4",
+        skip_keys=None, on_config_done=None):
     tg_or_gnn = _load_module("gnn_run_ext", EXP_ROOT / "gnn" / "run.py")
     compute_structural_features = tg_or_gnn.compute_structural_features
     build_edge_index = tg_or_gnn.build_edge_index
@@ -340,6 +389,9 @@ def run(genes_n, seed, device, log, only_regime=None, only_preset=None, variant=
                 continue
             key = f"Extended_{reg}_{pre}_{genes_n}gene"
             log(f"\n{'='*90}\n{key}\n{'='*90}")
+            if skip_keys and key in skip_keys:
+                log("  already solved in an earlier slot of this job -- skipping (resume)")
+                continue
 
             if genes_n == 2:
                 ds = build_two_gene_dataset(
@@ -386,6 +438,12 @@ def run(genes_n, seed, device, log, only_regime=None, only_preset=None, variant=
             summary[key]["ratio2_mlp"] = ratio2_mlp
             summary[key]["V_root"] = ds["V_root"]
 
+            # Flush NOW, not at the end: a 12-config 3-gene seed does not fit
+            # in one 4h slot, and the old all-or-nothing write meant a
+            # timed-out task produced literally nothing.
+            if on_config_done is not None:
+                on_config_done(reg, pre, key, summary[key])
+
     return summary
 
 
@@ -403,6 +461,9 @@ def main():
                     help="e4 = mean pooling (bidirectional MP + CE), e6 = sum pooling. "
                          "e4 keeps the original filenames; e6 writes alongside with an _e6 suffix "
                          "so neither overwrites the other.")
+    p.add_argument("--force", action="store_true",
+                   help="Discard any resume partials for this task and re-solve every config "
+                        "from scratch. Only meaningful without --regime.")
     args = p.parse_args()
 
     tag = f"{args.genes}gene"
@@ -411,13 +472,18 @@ def main():
     suffix = "" if args.variant == "e4" else f"_{args.variant}"
 
     if args.regime is not None:
+        # One config per task: fits comfortably in a slot, nothing to resume.
         assert args.preset is not None, "--regime requires --preset"
         configs_dir = out_dir / f"configs{suffix}"
         configs_dir.mkdir(parents=True, exist_ok=True)
         log_path = configs_dir / f"{args.regime}_{args.preset}.log"
+        partial_dir, done = None, {}
     else:
         log_path = out_dir / f"extended_fourway{suffix}.log"
-    log_f = open(log_path, "w")
+        partial_dir = out_dir / f"partial{suffix}"
+        done = _load_partials(partial_dir, _run_token(), args.genes, force=args.force)
+    # Append when resuming so the earlier slot's trajectory tables survive.
+    log_f = open(log_path, "a" if done else "w")
 
     def log(msg=""):
         print(msg, flush=True)
@@ -433,9 +499,21 @@ def main():
     log(f"[extended_fourway] {datetime.now().isoformat()}  genes={args.genes}  seed={args.seed}"
         f"  family=Extended (OOD -- never trained on)  {model_desc}{only_suffix}")
 
+    if done:
+        log(f"[resume] {len(done)}/12 configs already solved in an earlier slot of this job: "
+            f"{', '.join(sorted(k.split('_', 1)[1].rsplit('_', 1)[0] for k in done))}")
+
+    def flush(reg, pre, key, entry):
+        (partial_dir / f"{reg}_{pre}.json").write_text(json.dumps(entry, indent=2))
+        log(f"  [resume] checkpointed -> {partial_dir / f'{reg}_{pre}.json'}")
+
     device = torch.device(args.device)
     summary = run(args.genes, args.seed, device, log, only_regime=args.regime, only_preset=args.preset,
-                  variant=args.variant)
+                  variant=args.variant,
+                  skip_keys=set(done),
+                  on_config_done=None if partial_dir is None else flush)
+    # Configs carried over from earlier slots rejoin the aggregate here.
+    summary = {**done, **summary}
 
     if args.regime is not None:
         key = f"Extended_{args.regime}_{args.preset}_{args.genes}gene"

@@ -1,6 +1,6 @@
 # SLURM job log
 
-Last updated: 2026-08-23 (updated every time a new job is submitted or a
+Last updated: 2026-08-24 (updated every time a new job is submitted or a
 tracked job's status changes materially). Only jobs from this investigation
 are listed -- `squeue -u $(whoami)` also shows unrelated jobs (nlp_rq*,
 rarm7_*, tex_*, etc.) from other projects, not touched or tracked here.
@@ -16,10 +16,19 @@ or the E0-E9 retrain (2026-08-22).
 
 | Job ID | Name | Purpose | Status |
 |---|---|---|---|
-| 2206182 | fourway_rerun | Four-way action logs (DP vs myopic vs GNN-Q vs MLP-Q; root action + whole trajectory) for all 8 rungs x {3-gene, 2-gene} x 3 seeds, 48 tasks | PENDING. Regenerates every root-agreement and whole-trajectory figure. The stale ones on disk are dated 07-25 -> 08-10. |
-| 2206212 | verify_myopic_TRUE | Myopic baseline re-verification with Kanix's canonical `myopic_greedy`, 6 regimes x 2 presets x {2,3}-gene, 24 tasks | PENDING. Regenerates the myopic ratio2 reference (currently 0.105 3-gene / 0.230 2-gene, both from 07-25). |
-| 2206213 | extended_fourway | Extended-family (OOD) four-way log, **variant e4 only**, {2,3}-gene x 3 seeds, 6 tasks | RUNNING (2-gene half done). |
-| 2206261 | ext_e6e7_rerun | Extended-family four-way for the **E6 and E7** variants, {2,3}-gene x 3 seeds, 12 tasks | SUBMITTED. Needed because 2206213 covers only variant e4, and the pre-existing `submit_extended_fourway_e6.sh` / `_e7.sh` are 2-gene only -- the briefing quotes 3-gene E6/E7 Extended rows too, sourced from `extended/3gene/*/configs_e6`,`configs_e7` (07-26 / 08-09, both pre-fix). Without this the Extended section would still be half stale. |
+| 2206182 | fourway_rerun | Four-way action logs (DP vs myopic vs GNN-Q vs MLP-Q; root action + whole trajectory) for all 8 rungs x {3-gene, 2-gene} x 3 seeds, 48 tasks | **COMPLETE 08-24, 48/48, 0 errors.** Was RUNNING as of 08-24 03:00. Sat in `JobHeldUser` from submission (08-23 17:59) until released on 08-24 -- it had never started, so until it lands every root-agreement / whole-trajectory figure is still the stale 07-25 -> 08-10 data. 24/48 done (all 2-gene, ~55s each); the 24 3-gene tasks are the slow half but historical runs top out at ~28 min, comfortably inside the 4h wall, so this array needs no resume logic. |
+
+### 2026-08-24: the queue was holding, not running
+
+`2206182` never ran because it was `JobHeldUser` with `Priority=0` -- along with
+22 other jobs of this user's (`mnca_*`, `tex_*`, `canary_mem12`). All 23 were
+released on 08-24; `JobHeldUser` is now zero. The 3 `nlp_rq7_*` jobs are
+`JobHeldAdmin` and cannot be released from a user account.
+
+**Check for this first when a submitted job shows no progress.** `squeue` shows
+it as PENDING, which reads like "waiting for nodes" -- the distinguishing signal
+is `Reason=JobHeldUser` and `Priority=0` in `scontrol show job <id>`.
+
 
 ### Verified: the 3-gene dataset cache IS the corrected data
 
@@ -54,10 +63,101 @@ use the same pattern:
   so **the whole 0-29 array can be resubmitted at any time and only does the
   work that is actually missing**. `--force` redoes one from scratch.
 
+### 2206182 result: every 3-gene action-agreement figure moved (2026-08-24)
+
+Standard families (TRAIN = Trio + Nuclear, TEST = ThreeGeneration), all 12
+configs (6 regimes x 2 presets), averaged over seeds 0/1/2. Old = the committed
+07-25 -> 08-10 files, New = regenerated against corrected data + retrained
+checkpoints.
+
+**2-gene: bit-identical at all 8 rungs**, root and whole-trajectory alike. That
+is now the *fourth* independent confirmation that 2-gene was untouched by the
+3-gene allele-frequency fix (the others: myopic ratio2, the 2-gene Extended
+rerun, and the E0-E9 retrain).
+
+**3-gene: changed at every rung.** Whole-trajectory agreement vs DP:
+
+| Rung | GNN old -> new | MLP old -> new |
+|---|---|---|
+| E0 | 0.486 -> **0.314** | 0.443 -> 0.517 |
+| E1 | 0.462 -> 0.527 | 0.557 -> 0.502 |
+| E2 | 0.681 -> **0.729** | 0.533 -> 0.725 |
+| E4 | 0.633 -> 0.705 | 0.533 -> 0.725 |
+| E5 | 0.590 -> 0.623 | 0.533 -> 0.725 |
+| E6 | 0.567 -> 0.628 | 0.710 -> **0.565** |
+| E7 | 0.581 -> 0.623 | 0.533 -> 0.725 |
+| E9 | 0.395 -> 0.522 | 0.533 -> 0.725 |
+
+Myopic moved 0.557 -> 0.565, consistent with its ratio2 going 0.1052 -> 0.1090.
+E0's GNN is the big loser (0.486 -> 0.314); E6's MLP drops hard (0.710 -> 0.565,
+and root 2.0/12 -> 0.3/12). E2/E4/E5/E7/E9 share one MLP number because they all
+reuse the E2 CE MLP checkpoint -- expected, and true in the old data too.
+
+**Every root-agreement and whole-trajectory figure in the 3-gene half of the PI
+briefing is therefore stale and needs replacing from these files.**
+
+### 3-gene Extended does not fit in one slot (2026-08-24)
+
+All nine 3-gene Extended tasks in jobs 2206213 / 2206261 hit the 4h wall and
+produced **nothing**. Two compounding causes:
+
+1. Each of the 12 configs solves exact DP over **9,190,992 states from
+   scratch** -- there is no cached pickle for Extended at 3 genes, only for
+   Trio / Nuclear / ThreeGeneration. The logs show each task finished only
+   4-6 of 12 configs before being killed.
+2. `log_extended_fourway.py` wrote its JSON **only after all 12 configs
+   finished**. So a task that solved 5 configs and then hit the wall threw all
+   five away. That is the part that made the timeout total rather than partial.
+
+Fixed by giving the whole-seed path the same resume machinery the split
+experiments already use:
+
+- Every config is flushed to `extended/{genes}gene/seed{N}/partial{suffix}/
+  {regime}_{preset}.json` the instant it is solved, and a resumed task skips
+  what it already has. The log is appended to, not truncated.
+- `submit_extended_fourway.sh` and `submit_extended_fourway_e6e7_rerun.sh` now
+  carry `--signal=B:USR1@300` + a `scontrol requeue` trap, same as
+  `submit_e6_split_experiment.sh`.
+- **Partials are keyed to the SLURM job id.** `scontrol requeue` preserves the
+  job id, a fresh `sbatch` does not -- so a requeue resumes, but a new
+  submission *wipes* the partials rather than inheriting them. Without that
+  guard a resume could silently fold a config solved against superseded data or
+  superseded checkpoints into a fresh aggregate, which is exactly the failure
+  this entire regeneration pass exists to undo. `--force` re-solves from
+  scratch.
+
+**Verified end-to-end on a compute node (jobs 2207508 / 2207509, 2-gene so it
+is cheap, 2026-08-24).** The test kills a run mid-flight, restarts it under the
+same job id, then simulates a fresh submission:
+
+| Property | Result |
+|---|---|
+| Killed at the simulated wall, partials survive | **3/12 configs** checkpointed (LowHigh_Base, LowHigh_Aggressive, MediumEven_Base); final JSON correctly still the old 08-23 one. Under the old code this was **0**. |
+| Requeue resumes rather than restarts | slot 2 logged `[resume] 3/12 configs already solved in an earlier slot of this job`, skipped those three, solved the remaining nine, wrote the final JSON |
+| A new submission does not inherit partials | 12 partials on disk, **0 inherited** -- the job-id key held |
+| **Resume does not change the answer** | the resumed seed1 output is **identical** to the known-good pre-test copy (whole-trajectory, root-only, per-config and ratio2 blocks all equal). seed0, run clean, likewise identical. |
+
+One expected side effect: a resumed run's `.log` legitimately contains the
+earlier slot's config sections plus a header per slot, so a resumed log has
+more than 12 config blocks. The `.json` is unaffected and is what every
+analysis script reads -- but do not count config blocks in a resumed `.log`.
+
+Note the per-config mode (`--regime X --preset Y`, driven by
+`submit_extended_3gene_perconfig{,_e6,_e7}.sh`, 36 tasks each) was always
+immune to this -- one config per task, own JSON written immediately. It remains
+the alternative if the resume path is ever in doubt.
+
+**Not yet resubmitted.** 3-gene Extended (e4/e6/e7 x 3 seeds) is still stale
+07-26 / 08-09 data, and re-running it is ~108 config-solves either way.
+
+
 ## Finished
 
 | Job ID | Name | Purpose | Result |
 |---|---|---|---|
+| 2206212 | verify_myopic_TRUE | Myopic ratio2 reference, 24 tasks | **COMPLETE, 24/24.** 3-gene 0.1052 -> 0.1090; 2-gene 0.2303 bit-identical. Already folded into the artifact and commit 07f979d. |
+| 2206213 | extended_fourway (e4) | Extended/OOD four-way, variant e4, {2,3}-gene x 3 seeds, 6 tasks | **PARTIAL: 2-gene 3/3 COMPLETE, 3-gene 3/3 TIMEOUT** at the 4h wall. See "3-gene Extended does not fit in one slot" below. The 2-gene results came back bit-identical to the committed ones apart from a cosmetic `variant` label -- a third independent confirmation that 2-gene was untouched by the 3-gene fix, alongside the myopic 2-gene result. |
+| 2206261 | ext_e6e7_rerun | Extended/OOD four-way, variants E6+E7, {2,3}-gene x 3 seeds, 12 tasks | **PARTIAL: 2-gene 6/6 COMPLETE, 3-gene 6/6 TIMEOUT** at the 4h wall. Same cause. So all 2-gene Extended rows are now post-correction; all **3-gene** Extended rows (e4/e6/e7) are still the stale 07-26 / 08-09 data. |
 | 2204396 (artifact) | — | 3-gene ratio2 figures in the PI briefing artifact replaced from the corrected retrain | DONE 2026-08-23. Per-rung tables, master table, all 12 per-config rows, and every vs-previous-rung delta. Four directional claims flipped (E1 batching no longer a uniform win; E4 bidirectional MP now regresses at 3-gene; E7/E9 now better than E4; E6 MLP 0.214 -> 0.821) and the prose was rewritten to match. 2-gene verified unchanged and correct. |
 | 2204396 | ovfit_probe | Overfit probes: curve / randlabel / configholdout x GNN+MLP x 3 seeds, 500 epochs, on the FAIR rotate split (TRAIN=Trio+ThreeGeneration, TEST=Nuclear) | **COMPLETE, 18/18, 0 errors.** Three results: (1) real but shallow overfitting -- GNN val loss bottoms at ep150-250 then drifts up only ~2-3%; MLP shows none. (2) Neither model can memorize shuffled targets -- shuffled-target R2 sits at mean-predictor level (GNN -0.16 to -0.44), and total loss is HIGHER under shuffling. (3) Config-level and family-level generalization gaps are the same size (~1.7x vs ~1.6x), so neither config memorization nor a specific topology-transfer failure is supported. Analysis: `analyze_overfit_probes.py`. |
 | 2204343 | ovfit_smoke | 2-epoch smoke of all three overfit probes on the real partition | COMPLETE, 4/4, exit 0. All probes emitted their expected fields; `configholdout` produced all three ratio2 numbers. seed99 output dirs deleted so they do not pollute the results tree. |

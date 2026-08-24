@@ -1,4 +1,4 @@
-[e2_fourway] 2026-07-25T19:55:57.514660  genes=2  seed=0  variant=E2 (MSE + CE, state-grouped batching)
+[e2_fourway] 2026-08-24T03:07:07.463143  genes=2  seed=0  variant=E2 (MSE + CE, state-grouped batching)
 loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/gnn_q_ce_2gene/seed_runs/seed0/gnn_q_ce_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce_2gene/seed_runs/seed0/mlp_q_ce_2gene.pt
 

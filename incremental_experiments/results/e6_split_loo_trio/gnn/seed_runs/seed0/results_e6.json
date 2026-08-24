@@ -1,0 +1,249 @@
+{
+  "train": {
+    "Nuclear_LowHigh_Base_2gene": {
+      "ratio2": 0.19697027974321937,
+      "L": -0.09888301120347079,
+      "V_root": -0.08775097199770075
+    },
+    "Nuclear_LowHigh_Aggressive_2gene": {
+      "ratio2": 0.08068722780651799,
+      "L": -0.09977761751646443,
+      "V_root": -0.0899165776786806
+    },
+    "Nuclear_MediumEven_Base_2gene": {
+      "ratio2": 0.15367275374966213,
+      "L": -0.10721406709899373,
+      "V_root": -0.09565263166816096
+    },
+    "Nuclear_MediumEven_Aggressive_2gene": {
+      "ratio2": 0.06973295064881335,
+      "L": -0.11076472593058898,
+      "V_root": -0.10007595690569501
+    },
+    "Nuclear_LowLow_Base_2gene": {
+      "ratio2": 1.9327766518050844,
+      "L": -0.05781740719937314,
+      "V_root": -0.03828435203332321
+    },
+    "Nuclear_LowLow_Aggressive_2gene": {
+      "ratio2": 0.5602456670562369,
+      "L": -0.05874634911693273,
+      "V_root": -0.04136659479320019
+    },
+    "Nuclear_HighHigh_Base_2gene": {
+      "ratio2": 0.05619664661808102,
+      "L": -0.15758659386490415,
+      "V_root": -0.15055236788852727
+    },
+    "Nuclear_HighHigh_Aggressive_2gene": {
+      "ratio2": 0.024780385216226025,
+      "L": -0.16411117124776867,
+      "V_root": -0.1580185502050423
+    },
+    "Nuclear_MixedA_Base_2gene": {
+      "ratio2": 0.3114802355702513,
+      "L": -0.084476284593546,
+      "V_root": -0.07080840533953711
+    },
+    "Nuclear_MixedA_Aggressive_2gene": {
+      "ratio2": 0.12973797794251815,
+      "L": -0.08541038776922029,
+      "V_root": -0.0728041716425984
+    },
+    "Nuclear_MixedB_Base_2gene": {
+      "ratio2": 0.15605138313314157,
+      "L": -0.10504240908332502,
+      "V_root": -0.09395256448414485
+    },
+    "Nuclear_MixedB_Aggressive_2gene": {
+      "ratio2": 0.06881235554337183,
+      "L": -0.10721814457604073,
+      "V_root": -0.09710336907791386
+    },
+    "ThreeGeneration_LowHigh_Base_2gene": {
+      "ratio2": 0.2015810188146057,
+      "L": -0.121082380480813,
+      "V_root": -0.10915810573616076
+    },
+    "ThreeGeneration_LowHigh_Aggressive_2gene": {
+      "ratio2": 0.030876382835895336,
+      "L": -0.11558807615818242,
+      "V_root": -0.11138583628040535
+    },
+    "ThreeGeneration_MediumEven_Base_2gene": {
+      "ratio2": 0.13256988380656173,
+      "L": -0.12850660149631626,
+      "V_root": -0.11767682752538546
+    },
+    "ThreeGeneration_MediumEven_Aggressive_2gene": {
+      "ratio2": 0.02388549555532426,
+      "L": -0.12686325370911067,
+      "V_root": -0.12273466987403277
+    },
+    "ThreeGeneration_LowLow_Base_2gene": {
+      "ratio2": 1.4004196741069073,
+      "L": -0.06080586009166568,
+      "V_root": -0.04559156102426238
+    },
+    "ThreeGeneration_LowLow_Aggressive_2gene": {
+      "ratio2": 0.3104043691447892,
+      "L": -0.06212507323486261,
+      "V_root": -0.052074723550082004
+    },
+    "ThreeGeneration_HighHigh_Base_2gene": {
+      "ratio2": 0.04246767712958424,
+      "L": -0.1878737731477916,
+      "V_root": -0.1819393993738608
+    },
+    "ThreeGeneration_HighHigh_Aggressive_2gene": {
+      "ratio2": 0.010624573510277542,
+      "L": -0.19396101849434322,
+      "V_root": -0.19098387266114014
+    },
+    "ThreeGeneration_MixedA_Base_2gene": {
+      "ratio2": 0.26695894640211904,
+      "L": -0.09990553279016667,
+      "V_root": -0.08756052721248765
+    },
+    "ThreeGeneration_MixedA_Aggressive_2gene": {
+      "ratio2": 0.04804035073982513,
+      "L": -0.09645861352019536,
+      "V_root": -0.09131924983786005
+    },
+    "ThreeGeneration_MixedB_Base_2gene": {
+      "ratio2": 0.13310901430631425,
+      "L": -0.12604637908987582,
+      "V_root": -0.11583937892712344
+    },
+    "ThreeGeneration_MixedB_Aggressive_2gene": {
+      "ratio2": 0.024034086622945153,
+      "L": -0.1233909055335612,
+      "V_root": -0.11941663460424426
+    },
+    "Extended_LowHigh_Base_2gene": {
+      "ratio2": 0.2096273478718162,
+      "L": -0.14862535393028614,
+      "V_root": -0.13064950160463917
+    },
+    "Extended_LowHigh_Aggressive_2gene": {
+      "ratio2": 0.05615808446876922,
+      "L": -0.14408379614413136,
+      "V_root": -0.13372429829159732
+    },
+    "Extended_MediumEven_Base_2gene": {
+      "ratio2": 0.15616949408903838,
+      "L": -0.159933111635387,
+      "V_root": -0.14209271042788435
+    },
+    "Extended_MediumEven_Aggressive_2gene": {
+      "ratio2": 0.043210061095875885,
+      "L": -0.15877627279973006,
+      "V_root": -0.14878384723202298
+    },
+    "Extended_LowLow_Base_2gene": {
+      "ratio2": 0.28797481743373105,
+      "L": -0.06027150909010699,
+      "V_root": -0.055291039231763
+    },
+    "Extended_LowLow_Aggressive_2gene": {
+      "ratio2": 0.3632837479898789,
+      "L": -0.07850041029834103,
+      "V_root": -0.06133688559928369
+    },
+    "Extended_HighHigh_Base_2gene": {
+      "ratio2": 0.03285239005614694,
+      "L": -0.229704968152973,
+      "V_root": -0.22345883641459646
+    },
+    "Extended_HighHigh_Aggressive_2gene": {
+      "ratio2": 0.016962062137418913,
+      "L": -0.24170760642577516,
+      "V_root": -0.23542485929785034
+    },
+    "Extended_MixedA_Base_2gene": {
+      "ratio2": 0.2685088224255587,
+      "L": -0.12316710001297246,
+      "V_root": -0.10522979057420832
+    },
+    "Extended_MixedA_Aggressive_2gene": {
+      "ratio2": 0.08128760694090771,
+      "L": -0.12024164651059868,
+      "V_root": -0.10832209786927155
+    },
+    "Extended_MixedB_Base_2gene": {
+      "ratio2": 0.1614049921514985,
+      "L": -0.15701033315777435,
+      "V_root": -0.1395885519184311
+    },
+    "Extended_MixedB_Aggressive_2gene": {
+      "ratio2": 0.043904603094311545,
+      "L": -0.15408308125063888,
+      "V_root": -0.14434522187163557
+    }
+  },
+  "test": {
+    "Trio_LowHigh_Base_2gene": {
+      "ratio2": 0.12454658458189154,
+      "L": -0.06915787914400001,
+      "V_root": -0.06531382579499093
+    },
+    "Trio_LowHigh_Aggressive_2gene": {
+      "ratio2": 0.1820642242827543,
+      "L": -0.0809281134824,
+      "V_root": -0.06746327307539142
+    },
+    "Trio_MediumEven_Base_2gene": {
+      "ratio2": 0.13892022947499208,
+      "L": -0.07717381646745602,
+      "V_root": -0.07124473260970346
+    },
+    "Trio_MediumEven_Aggressive_2gene": {
+      "ratio2": 0.22329012170579163,
+      "L": -0.09518298233241602,
+      "V_root": -0.07398924250841928
+    },
+    "Trio_LowLow_Base_2gene": {
+      "ratio2": 1.0,
+      "L": -0.03226037760000001,
+      "V_root": -0.027074084855040002
+    },
+    "Trio_LowLow_Aggressive_2gene": {
+      "ratio2": 1.0,
+      "L": -0.048258840960000014,
+      "V_root": -0.03151163702137601
+    },
+    "Trio_HighHigh_Base_2gene": {
+      "ratio2": 1.0,
+      "L": -0.18381600000000003,
+      "V_root": -0.10854942487203126
+    },
+    "Trio_HighHigh_Aggressive_2gene": {
+      "ratio2": 0.005738427617672683,
+      "L": -0.11455877212109375,
+      "V_root": -0.11366593279508401
+    },
+    "Trio_MixedA_Base_2gene": {
+      "ratio2": 0.12731829475002449,
+      "L": -0.055242617376,
+      "V_root": -0.052147261896832005
+    },
+    "Trio_MixedA_Aggressive_2gene": {
+      "ratio2": 0.15726272505207162,
+      "L": -0.06480524250240001,
+      "V_root": -0.05575306199631226
+    },
+    "Trio_MixedB_Base_2gene": {
+      "ratio2": 0.12829701452477088,
+      "L": -0.07535154760960003,
+      "V_root": -0.07025024077928316
+    },
+    "Trio_MixedB_Aggressive_2gene": {
+      "ratio2": 0.2361851336358565,
+      "L": -0.09351934626560005,
+      "V_root": -0.07211837623543774
+    }
+  },
+  "train_avg_ratio2": 0.22465166715453405,
+  "test_avg_ratio2": 0.3603018963021522,
+  "gap": 0.13565022914761815
+}

@@ -1,4 +1,4 @@
-[e1_fourway] 2026-07-25T19:55:57.369442  genes=2  seed=0  variant=E1 (MSE + state-grouped batching)
+[e1_fourway] 2026-08-24T03:07:07.834635  genes=2  seed=0  variant=E1 (MSE + state-grouped batching)
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e1_gnn_mse_grouped_2gene/seed_runs/seed0/gnn_q_e1_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e1_mlp_mse_grouped_2gene/seed_runs/seed0/mlp_q_e1_2gene.pt
 

@@ -1,0 +1,20 @@
+/net/projects/ranalab/rajhansini/conda_envs/genetic-rl/lib/python3.11/site-packages/pgmpy/estimators/__init__.py:4: FutureWarning: `pgmpy.estimators.StructureScore` is deprecated and will be removed in v1.3.0. Use `pgmpy.structure_score` instead.
+  from .StructureScore import (
+[adp_ground_truth] 2026-08-22T23:26:45.681781  genes=3  family=Extended  regime=LowHigh  preset=Base
+[CONFIG] Extended_LowHigh_Base_3gene (test)
+  states=9,190,992  V*(root)=-0.171235  V_stop(root)=-0.324345
+
+--- Building Bayesian Network ---
+Bayesian Network setup completed in 0.005s
+
+--- Running Exact DP Solver FIRST ---
+[warn] belief snapshot save failed (PicklingError('memo id too large for LONG_BINGET')) -- continuing without disk cache
+Exact DP cache miss – kept freshly computed results in memory only.
+
+--- Running Approximate Dual DP Solver SECOND (using exact DP cache) ---
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2839186
+Academic license 2839186 - for non-commercial use only - registered to ra___@uchicago.edu
+slurmstepd-p009: error: *** JOB 2201156 ON p009 CANCELLED AT 2026-08-23T03:26:54 DUE TO TIME LIMIT ***
+slurmstepd-p009: error: *** JOB 2201156 STEPD TERMINATED ON p009 AT 2026-08-23T03:27:54 DUE TO JOB NOT ENDING WITH SIGNALS ***

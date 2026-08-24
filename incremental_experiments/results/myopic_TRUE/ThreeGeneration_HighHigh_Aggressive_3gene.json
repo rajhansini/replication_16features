@@ -1,8 +1,8 @@
 {
-  "V_root": -0.2910120369647778,
-  "V_stop_root": -0.7520688,
-  "L_myopic_TRUE": -0.29480124958158727,
-  "ratio2_TRUE": 0.008218538194439204,
+  "V_root": -0.25195022228045766,
+  "V_stop_root": -0.66624508125,
+  "L_myopic_TRUE": -0.25648792256238917,
+  "ratio2_TRUE": 0.010952827880167127,
   "root_action_myopic": [
     "test",
     "Grandfather"

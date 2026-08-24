@@ -1,4 +1,4 @@
-[e9_fourway] 2026-08-10T04:28:20.686679  genes=2  seed=1  variant=E9 (GNN: combined global-sum + local-mean pooling; MLP: unchanged from E2)
+[e9_fourway] 2026-08-24T03:10:46.537684  genes=2  seed=1  variant=E9 (GNN: combined global-sum + local-mean pooling; MLP: unchanged from E2)
 loaded /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e9_gnn_combopool_2gene/seed_runs/seed1/gnn_q_e9_2gene.pt
 loaded /net/projects/ranalab/rajhansini/replication_16features/fixing_gnn_q/results/mlp_q_ce_2gene/seed_runs/seed1/mlp_q_ce_2gene.pt
 

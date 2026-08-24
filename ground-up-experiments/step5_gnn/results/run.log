@@ -303,3 +303,269 @@
   ThreeGeneration__Aggressive__0.02             TRAIN  0.011129
   ThreeGeneration__Base__0.08                   TEST   0.041502
   ThreeGeneration__Aggressive__0.08             TEST   0.023564
+
+============================================================
+[RUN] 2026-07-03T09:50:38.493128
+============================================================
+
+[1] Datasets:
+    Extended__Base__0.02  [building...]
+    done in 13.9s  (107728 states)
+    Extended__Aggressive__0.02  [building...]
+    done in 14.9s  (107728 states)
+    Extended__Base__0.08  [building...]
+    done in 14.4s  (107728 states)
+    Extended__Aggressive__0.08  [building...]
+    done in 15.1s  (107728 states)
+    ThreeGeneration__Base__0.02  [building...]
+    done in 2.0s  (20816 states)
+    ThreeGeneration__Aggressive__0.02  [building...]
+    done in 1.8s  (20816 states)
+    ThreeGeneration__Base__0.08  [building...]
+    done in 2.1s  (20816 states)
+    ThreeGeneration__Aggressive__0.08  [building...]
+    done in 2.0s  (20816 states)
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 472544
+    Training complete.
+
+[3] Evaluation — done 0/4, pending 8/4
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=0.030359  (20.9s)
+
+    [TRAIN] Extended__Aggressive__0.02 — loading...
+    ratio2=0.008468  (21.1s)
+
+    [TRAIN] Extended__Base__0.08 — loading...
+    ratio2=0.026152  (21.4s)
+
+    [TRAIN] Extended__Aggressive__0.08 — loading...
+    ratio2=0.009894  (21.1s)
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=0.022874  (5.0s)
+
+    [TRAIN] ThreeGeneration__Aggressive__0.02 — loading...
+    ratio2=0.003153  (5.8s)
+
+    [TEST] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.013205  (5.4s)
+
+    [TEST] ThreeGeneration__Aggressive__0.08 — loading...
+    ratio2=0.001555  (4.9s)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  Extended__Base__0.02                          TRAIN  0.030359
+  Extended__Aggressive__0.02                    TRAIN  0.008468
+  Extended__Base__0.08                          TRAIN  0.026152
+  Extended__Aggressive__0.08                    TRAIN  0.009894
+  ThreeGeneration__Base__0.02                   TRAIN  0.022874
+  ThreeGeneration__Aggressive__0.02             TRAIN  0.003153
+  ThreeGeneration__Base__0.08                   TEST   0.013205
+  ThreeGeneration__Aggressive__0.08             TEST   0.001555
+
+============================================================
+[RUN] 2026-07-10T01:29:39.766529
+============================================================
+
+[1] Datasets:
+    Extended__Base__0.02  [building...]
+    done in 17.0s  (107728 states)
+    Extended__Aggressive__0.02  [building...]
+    done in 18.1s  (107728 states)
+    Extended__Base__0.08  [building...]
+    done in 17.6s  (107728 states)
+    Extended__Aggressive__0.08  [building...]
+    done in 18.0s  (107728 states)
+    ThreeGeneration__Base__0.02  [building...]
+    done in 2.4s  (20816 states)
+    ThreeGeneration__Aggressive__0.02  [building...]
+    done in 2.1s  (20816 states)
+    ThreeGeneration__Base__0.08  [building...]
+    done in 2.6s  (20816 states)
+    ThreeGeneration__Aggressive__0.08  [building...]
+    done in 2.4s  (20816 states)
+
+[2] Training GNN:
+    Starting fresh (0/500)
+    Train samples: 472544
+    Verification written → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/verify.log
+    Training complete.
+
+[3] Evaluation — done 0/4, pending 8/4
+
+    [TRAIN] Extended__Base__0.02 — loading...
+    ratio2=0.171712  (4.5s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.1063, 'Grandmother': -0.1063, 'Mother': -0.1063, 'Father': -0.1283, 'Uncle': -0.1283, 'Child': -0.11427}  v_stop=-0.21640
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.1063, 'Mother': -0.1063, 'Father': -0.09658, 'Uncle': -0.09658, 'Child': -0.07342}  v_stop=-0.14396
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.07002, 'Mother': -0.03549, 'Father': -0.03258, 'Uncle': -0.0391}  v_stop=-0.07251
+        → TEST Father
+      step 3: tested=['Child', 'Father', 'Grandfather']
+        Q: {'Grandmother': -0.03549, 'Mother': -0.03549, 'Uncle': -0.0375}  v_stop=-0.04356
+        → TEST Grandmother
+      step 4: tested=['Child', 'Father', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.03549, 'Uncle': -0.01813}  v_stop=-0.01424
+        → STOP (best_Q=-0.01813 <= v_stop=-0.01424)
+      trace done (4 steps)
+
+    [TRAIN] Extended__Aggressive__0.02 — loading...
+    ratio2=0.063018  (4.5s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.10619, 'Grandmother': -0.10619, 'Mother': -0.10619, 'Father': -0.13708, 'Uncle': -0.13708, 'Child': -0.11427}  v_stop=-0.31819
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.10619, 'Mother': -0.10619, 'Father': -0.09373, 'Uncle': -0.09373, 'Child': -0.07057}  v_stop=-0.21284
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.07118, 'Mother': -0.02523, 'Father': -0.02973, 'Uncle': -0.03625}  v_stop=-0.10775
+        → TEST Mother
+      step 3: tested=['Child', 'Grandfather', 'Mother']
+        Q: {'Grandmother': -0.07118, 'Father': -0.02973, 'Uncle': -0.03625}  v_stop=-0.08659
+        → TEST Father
+      step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+        Q: {'Grandmother': -0.02523, 'Uncle': -0.03465}  v_stop=-0.04366
+        → TEST Grandmother
+      step 5: tested=['Child', 'Father', 'Grandfather', 'Grandmother', 'Mother']
+        Q: {'Uncle': -0.01527}  v_stop=0.00000
+        → STOP (best_Q=-0.01527 <= v_stop=0.00000)
+      trace done (5 steps)
+
+    [TRAIN] Extended__Base__0.08 — loading...
+    ratio2=0.123773  (4.3s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.10987, 'Grandmother': -0.10987, 'Mother': -0.10987, 'Father': -0.1241, 'Uncle': -0.1241, 'Child': -0.11427}  v_stop=-0.25633
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.10987, 'Mother': -0.10987, 'Father': -0.08953, 'Uncle': -0.08953, 'Child': -0.06487}  v_stop=-0.16476
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.02109, 'Mother': -0.05844, 'Father': -0.03264, 'Uncle': -0.03777}  v_stop=-0.07970
+        → TEST Grandmother
+      step 3: tested=['Child', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.05844, 'Father': -0.01813, 'Uncle': -0.01813}  v_stop=-0.01578
+        → STOP (best_Q=-0.01813 <= v_stop=-0.01578)
+      trace done (3 steps)
+
+    [TRAIN] Extended__Aggressive__0.08 — loading...
+    ratio2=0.088114  (4.7s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.11581, 'Grandmother': -0.11581, 'Mother': -0.11581, 'Father': -0.13288, 'Uncle': -0.13288, 'Child': -0.11427}  v_stop=-0.38004
+        → TEST Child
+      step 1: tested=['Child']
+        Q: {'Grandfather': -0.02079, 'Grandmother': -0.02079, 'Mother': -0.06727, 'Father': -0.04439, 'Uncle': -0.05323}  v_stop=-0.20351
+        → TEST Grandfather
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.0221, 'Mother': -0.06727, 'Father': -0.02979, 'Uncle': -0.03491}  v_stop=-0.11889
+        → TEST Grandmother
+      step 3: tested=['Child', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.06727, 'Father': -0.01527, 'Uncle': -0.01527}  v_stop=-0.02353
+        → TEST Father
+      step 4: tested=['Child', 'Father', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.06727, 'Uncle': -0.01527}  v_stop=-0.02353
+        → TEST Uncle
+      step 5: tested=['Child', 'Father', 'Grandfather', 'Grandmother', 'Uncle']
+        Q: {'Mother': -0.06727}  v_stop=-0.02353
+        → STOP (best_Q=-0.06727 <= v_stop=-0.02353)
+      trace done (5 steps)
+
+    [TRAIN] ThreeGeneration__Base__0.02 — loading...
+    ratio2=0.079460  (1.3s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.1063, 'Grandmother': -0.1063, 'Mother': -0.1063, 'Father': -0.1283, 'Child': -0.11427}  v_stop=-0.16831
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.1063, 'Mother': -0.1063, 'Father': -0.09658, 'Child': -0.07342}  v_stop=-0.11547
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.07002, 'Mother': -0.03549, 'Father': -0.03258}  v_stop=-0.05006
+        → TEST Father
+      step 3: tested=['Child', 'Father', 'Grandfather']
+        Q: {'Grandmother': -0.03549, 'Mother': -0.03549}  v_stop=-0.02849
+        → STOP (best_Q=-0.03549 <= v_stop=-0.02849)
+      trace done (3 steps)
+
+    [TRAIN] ThreeGeneration__Aggressive__0.02 — loading...
+    ratio2=0.074602  (1.3s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.10619, 'Grandmother': -0.10619, 'Mother': -0.10619, 'Father': -0.13708, 'Child': -0.11427}  v_stop=-0.24748
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.10619, 'Mother': -0.10619, 'Father': -0.09373, 'Child': -0.07057}  v_stop=-0.17052
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.07118, 'Mother': -0.02523, 'Father': -0.02973}  v_stop=-0.07432
+        → TEST Mother
+      step 3: tested=['Child', 'Grandfather', 'Mother']
+        Q: {'Grandmother': -0.07118, 'Father': -0.02973}  v_stop=-0.05316
+        → TEST Father
+      step 4: tested=['Child', 'Father', 'Grandfather', 'Mother']
+        Q: {'Grandmother': -0.02523}  v_stop=-0.02116
+        → STOP (best_Q=-0.02523 <= v_stop=-0.02116)
+      trace done (4 steps)
+
+    [TEST] ThreeGeneration__Base__0.08 — loading...
+    ratio2=0.063411  (1.3s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.10987, 'Grandmother': -0.10987, 'Mother': -0.10987, 'Father': -0.1241, 'Child': -0.11427}  v_stop=-0.19937
+        → TEST Grandfather
+      step 1: tested=['Grandfather']
+        Q: {'Grandmother': -0.10987, 'Mother': -0.10987, 'Father': -0.08953, 'Child': -0.06487}  v_stop=-0.13320
+        → TEST Child
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.02109, 'Mother': -0.05844, 'Father': -0.03264}  v_stop=-0.05533
+        → TEST Grandmother
+      step 3: tested=['Child', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.05844, 'Father': -0.01813}  v_stop=-0.01578
+        → STOP (best_Q=-0.01813 <= v_stop=-0.01578)
+      trace done (3 steps)
+
+    [TEST] ThreeGeneration__Aggressive__0.08 — loading...
+    ratio2=0.095829  (1.1s)
+    ROLLOUT TRACE:
+      step 0: tested={}
+        Q: {'Grandfather': -0.11581, 'Grandmother': -0.11581, 'Mother': -0.11581, 'Father': -0.13288, 'Child': -0.11427}  v_stop=-0.29558
+        → TEST Child
+      step 1: tested=['Child']
+        Q: {'Grandfather': -0.02079, 'Grandmother': -0.02079, 'Mother': -0.06727, 'Father': -0.04439}  v_stop=-0.13705
+        → TEST Grandfather
+      step 2: tested=['Child', 'Grandfather']
+        Q: {'Grandmother': -0.0221, 'Mother': -0.06727, 'Father': -0.02979}  v_stop=-0.08249
+        → TEST Grandmother
+      step 3: tested=['Child', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.06727, 'Father': -0.01527}  v_stop=-0.02353
+        → TEST Father
+      step 4: tested=['Child', 'Father', 'Grandfather', 'Grandmother']
+        Q: {'Mother': -0.06727}  v_stop=-0.02353
+        → STOP (best_Q=-0.06727 <= v_stop=-0.02353)
+      trace done (4 steps)
+
+[DONE] → /net/projects/ranalab/rajhansini/replication_16features/ground-up-experiments/step5_gnn/results/results.json
+
+  Key                                           Split    ratio2
+  --------------------------------------------------------------
+  Extended__Base__0.02                          TRAIN  0.171712
+  Extended__Aggressive__0.02                    TRAIN  0.063018
+  Extended__Base__0.08                          TRAIN  0.123773
+  Extended__Aggressive__0.08                    TRAIN  0.088114
+  ThreeGeneration__Base__0.02                   TRAIN  0.079460
+  ThreeGeneration__Aggressive__0.02             TRAIN  0.074602
+  ThreeGeneration__Base__0.08                   TEST   0.063411
+  ThreeGeneration__Aggressive__0.08             TEST   0.095829

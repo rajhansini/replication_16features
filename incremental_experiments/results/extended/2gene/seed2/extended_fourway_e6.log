@@ -1,4 +1,4 @@
-[extended_fourway] 2026-07-26T19:09:07.535840  genes=2  seed=2  family=Extended (OOD -- never trained on)  GNN=E6 sumpool  MLP=E6 sumpool
+[extended_fourway] 2026-08-23T19:25:50.997498  genes=2  seed=2  family=Extended (OOD -- never trained on)  GNN=E6 sumpool  MLP=E6 sumpool
 loaded GNN (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_gnn_sumpool_2gene/seed_runs/seed2/gnn_q_e6_2gene.pt
 loaded MLP (e6) /net/projects/ranalab/rajhansini/replication_16features/incremental_experiments/results/e6_mlp_sumpool_2gene/seed_runs/seed2/mlp_q_e6_2gene.pt
 

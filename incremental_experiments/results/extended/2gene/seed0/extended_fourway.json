@@ -2,7 +2,7 @@
   "genes": 2,
   "seed": 0,
   "family": "Extended",
-  "variant": "OOD_E4gnn_E2mlp",
+  "variant": "e4",
   "overall_whole_traj": {
     "myopic": {
       "n_match": 27,
